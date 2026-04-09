@@ -96,6 +96,3 @@ npm run build
 - `/api/invoices`
 - `/api/payments`
 
-## Recommended Next Step
-
-Add create/edit flows on top of the existing typed services and schemas, starting with orders and invoices.
