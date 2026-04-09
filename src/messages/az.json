@@ -16,8 +16,11 @@
     "dashboard": "Panel",
     "customers": "Müştərilər",
     "fabrics": "Parçalar",
+    "products": "Məhsullar",
     "orders": "Sifarişlər",
     "invoices": "Fakturalar",
+    "reports": "Hesabatlar",
+    "settings": "Tənzimləmələr",
     "payments": "Ödənişlər"
   },
   "Landing": {
@@ -45,7 +48,9 @@
   "Shell": {
     "subtitle": "Parça əməliyyatları demo iş sahəsi",
     "welcomeBack": "Biznes görünüşü",
-    "demoSafe": "Yalnız nümunə qeydlər"
+    "demoSafe": "Yalnız nümunə qeydlər",
+    "mobileMenuLabel": "Naviqasiya menyusunu aç",
+    "searchActionLabel": "Modullarda axtar"
   },
   "Dashboard": {
     "title": "Panel",
@@ -95,6 +100,26 @@
     "title": "Parçalar",
     "description": "Kataloq üzrə populyar tekstilləri, stok vəziyyətini və rezerv təzyiqini izləyin.",
     "searchPlaceholder": "SKU, parça və ya kateqoriya axtar",
+    "cards": {
+      "totalStock": "Ümumi stok",
+      "reservedStock": "Rezerv stok",
+      "averageUnitPrice": "Orta vahid qiymət"
+    },
+    "table": {
+      "product": "Məhsul",
+      "composition": "Tərkib",
+      "width": "En",
+      "weight": "Sıxlıq",
+      "stock": "Stok",
+      "reserved": "Rezerv",
+      "price": "Vahid qiymət",
+      "status": "Status"
+    }
+  },
+  "Products": {
+    "title": "Məhsullar",
+    "description": "Tekstil kataloqunu stok, rezerv və qiymət görünürlüğü olan peşəkar məhsul kitabxanası kimi təqdim edin.",
+    "searchPlaceholder": "SKU, məhsul və ya kateqoriya axtar",
     "cards": {
       "totalStock": "Ümumi stok",
       "reservedStock": "Rezerv stok",
@@ -180,6 +205,54 @@
       "method": "Üsul",
       "amount": "Məbləğ",
       "status": "Status"
+    }
+  },
+  "Reports": {
+    "title": "Hesabatlar",
+    "description": "Satış, yığım, müştəri və məhsul performansı üçün təqdimata hazır analitika mərkəzinin ilkin görünüşünü göstərin.",
+    "cards": {
+      "exportsReady": "Eksporta hazır görünüşlər",
+      "coverage": "Əhatə sahələri",
+      "refreshCycle": "Yenilənmə ritmi"
+    },
+    "panels": {
+      "collectionsTitle": "Yığım xülasəsi",
+      "collectionsDescription": "Gecikmiş risk və qismən ödənişlərin hesabatlarda necə görünəcəyini izləyin.",
+      "collectionsBody": "Bu hissə aylıq debitor paketləri, müştəri yığım trendi və faktura yaşlanma görünüşləri üçün ayrılıb.",
+      "catalogTitle": "Məhsul performansı",
+      "catalogDescription": "Hansı referansların, kateqoriyaların və rezervdəki məhsulların daha çox tələbat gördüyünü izləyin.",
+      "catalogBody": "Gələcək hesabatlar portfel üzrə stok təzyiqi, rezerv nisbəti və qiymət dəyişimini müqayisə edəcək.",
+      "roadmapTitle": "Növbəti mərhələ",
+      "roadmapDescription": "Shell daha güclü qrafik və export iş axınları üçün hazırdır.",
+      "roadmapItems": {
+        "profitability": "Marja və mənfəətlilik görünüşləri",
+        "regional": "Regional müştəri seqmentasiyası",
+        "inventory": "Stok yaşlanması və yenidən tədarük xəbərdarlıqları"
+      }
+    }
+  },
+  "Settings": {
+    "title": "Tənzimləmələr",
+    "description": "FabricLog-un brendinq, əməliyyat, lokalizasiya və idarəetmə üçün konfiqurasiya olunan iş sahəsinə necə çevrilə biləcəyini göstərin.",
+    "cards": {
+      "workspace": "İş sahəsi profili",
+      "localization": "Lokalizasiyaya hazır",
+      "governance": "İdarəetmə səthi"
+    },
+    "panels": {
+      "profileTitle": "Biznes profili",
+      "profileDescription": "Uydurma FabricLog iş sahəsi üçün ictimai demo metadata.",
+      "profileBody": "Bu sahə sonradan şirkət məlumatı, vergi seçimləri, faktura şablonları və sifariş kodu qaydaları üçün istifadə edilə bilər.",
+      "experienceTitle": "Təcrübə standartları",
+      "experienceDescription": "Dil, tarix və panel seçimlərinin idarəsi üçün hazır struktur.",
+      "experienceBody": "Mövcud struktur artıq ingilis və azərbaycan dillərini dəstəkləyir və layout yenidən yazılmadan istifadəçi səviyyəli seçimlərə genişlənə bilər.",
+      "controlsTitle": "Əməliyyat nəzarətləri",
+      "controlsDescription": "Səlahiyyət, export və inteqrasiya üçün gələcəyə hazır placeholder sahələr.",
+      "controlsItems": {
+        "roles": "Rol və giriş siyasətləri",
+        "templates": "Sənəd və faktura şablonları",
+        "integrations": "Mühasibat və hesabat inteqrasiyaları"
+      }
     }
   },
   "Statuses": {

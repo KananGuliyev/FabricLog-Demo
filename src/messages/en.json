@@ -16,8 +16,11 @@
     "dashboard": "Dashboard",
     "customers": "Customers",
     "fabrics": "Fabrics",
+    "products": "Products",
     "orders": "Orders",
     "invoices": "Invoices",
+    "reports": "Reports",
+    "settings": "Settings",
     "payments": "Payments"
   },
   "Landing": {
@@ -45,7 +48,9 @@
   "Shell": {
     "subtitle": "Fabric operations demo workspace",
     "welcomeBack": "Business snapshot",
-    "demoSafe": "Sample records only"
+    "demoSafe": "Sample records only",
+    "mobileMenuLabel": "Open navigation menu",
+    "searchActionLabel": "Search modules"
   },
   "Dashboard": {
     "title": "Dashboard",
@@ -95,6 +100,26 @@
     "title": "Fabrics",
     "description": "Track popular textiles, stock position, and reservation pressure across the catalog.",
     "searchPlaceholder": "Search SKU, fabric, or category",
+    "cards": {
+      "totalStock": "Total stock",
+      "reservedStock": "Reserved stock",
+      "averageUnitPrice": "Average unit price"
+    },
+    "table": {
+      "product": "Product",
+      "composition": "Composition",
+      "width": "Width",
+      "weight": "Weight",
+      "stock": "Stock",
+      "reserved": "Reserved",
+      "price": "Unit price",
+      "status": "Status"
+    }
+  },
+  "Products": {
+    "title": "Products",
+    "description": "Present the textile catalog as a polished product library with stock, reservations, and pricing visibility.",
+    "searchPlaceholder": "Search SKU, product, or category",
     "cards": {
       "totalStock": "Total stock",
       "reservedStock": "Reserved stock",
@@ -180,6 +205,54 @@
       "method": "Method",
       "amount": "Amount",
       "status": "Status"
+    }
+  },
+  "Reports": {
+    "title": "Reports",
+    "description": "Preview the reporting layer for sales, collections, customers, and product performance in a presentation-ready analytics hub.",
+    "cards": {
+      "exportsReady": "Export-ready views",
+      "coverage": "Coverage areas",
+      "refreshCycle": "Refresh cadence"
+    },
+    "panels": {
+      "collectionsTitle": "Collections overview",
+      "collectionsDescription": "Monitor where reporting will highlight overdue exposure and partial settlements.",
+      "collectionsBody": "This section is reserved for monthly receivables packs, customer collection trends, and invoice aging snapshots.",
+      "catalogTitle": "Product performance",
+      "catalogDescription": "Track which references, categories, and reserved lines are pulling the most demand.",
+      "catalogBody": "Future reports will compare stock pressure, reservation ratios, and price movement across the portfolio.",
+      "roadmapTitle": "Coming next",
+      "roadmapDescription": "The shell is ready for richer charting and export workflows.",
+      "roadmapItems": {
+        "profitability": "Margin and profitability views",
+        "regional": "Regional customer segmentation",
+        "inventory": "Inventory aging and replenishment alerts"
+      }
+    }
+  },
+  "Settings": {
+    "title": "Settings",
+    "description": "Show how FabricLog can grow into a configurable workspace for branding, operations, localization, and governance.",
+    "cards": {
+      "workspace": "Workspace profile",
+      "localization": "Localization ready",
+      "governance": "Governance surface"
+    },
+    "panels": {
+      "profileTitle": "Business profile",
+      "profileDescription": "Public demo metadata for the fictional FabricLog workspace.",
+      "profileBody": "Use this area later for company info, tax preferences, invoice templates, and order reference rules.",
+      "experienceTitle": "Experience defaults",
+      "experienceDescription": "Prepare the app for language, date, and dashboard preference management.",
+      "experienceBody": "The current structure already supports English and Azerbaijani and can grow into user-level preferences without a layout rewrite.",
+      "controlsTitle": "Operational controls",
+      "controlsDescription": "Future-ready placeholders for permissions, exports, and integrations.",
+      "controlsItems": {
+        "roles": "Role and access policies",
+        "templates": "Document and invoice templates",
+        "integrations": "Accounting and reporting integrations"
+      }
     }
   },
   "Statuses": {
