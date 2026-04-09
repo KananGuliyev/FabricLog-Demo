@@ -20,6 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { EmptyState } from "@/components/shared/empty-state";
 
 type DataTableProps<TData> = {
   data: TData[];
@@ -49,27 +50,26 @@ export function DataTable<TData>({
   });
 
   return (
-    <div className="space-y-4">
-      <div className="relative max-w-md">
+    <div className="section-stack">
+      <div className="table-toolbar">
+        <div className="relative w-full max-w-md">
         <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="h-11 rounded-2xl border-border/80 bg-card pl-10 shadow-sm"
+          className="pl-10"
           placeholder={searchPlaceholder}
         />
+        </div>
       </div>
 
-      <div className="overflow-hidden rounded-3xl border border-border/80 bg-card shadow-sm">
+      <div className="table-frame">
         <Table>
-          <TableHeader className="bg-muted/40">
+          <TableHeader className="bg-muted/34">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead
-                    key={header.id}
-                    className="h-12 text-xs uppercase tracking-[0.16em] text-muted-foreground"
-                  >
+                  <TableHead key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -84,9 +84,9 @@ export function DataTable<TData>({
           <TableBody>
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} className="hover:bg-muted/25">
+                <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="py-4 align-middle">
+                    <TableCell key={cell.id}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
@@ -96,9 +96,9 @@ export function DataTable<TData>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="py-12 text-center text-sm text-muted-foreground"
+                  className="px-4 py-6"
                 >
-                  {emptyMessage}
+                  <EmptyState title={emptyMessage} />
                 </TableCell>
               </TableRow>
             )}

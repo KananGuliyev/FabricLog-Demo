@@ -17,7 +17,7 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
   const tCommon = await getTranslations({ locale, namespace: "Common" });
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}
@@ -53,7 +53,7 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
           description={t("panels.profileDescription")}
           action={<Badge className="bg-primary/10 text-primary hover:bg-primary/10">Demo workspace</Badge>}
         >
-          <div className="flex items-start gap-4 rounded-3xl border border-border/70 bg-card px-5 py-5">
+          <div className="panel-secondary flex items-start gap-4 px-5 py-5">
             <Avatar className="size-12 rounded-2xl">
               <AvatarFallback className="rounded-2xl bg-primary text-primary-foreground">
                 FL
@@ -61,7 +61,7 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
             </Avatar>
             <div className="space-y-2">
               <p className="text-base font-semibold">FabricLog Demo Workspace</p>
-              <p className="text-sm leading-6 text-muted-foreground">
+              <p className="body-copy text-sm text-muted-foreground">
                 {t("panels.profileBody")}
               </p>
             </div>
@@ -74,20 +74,20 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
             description={t("panels.experienceDescription")}
           >
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl border border-border/70 bg-card px-5 py-5">
+              <div className="panel-secondary flex items-start gap-4 px-5 py-5">
                 <Globe2 className="mt-1 size-5 text-primary" />
                 <div>
                   <p className="font-semibold">Locale-ready shell</p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  <p className="body-copy mt-2 text-sm text-muted-foreground">
                     {t("panels.experienceBody")}
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 rounded-3xl border border-border/70 bg-card px-5 py-5">
+              <div className="panel-secondary flex items-start gap-4 px-5 py-5">
                 <Palette className="mt-1 size-5 text-primary" />
                 <div>
                   <p className="font-semibold">Visual consistency</p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  <p className="body-copy mt-2 text-sm text-muted-foreground">
                     Theme tokens, spacing, and surface styles are aligned across the shell and feature pages.
                   </p>
                 </div>
@@ -100,15 +100,15 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
             description={t("panels.controlsDescription")}
           >
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-border/70 bg-card px-5 py-5">
+              <div className="panel-secondary px-5 py-5">
                 <LockKeyhole className="size-5 text-primary" />
                 <p className="mt-4 text-sm font-semibold">{t("panels.controlsItems.roles")}</p>
               </div>
-              <div className="rounded-3xl border border-border/70 bg-card px-5 py-5">
+              <div className="panel-secondary px-5 py-5">
                 <SlidersHorizontal className="size-5 text-primary" />
                 <p className="mt-4 text-sm font-semibold">{t("panels.controlsItems.templates")}</p>
               </div>
-              <div className="rounded-3xl border border-border/70 bg-card px-5 py-5">
+              <div className="panel-secondary px-5 py-5">
                 <Palette className="size-5 text-primary" />
                 <p className="mt-4 text-sm font-semibold">{t("panels.controlsItems.integrations")}</p>
               </div>

@@ -29,7 +29,7 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
   const featuredCustomer = customers[0]!;
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}
@@ -62,13 +62,13 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
       <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
         <CustomersTable data={customers} locale={appLocale} />
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("featured")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="rounded-3xl bg-primary px-5 py-5 text-primary-foreground">
-              <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/72">
+            <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
+              <p className="subtle-label text-primary-foreground/72">
                 {t("cards.signatureAccount")}
               </p>
               <p className="mt-2 text-2xl font-semibold">
@@ -79,12 +79,12 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
                 {featuredCustomer.preferredCollection}.
               </p>
             </div>
-            <div className="rounded-3xl border border-border/70 bg-card px-5 py-5">
-              <p className="text-sm text-muted-foreground">{t("cards.exposure")}</p>
+            <div className="panel-secondary px-5 py-5">
+              <p className="subtle-label text-muted-foreground">{t("cards.exposure")}</p>
               <p className="mt-1 text-3xl font-semibold">
                 {formatCurrency(featuredCustomer.outstandingBalance, appLocale)}
               </p>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="body-copy mt-2 text-sm text-muted-foreground">
                 {t("cards.lastOrderPrefix")} {featuredCustomer.lastOrderDate}
               </p>
             </div>

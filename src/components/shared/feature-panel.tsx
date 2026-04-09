@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { SectionHeader } from "./section-header";
 
 type FeaturePanelProps = {
   title: string;
@@ -17,17 +18,9 @@ export function FeaturePanel({
   className,
 }: FeaturePanelProps) {
   return (
-    <Card className={cn("surface-panel border-0", className)}>
+    <Card className={cn("gap-4", className)}>
       <CardHeader>
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-1.5">
-            <CardTitle>{title}</CardTitle>
-            {description ? (
-              <p className="text-sm text-muted-foreground">{description}</p>
-            ) : null}
-          </div>
-          {action ? <div className="shrink-0">{action}</div> : null}
-        </div>
+        <SectionHeader title={title} description={description} action={action} />
       </CardHeader>
       <CardContent>{children}</CardContent>
     </Card>

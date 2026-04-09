@@ -28,7 +28,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
     products.length;
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}

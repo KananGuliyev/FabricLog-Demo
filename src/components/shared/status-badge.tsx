@@ -20,10 +20,10 @@ const statusToneMap = {
 } as const;
 
 const toneStyles = {
-  success: "border-emerald-200 bg-emerald-50 text-emerald-700",
-  warning: "border-amber-200 bg-amber-50 text-amber-700",
-  critical: "border-rose-200 bg-rose-50 text-rose-700",
-  neutral: "border-slate-200 bg-slate-100 text-slate-700",
+  success: "border-emerald-200/80 bg-emerald-50 text-emerald-700",
+  warning: "border-amber-200/80 bg-amber-50 text-amber-700",
+  critical: "border-rose-200/80 bg-rose-50 text-rose-700",
+  neutral: "border-slate-200/90 bg-slate-100 text-slate-700",
 };
 
 type StatusBadgeProps = {
@@ -35,7 +35,10 @@ export function StatusBadge({ label, status }: StatusBadgeProps) {
   return (
     <Badge
       variant="outline"
-      className={cn("font-medium", toneStyles[statusToneMap[status]])}
+      className={cn(
+        "rounded-full px-2.5 py-1 text-[0.72rem] font-semibold tracking-[0.04em]",
+        toneStyles[statusToneMap[status]]
+      )}
     >
       {label}
     </Badge>

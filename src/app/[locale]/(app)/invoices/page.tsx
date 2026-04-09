@@ -32,7 +32,7 @@ export default async function InvoicesPage({ params }: InvoicesPageProps) {
     .reduce((sum, invoice) => sum + (invoice.amount - invoice.paidAmount), 0);
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}

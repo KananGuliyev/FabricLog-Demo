@@ -13,10 +13,10 @@ type MetricCardProps = {
 };
 
 const toneStyles: Record<StatTone, string> = {
-  neutral: "from-card to-card/70",
-  success: "from-emerald-50 to-card",
-  warning: "from-amber-50 to-card",
-  critical: "from-rose-50 to-card",
+  neutral: "border-border/70 bg-gradient-to-br from-card via-card to-muted/25",
+  success: "border-emerald-200/70 bg-gradient-to-br from-emerald-50/90 via-card to-card",
+  warning: "border-amber-200/70 bg-gradient-to-br from-amber-50/90 via-card to-card",
+  critical: "border-rose-200/70 bg-gradient-to-br from-rose-50/90 via-card to-card",
 };
 
 export function MetricCard({
@@ -34,13 +34,15 @@ export function MetricCard({
   return (
     <Card
       className={cn(
-        "surface-panel border-0 bg-gradient-to-br",
+        "gap-4 border bg-gradient-to-br shadow-none",
         toneStyles[tone]
       )}
     >
       <CardHeader className="space-y-3">
         <div className="flex items-center justify-between gap-3">
-          <p className="text-sm font-medium text-muted-foreground">{label}</p>
+          <p className="subtle-label text-[0.72rem] text-muted-foreground">
+            {label}
+          </p>
           {trendLabel ? (
             <span
               className={cn(
@@ -55,11 +57,11 @@ export function MetricCard({
             </span>
           ) : null}
         </div>
-        <CardTitle className="text-3xl font-semibold tracking-tight">
+        <CardTitle className="text-3xl font-semibold tracking-tight text-foreground">
           {value}
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-0 text-sm text-muted-foreground">
+      <CardContent className="body-copy pt-0 text-sm text-muted-foreground">
         {hint}
       </CardContent>
     </Card>

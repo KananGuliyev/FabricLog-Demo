@@ -30,7 +30,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const customers = fabricLogService.getCustomers();
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}
@@ -69,10 +69,10 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.5fr_0.9fr]">
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("charts.revenueTitle")}</CardTitle>
-            <p className="text-sm text-muted-foreground">
+            <p className="body-copy text-sm text-muted-foreground">
               {t("charts.revenueDescription")}
             </p>
           </CardHeader>
@@ -84,10 +84,10 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
           </CardContent>
         </Card>
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("charts.paymentsTitle")}</CardTitle>
-            <p className="text-sm text-muted-foreground">
+            <p className="body-copy text-sm text-muted-foreground">
               {t("charts.paymentsDescription")}
             </p>
           </CardHeader>
@@ -101,7 +101,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr_0.9fr]">
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("recentOrders")}</CardTitle>
           </CardHeader>
@@ -114,11 +114,11 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
               return (
                 <div
                   key={order.id}
-                  className="flex items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card/70 px-4 py-3"
+                  className="panel-secondary flex items-center justify-between gap-4 px-4 py-3"
                 >
                   <div>
                     <p className="font-medium">{order.referenceCode}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="body-copy text-sm text-muted-foreground">
                       {customer?.company}
                     </p>
                   </div>
@@ -132,7 +132,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
           </CardContent>
         </Card>
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("charts.pipelineTitle")}</CardTitle>
           </CardHeader>
@@ -141,15 +141,15 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
           </CardContent>
         </Card>
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("insightsTitle")}</CardTitle>
-            <p className="text-sm text-muted-foreground">
+            <p className="body-copy text-sm text-muted-foreground">
               {t("insightsDescription")}
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="rounded-3xl bg-primary px-5 py-5 text-primary-foreground">
+            <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
               <p className="text-sm font-semibold">
                 {tInsights("primary.title")}
               </p>
@@ -157,16 +157,16 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
                 {tInsights("primary.description")}
               </p>
             </div>
-            <div className="rounded-3xl border border-border/70 bg-muted/30 px-5 py-5">
+            <div className="panel-inset px-5 py-5">
               <p className="text-sm font-semibold">
                 {tInsights("secondary.title")}
               </p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              <p className="body-copy mt-2 text-sm text-muted-foreground">
                 {tInsights("secondary.description")}
               </p>
             </div>
-            <div className="rounded-3xl border border-border/70 bg-card px-5 py-5">
-              <p className="text-sm font-medium text-muted-foreground">
+            <div className="panel-secondary px-5 py-5">
+              <p className="subtle-label text-muted-foreground">
                 {t("lowStockExposure")}
               </p>
               <p className="mt-2 text-3xl font-semibold">

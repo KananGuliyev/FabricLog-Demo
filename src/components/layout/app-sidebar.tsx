@@ -23,21 +23,21 @@ export function AppSidebar({
   localeNote,
 }: AppSidebarProps) {
   return (
-    <aside className="hidden border-r border-sidebar-border bg-sidebar px-5 py-6 text-sidebar-foreground lg:flex lg:flex-col lg:justify-between">
+    <aside className="hidden border-r border-sidebar-border/90 bg-sidebar px-5 py-6 text-sidebar-foreground lg:flex lg:flex-col lg:justify-between">
       <div className="space-y-8">
         <BrandMark />
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+        <div className="rounded-[1.75rem] border border-white/10 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
           <p className="text-xs uppercase tracking-[0.22em] text-sidebar-foreground/56">
             {infoLabel}
           </p>
-          <p className="mt-2 text-sm leading-6 text-sidebar-foreground/86">
+          <p className="mt-2 text-sm leading-6 text-sidebar-foreground/82">
             {infoText}
           </p>
         </div>
         <AppSidebarNav activePath={activePath} items={items} />
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-[1.75rem] border border-white/10 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
         <p className="text-xs uppercase tracking-[0.22em] text-sidebar-foreground/56">
           {localeLabel}
         </p>

@@ -35,7 +35,7 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
   const liveValue = orders.reduce((sum, order) => sum + order.amount, 0);
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}
@@ -68,7 +68,7 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
       <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
         <OrdersTable data={orderRows} locale={appLocale} />
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("cards.formFoundation")}</CardTitle>
           </CardHeader>

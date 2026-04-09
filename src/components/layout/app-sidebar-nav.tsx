@@ -31,16 +31,16 @@ export function AppSidebarNav({
             key={item.href}
             href={item.href}
             className={cn(
-              "flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all",
+              "flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-200",
               active
-                ? "bg-white/14 text-white shadow-lg"
+                ? "bg-white/14 text-white shadow-lg shadow-black/10"
                 : "text-sidebar-foreground/72 hover:bg-white/8 hover:text-white"
             )}
           >
             <span
               className={cn(
-                "flex size-9 items-center justify-center rounded-xl",
-                active ? "bg-white/15" : "bg-white/5"
+                "flex size-9 items-center justify-center rounded-xl transition-colors",
+                active ? "bg-white/16" : "bg-white/5"
               )}
             >
               <Icon className="size-4.5" />

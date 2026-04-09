@@ -19,7 +19,7 @@ export function PageIntro({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between",
+        "flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between",
         className
       )}
     >
@@ -29,16 +29,16 @@ export function PageIntro({
             {badge}
           </Badge>
         ) : null}
-        <div className="space-y-2">
-          <h1 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        <div className="space-y-2.5">
+          <h1 className="page-title text-balance">
             {title}
           </h1>
-          <p className="max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
+          <p className="body-copy max-w-xl text-sm sm:text-base">
             {description}
           </p>
         </div>
       </div>
-      {action ? <div className="shrink-0">{action}</div> : null}
+      {action ? <div className="shrink-0 self-start lg:self-auto">{action}</div> : null}
     </div>
   );
 }
