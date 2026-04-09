@@ -1,0 +1,220 @@
+{
+  "Common": {
+    "appName": "FabricLog",
+    "demoBadge": "İctimai təhlükəsiz demo",
+    "openDemo": "Demo aç",
+    "viewOnGitHub": "Portfel üçün hazırdır",
+    "search": "Axtar",
+    "localeEnglish": "İngilis dili",
+    "localeAzerbaijani": "Azərbaycan dili",
+    "localeLabel": "Dil",
+    "portfolioNote": "Bütün qeydlər portfel nümayişi üçün hazırlanmış uydurma nümunə məlumatlardır.",
+    "updatedLabel": "Son yenilənmə",
+    "currency": "AZN"
+  },
+  "Navigation": {
+    "dashboard": "Panel",
+    "customers": "Müştərilər",
+    "fabrics": "Parçalar",
+    "orders": "Sifarişlər",
+    "invoices": "Fakturalar",
+    "payments": "Ödənişlər"
+  },
+  "Landing": {
+    "eyebrow": "Tekstil biznesi əməliyyat demosu",
+    "title": "Parça biznesini bir idarəetmə mərkəzindən yönəldin.",
+    "description": "FabricLog tekstil əməliyyatları üçün peşəkar full-stack demo təqdim edir: müştərilər, stok, sifarişlər, fakturalar və ödəniş izlənməsi bir SaaS təcrübəsində birləşir.",
+    "primaryCta": "Paneli aç",
+    "secondaryCta": "Modullara bax",
+    "highlightsTitle": "Real görünən nümayiş dəyəri üçün hazırlanıb",
+    "stats": {
+      "customers": "Uydurma müştərilər",
+      "invoices": "Əlaqəli fakturalar",
+      "fabrics": "Parça referansları",
+      "languages": "Dəstəklənən dillər"
+    },
+    "highlights": {
+      "customers": "Müştəri portfeli, regional hesablar və yığım görünürlüğü",
+      "inventory": "Stok təzyiqi, rezerv və qiymət məlumatlı parça kataloqu",
+      "orders": "Nümunədən göndərişə qədər sifariş axını",
+      "finance": "Realistik xülasələrlə faktura və ödəniş izlənməsi"
+    },
+    "safetyTitle": "Portfel üçün təhlükəsiz dizayn",
+    "safetyDescription": "Heç bir gizli məlumat, istehsal xidməti və ya şəxsi məlumat yoxdur. Bu demodakı bütün şirkətlər, kontaktlar, sifarişlər və əməliyyatlar uydurmadır."
+  },
+  "Shell": {
+    "subtitle": "Parça əməliyyatları demo iş sahəsi",
+    "welcomeBack": "Biznes görünüşü",
+    "demoSafe": "Yalnız nümunə qeydlər"
+  },
+  "Dashboard": {
+    "title": "Panel",
+    "description": "Satış dinamikasını, aşağı stok təzyiqini, faktura riskini və ödəniş toplama performansını izləyin.",
+    "metrics": {
+      "revenue": "Qeyd olunan gəlir",
+      "customers": "Aktiv müştərilər",
+      "invoices": "Açıq fakturalar",
+      "collections": "Yığım faizi"
+    },
+    "charts": {
+      "revenueTitle": "Gəlir trendi",
+      "revenueDescription": "Aylıq gəlir və faktura həcmi",
+      "paymentsTitle": "Ödəniş bölgüsü",
+      "paymentsDescription": "Ödəniş statusuna görə açıq risk",
+      "pipelineTitle": "Sifariş axını"
+    },
+    "recentOrders": "Son sifarişlər",
+    "insightsTitle": "Əməliyyat qeydləri",
+    "insightsDescription": "Cari demo nəticələrinə əsaslanan sürətli hərəkətlər və biznes qeydləri.",
+    "lowStockExposure": "Aşağı stok riski"
+  },
+  "Customers": {
+    "title": "Müştərilər",
+    "description": "Dəyərli hesabları, açıq balansları və üstünlük verilən kolleksiyaları bir yerdə görün.",
+    "searchPlaceholder": "Müştəri və ya şirkət axtar",
+    "featured": "Fokus hesab",
+    "cards": {
+      "totalAccounts": "Ümumi hesablar",
+      "signatureCustomers": "Signature müştərilər",
+      "outstandingBalance": "Açıq balans",
+      "signatureAccount": "Signature hesab",
+      "exposure": "Risk məbləği",
+      "lastOrderPrefix": "Son sifariş"
+    },
+    "table": {
+      "name": "Müştəri",
+      "region": "Region",
+      "tier": "Səviyyə",
+      "collection": "Kolleksiya",
+      "orders": "Sifarişlər",
+      "balance": "Açıq balans",
+      "lastOrder": "Son sifariş"
+    }
+  },
+  "Fabrics": {
+    "title": "Parçalar",
+    "description": "Kataloq üzrə populyar tekstilləri, stok vəziyyətini və rezerv təzyiqini izləyin.",
+    "searchPlaceholder": "SKU, parça və ya kateqoriya axtar",
+    "cards": {
+      "totalStock": "Ümumi stok",
+      "reservedStock": "Rezerv stok",
+      "averageUnitPrice": "Orta vahid qiymət"
+    },
+    "table": {
+      "product": "Məhsul",
+      "composition": "Tərkib",
+      "width": "En",
+      "weight": "Sıxlıq",
+      "stock": "Stok",
+      "reserved": "Rezerv",
+      "price": "Vahid qiymət",
+      "status": "Status"
+    }
+  },
+  "Orders": {
+    "title": "Sifarişlər",
+    "description": "Yeni sorğulardan istehsal və göndərişə qədər canlı sifariş siyahısına baxın.",
+    "searchPlaceholder": "Sifariş və ya kod axtar",
+    "cards": {
+      "liveOrderValue": "Aktiv sifariş məbləği",
+      "inProduction": "İstehsalda",
+      "readyToDispatch": "Göndərişə hazır",
+      "formFoundation": "Forma bazası"
+    },
+    "form": {
+      "customer": "Müştəri",
+      "fabric": "Parça",
+      "quantity": "Miqdar (m)",
+      "helper": "Gələcək sifariş yaratma və redaktə axınları üçün React Hook Form + Zod nümunəsi.",
+      "submit": "Demo üçün hazır forma nümunəsi"
+    },
+    "table": {
+      "reference": "Kod",
+      "customer": "Müştəri",
+      "fabric": "Parça",
+      "quantity": "Miqdar",
+      "amount": "Məbləğ",
+      "created": "Yaradılıb",
+      "delivery": "Çatdırılma",
+      "status": "Status"
+    }
+  },
+  "Invoices": {
+    "title": "Fakturalar",
+    "description": "Ödəniş tarixlərini, gecikmiş riskləri və qismən yığımları qabaqcadan görün.",
+    "searchPlaceholder": "Faktura və ya müştəri axtar",
+    "cards": {
+      "openInvoiceValue": "Açıq faktura məbləği",
+      "overdueExposure": "Gecikmiş risk",
+      "paidInFull": "Tam ödənənlər"
+    },
+    "table": {
+      "invoice": "Faktura",
+      "customer": "Müştəri",
+      "issued": "Tarix",
+      "due": "Son tarix",
+      "amount": "Məbləğ",
+      "paid": "Ödənib",
+      "status": "Status"
+    }
+  },
+  "Payments": {
+    "title": "Ödənişlər",
+    "description": "Ödəniş vaxtını, üsullarını və təqib tələb edən müştəriləri izləyin.",
+    "searchPlaceholder": "Ödəniş və ya müştəri axtar",
+    "cards": {
+      "collectedPayments": "Yığılmış ödənişlər",
+      "bankTransfers": "Bank köçürmələri",
+      "partialReceipts": "Qismən ödənişlər",
+      "collectionNoteTitle": "Yığım qeydi"
+    },
+    "notes": {
+      "primary": "Ödəniş cədvəli heç bir şəxsi maliyyə məlumatından istifadə etmədən bank köçürməsi, wire və kart ödənişləri ilə real əməliyyat hissi yaradır.",
+      "secondary": "Portfel izləyiciləri həm UI, həm də typed API marşrut qatına baxaraq ödəniş statusu izlənməsinin necə qurulduğunu görə bilərlər."
+    },
+    "table": {
+      "payment": "Ödəniş",
+      "customer": "Müştəri",
+      "invoice": "Faktura",
+      "date": "Tarix",
+      "method": "Üsul",
+      "amount": "Məbləğ",
+      "status": "Status"
+    }
+  },
+  "Statuses": {
+    "tiers": {
+      "signature": "Signature",
+      "growth": "Growth",
+      "studio": "Studio"
+    },
+    "fabric": {
+      "available": "Mövcuddur",
+      "low": "Az stok",
+      "reserved": "Rezervdədir"
+    },
+    "order": {
+      "new": "Yeni",
+      "sampling": "Nümunə",
+      "production": "İstehsal",
+      "ready": "Hazırdır",
+      "dispatched": "Göndərilib"
+    },
+    "payment": {
+      "paid": "Ödənib",
+      "partial": "Qismən",
+      "pending": "Gözləyir",
+      "overdue": "Gecikib"
+    }
+  },
+  "Insights": {
+    "primary": {
+      "title": "Prioritet yığım pəncərəsi",
+      "description": "İki qismən ödənişli fakturanın son tarixi növbəti beş iş gününə düşür. Sürətli təqib aylıq yığım faizini hədəfdə saxlayır."
+    },
+    "secondary": {
+      "title": "Rezerv planlaması",
+      "description": "Premium jakard və kətan məhsullarında rezerv təzyiqi ən yüksəkdir. Yenidən tədarük əvvəlcə bu istiqamətə yönəlməlidir."
+    }
+  }
+}

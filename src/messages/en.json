@@ -1,0 +1,220 @@
+{
+  "Common": {
+    "appName": "FabricLog",
+    "demoBadge": "Public-safe demo",
+    "openDemo": "Open demo",
+    "viewOnGitHub": "Portfolio ready",
+    "search": "Search",
+    "localeEnglish": "English",
+    "localeAzerbaijani": "Azerbaijani",
+    "localeLabel": "Locale",
+    "portfolioNote": "All records are fictional sample data created for portfolio presentation.",
+    "updatedLabel": "Last refreshed",
+    "currency": "AZN"
+  },
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "fabrics": "Fabrics",
+    "orders": "Orders",
+    "invoices": "Invoices",
+    "payments": "Payments"
+  },
+  "Landing": {
+    "eyebrow": "Textile business operations demo",
+    "title": "Run a fabric business from one clean control center.",
+    "description": "FabricLog presents a polished full-stack demo for textile operations: customers, stock, orders, invoices, and payment follow-up inside a recruiter-friendly SaaS experience.",
+    "primaryCta": "Launch dashboard",
+    "secondaryCta": "Browse modules",
+    "highlightsTitle": "Built for realistic showcase value",
+    "stats": {
+      "customers": "Fictional customers",
+      "invoices": "Linked invoices",
+      "fabrics": "Fabric references",
+      "languages": "Supported languages"
+    },
+    "highlights": {
+      "customers": "Customer portfolio, regional accounts, and collection visibility",
+      "inventory": "Fabric catalog with stock pressure, reservations, and pricing",
+      "orders": "Order pipeline from sampling to dispatch with delivery targets",
+      "finance": "Invoice and payment tracking with realistic summaries"
+    },
+    "safetyTitle": "Portfolio-safe by design",
+    "safetyDescription": "No secrets, no production services, no personal data. Every company, contact, order, and transaction in this demo is fictional."
+  },
+  "Shell": {
+    "subtitle": "Fabric operations demo workspace",
+    "welcomeBack": "Business snapshot",
+    "demoSafe": "Sample records only"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "description": "Monitor sales momentum, low stock pressure, invoice exposure, and payment collection performance.",
+    "metrics": {
+      "revenue": "Revenue booked",
+      "customers": "Active customers",
+      "invoices": "Open invoices",
+      "collections": "Collection rate"
+    },
+    "charts": {
+      "revenueTitle": "Revenue trend",
+      "revenueDescription": "Monthly booked revenue and invoice volume",
+      "paymentsTitle": "Payment mix",
+      "paymentsDescription": "Open exposure by payment status",
+      "pipelineTitle": "Order pipeline"
+    },
+    "recentOrders": "Recent orders",
+    "insightsTitle": "Operations insights",
+    "insightsDescription": "Quick actions and business notes based on current mock performance.",
+    "lowStockExposure": "Low stock exposure"
+  },
+  "Customers": {
+    "title": "Customers",
+    "description": "Keep high-value accounts, outstanding balances, and preferred collections visible in one place.",
+    "searchPlaceholder": "Search customer or company",
+    "featured": "Account focus",
+    "cards": {
+      "totalAccounts": "Total accounts",
+      "signatureCustomers": "Signature customers",
+      "outstandingBalance": "Outstanding balance",
+      "signatureAccount": "Signature account",
+      "exposure": "Exposure",
+      "lastOrderPrefix": "Last order on"
+    },
+    "table": {
+      "name": "Customer",
+      "region": "Region",
+      "tier": "Tier",
+      "collection": "Collection",
+      "orders": "Orders",
+      "balance": "Outstanding balance",
+      "lastOrder": "Last order"
+    }
+  },
+  "Fabrics": {
+    "title": "Fabrics",
+    "description": "Track popular textiles, stock position, and reservation pressure across the catalog.",
+    "searchPlaceholder": "Search SKU, fabric, or category",
+    "cards": {
+      "totalStock": "Total stock",
+      "reservedStock": "Reserved stock",
+      "averageUnitPrice": "Average unit price"
+    },
+    "table": {
+      "product": "Product",
+      "composition": "Composition",
+      "width": "Width",
+      "weight": "Weight",
+      "stock": "Stock",
+      "reserved": "Reserved",
+      "price": "Unit price",
+      "status": "Status"
+    }
+  },
+  "Orders": {
+    "title": "Orders",
+    "description": "Review the live order book from new requests through production and dispatch.",
+    "searchPlaceholder": "Search order or reference",
+    "cards": {
+      "liveOrderValue": "Live order value",
+      "inProduction": "In production",
+      "readyToDispatch": "Ready to dispatch",
+      "formFoundation": "Form foundation"
+    },
+    "form": {
+      "customer": "Customer",
+      "fabric": "Fabric",
+      "quantity": "Quantity (m)",
+      "helper": "Illustrative React Hook Form + Zod setup for future order create/edit flows.",
+      "submit": "Demo-ready form pattern"
+    },
+    "table": {
+      "reference": "Reference",
+      "customer": "Customer",
+      "fabric": "Fabric",
+      "quantity": "Quantity",
+      "amount": "Amount",
+      "created": "Created",
+      "delivery": "Delivery",
+      "status": "Status"
+    }
+  },
+  "Invoices": {
+    "title": "Invoices",
+    "description": "Stay ahead of due dates, overdue exposure, and partial collections.",
+    "searchPlaceholder": "Search invoice or customer",
+    "cards": {
+      "openInvoiceValue": "Open invoice value",
+      "overdueExposure": "Overdue exposure",
+      "paidInFull": "Paid in full"
+    },
+    "table": {
+      "invoice": "Invoice",
+      "customer": "Customer",
+      "issued": "Issued",
+      "due": "Due",
+      "amount": "Amount",
+      "paid": "Paid",
+      "status": "Status"
+    }
+  },
+  "Payments": {
+    "title": "Payments",
+    "description": "Track payment timing, methods, and customers that need follow-up.",
+    "searchPlaceholder": "Search payment or customer",
+    "cards": {
+      "collectedPayments": "Collected payments",
+      "bankTransfers": "Bank transfers",
+      "partialReceipts": "Partial receipts",
+      "collectionNoteTitle": "Collection note"
+    },
+    "notes": {
+      "primary": "The payment ledger mixes bank transfers, wire receipts, and card settlements to make the demo feel operationally realistic without using any private billing information.",
+      "secondary": "Portfolio viewers can inspect both the UI and the typed API route layer to see how payment status tracking is modeled end to end."
+    },
+    "table": {
+      "payment": "Payment",
+      "customer": "Customer",
+      "invoice": "Invoice",
+      "date": "Date",
+      "method": "Method",
+      "amount": "Amount",
+      "status": "Status"
+    }
+  },
+  "Statuses": {
+    "tiers": {
+      "signature": "Signature",
+      "growth": "Growth",
+      "studio": "Studio"
+    },
+    "fabric": {
+      "available": "Available",
+      "low": "Low stock",
+      "reserved": "Reserved"
+    },
+    "order": {
+      "new": "New",
+      "sampling": "Sampling",
+      "production": "Production",
+      "ready": "Ready",
+      "dispatched": "Dispatched"
+    },
+    "payment": {
+      "paid": "Paid",
+      "partial": "Partial",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    }
+  },
+  "Insights": {
+    "primary": {
+      "title": "Priority collection window",
+      "description": "Two partial invoices are due within the next five business days. A quick follow-up keeps the monthly collection rate above target."
+    },
+    "secondary": {
+      "title": "Reserve planning",
+      "description": "Premium jacquard and linen references are seeing the heaviest reservation pressure. Replenishment should focus there first."
+    }
+  }
+}
