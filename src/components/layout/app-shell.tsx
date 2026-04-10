@@ -38,7 +38,7 @@ export function AppShell({ children, session }: AppShellProps) {
       <AppSidebar
         activePath={pathname}
         infoLabel={tShell("subtitle")}
-        infoText={tCommon("portfolioNote")}
+        infoText={tShell("workspaceSummary")}
         items={navigationItems}
         localeLabel={tCommon("localeLabel")}
         localeName={localeName}
@@ -53,7 +53,6 @@ export function AppShell({ children, session }: AppShellProps) {
           items={navigationItems}
           lastUpdatedLabel={tCommon("updatedLabel")}
           mobileMenuLabel={tShell("mobileMenuLabel")}
-          searchHint={tShell("welcomeBack")}
           session={session}
           sessionLabel={tShell("sessionLabel")}
           sessionMetaLabel={tShell("sessionMetaLabel")}

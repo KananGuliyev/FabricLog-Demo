@@ -19,7 +19,6 @@ type AppHeaderProps = {
   items: NavigationItem[];
   lastUpdatedLabel: string;
   mobileMenuLabel: string;
-  searchHint: string;
   session: DemoSession;
   sessionLabel: string;
   sessionMetaLabel: string;
@@ -39,7 +38,6 @@ export function AppHeader({
   items,
   lastUpdatedLabel,
   mobileMenuLabel,
-  searchHint,
   session,
   sessionLabel,
   sessionMetaLabel,
@@ -114,8 +112,7 @@ export function AppHeader({
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className="subtle-label text-muted-foreground">{searchHint}</p>
-          <div className="mt-1.5 flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             <h1 className="font-heading text-lg font-semibold tracking-tight sm:text-xl">
               {currentTitle}
             </h1>

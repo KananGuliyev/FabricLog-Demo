@@ -24,23 +24,29 @@ FabricLog is designed to demonstrate the kind of product thinking often expected
 
 ## Screenshots
 
-Add polished repository screenshots here before publishing. Recommended sections:
+### Dashboard Overview
 
-| Screen | Suggested File |
-| --- | --- |
-| Dashboard overview | `docs/screenshots/dashboard.png` |
-| Customers portfolio view | `docs/screenshots/customers.png` |
-| Product catalog | `docs/screenshots/products.png` |
-| Orders and invoicing workflow | `docs/screenshots/orders-invoices.png` |
-| Record detail experience | `docs/screenshots/detail-view.png` |
-| Login screen | `docs/screenshots/login.png` |
-
-Example markdown once screenshots are added:
-
-```md
 ![Dashboard overview](docs/screenshots/dashboard.png)
-![Customers portfolio](docs/screenshots/customers.png)
-```
+
+### Customers Portfolio View
+
+![Customers portfolio view](docs/screenshots/customers.png)
+
+### Product Catalog
+
+![Product catalog](docs/screenshots/products.png)
+
+### Orders and Invoicing Workflow
+
+![Orders and invoicing workflow](docs/screenshots/orders-invoices.png)
+
+### Record Detail Experience
+
+![Record detail experience](docs/screenshots/detail-view.png)
+
+### Login Screen
+
+![Login screen](docs/screenshots/login.png)
 
 ## Tech Stack
 
@@ -153,7 +159,6 @@ src/
   components/
     dashboard/
     data-table/
-    forms/
     layout/
     navigation/
     shared/
@@ -162,7 +167,6 @@ src/
     auth/
     customers/
     dashboard/
-    fabrics/
     invoices/
     orders/
     payments/
@@ -181,6 +185,8 @@ src/
     repositories/
     services/
   types/
+docs/
+  screenshots/
 public/
   brand/
   demo/
@@ -254,7 +260,7 @@ For recruiters or hiring managers, it provides a compact but credible example of
 - Add date-range filtering and export actions for reports
 - Add role-based demo personas and richer permissions modeling
 - Expand payment and invoice workflows with reminders and timeline actions
-- Add screenshot assets, deployment links, and short product walkthrough media
+- Add a live deployment link and short product walkthrough media
 - Add tests for key service mappers and route protection behavior
 
 ## Environment Notes
@@ -271,7 +277,6 @@ The local Windows `spawn EPERM` issue seen in some sandboxed environments is a w
 
 Before publishing the repository:
 
-- add final screenshots to the `Screenshots` section
 - keep the public demo credentials clearly labeled as mock-only
 - treat `/products` as the canonical catalog route
 - confirm no local `.env` files or generated build output are tracked

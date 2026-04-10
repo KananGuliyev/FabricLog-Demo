@@ -1,7 +1,7 @@
 ﻿{
   "Common": {
     "appName": "FabricLog",
-    "brandSubtitle": "Tekstil emeliyyatlari demosu",
+    "brandSubtitle": "Tekstil emeliyyatlari is sahesi",
     "demoBadge": "Ictimai, tehlukesiz demo",
     "openDemo": "Demoya kec",
     "viewOnGitHub": "Portfel ucun hazirdir",
@@ -26,12 +26,12 @@
     "payments": "Odenisler"
   },
   "Landing": {
-    "eyebrow": "Tekstil biznesi emeliyyat demosu",
-    "title": "Parca biznesini vahid idareetme merkezinden idare edin.",
-    "description": "FabricLog tekstil emeliyyatlari ucun pesekar full-stack demo teqdim edir: musteriler, stok, sifarisler, fakturalar ve odenis izlenmesi bir SaaS tecrubesinde birlesir.",
+    "eyebrow": "Portfel ucun hazir tekstil emeliyyat platformasi",
+    "title": "Tekstil emeliyyatlarini real daxili mehsul aydinligi ile idare edin.",
+    "description": "FabricLog tekstil biznesleri ucun iki dilli SaaS demosudur ve musterileri, kataloqu, sifarisleri, fakturalari, odenisleri ve hesabatlari vahid emeliyyat is sahesinde birlesdirir.",
     "primaryCta": "Paneli ac",
-    "secondaryCta": "Modullara bax",
-    "highlightsTitle": "Real numayis deyerine uygun qurulus",
+    "secondaryCta": "Musterilere bax",
+    "highlightsTitle": "Tam emeliyyat mehsulu kimi hiss olunmasi ucun qurulub",
     "stats": {
       "customers": "Uydurma musteriler",
       "invoices": "Bagli fakturalar",
@@ -48,7 +48,10 @@
     "safetyDescription": "Hech bir gizli melumat, istehsal xidmeti ve ya sexsi melumat yoxdur. Bu demodaki butun sirketler, kontaktlar, sifarisler ve emeliyyatlar uydurmadir."
   },
   "Shell": {
-    "subtitle": "Parca emeliyyatlari demo is sahesi",
+    "subtitle": "FabricLog is sahesi",
+    "workspaceSummary": "Musteriler, mehsullar, sifarisler, fakturalar, odenisler ve hesabatlar vahid ictimai-demo is sahesinde baglanir.",
+    "coreSectionLabel": "Esas modullar",
+    "utilitySectionLabel": "Is sahesi",
     "welcomeBack": "Biznes gorunusu",
     "demoSafe": "Yalniz numune qeydler",
     "mobileMenuLabel": "Naviqasiya menusunu ac",
@@ -947,8 +950,8 @@
     }
   },
   "Auth": {
-    "title": "FabricLog demo is sahesine daxil olun",
-    "description": "Qorunan panel, musteriler, mehsullar, sifarisler, fakturalar ve hesabatlar axinini gormek ucun ortaq demo hesabindan istifade edin.",
+    "title": "FabricLog emeliyyat is sahesine daxil olun",
+    "description": "FabricLog daxilinde qorunan musteri, kataloq, sifaris, faktura, odenis ve hesabat axinina baxmaq ucun ortaq demo hesabindan istifade edin.",
     "backToHome": "Ana sehifeye qayit",
     "submit": "Demo sahesine daxil ol",
     "submitPending": "Daxil olunur...",

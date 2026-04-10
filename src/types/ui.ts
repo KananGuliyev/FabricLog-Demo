@@ -4,7 +4,7 @@ export type NavigationItem = {
   href: string;
   icon: LucideIcon;
   labelKey: string;
-  primary: boolean;
+  section: "core" | "utility";
 };
 
 export type StatTone = "neutral" | "success" | "warning" | "critical";

@@ -1,7 +1,7 @@
 ﻿{
   "Common": {
     "appName": "FabricLog",
-    "brandSubtitle": "Textile operations demo",
+    "brandSubtitle": "Textile operations workspace",
     "demoBadge": "Public-safe demo",
     "openDemo": "Open demo",
     "viewOnGitHub": "Portfolio ready",
@@ -26,12 +26,12 @@
     "payments": "Payments"
   },
   "Landing": {
-    "eyebrow": "Textile business operations demo",
-    "title": "Run a fabric business from one clean control center.",
-    "description": "FabricLog presents a polished full-stack demo for textile operations: customers, stock, orders, invoices, and payment follow-up inside a recruiter-friendly SaaS experience.",
+    "eyebrow": "Portfolio-ready textile operations platform",
+    "title": "Manage textile operations with the clarity of a real internal product.",
+    "description": "FabricLog is a bilingual SaaS demo for textile businesses, bringing customers, catalog, orders, invoices, payments, and reporting into one polished operations workspace.",
     "primaryCta": "Launch dashboard",
-    "secondaryCta": "Browse modules",
-    "highlightsTitle": "Built for realistic showcase value",
+    "secondaryCta": "Explore customers",
+    "highlightsTitle": "Designed to feel like a complete operations product",
     "stats": {
       "customers": "Fictional customers",
       "invoices": "Linked invoices",
@@ -48,7 +48,10 @@
     "safetyDescription": "No secrets, no production services, no personal data. Every company, contact, order, and transaction in this demo is fictional."
   },
   "Shell": {
-    "subtitle": "Fabric operations demo workspace",
+    "subtitle": "FabricLog workspace",
+    "workspaceSummary": "Customers, products, orders, invoicing, payments, and reporting are connected inside one public-safe demo workspace.",
+    "coreSectionLabel": "Core modules",
+    "utilitySectionLabel": "Workspace",
     "welcomeBack": "Business snapshot",
     "demoSafe": "Sample records only",
     "mobileMenuLabel": "Open navigation menu",
@@ -947,8 +950,8 @@
     }
   },
   "Auth": {
-    "title": "Access the FabricLog demo workspace",
-    "description": "Use the shared demo account to explore the protected dashboard, customers, products, orders, invoices, and reports flow.",
+    "title": "Access the FabricLog operations workspace",
+    "description": "Use the shared demo account to review the protected customer, catalog, order, invoice, payment, and reporting flow inside FabricLog.",
     "backToHome": "Back to home",
     "submit": "Sign in to demo",
     "submitPending": "Signing in...",
