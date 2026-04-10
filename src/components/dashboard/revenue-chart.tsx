@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import {
   Area,
   AreaChart,
@@ -20,6 +21,8 @@ type RevenueChartProps = {
 };
 
 export function RevenueChart({ data, locale }: RevenueChartProps) {
+  const tCharts = useTranslations("Dashboard.charts");
+
   return (
     <div className="h-72">
       <ResponsiveContainer width="100%" height="100%">
@@ -45,7 +48,7 @@ export function RevenueChart({ data, locale }: RevenueChartProps) {
           <Tooltip
             formatter={(value) => [
               formatCurrency(Number(value ?? 0), locale),
-              "Revenue",
+              tCharts("revenueSeriesLabel"),
             ]}
             contentStyle={{
               borderRadius: 18,

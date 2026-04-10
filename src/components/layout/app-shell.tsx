@@ -10,6 +10,8 @@ import {
   findRouteByPath,
   navigationItems,
 } from "@/components/navigation/navigation-config";
+import type { AppLocale } from "@/lib/constants/site";
+import { formatDate } from "@/lib/formatting";
 import { usePathname } from "@/lib/i18n/navigation";
 
 type AppShellProps = {
@@ -17,7 +19,7 @@ type AppShellProps = {
 };
 
 export function AppShell({ children }: AppShellProps) {
-  const locale = useLocale();
+  const locale = useLocale() as AppLocale;
   const pathname = usePathname();
   const tShell = useTranslations("Shell");
   const tCommon = useTranslations("Common");
@@ -51,7 +53,7 @@ export function AppShell({ children }: AppShellProps) {
           mobileMenuLabel={tShell("mobileMenuLabel")}
           searchActionLabel={tShell("searchActionLabel")}
           searchHint={tShell("welcomeBack")}
-          updatedValue="09 Apr 2026"
+          updatedValue={formatDate("2026-04-09", locale)}
           languageSwitcher={<LanguageSwitcher />}
         />
 

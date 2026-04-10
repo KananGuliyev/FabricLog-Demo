@@ -24,7 +24,7 @@ export default async function InvoicesPage({ params }: InvoicesPageProps) {
     ...invoice,
     customerName:
       customers.find((customer) => customer.id === invoice.customerId)?.company ??
-      "Unknown",
+      tCommon("unknown"),
   }));
 
   const overdueValue = invoices
@@ -49,21 +49,21 @@ export default async function InvoicesPage({ params }: InvoicesPageProps) {
             ),
             appLocale
           )}
-          hint="Outstanding receivables across pending, partial, and overdue invoices"
+          hint={t("cards.openInvoiceValueHint")}
           trend={-2}
           tone="warning"
         />
         <MetricCard
           label={t("cards.overdueExposure")}
           value={formatCurrency(overdueValue, appLocale)}
-          hint="Receivables already beyond their expected due date"
+          hint={t("cards.overdueExposureHint")}
           trend={-7}
           tone="critical"
         />
         <MetricCard
           label={t("cards.paidInFull")}
           value={`${invoices.filter((invoice) => invoice.status === "paid").length}`}
-          hint="Invoices cleared without follow-up"
+          hint={t("cards.paidInFullHint")}
           trend={10}
           tone="success"
         />

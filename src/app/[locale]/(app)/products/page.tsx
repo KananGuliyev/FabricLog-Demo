@@ -39,21 +39,21 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
         <MetricCard
           label={t("cards.totalStock")}
           value={`${formatNumber(totalStock, appLocale)} m`}
-          hint="Available catalog position across the demo assortment"
+          hint={t("cards.totalStockHint")}
           trend={11}
           tone="success"
         />
         <MetricCard
           label={t("cards.reservedStock")}
           value={`${formatNumber(reservedStock, appLocale)} m`}
-          hint="Committed to current pipeline orders and sampling work"
+          hint={t("cards.reservedStockHint")}
           trend={7}
           tone="warning"
         />
         <MetricCard
           label={t("cards.averageUnitPrice")}
           value={formatCurrency(avgPrice, appLocale)}
-          hint="Weighted for a premium but balanced textile portfolio"
+          hint={t("cards.averageUnitPriceHint")}
           trend={3}
         />
       </div>

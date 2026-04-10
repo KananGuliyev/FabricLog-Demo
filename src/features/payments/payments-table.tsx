@@ -54,7 +54,7 @@ export function PaymentsTable({ data, locale }: PaymentsTableProps) {
       data={data}
       columns={columns}
       searchPlaceholder={t("searchPlaceholder")}
-      emptyMessage="No payments found."
+      emptyMessage={t("emptyState")}
     />
   );
 }

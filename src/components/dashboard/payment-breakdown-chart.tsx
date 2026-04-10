@@ -24,6 +24,7 @@ export function PaymentBreakdownChart({
   locale,
 }: PaymentBreakdownChartProps) {
   const tStatus = useTranslations("Statuses.payment");
+  const tCharts = useTranslations("Dashboard.charts");
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
@@ -33,7 +34,7 @@ export function PaymentBreakdownChart({
             <Tooltip
               formatter={(value) => [
                 formatCurrency(Number(value ?? 0), locale),
-                "Exposure",
+                tCharts("paymentValueLabel"),
               ]}
               contentStyle={{
                 borderRadius: 18,
@@ -73,7 +74,9 @@ export function PaymentBreakdownChart({
               />
               <div>
                 <p className="text-sm font-medium">{tStatus(entry.status)}</p>
-                <p className="text-xs text-muted-foreground">{entry.count} invoices</p>
+                <p className="text-xs text-muted-foreground">
+                  {tCharts("paymentCountLabel", { count: entry.count })}
+                </p>
               </div>
             </div>
             <p className="text-sm font-semibold">

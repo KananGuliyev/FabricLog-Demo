@@ -11,6 +11,7 @@ type OrderPipelineChartProps = {
 
 export function OrderPipelineChart({ data }: OrderPipelineChartProps) {
   const tStatus = useTranslations("Statuses.order");
+  const tCharts = useTranslations("Dashboard.charts");
 
   return (
     <div className="h-72">
@@ -28,7 +29,7 @@ export function OrderPipelineChart({ data }: OrderPipelineChartProps) {
             ) => tStatus(value)}
           />
           <Tooltip
-            formatter={(value) => [Number(value ?? 0), "Orders"]}
+            formatter={(value) => [Number(value ?? 0), tCharts("pipelineValueLabel")]}
             labelFormatter={(value) =>
               tStatus(
                 (value as DashboardSummary["orderPipeline"][number]["status"]) ??

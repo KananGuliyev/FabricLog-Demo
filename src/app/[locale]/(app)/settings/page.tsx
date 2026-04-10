@@ -28,20 +28,20 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
         <MetricCard
           label={t("cards.workspace")}
           value="FabricLog"
-          hint="A stable brand and workspace surface for future client-specific configuration."
+          hint={t("cards.workspaceHint")}
           trend={7}
         />
         <MetricCard
           label={t("cards.localization")}
-          value="EN / AZ"
-          hint="The shell and route system are already ready for more locales later."
+          value={t("cards.localizationValue")}
+          hint={t("cards.localizationHint")}
           trend={10}
           tone="success"
         />
         <MetricCard
           label={t("cards.governance")}
-          value="Future ready"
-          hint="Access, exports, and integrations can land without restructuring the layout."
+          value={t("cards.governanceValue")}
+          hint={t("cards.governanceHint")}
           trend={5}
           tone="warning"
         />
@@ -51,7 +51,11 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
         <FeaturePanel
           title={t("panels.profileTitle")}
           description={t("panels.profileDescription")}
-          action={<Badge className="bg-primary/10 text-primary hover:bg-primary/10">Demo workspace</Badge>}
+          action={
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
+              {t("badges.demoWorkspace")}
+            </Badge>
+          }
         >
           <div className="panel-secondary flex items-start gap-4 px-5 py-5">
             <Avatar className="size-12 rounded-2xl">
@@ -60,7 +64,7 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
               </AvatarFallback>
             </Avatar>
             <div className="space-y-2">
-              <p className="text-base font-semibold">FabricLog Demo Workspace</p>
+              <p className="text-base font-semibold">{t("panels.workspaceTitle")}</p>
               <p className="body-copy text-sm text-muted-foreground">
                 {t("panels.profileBody")}
               </p>
@@ -77,7 +81,9 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
               <div className="panel-secondary flex items-start gap-4 px-5 py-5">
                 <Globe2 className="mt-1 size-5 text-primary" />
                 <div>
-                  <p className="font-semibold">Locale-ready shell</p>
+                  <p className="font-semibold">
+                    {t("panels.experienceItems.localeReadyTitle")}
+                  </p>
                   <p className="body-copy mt-2 text-sm text-muted-foreground">
                     {t("panels.experienceBody")}
                   </p>
@@ -86,9 +92,11 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
               <div className="panel-secondary flex items-start gap-4 px-5 py-5">
                 <Palette className="mt-1 size-5 text-primary" />
                 <div>
-                  <p className="font-semibold">Visual consistency</p>
+                  <p className="font-semibold">
+                    {t("panels.experienceItems.visualConsistencyTitle")}
+                  </p>
                   <p className="body-copy mt-2 text-sm text-muted-foreground">
-                    Theme tokens, spacing, and surface styles are aligned across the shell and feature pages.
+                    {t("panels.experienceItems.visualConsistencyBody")}
                   </p>
                 </div>
               </div>

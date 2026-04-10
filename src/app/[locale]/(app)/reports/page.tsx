@@ -26,21 +26,21 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
       <div className="grid gap-4 md:grid-cols-3">
         <MetricCard
           label={t("cards.exportsReady")}
-          value="06"
-          hint="Structured reporting views already fit the dashboard visual system."
+          value={t("cards.exportsReadyValue")}
+          hint={t("cards.exportsReadyHint")}
           trend={12}
           tone="success"
         />
         <MetricCard
           label={t("cards.coverage")}
-          value="Sales + Ops"
-          hint="Reports are positioned to combine customer, catalog, and finance perspectives."
+          value={t("cards.coverageValue")}
+          hint={t("cards.coverageHint")}
           trend={8}
         />
         <MetricCard
           label={t("cards.refreshCycle")}
-          value="Weekly"
-          hint="A future reporting cadence can plug into the existing mock-service layer."
+          value={t("cards.refreshCycleValue")}
+          hint={t("cards.refreshCycleHint")}
           trend={4}
           tone="warning"
         />
@@ -50,12 +50,18 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
         <FeaturePanel
           title={t("panels.collectionsTitle")}
           description={t("panels.collectionsDescription")}
-          action={<Badge className="bg-primary/10 text-primary hover:bg-primary/10">Demo ready</Badge>}
+          action={
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
+              {t("badges.demoReady")}
+            </Badge>
+          }
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
               <Download className="size-5" />
-              <p className="mt-4 text-lg font-semibold">Monthly packs</p>
+              <p className="mt-4 text-lg font-semibold">
+                {t("panels.monthlyPacksTitle")}
+              </p>
               <p className="mt-2 text-sm leading-6 text-primary-foreground/86">
                 {t("panels.collectionsBody")}
               </p>
@@ -63,16 +69,20 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
             <div className="space-y-4">
               <div className="panel-secondary px-5 py-5">
                 <Layers3 className="size-5 text-primary" />
-                <p className="mt-4 text-base font-semibold">Aging buckets</p>
+                <p className="mt-4 text-base font-semibold">
+                  {t("panels.agingBucketsTitle")}
+                </p>
                 <p className="body-copy mt-2 text-sm text-muted-foreground">
-                  Use this slot for receivables aging, collector notes, and export filters.
+                  {t("panels.agingBucketsBody")}
                 </p>
               </div>
               <div className="panel-secondary px-5 py-5">
                 <ShieldCheck className="size-5 text-primary" />
-                <p className="mt-4 text-base font-semibold">Collection confidence</p>
+                <p className="mt-4 text-base font-semibold">
+                  {t("panels.collectionConfidenceTitle")}
+                </p>
                 <p className="body-copy mt-2 text-sm text-muted-foreground">
-                  Pair payment status with account health signals without changing the shell.
+                  {t("panels.collectionConfidenceBody")}
                 </p>
               </div>
             </div>
@@ -86,7 +96,9 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
           <div className="space-y-4">
             <div className="panel-secondary px-5 py-5">
               <Radar className="size-5 text-primary" />
-              <p className="mt-4 text-base font-semibold">Demand pulse</p>
+              <p className="mt-4 text-base font-semibold">
+                {t("panels.demandPulseTitle")}
+              </p>
               <p className="body-copy mt-2 text-sm text-muted-foreground">
                 {t("panels.catalogBody")}
               </p>

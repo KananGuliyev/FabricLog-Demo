@@ -5,7 +5,7 @@ import { MetricCard } from "@/components/shared/metric-card";
 import { PageIntro } from "@/components/shared/page-intro";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AppLocale } from "@/lib/constants/site";
-import { formatCurrency } from "@/lib/formatting";
+import { formatCurrency, formatDate } from "@/lib/formatting";
 import { fabricLogService } from "@/server/services/fabriclog-service";
 
 type CustomersPageProps = {
@@ -40,20 +40,20 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
         <MetricCard
           label={t("cards.totalAccounts")}
           value={`${customers.length}`}
-          hint="Balanced between signature hospitality, tailoring, and studio buyers"
+          hint={t("cards.totalAccountsHint")}
           trend={9}
         />
         <MetricCard
           label={t("cards.signatureCustomers")}
           value={`${signatureCustomers}`}
-          hint="Highest-value accounts with multi-order relationships"
+          hint={t("cards.signatureCustomersHint")}
           trend={6}
           tone="success"
         />
         <MetricCard
           label={t("cards.outstandingBalance")}
           value={formatCurrency(totalOutstanding, appLocale)}
-          hint="Portfolio exposure still awaiting collection"
+          hint={t("cards.outstandingBalanceHint")}
           trend={-4}
           tone="warning"
         />
@@ -75,8 +75,10 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
                 {featuredCustomer.company}
               </p>
               <p className="mt-2 text-sm leading-6 text-primary-foreground/86">
-                {featuredCustomer.name} oversees a recurring demand mix focused on{" "}
-                {featuredCustomer.preferredCollection}.
+                {t("featuredDescription", {
+                  name: featuredCustomer.name,
+                  collection: featuredCustomer.preferredCollection,
+                })}
               </p>
             </div>
             <div className="panel-secondary px-5 py-5">
@@ -85,7 +87,8 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
                 {formatCurrency(featuredCustomer.outstandingBalance, appLocale)}
               </p>
               <p className="body-copy mt-2 text-sm text-muted-foreground">
-                {t("cards.lastOrderPrefix")} {featuredCustomer.lastOrderDate}
+                {t("cards.lastOrderPrefix")}{" "}
+                {formatDate(featuredCustomer.lastOrderDate, appLocale)}
               </p>
             </div>
           </CardContent>

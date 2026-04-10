@@ -41,28 +41,28 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         <MetricCard
           label={t("metrics.revenue")}
           value={formatCurrency(summary.totalRevenue, appLocale)}
-          hint="Booked across the current seeded invoice portfolio"
+          hint={t("metrics.revenueHint")}
           trend={14}
           tone="success"
         />
         <MetricCard
           label={t("metrics.customers")}
           value={`${summary.activeCustomers}`}
-          hint="Active fictional accounts across atelier, hospitality, and tailoring segments"
+          hint={t("metrics.customersHint")}
           trend={8}
           tone="neutral"
         />
         <MetricCard
           label={t("metrics.invoices")}
           value={`${summary.openInvoices}`}
-          hint="Invoices still requiring collection follow-up"
+          hint={t("metrics.invoicesHint")}
           trend={-3}
           tone="warning"
         />
         <MetricCard
           label={t("metrics.collections")}
           value={formatPercent(summary.collectionRate, appLocale)}
-          hint="Collected value against total invoiced exposure"
+          hint={t("metrics.collectionsHint")}
           trend={6}
           tone="success"
         />

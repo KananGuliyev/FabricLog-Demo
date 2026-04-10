@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils";
 
 type BrandMarkProps = {
@@ -6,6 +10,8 @@ type BrandMarkProps = {
 };
 
 export function BrandMark({ className, compact = false }: BrandMarkProps) {
+  const tCommon = useTranslations("Common");
+
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div className="relative flex size-10 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--primary),var(--chart-3))] text-primary-foreground shadow-lg shadow-primary/20">
@@ -23,7 +29,7 @@ export function BrandMark({ className, compact = false }: BrandMarkProps) {
             FabricLog
           </span>
           <span className="text-xs text-muted-foreground">
-            Textile operations demo
+            {tCommon("brandSubtitle")}
           </span>
         </div>
       ) : null}

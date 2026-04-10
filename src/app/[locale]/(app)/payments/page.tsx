@@ -25,11 +25,11 @@ export default async function PaymentsPage({ params }: PaymentsPageProps) {
     ...payment,
     customerName:
       customers.find((customer) => customer.id === payment.customerId)?.company ??
-      "Unknown",
+      tCommon("unknown"),
   }));
 
   return (
-    <div className="space-y-8">
+    <div className="page-grid">
       <PageIntro
         badge={tCommon("demoBadge")}
         title={t("title")}
@@ -43,20 +43,20 @@ export default async function PaymentsPage({ params }: PaymentsPageProps) {
             payments.reduce((sum, payment) => sum + payment.amount, 0),
             appLocale
           )}
-          hint="Seeded receipts already logged against the invoice portfolio"
+          hint={t("cards.collectedPaymentsHint")}
           trend={12}
           tone="success"
         />
         <MetricCard
           label={t("cards.bankTransfers")}
           value={`${payments.filter((payment) => payment.method.includes("Bank")).length}`}
-          hint="Primary settlement channel used in the fictional dataset"
+          hint={t("cards.bankTransfersHint")}
           trend={4}
         />
         <MetricCard
           label={t("cards.partialReceipts")}
           value={`${payments.filter((payment) => payment.status === "partial").length}`}
-          hint="Customers that still need follow-up to complete settlement"
+          hint={t("cards.partialReceiptsHint")}
           trend={-1}
           tone="warning"
         />
@@ -65,7 +65,7 @@ export default async function PaymentsPage({ params }: PaymentsPageProps) {
       <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
         <PaymentsTable data={paymentRows} locale={appLocale} />
 
-        <Card className="surface-panel border-0">
+        <Card>
           <CardHeader>
             <CardTitle>{t("cards.collectionNoteTitle")}</CardTitle>
           </CardHeader>

@@ -73,7 +73,7 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
       data={data}
       columns={columns}
       searchPlaceholder={t("searchPlaceholder")}
-      emptyMessage="No products found."
+      emptyMessage={t("emptyState")}
     />
   );
 }

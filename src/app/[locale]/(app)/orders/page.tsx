@@ -27,9 +27,10 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
     ...order,
     customerName:
       customers.find((customer) => customer.id === order.customerId)?.company ??
-      "Unknown",
+      tCommon("unknown"),
     fabricName:
-      fabrics.find((fabric) => fabric.id === order.fabricId)?.name ?? "Unknown",
+      fabrics.find((fabric) => fabric.id === order.fabricId)?.name ??
+      tCommon("unknown"),
   }));
 
   const liveValue = orders.reduce((sum, order) => sum + order.amount, 0);
@@ -46,21 +47,21 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
         <MetricCard
           label={t("cards.liveOrderValue")}
           value={formatCurrency(liveValue, appLocale)}
-          hint="Total seeded order portfolio currently tracked in the demo"
+          hint={t("cards.liveOrderValueHint")}
           trend={16}
           tone="success"
         />
         <MetricCard
           label={t("cards.inProduction")}
           value={`${orders.filter((order) => order.status === "production").length}`}
-          hint="Orders actively moving through cutting and finishing"
+          hint={t("cards.inProductionHint")}
           trend={5}
           tone="critical"
         />
         <MetricCard
           label={t("cards.readyToDispatch")}
           value={`${orders.filter((order) => order.status === "ready").length}`}
-          hint="Orders prepared for final QA and outbound coordination"
+          hint={t("cards.readyToDispatchHint")}
           trend={4}
         />
       </div>

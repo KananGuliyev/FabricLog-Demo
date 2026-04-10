@@ -62,7 +62,7 @@ export function InvoicesTable({ data, locale }: InvoicesTableProps) {
       data={data}
       columns={columns}
       searchPlaceholder={t("searchPlaceholder")}
-      emptyMessage="No invoices found."
+      emptyMessage={t("emptyState")}
     />
   );
 }

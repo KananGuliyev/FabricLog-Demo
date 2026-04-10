@@ -1,6 +1,7 @@
 {
   "Common": {
     "appName": "FabricLog",
+    "brandSubtitle": "Textile operations demo",
     "demoBadge": "Public-safe demo",
     "openDemo": "Open demo",
     "viewOnGitHub": "Portfolio ready",
@@ -10,7 +11,8 @@
     "localeLabel": "Locale",
     "portfolioNote": "All records are fictional sample data created for portfolio presentation.",
     "updatedLabel": "Last refreshed",
-    "currency": "AZN"
+    "currency": "AZN",
+    "unknown": "Unknown"
   },
   "Navigation": {
     "dashboard": "Dashboard",
@@ -57,16 +59,24 @@
     "description": "Monitor sales momentum, low stock pressure, invoice exposure, and payment collection performance.",
     "metrics": {
       "revenue": "Revenue booked",
+      "revenueHint": "Booked across the current seeded invoice portfolio.",
       "customers": "Active customers",
+      "customersHint": "Active fictional accounts across atelier, hospitality, and tailoring segments.",
       "invoices": "Open invoices",
-      "collections": "Collection rate"
+      "invoicesHint": "Invoices still requiring collection follow-up.",
+      "collections": "Collection rate",
+      "collectionsHint": "Collected value against total invoiced exposure."
     },
     "charts": {
       "revenueTitle": "Revenue trend",
       "revenueDescription": "Monthly booked revenue and invoice volume",
+      "revenueSeriesLabel": "Revenue",
       "paymentsTitle": "Payment mix",
       "paymentsDescription": "Open exposure by payment status",
-      "pipelineTitle": "Order pipeline"
+      "paymentValueLabel": "Exposure",
+      "paymentCountLabel": "{count} invoices",
+      "pipelineTitle": "Order pipeline",
+      "pipelineValueLabel": "Orders"
     },
     "recentOrders": "Recent orders",
     "insightsTitle": "Operations insights",
@@ -77,11 +87,16 @@
     "title": "Customers",
     "description": "Keep high-value accounts, outstanding balances, and preferred collections visible in one place.",
     "searchPlaceholder": "Search customer or company",
+    "emptyState": "No customers found.",
     "featured": "Account focus",
+    "featuredDescription": "{name} oversees a recurring demand mix focused on {collection}.",
     "cards": {
       "totalAccounts": "Total accounts",
+      "totalAccountsHint": "Balanced between signature hospitality, tailoring, and studio buyers.",
       "signatureCustomers": "Signature customers",
+      "signatureCustomersHint": "Highest-value accounts with multi-order relationships.",
       "outstandingBalance": "Outstanding balance",
+      "outstandingBalanceHint": "Portfolio exposure still awaiting collection.",
       "signatureAccount": "Signature account",
       "exposure": "Exposure",
       "lastOrderPrefix": "Last order on"
@@ -120,10 +135,14 @@
     "title": "Products",
     "description": "Present the textile catalog as a polished product library with stock, reservations, and pricing visibility.",
     "searchPlaceholder": "Search SKU, product, or category",
+    "emptyState": "No products found.",
     "cards": {
       "totalStock": "Total stock",
+      "totalStockHint": "Available catalog position across the demo assortment.",
       "reservedStock": "Reserved stock",
-      "averageUnitPrice": "Average unit price"
+      "reservedStockHint": "Committed to current pipeline orders and sampling work.",
+      "averageUnitPrice": "Average unit price",
+      "averageUnitPriceHint": "Weighted for a premium but balanced textile portfolio."
     },
     "table": {
       "product": "Product",
@@ -140,10 +159,14 @@
     "title": "Orders",
     "description": "Review the live order book from new requests through production and dispatch.",
     "searchPlaceholder": "Search order or reference",
+    "emptyState": "No orders found.",
     "cards": {
       "liveOrderValue": "Live order value",
+      "liveOrderValueHint": "Total seeded order portfolio currently tracked in the demo.",
       "inProduction": "In production",
+      "inProductionHint": "Orders actively moving through cutting and finishing.",
       "readyToDispatch": "Ready to dispatch",
+      "readyToDispatchHint": "Orders prepared for final QA and outbound coordination.",
       "formFoundation": "Form foundation"
     },
     "form": {
@@ -168,10 +191,14 @@
     "title": "Invoices",
     "description": "Stay ahead of due dates, overdue exposure, and partial collections.",
     "searchPlaceholder": "Search invoice or customer",
+    "emptyState": "No invoices found.",
     "cards": {
       "openInvoiceValue": "Open invoice value",
+      "openInvoiceValueHint": "Outstanding receivables across pending, partial, and overdue invoices.",
       "overdueExposure": "Overdue exposure",
-      "paidInFull": "Paid in full"
+      "overdueExposureHint": "Receivables already beyond their expected due date.",
+      "paidInFull": "Paid in full",
+      "paidInFullHint": "Invoices cleared without follow-up."
     },
     "table": {
       "invoice": "Invoice",
@@ -187,10 +214,14 @@
     "title": "Payments",
     "description": "Track payment timing, methods, and customers that need follow-up.",
     "searchPlaceholder": "Search payment or customer",
+    "emptyState": "No payments found.",
     "cards": {
       "collectedPayments": "Collected payments",
+      "collectedPaymentsHint": "Seeded receipts already logged against the invoice portfolio.",
       "bankTransfers": "Bank transfers",
+      "bankTransfersHint": "Primary settlement channel used in the fictional dataset.",
       "partialReceipts": "Partial receipts",
+      "partialReceiptsHint": "Customers that still need follow-up to complete settlement.",
       "collectionNoteTitle": "Collection note"
     },
     "notes": {
@@ -210,17 +241,32 @@
   "Reports": {
     "title": "Reports",
     "description": "Preview the reporting layer for sales, collections, customers, and product performance in a presentation-ready analytics hub.",
+    "badges": {
+      "demoReady": "Demo ready"
+    },
     "cards": {
       "exportsReady": "Export-ready views",
+      "exportsReadyValue": "06",
+      "exportsReadyHint": "Structured reporting views already fit the dashboard visual system.",
       "coverage": "Coverage areas",
-      "refreshCycle": "Refresh cadence"
+      "coverageValue": "Sales + Ops",
+      "coverageHint": "Reports are positioned to combine customer, catalog, and finance perspectives.",
+      "refreshCycle": "Refresh cadence",
+      "refreshCycleValue": "Weekly",
+      "refreshCycleHint": "A future reporting cadence can plug into the existing mock-service layer."
     },
     "panels": {
       "collectionsTitle": "Collections overview",
       "collectionsDescription": "Monitor where reporting will highlight overdue exposure and partial settlements.",
+      "monthlyPacksTitle": "Monthly packs",
       "collectionsBody": "This section is reserved for monthly receivables packs, customer collection trends, and invoice aging snapshots.",
+      "agingBucketsTitle": "Aging buckets",
+      "agingBucketsBody": "Use this slot for receivables aging, collector notes, and export filters.",
+      "collectionConfidenceTitle": "Collection confidence",
+      "collectionConfidenceBody": "Pair payment status with account health signals without changing the shell.",
       "catalogTitle": "Product performance",
       "catalogDescription": "Track which references, categories, and reserved lines are pulling the most demand.",
+      "demandPulseTitle": "Demand pulse",
       "catalogBody": "Future reports will compare stock pressure, reservation ratios, and price movement across the portfolio.",
       "roadmapTitle": "Coming next",
       "roadmapDescription": "The shell is ready for richer charting and export workflows.",
@@ -234,18 +280,32 @@
   "Settings": {
     "title": "Settings",
     "description": "Show how FabricLog can grow into a configurable workspace for branding, operations, localization, and governance.",
+    "badges": {
+      "demoWorkspace": "Demo workspace"
+    },
     "cards": {
       "workspace": "Workspace profile",
+      "workspaceHint": "A stable brand and workspace surface for future client-specific configuration.",
       "localization": "Localization ready",
-      "governance": "Governance surface"
+      "localizationValue": "EN / AZ",
+      "localizationHint": "The shell and route system are already ready for more locales later.",
+      "governance": "Governance surface",
+      "governanceValue": "Future ready",
+      "governanceHint": "Access, exports, and integrations can land without restructuring the layout."
     },
     "panels": {
       "profileTitle": "Business profile",
       "profileDescription": "Public demo metadata for the fictional FabricLog workspace.",
+      "workspaceTitle": "FabricLog Demo Workspace",
       "profileBody": "Use this area later for company info, tax preferences, invoice templates, and order reference rules.",
       "experienceTitle": "Experience defaults",
       "experienceDescription": "Prepare the app for language, date, and dashboard preference management.",
       "experienceBody": "The current structure already supports English and Azerbaijani and can grow into user-level preferences without a layout rewrite.",
+      "experienceItems": {
+        "localeReadyTitle": "Locale-ready shell",
+        "visualConsistencyTitle": "Visual consistency",
+        "visualConsistencyBody": "Theme tokens, spacing, and surface styles are aligned across the shell and feature pages."
+      },
       "controlsTitle": "Operational controls",
       "controlsDescription": "Future-ready placeholders for permissions, exports, and integrations.",
       "controlsItems": {

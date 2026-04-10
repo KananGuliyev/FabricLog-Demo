@@ -73,7 +73,7 @@ export function OrdersTable({ data, locale }: OrdersTableProps) {
       data={data}
       columns={columns}
       searchPlaceholder={t("searchPlaceholder")}
-      emptyMessage="No orders found."
+      emptyMessage={t("emptyState")}
     />
   );
 }

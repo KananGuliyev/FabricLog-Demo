@@ -59,7 +59,7 @@ export function CustomersTable({ data, locale }: CustomersTableProps) {
       data={data}
       columns={columns}
       searchPlaceholder={t("searchPlaceholder")}
-      emptyMessage="No customers found."
+      emptyMessage={t("emptyState")}
     />
   );
 }

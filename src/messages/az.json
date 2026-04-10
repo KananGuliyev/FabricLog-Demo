@@ -1,16 +1,18 @@
 {
   "Common": {
     "appName": "FabricLog",
-    "demoBadge": "İctimai təhlükəsiz demo",
-    "openDemo": "Demo aç",
+    "brandSubtitle": "Tekstil əməliyyatları demosu",
+    "demoBadge": "İctimai, təhlükəsiz demo",
+    "openDemo": "Demoya keç",
     "viewOnGitHub": "Portfel üçün hazırdır",
     "search": "Axtar",
     "localeEnglish": "İngilis dili",
     "localeAzerbaijani": "Azərbaycan dili",
     "localeLabel": "Dil",
-    "portfolioNote": "Bütün qeydlər portfel nümayişi üçün hazırlanmış uydurma nümunə məlumatlardır.",
+    "portfolioNote": "Bütün qeydlər portfel təqdimatı üçün hazırlanmış uydurma nümunə məlumatlardır.",
     "updatedLabel": "Son yenilənmə",
-    "currency": "AZN"
+    "currency": "AZN",
+    "unknown": "Naməlum"
   },
   "Navigation": {
     "dashboard": "Panel",
@@ -25,7 +27,7 @@
   },
   "Landing": {
     "eyebrow": "Tekstil biznesi əməliyyat demosu",
-    "title": "Parça biznesini bir idarəetmə mərkəzindən yönəldin.",
+    "title": "Parça biznesini vahid idarəetmə mərkəzindən yönəldin.",
     "description": "FabricLog tekstil əməliyyatları üçün peşəkar full-stack demo təqdim edir: müştərilər, stok, sifarişlər, fakturalar və ödəniş izlənməsi bir SaaS təcrübəsində birləşir.",
     "primaryCta": "Paneli aç",
     "secondaryCta": "Modullara bax",
@@ -57,16 +59,24 @@
     "description": "Satış dinamikasını, aşağı stok təzyiqini, faktura riskini və ödəniş toplama performansını izləyin.",
     "metrics": {
       "revenue": "Qeyd olunan gəlir",
+      "revenueHint": "Mövcud nümunə faktura portfeli üzrə qeydə alınmış gəlir.",
       "customers": "Aktiv müştərilər",
+      "customersHint": "Atelye, qonaqpərvərlik və tikiş seqmentləri üzrə aktiv uydurma hesablar.",
       "invoices": "Açıq fakturalar",
-      "collections": "Yığım faizi"
+      "invoicesHint": "Hələ də yığım izlənməsi tələb edən fakturalar.",
+      "collections": "Yığım faizi",
+      "collectionsHint": "Ümumi faktura məbləği ilə müqayisədə toplanmış dəyər."
     },
     "charts": {
       "revenueTitle": "Gəlir trendi",
-      "revenueDescription": "Aylıq gəlir və faktura həcmi",
+      "revenueDescription": "Aylıq qeydə alınmış gəlir və faktura həcmi",
+      "revenueSeriesLabel": "Gəlir",
       "paymentsTitle": "Ödəniş bölgüsü",
       "paymentsDescription": "Ödəniş statusuna görə açıq risk",
-      "pipelineTitle": "Sifariş axını"
+      "paymentValueLabel": "Risk məbləği",
+      "paymentCountLabel": "{count} faktura",
+      "pipelineTitle": "Sifariş axını",
+      "pipelineValueLabel": "Sifarişlər"
     },
     "recentOrders": "Son sifarişlər",
     "insightsTitle": "Əməliyyat qeydləri",
@@ -77,12 +87,17 @@
     "title": "Müştərilər",
     "description": "Dəyərli hesabları, açıq balansları və üstünlük verilən kolleksiyaları bir yerdə görün.",
     "searchPlaceholder": "Müştəri və ya şirkət axtar",
+    "emptyState": "Müştəri tapılmadı.",
     "featured": "Fokus hesab",
+    "featuredDescription": "{name} əsasən {collection} istiqamətində təkrarlanan tələb portfelinə nəzarət edir.",
     "cards": {
       "totalAccounts": "Ümumi hesablar",
-      "signatureCustomers": "Signature müştərilər",
+      "totalAccountsHint": "Premium qonaqpərvərlik, tikiş və studiya alıcıları arasında balanslı paylanma.",
+      "signatureCustomers": "Premium müştərilər",
+      "signatureCustomersHint": "Bir neçə sifariş əlaqəsi olan ən dəyərli hesablar.",
       "outstandingBalance": "Açıq balans",
-      "signatureAccount": "Signature hesab",
+      "outstandingBalanceHint": "Hələ də yığım gözləyən portfel riski.",
+      "signatureAccount": "Premium hesab",
       "exposure": "Risk məbləği",
       "lastOrderPrefix": "Son sifariş"
     },
@@ -120,10 +135,14 @@
     "title": "Məhsullar",
     "description": "Tekstil kataloqunu stok, rezerv və qiymət görünürlüğü olan peşəkar məhsul kitabxanası kimi təqdim edin.",
     "searchPlaceholder": "SKU, məhsul və ya kateqoriya axtar",
+    "emptyState": "Məhsul tapılmadı.",
     "cards": {
       "totalStock": "Ümumi stok",
+      "totalStockHint": "Demo assortiment üzrə mövcud kataloq mövqeyi.",
       "reservedStock": "Rezerv stok",
-      "averageUnitPrice": "Orta vahid qiymət"
+      "reservedStockHint": "Cari sifariş axını və nümunə işləri üçün ayrılmış həcm.",
+      "averageUnitPrice": "Orta vahid qiymət",
+      "averageUnitPriceHint": "Premium, amma balanslı tekstil portfeli üzrə hesablanmış orta qiymət."
     },
     "table": {
       "product": "Məhsul",
@@ -140,10 +159,14 @@
     "title": "Sifarişlər",
     "description": "Yeni sorğulardan istehsal və göndərişə qədər canlı sifariş siyahısına baxın.",
     "searchPlaceholder": "Sifariş və ya kod axtar",
+    "emptyState": "Sifariş tapılmadı.",
     "cards": {
       "liveOrderValue": "Aktiv sifariş məbləği",
+      "liveOrderValueHint": "Demoda izlənən ümumi nümunə sifariş portfeli.",
       "inProduction": "İstehsalda",
+      "inProductionHint": "Kəsmə və tamamlanma mərhələsində olan sifarişlər.",
       "readyToDispatch": "Göndərişə hazır",
+      "readyToDispatchHint": "Yekun keyfiyyət yoxlaması və göndəriş koordinasiyası üçün hazır sifarişlər.",
       "formFoundation": "Forma bazası"
     },
     "form": {
@@ -168,10 +191,14 @@
     "title": "Fakturalar",
     "description": "Ödəniş tarixlərini, gecikmiş riskləri və qismən yığımları qabaqcadan görün.",
     "searchPlaceholder": "Faktura və ya müştəri axtar",
+    "emptyState": "Faktura tapılmadı.",
     "cards": {
       "openInvoiceValue": "Açıq faktura məbləği",
+      "openInvoiceValueHint": "Gözləyən, qismən ödənmiş və gecikmiş fakturalar üzrə açıq debitor məbləği.",
       "overdueExposure": "Gecikmiş risk",
-      "paidInFull": "Tam ödənənlər"
+      "overdueExposureHint": "Ödəniş tarixi artıq keçmiş debitor borcları.",
+      "paidInFull": "Tam ödənənlər",
+      "paidInFullHint": "Əlavə təqib tələb etmədən bağlanan fakturalar."
     },
     "table": {
       "invoice": "Faktura",
@@ -187,10 +214,14 @@
     "title": "Ödənişlər",
     "description": "Ödəniş vaxtını, üsullarını və təqib tələb edən müştəriləri izləyin.",
     "searchPlaceholder": "Ödəniş və ya müştəri axtar",
+    "emptyState": "Ödəniş tapılmadı.",
     "cards": {
       "collectedPayments": "Yığılmış ödənişlər",
+      "collectedPaymentsHint": "Nümunə ödənişlər artıq faktura portfelinə qarşı qeyd edilib.",
       "bankTransfers": "Bank köçürmələri",
+      "bankTransfersHint": "Uydurma məlumat dəstində istifadə olunan əsas hesablaşma kanalı.",
       "partialReceipts": "Qismən ödənişlər",
+      "partialReceiptsHint": "Hesablaşmanı tamamlamaq üçün əlavə təqib tələb edən müştərilər.",
       "collectionNoteTitle": "Yığım qeydi"
     },
     "notes": {
@@ -210,17 +241,32 @@
   "Reports": {
     "title": "Hesabatlar",
     "description": "Satış, yığım, müştəri və məhsul performansı üçün təqdimata hazır analitika mərkəzinin ilkin görünüşünü göstərin.",
+    "badges": {
+      "demoReady": "Demo üçün hazır"
+    },
     "cards": {
       "exportsReady": "Eksporta hazır görünüşlər",
+      "exportsReadyValue": "06",
+      "exportsReadyHint": "Strukturlaşdırılmış hesabat görünüşləri artıq dashboard vizual sistemi ilə uyğunlaşır.",
       "coverage": "Əhatə sahələri",
-      "refreshCycle": "Yenilənmə ritmi"
+      "coverageValue": "Satış + əməliyyat",
+      "coverageHint": "Hesabatlar müştəri, kataloq və maliyyə perspektivlərini birləşdirmək üçün mövqelənib.",
+      "refreshCycle": "Yenilənmə ritmi",
+      "refreshCycleValue": "Həftəlik",
+      "refreshCycleHint": "Gələcək hesabat ritmi mövcud mock-service qatına problemsiz qoşula bilər."
     },
     "panels": {
       "collectionsTitle": "Yığım xülasəsi",
       "collectionsDescription": "Gecikmiş risk və qismən ödənişlərin hesabatlarda necə görünəcəyini izləyin.",
+      "monthlyPacksTitle": "Aylıq paketlər",
       "collectionsBody": "Bu hissə aylıq debitor paketləri, müştəri yığım trendi və faktura yaşlanma görünüşləri üçün ayrılıb.",
+      "agingBucketsTitle": "Yaşlanma qrupları",
+      "agingBucketsBody": "Bu sahədə debitor yaşlanması, kollektor qeydləri və export filtrləri yerləşdirilə bilər.",
+      "collectionConfidenceTitle": "Yığım etibarlılığı",
+      "collectionConfidenceBody": "Ödəniş statusunu hesab sağlamlığı siqnalları ilə birləşdirin, həm də shell quruluşunu dəyişmədən.",
       "catalogTitle": "Məhsul performansı",
-      "catalogDescription": "Hansı referansların, kateqoriyaların və rezervdəki məhsulların daha çox tələbat gördüyünü izləyin.",
+      "catalogDescription": "Hansı referansların, kateqoriyaların və rezervdəki məhsulların daha çox tələb gördüyünü izləyin.",
+      "demandPulseTitle": "Tələb nəbzi",
       "catalogBody": "Gələcək hesabatlar portfel üzrə stok təzyiqi, rezerv nisbəti və qiymət dəyişimini müqayisə edəcək.",
       "roadmapTitle": "Növbəti mərhələ",
       "roadmapDescription": "Shell daha güclü qrafik və export iş axınları üçün hazırdır.",
@@ -234,18 +280,32 @@
   "Settings": {
     "title": "Tənzimləmələr",
     "description": "FabricLog-un brendinq, əməliyyat, lokalizasiya və idarəetmə üçün konfiqurasiya olunan iş sahəsinə necə çevrilə biləcəyini göstərin.",
+    "badges": {
+      "demoWorkspace": "Demo iş sahəsi"
+    },
     "cards": {
       "workspace": "İş sahəsi profili",
+      "workspaceHint": "Gələcək müştəriyə uyğun konfiqurasiya üçün sabit brend və iş sahəsi səthi.",
       "localization": "Lokalizasiyaya hazır",
-      "governance": "İdarəetmə səthi"
+      "localizationValue": "EN / AZ",
+      "localizationHint": "Shell və marşrut sistemi sonradan daha çox dil əlavə etmək üçün artıq hazırdır.",
+      "governance": "İdarəetmə səthi",
+      "governanceValue": "Gələcəyə hazır",
+      "governanceHint": "Giriş, export və inteqrasiyalar layout dəyişmədən əlavə oluna bilər."
     },
     "panels": {
       "profileTitle": "Biznes profili",
       "profileDescription": "Uydurma FabricLog iş sahəsi üçün ictimai demo metadata.",
+      "workspaceTitle": "FabricLog Demo İş Sahəsi",
       "profileBody": "Bu sahə sonradan şirkət məlumatı, vergi seçimləri, faktura şablonları və sifariş kodu qaydaları üçün istifadə edilə bilər.",
       "experienceTitle": "Təcrübə standartları",
       "experienceDescription": "Dil, tarix və panel seçimlərinin idarəsi üçün hazır struktur.",
       "experienceBody": "Mövcud struktur artıq ingilis və azərbaycan dillərini dəstəkləyir və layout yenidən yazılmadan istifadəçi səviyyəli seçimlərə genişlənə bilər.",
+      "experienceItems": {
+        "localeReadyTitle": "Lokalizasiya üçün hazır shell",
+        "visualConsistencyTitle": "Vizual ardıcıllıq",
+        "visualConsistencyBody": "Tema tokenləri, boşluq sistemi və səth üslubları shell və funksional səhifələr boyunca uyğunlaşdırılıb."
+      },
       "controlsTitle": "Əməliyyat nəzarətləri",
       "controlsDescription": "Səlahiyyət, export və inteqrasiya üçün gələcəyə hazır placeholder sahələr.",
       "controlsItems": {
@@ -257,26 +317,26 @@
   },
   "Statuses": {
     "tiers": {
-      "signature": "Signature",
-      "growth": "Growth",
-      "studio": "Studio"
+      "signature": "Premium",
+      "growth": "İnkişaf",
+      "studio": "Studiya"
     },
     "fabric": {
-      "available": "Mövcuddur",
+      "available": "Mövcud",
       "low": "Az stok",
-      "reserved": "Rezervdədir"
+      "reserved": "Rezervdə"
     },
     "order": {
       "new": "Yeni",
       "sampling": "Nümunə",
       "production": "İstehsal",
-      "ready": "Hazırdır",
+      "ready": "Hazır",
       "dispatched": "Göndərilib"
     },
     "payment": {
       "paid": "Ödənib",
       "partial": "Qismən",
-      "pending": "Gözləyir",
+      "pending": "Gözləmədə",
       "overdue": "Gecikib"
     }
   },
