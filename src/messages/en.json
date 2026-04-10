@@ -516,39 +516,102 @@
   },
   "Settings": {
     "title": "Settings",
-    "description": "Show how FabricLog can grow into a configurable workspace for branding, operations, localization, and governance.",
+    "description": "Review the demo workspace profile, language support, and interface defaults that make FabricLog feel like a polished internal product.",
     "badges": {
-      "demoWorkspace": "Demo workspace"
+      "demoWorkspace": "Demo workspace",
+      "active": "Active",
+      "available": "Available",
+      "readOnly": "Read-only",
+      "publicSafe": "Public-safe"
     },
     "cards": {
-      "workspace": "Workspace profile",
-      "workspaceHint": "A stable brand and workspace surface for future client-specific configuration.",
-      "localization": "Localization ready",
-      "localizationValue": "EN / AZ",
-      "localizationHint": "The shell and route system are already ready for more locales later.",
-      "governance": "Governance surface",
-      "governanceValue": "Future ready",
-      "governanceHint": "Access, exports, and integrations can land without restructuring the layout."
+      "activeLocale": "Active locale",
+      "activeLocaleHint": "English stays the default language, with Azerbaijani supported across the main interface.",
+      "interfaceMode": "Interface mode",
+      "interfaceModeValue": "Read-only demo",
+      "interfaceModeHint": "Preference surfaces stay intentionally lightweight and can gain persistence later without a layout rewrite.",
+      "workspaceState": "Workspace state",
+      "workspaceStateValue": "Sample data only",
+      "workspaceStateHint": "Every profile, order, invoice, and payment record in this workspace is fictional."
     },
-    "panels": {
-      "profileTitle": "Business profile",
-      "profileDescription": "Public demo metadata for the fictional FabricLog workspace.",
-      "workspaceTitle": "FabricLog Demo Workspace",
-      "profileBody": "Use this area later for company info, tax preferences, invoice templates, and order reference rules.",
-      "experienceTitle": "Experience defaults",
-      "experienceDescription": "Prepare the app for language, date, and dashboard preference management.",
-      "experienceBody": "The current structure already supports English and Azerbaijani and can grow into user-level preferences without a layout rewrite.",
-      "experienceItems": {
-        "localeReadyTitle": "Locale-ready shell",
-        "visualConsistencyTitle": "Visual consistency",
-        "visualConsistencyBody": "Theme tokens, spacing, and surface styles are aligned across the shell and feature pages."
+    "profile": {
+      "title": "Profile and workspace",
+      "description": "A fictional operator profile that anchors the public demo without using any real business identity.",
+      "name": "Ayla Mammadli",
+      "role": "Operations manager",
+      "workspace": "FabricLog Demo Workspace",
+      "summary": "Oversees customer follow-up, invoice visibility, and product availability across the seeded textile portfolio.",
+      "email": "ayla@fabriclog.demo",
+      "region": "Baku showroom",
+      "meta": {
+        "role": "Role",
+        "email": "Contact email",
+        "workspace": "Workspace",
+        "region": "Region"
+      }
+    },
+    "language": {
+      "title": "Language preference",
+      "description": "The shell already uses locale-aware routing and shared message files, so language switching stays consistent across the demo.",
+      "switcherLabel": "Current interface language",
+      "switcherDescription": "Use the same locale control shown in the app header to switch the current route between English and Azerbaijani.",
+      "supportNote": "The existing message structure is already ready for future language additions without changing page layouts.",
+      "localeCards": {
+        "enDescription": "Default language for the portfolio demo and main product copy.",
+        "azDescription": "Fully supported across navigation, dashboards, tables, and page summaries."
+      }
+    },
+    "preferences": {
+      "title": "UI preferences",
+      "description": "Lightweight demo defaults that show how a fuller settings surface can grow without overloading the page.",
+      "items": {
+        "density": {
+          "title": "Layout density",
+          "value": "Comfortable",
+          "description": "Uses the current spacing system for clear, recruiter-friendly readability."
+        },
+        "statusVisibility": {
+          "title": "Status visibility",
+          "value": "Expanded",
+          "description": "Operational badges and cues stay visible across tables and summary panels."
+        },
+        "summaryMode": {
+          "title": "Summary emphasis",
+          "value": "Report-ready",
+          "description": "KPI cards and overview panels are tuned for quick business scanning."
+        }
+      }
+    },
+    "about": {
+      "title": "App info",
+      "description": "A short product snapshot that explains what FabricLog demonstrates in the public showcase.",
+      "eyebrow": "About FabricLog",
+      "summary": "FabricLog is a bilingual textile operations demo covering customers, catalog, orders, invoices, and reporting in one consistent SaaS workspace.",
+      "meta": {
+        "product": "Product",
+        "positioning": "Positioning",
+        "foundation": "Foundation",
+        "coverage": "Coverage"
       },
-      "controlsTitle": "Operational controls",
-      "controlsDescription": "Future-ready placeholders for permissions, exports, and integrations.",
-      "controlsItems": {
-        "roles": "Role and access policies",
-        "templates": "Document and invoice templates",
-        "integrations": "Accounting and reporting integrations"
+      "values": {
+        "positioning": "Public portfolio showcase",
+        "foundation": "Next.js, TypeScript, mock service layer",
+        "coverage": "Customers, products, orders, invoices, reports"
+      },
+      "highlights": {
+        "bilingual": "Bilingual UI",
+        "mockData": "Mock API shape",
+        "publicSafe": "Portfolio-safe data"
+      }
+    },
+    "disclaimer": {
+      "title": "Demo disclaimer",
+      "description": "Clear portfolio context for anyone reviewing the project.",
+      "body": "All records in FabricLog are fictional sample data created for interface and architecture demonstration.",
+      "items": {
+        "customers": "No real customer or supplier data is used anywhere in the demo.",
+        "finance": "No real invoices, payments, credentials, or accounting integrations are connected.",
+        "controls": "The page models a realistic SaaS settings experience without exposing production controls."
       }
     }
   },

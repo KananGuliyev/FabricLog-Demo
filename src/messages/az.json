@@ -515,42 +515,105 @@
                               }
                 },
     "Settings":  {
-                     "title":  "TÃƒâ€°Ã¢â€žÂ¢nzimlÃƒâ€°Ã¢â€žÂ¢mÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢r",
-                     "description":  "FabricLog-un brendinq, Ãƒâ€°Ã¢â€žÂ¢mÃƒâ€°Ã¢â€žÂ¢liyyat, lokalizasiya vÃƒâ€°Ã¢â€žÂ¢ idarÃƒâ€°Ã¢â€žÂ¢etmÃƒâ€°Ã¢â€žÂ¢ ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n konfiqurasiya olunan iÃƒâ€¦Ã…Â¸ sahÃƒâ€°Ã¢â€žÂ¢sinÃƒâ€°Ã¢â€žÂ¢ necÃƒâ€°Ã¢â€žÂ¢ ÃƒÆ’Ã‚Â§evrilÃƒâ€°Ã¢â€žÂ¢ bilÃƒâ€°Ã¢â€žÂ¢cÃƒâ€°Ã¢â€žÂ¢yini gÃƒÆ’Ã‚Â¶stÃƒâ€°Ã¢â€žÂ¢rin.",
+                     "title":  "T?nziml?m?l?r",
+                     "description":  "FabricLog demo i? sah?sinin profilini, dil d?st?yini v? interfeys standartlar?n? bir yerd?n n?z?rd?n ke?irin.",
                      "badges":  {
-                                    "demoWorkspace":  "Demo iÃƒâ€¦Ã…Â¸ sahÃƒâ€°Ã¢â€žÂ¢si"
-                                },
+                                     "demoWorkspace":  "Demo i? sah?si",
+                                     "active":  "Aktiv",
+                                     "available":  "M?vcuddur",
+                                     "readOnly":  "Yaln?z bax??",
+                                     "publicSafe":  "?ctimai demo"
+                                 },
                      "cards":  {
-                                   "workspace":  "Ãƒâ€žÃ‚Â°Ãƒâ€¦Ã…Â¸ sahÃƒâ€°Ã¢â€žÂ¢si profili",
-                                   "workspaceHint":  "GÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢cÃƒâ€°Ã¢â€žÂ¢k mÃƒÆ’Ã‚Â¼Ãƒâ€¦Ã…Â¸tÃƒâ€°Ã¢â€žÂ¢riyÃƒâ€°Ã¢â€žÂ¢ uyÃƒâ€žÃ…Â¸un konfiqurasiya ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n sabit brend vÃƒâ€°Ã¢â€žÂ¢ iÃƒâ€¦Ã…Â¸ sahÃƒâ€°Ã¢â€žÂ¢si sÃƒâ€°Ã¢â€žÂ¢thi.",
-                                   "localization":  "Lokalizasiyaya hazÃƒâ€žÃ‚Â±r",
-                                   "localizationValue":  "EN / AZ",
-                                   "localizationHint":  "Shell vÃƒâ€°Ã¢â€žÂ¢ marÃƒâ€¦Ã…Â¸rut sistemi sonradan daha ÃƒÆ’Ã‚Â§ox dil Ãƒâ€°Ã¢â€žÂ¢lavÃƒâ€°Ã¢â€žÂ¢ etmÃƒâ€°Ã¢â€žÂ¢k ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n artÃƒâ€žÃ‚Â±q hazÃƒâ€žÃ‚Â±rdÃƒâ€žÃ‚Â±r.",
-                                   "governance":  "Ãƒâ€žÃ‚Â°darÃƒâ€°Ã¢â€žÂ¢etmÃƒâ€°Ã¢â€žÂ¢ sÃƒâ€°Ã¢â€žÂ¢thi",
-                                   "governanceValue":  "GÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢cÃƒâ€°Ã¢â€žÂ¢yÃƒâ€°Ã¢â€žÂ¢ hazÃƒâ€žÃ‚Â±r",
-                                   "governanceHint":  "GiriÃƒâ€¦Ã…Â¸, export vÃƒâ€°Ã¢â€žÂ¢ inteqrasiyalar layout dÃƒâ€°Ã¢â€žÂ¢yiÃƒâ€¦Ã…Â¸mÃƒâ€°Ã¢â€žÂ¢dÃƒâ€°Ã¢â€žÂ¢n Ãƒâ€°Ã¢â€žÂ¢lavÃƒâ€°Ã¢â€žÂ¢ oluna bilÃƒâ€°Ã¢â€žÂ¢r."
+                                   "activeLocale":  "Aktiv dil",
+                                   "activeLocaleHint":  "?ngilis dili standartd?r, Az?rbaycan dili is? ?sas interfeysd? tam d?st?kl?nir.",
+                                   "interfaceMode":  "?nterfeys rejimi",
+                                   "interfaceModeValue":  "Yaln?z bax?? demosu",
+                                   "interfaceModeHint":  "Se?im s?thi q?sd?n y?ng?l saxlan?l?b v? sonradan yadda saxlanma m?ntiqi ?lav? oluna bil?r.",
+                                   "workspaceState":  "?? sah?sinin v?ziyy?ti",
+                                   "workspaceStateValue":  "Yaln?z n?mun? m?lumatlar",
+                                   "workspaceStateHint":  "Bu i? sah?sind?ki b?t?n profil, sifari?, faktura v? ?d?ni? qeydl?ri uydurmad?r."
                                },
-                     "panels":  {
-                                    "profileTitle":  "Biznes profili",
-                                    "profileDescription":  "Uydurma FabricLog iÃƒâ€¦Ã…Â¸ sahÃƒâ€°Ã¢â€žÂ¢si ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n ictimai demo metadata.",
-                                    "workspaceTitle":  "FabricLog Demo Ãƒâ€žÃ‚Â°Ãƒâ€¦Ã…Â¸ SahÃƒâ€°Ã¢â€žÂ¢si",
-                                    "profileBody":  "Bu sahÃƒâ€°Ã¢â€žÂ¢ sonradan Ãƒâ€¦Ã…Â¸irkÃƒâ€°Ã¢â€žÂ¢t mÃƒâ€°Ã¢â€žÂ¢lumatÃƒâ€žÃ‚Â±, vergi seÃƒÆ’Ã‚Â§imlÃƒâ€°Ã¢â€žÂ¢ri, faktura Ãƒâ€¦Ã…Â¸ablonlarÃƒâ€žÃ‚Â± vÃƒâ€°Ã¢â€žÂ¢ sifariÃƒâ€¦Ã…Â¸ kodu qaydalarÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n istifadÃƒâ€°Ã¢â€žÂ¢ edilÃƒâ€°Ã¢â€žÂ¢ bilÃƒâ€°Ã¢â€žÂ¢r.",
-                                    "experienceTitle":  "TÃƒâ€°Ã¢â€žÂ¢crÃƒÆ’Ã‚Â¼bÃƒâ€°Ã¢â€žÂ¢ standartlarÃƒâ€žÃ‚Â±",
-                                    "experienceDescription":  "Dil, tarix vÃƒâ€°Ã¢â€žÂ¢ panel seÃƒÆ’Ã‚Â§imlÃƒâ€°Ã¢â€žÂ¢rinin idarÃƒâ€°Ã¢â€žÂ¢si ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n hazÃƒâ€žÃ‚Â±r struktur.",
-                                    "experienceBody":  "MÃƒÆ’Ã‚Â¶vcud struktur artÃƒâ€žÃ‚Â±q ingilis vÃƒâ€°Ã¢â€žÂ¢ azÃƒâ€°Ã¢â€žÂ¢rbaycan dillÃƒâ€°Ã¢â€žÂ¢rini dÃƒâ€°Ã¢â€žÂ¢stÃƒâ€°Ã¢â€žÂ¢klÃƒâ€°Ã¢â€žÂ¢yir vÃƒâ€°Ã¢â€žÂ¢ layout yenidÃƒâ€°Ã¢â€žÂ¢n yazÃƒâ€žÃ‚Â±lmadan istifadÃƒâ€°Ã¢â€žÂ¢ÃƒÆ’Ã‚Â§i sÃƒâ€°Ã¢â€žÂ¢viyyÃƒâ€°Ã¢â€žÂ¢li seÃƒÆ’Ã‚Â§imlÃƒâ€°Ã¢â€žÂ¢rÃƒâ€°Ã¢â€žÂ¢ geniÃƒâ€¦Ã…Â¸lÃƒâ€°Ã¢â€žÂ¢nÃƒâ€°Ã¢â€žÂ¢ bilÃƒâ€°Ã¢â€žÂ¢r.",
-                                    "experienceItems":  {
-                                                            "localeReadyTitle":  "Lokalizasiya ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n hazÃƒâ€žÃ‚Â±r shell",
-                                                            "visualConsistencyTitle":  "Vizual ardÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±llÃƒâ€žÃ‚Â±q",
-                                                            "visualConsistencyBody":  "Tema tokenlÃƒâ€°Ã¢â€žÂ¢ri, boÃƒâ€¦Ã…Â¸luq sistemi vÃƒâ€°Ã¢â€žÂ¢ sÃƒâ€°Ã¢â€žÂ¢th ÃƒÆ’Ã‚Â¼slublarÃƒâ€žÃ‚Â± shell vÃƒâ€°Ã¢â€žÂ¢ funksional sÃƒâ€°Ã¢â€žÂ¢hifÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢r boyunca uyÃƒâ€žÃ…Â¸unlaÃƒâ€¦Ã…Â¸dÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±lÃƒâ€žÃ‚Â±b."
-                                                        },
-                                    "controlsTitle":  "Ãƒâ€ Ã‚ÂmÃƒâ€°Ã¢â€žÂ¢liyyat nÃƒâ€°Ã¢â€žÂ¢zarÃƒâ€°Ã¢â€žÂ¢tlÃƒâ€°Ã¢â€žÂ¢ri",
-                                    "controlsDescription":  "SÃƒâ€°Ã¢â€žÂ¢lahiyyÃƒâ€°Ã¢â€žÂ¢t, export vÃƒâ€°Ã¢â€žÂ¢ inteqrasiya ÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¼n gÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢cÃƒâ€°Ã¢â€žÂ¢yÃƒâ€°Ã¢â€žÂ¢ hazÃƒâ€žÃ‚Â±r placeholder sahÃƒâ€°Ã¢â€žÂ¢lÃƒâ€°Ã¢â€žÂ¢r.",
-                                    "controlsItems":  {
-                                                          "roles":  "Rol vÃƒâ€°Ã¢â€žÂ¢ giriÃƒâ€¦Ã…Â¸ siyasÃƒâ€°Ã¢â€žÂ¢tlÃƒâ€°Ã¢â€žÂ¢ri",
-                                                          "templates":  "SÃƒâ€°Ã¢â€žÂ¢nÃƒâ€°Ã¢â€žÂ¢d vÃƒâ€°Ã¢â€žÂ¢ faktura Ãƒâ€¦Ã…Â¸ablonlarÃƒâ€žÃ‚Â±",
-                                                          "integrations":  "MÃƒÆ’Ã‚Â¼hasibat vÃƒâ€°Ã¢â€žÂ¢ hesabat inteqrasiyalarÃƒâ€žÃ‚Â±"
+                     "profile":  {
+                                     "title":  "Profil v? i? sah?si",
+                                     "description":  "He? bir real biznes identikliyi istifad? etm?d?n ictimai demo ???n haz?rlanm?? uydurma operator profili.",
+                                     "name":  "Ayla M?mm?dli",
+                                     "role":  "?m?liyyat meneceri",
+                                     "workspace":  "FabricLog Demo ?? Sah?si",
+                                     "summary":  "N?mun? tekstil portfeli ?zr? m??t?ri t?qibini, faktura g?r?n?rl???n? v? m?hsul m?vcudlu?unu izl?yir.",
+                                     "email":  "ayla@fabriclog.demo",
+                                     "region":  "Bak? showroomu",
+                                     "meta":  {
+                                                  "role":  "Rol",
+                                                  "email":  "?laq? e-po?tu",
+                                                  "workspace":  "?? sah?si",
+                                                  "region":  "Region"
+                                              }
+                                 },
+                     "language":  {
+                                      "title":  "Dil se?imi",
+                                      "description":  "Shell art?q locale ?sasl? mar?rutlardan v? ortaq message fayllar?ndan istifad? edir, buna g?r? dil d?yi?imi demo boyunca sabit qal?r.",
+                                      "switcherLabel":  "Cari interfeys dili",
+                                      "switcherDescription":  "Cari s?hif?ni ingilis v? Az?rbaycan dill?ri aras?nda d?yi?m?k ???n ba?l?qdak? eyni dil idar?sind?n istifad? edin.",
+                                      "supportNote":  "M?vcud message qurulu?u g?l?c?kd? yeni dill?ri s?hif? layoutlar?n? d?yi?m?d?n ?lav? etm?y? haz?rd?r.",
+                                      "localeCards":  {
+                                                          "enDescription":  "Portfel demosu v? ?sas m?hsul m?tni ???n standart dil.",
+                                                          "azDescription":  "Naviqasiya, panel, c?dv?ll?r v? s?hif? x?las?l?rind? tam d?st?kl?nir."
                                                       }
-                                }
+                                  },
+                     "preferences":  {
+                                         "title":  "?nterfeys se?iml?ri",
+                                         "description":  "S?hif?ni y?kl?m?d?n tamamlamaq ???n d???n?lm??, y?ng?l demo standartlar?.",
+                                         "items":  {
+                                                       "density":  {
+                                                                       "title":  "Layout s?xl???",
+                                                                       "value":  "Rahat",
+                                                                       "description":  "Cari bo?luq sistemi ayd?n v? portfel bax??? ???n rahat oxunu? verir."
+                                                                   },
+                                                       "statusVisibility":  {
+                                                                                "title":  "Status g?r?n?rl???",
+                                                                                "value":  "Geni?l?ndirilmi?",
+                                                                                "description":  "?m?liyyat badge-l?ri v? ipuclar? c?dv?ll?r v? x?las? panell?rind? g?r?n?n saxlan?l?r."
+                                                                            },
+                                                       "summaryMode":  {
+                                                                           "title":  "X?las? vur?usu",
+                                                                           "value":  "Hesabat y?n?ml?",
+                                                                           "description":  "KPI kartlar? v? overview panell?ri s?r?tli biznes bax??? ???n qurulub."
+                                                                       }
+                                                   }
+                                     },
+                     "about":  {
+                                     "title":  "T?tbiq haqq?nda",
+                                     "description":  "FabricLog-un ictimai n?mayi?d? n?yi g?st?rdiyini izah ed?n q?sa m?hsul x?las?si.",
+                                     "eyebrow":  "FabricLog haqq?nda",
+                                     "summary":  "FabricLog m??t?ril?ri, kataloqu, sifari?l?ri, fakturalar? v? hesabatlar? vahid SaaS i? sah?sind? birl??dir?n iki dilli tekstil ?m?liyyat demosudur.",
+                                     "meta":  {
+                                                  "product":  "M?hsul",
+                                                  "positioning":  "M?vqel?ndirm?",
+                                                  "foundation":  "Baza",
+                                                  "coverage":  "?hat?"
+                                              },
+                                     "values":  {
+                                                    "positioning":  "?ctimai portfel n?mayi?i",
+                                                    "foundation":  "Next.js, TypeScript, mock servis qat?",
+                                                    "coverage":  "M??t?ril?r, m?hsullar, sifari?l?r, fakturalar, hesabatlar"
+                                                },
+                                     "highlights":  {
+                                                        "bilingual":  "?ki dilli UI",
+                                                        "mockData":  "Mock API qurulu?u",
+                                                        "publicSafe":  "Portfel ???n t?hl?k?siz data"
+                                                    }
+                                 },
+                     "disclaimer":  {
+                                          "title":  "Demo qeydi",
+                                          "description":  "Layih?ni n?z?rd?n ke?ir?nl?r ???n ayd?n kontekst.",
+                                          "body":  "FabricLog daxilind?ki b?t?n qeydl?r yaln?z interfeys v? memarl?q n?mayi?i ???n yarad?lm?? uydurma n?mun? m?lumatlard?r.",
+                                          "items":  {
+                                                        "customers":  "Demo daxilind? he? bir real m??t?ri v? ya t?chizat?? m?lumat? istifad? olunmur.",
+                                                        "finance":  "He? bir real faktura, ?d?ni?, m?xfi a?ar v? ya m?hasibat inteqrasiyas? qo?ulmay?b.",
+                                                        "controls":  "S?hif? istehsal n?zar?tl?rini a?madan real SaaS t?nziml?m? t?cr?b?sini modell??dirir."
+                                                    }
+                                      }
                  },
     "Statuses":  {
                      "tiers":  {
