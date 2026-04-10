@@ -13,12 +13,14 @@ import {
 import type { AppLocale } from "@/lib/constants/site";
 import { formatDate } from "@/lib/formatting";
 import { usePathname } from "@/lib/i18n/navigation";
+import type { DemoSession } from "@/types/auth";
 
 type AppShellProps = {
   children: React.ReactNode;
+  session: DemoSession;
 };
 
-export function AppShell({ children }: AppShellProps) {
+export function AppShell({ children, session }: AppShellProps) {
   const locale = useLocale() as AppLocale;
   const pathname = usePathname();
   const tShell = useTranslations("Shell");
@@ -53,6 +55,11 @@ export function AppShell({ children }: AppShellProps) {
           mobileMenuLabel={tShell("mobileMenuLabel")}
           searchActionLabel={tShell("searchActionLabel")}
           searchHint={tShell("welcomeBack")}
+          session={session}
+          sessionLabel={tShell("sessionLabel")}
+          sessionMetaLabel={tShell("sessionMetaLabel")}
+          signOutLabel={tShell("signOut")}
+          logoutHref={`/${locale}/logout`}
           updatedValue={formatDate("2026-04-09", locale)}
           languageSwitcher={<LanguageSwitcher />}
         />

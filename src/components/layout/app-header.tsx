@@ -1,11 +1,13 @@
 "use client";
 
-import { Menu, Search } from "lucide-react";
+import { LogOut, Menu, Search } from "lucide-react";
 
 import { BrandMark } from "@/components/shared/brand-mark";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import type { DemoSession } from "@/types/auth";
 import type { NavigationItem } from "@/types/ui";
 
 import { AppSidebarNav } from "./app-sidebar-nav";
@@ -19,6 +21,11 @@ type AppHeaderProps = {
   mobileMenuLabel: string;
   searchActionLabel: string;
   searchHint: string;
+  session: DemoSession;
+  sessionLabel: string;
+  sessionMetaLabel: string;
+  signOutLabel: string;
+  logoutHref: string;
   updatedValue: string;
   languageSwitcher: React.ReactNode;
 };
@@ -32,6 +39,11 @@ export function AppHeader({
   mobileMenuLabel,
   searchActionLabel,
   searchHint,
+  session,
+  sessionLabel,
+  sessionMetaLabel,
+  signOutLabel,
+  logoutHref,
   updatedValue,
   languageSwitcher,
 }: AppHeaderProps) {
@@ -50,7 +62,37 @@ export function AppHeader({
               className="border-none bg-sidebar p-6 text-sidebar-foreground"
             >
               <BrandMark />
-              <AppSidebarNav activePath={activePath} items={items} mobile />
+              <div className="mt-6 section-stack">
+                <AppSidebarNav activePath={activePath} items={items} mobile />
+
+                <div className="panel-secondary rounded-3xl px-4 py-4">
+                  <div className="flex items-start gap-3">
+                    <Avatar className="size-10 rounded-2xl">
+                      <AvatarFallback className="rounded-2xl bg-primary text-primary-foreground">
+                        {session.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1.5">
+                      <p className="subtle-label text-sidebar-foreground/70">
+                        {sessionLabel}
+                      </p>
+                      <p className="text-sm font-semibold text-sidebar-foreground">
+                        {session.name}
+                      </p>
+                      <p className="text-xs text-sidebar-foreground/70">
+                        {session.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <Button asChild variant="outline" className="w-full justify-center">
+                  <a href={logoutHref}>
+                    <LogOut className="size-4" />
+                    {signOutLabel}
+                  </a>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
@@ -70,6 +112,24 @@ export function AppHeader({
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <div className="panel-secondary flex min-w-[13rem] items-center gap-3 px-4 py-2">
+            <Avatar className="size-9 rounded-2xl">
+              <AvatarFallback className="rounded-2xl bg-primary text-primary-foreground">
+                {session.initials}
+              </AvatarFallback>
+            </Avatar>
+            <div className="min-w-0">
+              <p className="subtle-label text-muted-foreground">
+                {sessionLabel}
+              </p>
+              <p className="truncate text-sm font-medium text-foreground">
+                {session.name}
+              </p>
+              <p className="truncate text-xs text-muted-foreground">
+                {sessionMetaLabel} {session.role}
+              </p>
+            </div>
+          </div>
           <Button
             variant="outline"
             className="px-4 text-muted-foreground"
@@ -84,6 +144,12 @@ export function AppHeader({
             <p className="text-sm font-medium">{updatedValue}</p>
           </div>
           {languageSwitcher}
+          <Button asChild variant="outline" className="rounded-full px-4">
+            <a href={logoutHref}>
+              <LogOut className="size-4" />
+              {signOutLabel}
+            </a>
+          </Button>
         </div>
       </div>
       <Separator />

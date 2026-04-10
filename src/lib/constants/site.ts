@@ -8,3 +8,7 @@ export const siteConfig = {
 } as const;
 
 export type AppLocale = (typeof siteConfig.locales)[number];
+
+export function isAppLocale(value: string): value is AppLocale {
+  return siteConfig.locales.includes(value as AppLocale);
+}

@@ -52,7 +52,10 @@
     "welcomeBack": "Business snapshot",
     "demoSafe": "Sample records only",
     "mobileMenuLabel": "Open navigation menu",
-    "searchActionLabel": "Search modules"
+    "searchActionLabel": "Search modules",
+    "sessionLabel": "Signed in",
+    "sessionMetaLabel": "Role:",
+    "signOut": "Sign out"
   },
   "Dashboard": {
     "title": "Dashboard",
@@ -649,6 +652,48 @@
     "secondary": {
       "title": "Reserve planning",
       "description": "Premium jacquard and linen references are seeing the heaviest reservation pressure. Replenishment should focus there first."
+    }
+  },
+  "Auth": {
+    "title": "Access the FabricLog demo workspace",
+    "description": "Use the shared demo account to explore the protected dashboard, customers, products, orders, invoices, and reports flow.",
+    "backToHome": "Back to home",
+    "submit": "Sign in to demo",
+    "submitPending": "Signing in...",
+    "fields": {
+      "email": "Email address",
+      "emailDescription": "Use the shared demo email shown below.",
+      "password": "Password",
+      "passwordDescription": "Enter the demo password to create the mock session."
+    },
+    "errors": {
+      "invalidCredentials": "The demo credentials did not match. Use the shared account details shown on this page."
+    },
+    "credentials": {
+      "eyebrow": "Demo access",
+      "title": "Shared credentials",
+      "description": "These fixed credentials are safe to publish and are intended for recruiters, reviewers, and portfolio walkthroughs.",
+      "emailLabel": "Demo email",
+      "passwordLabel": "Demo password"
+    },
+    "howItWorks": {
+      "eyebrow": "Mock authentication",
+      "title": "How demo access works",
+      "description": "FabricLog uses one fictional account and a simple HttpOnly cookie session so the sign-in flow feels realistic without adding production auth complexity.",
+      "items": {
+        "account": "Account model",
+        "session": "Session behavior"
+      },
+      "values": {
+        "account": "One shared demo user",
+        "session": "Cookie cleared on sign out"
+      }
+    },
+    "form": {
+      "badge": "Protected demo",
+      "title": "Sign in",
+      "description": "This lightweight auth flow protects the internal app pages while keeping the public landing page open.",
+      "footer": "This is a mock authentication flow only. No real identity provider, database, or production credentials are used anywhere in the project."
     }
   }
 }
