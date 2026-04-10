@@ -309,33 +309,60 @@
   "Orders": {
     "title": "Orders",
     "description": "Review the live order book from new requests through production and dispatch.",
-    "searchPlaceholder": "Search order or reference",
+    "searchPlaceholder": "Search order, customer, product, or invoice",
     "emptyState": "No orders found.",
+    "emptyStateDescription": "Try clearing the current search or filters to restore the full seeded order book.",
+    "filters": {
+      "all": "All",
+      "orderStatusLabel": "Order status",
+      "paymentStatusLabel": "Payment status"
+    },
     "cards": {
+      "totalOrders": "Total orders",
+      "totalOrdersHint": "Seeded operational orders currently tracked across the showcase pipeline.",
       "liveOrderValue": "Live order value",
       "liveOrderValueHint": "Total seeded order portfolio currently tracked in the demo.",
       "inProduction": "In production",
       "inProductionHint": "Orders actively moving through cutting and finishing.",
-      "readyToDispatch": "Ready to dispatch",
-      "readyToDispatchHint": "Orders prepared for final QA and outbound coordination.",
-      "formFoundation": "Form foundation"
-    },
-    "form": {
-      "customer": "Customer",
-      "fabric": "Fabric",
-      "quantity": "Quantity (m)",
-      "helper": "Illustrative React Hook Form + Zod setup for future order create/edit flows.",
-      "submit": "Demo-ready form pattern"
+      "billingFollowUp": "Billing follow-up",
+      "billingFollowUpHint": "Orders still waiting on invoice completion or settlement progress."
     },
     "table": {
-      "reference": "Reference",
+      "order": "Order",
       "customer": "Customer",
-      "fabric": "Fabric",
-      "quantity": "Quantity",
-      "amount": "Amount",
-      "created": "Created",
-      "delivery": "Delivery",
-      "status": "Status"
+      "orderDate": "Order date",
+      "items": "Item summary",
+      "itemsCue": "{quantity} m booked",
+      "totalAmount": "Total amount",
+      "orderStatus": "Order status",
+      "paymentStatus": "Payment status",
+      "invoiceCue": "Invoice {invoiceId}",
+      "awaitingInvoice": "Awaiting invoice",
+      "deliveryCue": "Delivery {date}"
+    },
+    "panel": {
+      "title": "Operations focus",
+      "description": "Track which orders need production attention, dispatch coordination, and billing follow-up.",
+      "featuredLabel": "Priority order",
+      "featuredDescription": "{reference} for {customer} currently sits closest to active operations follow-up in the seeded order book.",
+      "cards": {
+        "inProduction": "In production",
+        "inProductionHint": "Orders currently moving through cutting, finishing, and QA preparation.",
+        "readyToDispatch": "Ready to dispatch",
+        "readyToDispatchHint": "Orders positioned for outbound scheduling and final shipment coordination.",
+        "billingFollowUp": "Billing follow-up",
+        "billingFollowUpHint": "Orders still carrying an open billing task or missing invoice coverage."
+      },
+      "meta": {
+        "customer": "Customer",
+        "orderDate": "Order date",
+        "deliveryDate": "Delivery date",
+        "itemSummary": "Item summary",
+        "invoice": "Invoice link",
+        "paymentStatus": "Payment status",
+        "orderStatus": "Order status",
+        "totalAmount": "Total amount"
+      }
     }
   },
   "Invoices": {

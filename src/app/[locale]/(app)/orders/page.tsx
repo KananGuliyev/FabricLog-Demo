@@ -1,9 +1,8 @@
 import { getTranslations } from "next-intl/server";
 
-import { OrderIntakePreview } from "@/components/forms/order-intake-preview";
 import { MetricCard } from "@/components/shared/metric-card";
 import { PageIntro } from "@/components/shared/page-intro";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { OrderOperationsPanel } from "@/features/orders/order-operations-panel";
 import { OrdersTable } from "@/features/orders/orders-table";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency } from "@/lib/formatting";
@@ -18,22 +17,16 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
   const appLocale = locale as AppLocale;
   const t = await getTranslations({ locale, namespace: "Orders" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
+  const tOrderStatuses = await getTranslations({
+    locale,
+    namespace: "Statuses.order",
+  });
+  const tPaymentStatuses = await getTranslations({
+    locale,
+    namespace: "Statuses.payment",
+  });
 
-  const orders = fabricLogService.getOrders();
-  const customers = fabricLogService.getCustomers();
-  const fabrics = fabricLogService.getFabrics();
-
-  const orderRows = orders.map((order) => ({
-    ...order,
-    customerName:
-      customers.find((customer) => customer.id === order.customerId)?.company ??
-      tCommon("unknown"),
-    fabricName:
-      fabrics.find((fabric) => fabric.id === order.fabricId)?.name ??
-      tCommon("unknown"),
-  }));
-
-  const liveValue = orders.reduce((sum, order) => sum + order.amount, 0);
+  const overview = fabricLogService.getOrdersOverview();
 
   return (
     <div className="page-grid">
@@ -43,40 +36,86 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <MetricCard
+          label={t("cards.totalOrders")}
+          value={`${overview.summary.totalOrders}`}
+          hint={t("cards.totalOrdersHint")}
+          trend={8}
+        />
         <MetricCard
           label={t("cards.liveOrderValue")}
-          value={formatCurrency(liveValue, appLocale)}
+          value={formatCurrency(overview.summary.liveOrderValue, appLocale)}
           hint={t("cards.liveOrderValueHint")}
           trend={16}
           tone="success"
         />
         <MetricCard
           label={t("cards.inProduction")}
-          value={`${orders.filter((order) => order.status === "production").length}`}
+          value={`${overview.summary.inProductionCount}`}
           hint={t("cards.inProductionHint")}
           trend={5}
           tone="critical"
         />
         <MetricCard
-          label={t("cards.readyToDispatch")}
-          value={`${orders.filter((order) => order.status === "ready").length}`}
-          hint={t("cards.readyToDispatchHint")}
-          trend={4}
+          label={t("cards.billingFollowUp")}
+          value={`${overview.summary.billingFollowUpCount}`}
+          hint={t("cards.billingFollowUpHint")}
+          trend={-2}
+          tone="warning"
         />
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
-        <OrdersTable data={orderRows} locale={appLocale} />
+        <OrdersTable data={overview.rows} locale={appLocale} />
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("cards.formFoundation")}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <OrderIntakePreview />
-          </CardContent>
-        </Card>
+        <OrderOperationsPanel
+          featuredOrder={overview.featuredOrder}
+          locale={appLocale}
+          summary={overview.summary}
+          translations={{
+            title: t("panel.title"),
+            description: t("panel.description"),
+            featuredLabel: t("panel.featuredLabel"),
+            featuredDescription: t("panel.featuredDescription", {
+              reference: overview.featuredOrder.referenceCode,
+              customer: overview.featuredOrder.customerName,
+            }),
+            summaryCards: {
+              inProduction: t("panel.cards.inProduction"),
+              inProductionHint: t("panel.cards.inProductionHint"),
+              readyToDispatch: t("panel.cards.readyToDispatch"),
+              readyToDispatchHint: t("panel.cards.readyToDispatchHint"),
+              billingFollowUp: t("panel.cards.billingFollowUp"),
+              billingFollowUpHint: t("panel.cards.billingFollowUpHint"),
+            },
+            meta: {
+              customer: t("panel.meta.customer"),
+              orderDate: t("panel.meta.orderDate"),
+              deliveryDate: t("panel.meta.deliveryDate"),
+              itemSummary: t("panel.meta.itemSummary"),
+              invoice: t("panel.meta.invoice"),
+              paymentStatus: t("panel.meta.paymentStatus"),
+              orderStatus: t("panel.meta.orderStatus"),
+              totalAmount: t("panel.meta.totalAmount"),
+            },
+            orderStatuses: {
+              new: tOrderStatuses("new"),
+              sampling: tOrderStatuses("sampling"),
+              production: tOrderStatuses("production"),
+              ready: tOrderStatuses("ready"),
+              dispatched: tOrderStatuses("dispatched"),
+            },
+            paymentStatuses: {
+              none: tPaymentStatuses("none"),
+              paid: tPaymentStatuses("paid"),
+              partial: tPaymentStatuses("partial"),
+              pending: tPaymentStatuses("pending"),
+              overdue: tPaymentStatuses("overdue"),
+            },
+            awaitingInvoice: t("table.awaitingInvoice"),
+          }}
+        />
       </div>
     </div>
   );

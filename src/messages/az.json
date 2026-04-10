@@ -307,35 +307,62 @@
     }
   },
   "Orders": {
-    "title": "SifariÅŸlÉ™r",
-    "description": "Yeni sorÄŸulardan istehsal vÉ™ gÃ¶ndÉ™riÅŸÉ™ qÉ™dÉ™r canlÄ± sifariÅŸ siyahÄ±sÄ±na baxÄ±n.",
-    "searchPlaceholder": "SifariÅŸ vÉ™ ya kod axtar",
-    "emptyState": "SifariÅŸ tapÄ±lmadÄ±.",
-    "cards": {
-      "liveOrderValue": "Aktiv sifariÅŸ mÉ™blÉ™ÄŸi",
-      "liveOrderValueHint": "Demoda izlÉ™nÉ™n Ã¼mumi nÃ¼munÉ™ sifariÅŸ portfeli.",
-      "inProduction": "Ä°stehsalda",
-      "inProductionHint": "KÉ™smÉ™ vÉ™ tamamlanma mÉ™rhÉ™lÉ™sindÉ™ olan sifariÅŸlÉ™r.",
-      "readyToDispatch": "GÃ¶ndÉ™riÅŸÉ™ hazÄ±r",
-      "readyToDispatchHint": "Yekun keyfiyyÉ™t yoxlamasÄ± vÉ™ gÃ¶ndÉ™riÅŸ koordinasiyasÄ± Ã¼Ã§Ã¼n hazÄ±r sifariÅŸlÉ™r.",
-      "formFoundation": "Forma bazasÄ±"
+    "title": "Sifari\u015fl\u0259r",
+    "description": "Yeni sor\u011fulardan istehsal v\u0259 g\u00f6nd\u0259ri\u015f\u0259 q\u0259d\u0259r cari sifari\u015f kitab\u0131n\u0131 daha g\u00fcc\u00fcl\u00fc \u0259m\u0259liyyat g\u00f6r\u00fcn\u00fc\u015f\u00fcnd\u0259 izl\u0259yin.",
+    "searchPlaceholder": "Sifari\u015f, m\u00fc\u015ft\u0259ri, m\u0259hsul v\u0259 ya faktura axtar",
+    "emptyState": "Sifari\u015f tap\u0131lmad\u0131.",
+    "emptyStateDescription": "Tam demo sifari\u015f kitab\u0131n\u0131 qaytarmaq \u00fc\u00e7\u00fcn axtar\u0131\u015f\u0131 v\u0259 ya filtrl\u0259ri t\u0259mizl\u0259yin.",
+    "filters": {
+      "all": "Ham\u0131s\u0131",
+      "orderStatusLabel": "Sifari\u015f statusu",
+      "paymentStatusLabel": "\u00d6d\u0259ni\u015f statusu"
     },
-    "form": {
-      "customer": "MÃ¼ÅŸtÉ™ri",
-      "fabric": "ParÃ§a",
-      "quantity": "Miqdar (m)",
-      "helper": "GÉ™lÉ™cÉ™k sifariÅŸ yaratma vÉ™ redaktÉ™ axÄ±nlarÄ± Ã¼Ã§Ã¼n React Hook Form + Zod nÃ¼munÉ™si.",
-      "submit": "Demo Ã¼Ã§Ã¼n hazÄ±r forma nÃ¼munÉ™si"
+    "cards": {
+      "totalOrders": "\u00dcmumi sifari\u015fl\u0259r",
+      "totalOrdersHint": "Cari demo ax\u0131n\u0131nda izl\u0259n\u0259n \u0259m\u0259liyyat sifari\u015fl\u0259ri.",
+      "liveOrderValue": "Aktiv sifari\u015f m\u0259bl\u0259\u011fi",
+      "liveOrderValueHint": "Haz\u0131rda demoda izl\u0259n\u0259n sifari\u015f portfelinin \u00fcmumi d\u0259y\u0259ri.",
+      "inProduction": "\u0130stehsalda",
+      "inProductionHint": "K\u0259sm\u0259, tamamlama v\u0259 keyfiyy\u0259t haz\u0131rl\u0131\u011f\u0131nda olan sifari\u015fl\u0259r.",
+      "billingFollowUp": "Maliyy\u0259 t\u0259qibi",
+      "billingFollowUpHint": "Fakturas\u0131 tamamlanmam\u0131\u015f v\u0259 ya \u00f6d\u0259ni\u015fi ba\u011flanmam\u0131\u015f sifari\u015fl\u0259r."
     },
     "table": {
-      "reference": "Kod",
-      "customer": "MÃ¼ÅŸtÉ™ri",
-      "fabric": "ParÃ§a",
-      "quantity": "Miqdar",
-      "amount": "MÉ™blÉ™ÄŸ",
-      "created": "YaradÄ±lÄ±b",
-      "delivery": "Ã‡atdÄ±rÄ±lma",
-      "status": "Status"
+      "order": "Sifari\u015f",
+      "customer": "M\u00fc\u015ft\u0259ri",
+      "orderDate": "Sifari\u015f tarixi",
+      "items": "M\u0259hsul x\u00fclas\u0259si",
+      "itemsCue": "{quantity} m qeyd olunub",
+      "totalAmount": "\u00dcmumi m\u0259bl\u0259\u011f",
+      "orderStatus": "Sifari\u015f statusu",
+      "paymentStatus": "\u00d6d\u0259ni\u015f statusu",
+      "invoiceCue": "Faktura {invoiceId}",
+      "awaitingInvoice": "Faktura g\u00f6zl\u0259yir",
+      "deliveryCue": "\u00c7atd\u0131r\u0131lma {date}"
+    },
+    "panel": {
+      "title": "\u018fm\u0259liyyat fokusu",
+      "description": "Hansi sifari\u015fl\u0259rin istehsal diqq\u0259ti, g\u00f6nd\u0259ri\u015f koordinasiyas\u0131 v\u0259 maliyy\u0259 t\u0259qibi t\u0259l\u0259b etdiyini izl\u0259yin.",
+      "featuredLabel": "Prioritet sifari\u015f",
+      "featuredDescription": "{reference} sifari\u015fi {customer} hesab\u0131 \u00fc\u00e7\u00fcn cari demo sifari\u015f kitab\u0131nda \u0259m\u0259liyyat t\u0259qibin\u0259 \u0259n yax\u0131n m\u00f6vqed\u0259dir.",
+      "cards": {
+        "inProduction": "\u0130stehsalda",
+        "inProductionHint": "Haz\u0131rda k\u0259sm\u0259, tamamlama v\u0259 QA haz\u0131rl\u0131\u011f\u0131nda olan sifari\u015fl\u0259r.",
+        "readyToDispatch": "G\u00f6nd\u0259ri\u015f\u0259 haz\u0131r",
+        "readyToDispatchHint": "Yekun logistika planlamas\u0131 v\u0259 g\u00f6nd\u0259ri\u015f koordinasiyas\u0131 \u00fc\u00e7\u00fcn haz\u0131r sifari\u015fl\u0259r.",
+        "billingFollowUp": "Maliyy\u0259 t\u0259qibi",
+        "billingFollowUpHint": "A\u00e7\u0131q maliyy\u0259 tap\u015f\u0131r\u0131\u011f\u0131 qalan v\u0259 ya faktura il\u0259 \u0259hat\u0259 olunmayan sifari\u015fl\u0259r."
+      },
+      "meta": {
+        "customer": "M\u00fc\u015ft\u0259ri",
+        "orderDate": "Sifari\u015f tarixi",
+        "deliveryDate": "\u00c7atd\u0131r\u0131lma tarixi",
+        "itemSummary": "M\u0259hsul x\u00fclas\u0259si",
+        "invoice": "Faktura ba\u011flant\u0131s\u0131",
+        "paymentStatus": "\u00d6d\u0259ni\u015f statusu",
+        "orderStatus": "Sifari\u015f statusu",
+        "totalAmount": "\u00dcmumi m\u0259bl\u0259\u011f"
+      }
     }
   },
   "Invoices": {
