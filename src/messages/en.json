@@ -79,6 +79,44 @@
       "pipelineValueLabel": "Orders"
     },
     "recentOrders": "Recent orders",
+    "activity": {
+      "title": "Recent activity",
+      "description": "Operational changes generated from the seeded order, invoice, payment, and stock timeline.",
+      "types": {
+        "payment_received": {
+          "title": "Payment received",
+          "description": "{customerName} paid {amount} toward {invoiceId}."
+        },
+        "invoice_partial_paid": {
+          "title": "Invoice partially paid",
+          "description": "{invoiceId} received a partial payment from {customerName}."
+        },
+        "invoice_overdue": {
+          "title": "Invoice overdue",
+          "description": "{invoiceId} for {customerName} is now overdue by {amount}."
+        },
+        "order_in_production": {
+          "title": "Order in production",
+          "description": "{orderCode} for {customerName} moved into production."
+        },
+        "order_ready": {
+          "title": "Order ready",
+          "description": "{orderCode} for {customerName} is ready for dispatch planning."
+        },
+        "order_dispatched": {
+          "title": "Order dispatched",
+          "description": "{orderCode} for {customerName} left the warehouse."
+        },
+        "inventory_low": {
+          "title": "Inventory alert",
+          "description": "{productName} is approaching the replenishment threshold."
+        },
+        "invoice_issued": {
+          "title": "Invoice issued",
+          "description": "{invoiceId} was issued for {customerName} ({amount})."
+        }
+      }
+    },
     "insightsTitle": "Operations insights",
     "insightsDescription": "Quick actions and business notes based on current mock performance.",
     "lowStockExposure": "Low stock exposure"

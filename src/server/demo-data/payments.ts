@@ -1,0 +1,58 @@
+import { paymentRecordSchema } from "@/types/domain";
+
+export const demoPayments = paymentRecordSchema.array().parse([
+  {
+    id: "pay-2401",
+    invoiceId: "inv-2401",
+    customerId: "cust-atelier-north",
+    amount: 10500,
+    paidAt: "2026-04-07",
+    method: "Bank transfer",
+    status: "partial",
+  },
+  {
+    id: "pay-2403",
+    invoiceId: "inv-2403",
+    customerId: "cust-caspian-loom",
+    amount: 17260,
+    paidAt: "2026-04-01",
+    method: "Card settlement",
+    status: "partial",
+  },
+  {
+    id: "pay-2405",
+    invoiceId: "inv-2405",
+    customerId: "cust-saffron-home",
+    amount: 11780,
+    paidAt: "2026-03-27",
+    method: "Bank transfer",
+    status: "paid",
+  },
+  {
+    id: "pay-2406",
+    invoiceId: "inv-2406",
+    customerId: "cust-amber-atelier",
+    amount: 7380,
+    paidAt: "2026-03-03",
+    method: "Card settlement",
+    status: "partial",
+  },
+  {
+    id: "pay-2407",
+    invoiceId: "inv-2407",
+    customerId: "cust-riviera-hotel",
+    amount: 54880,
+    paidAt: "2026-01-29",
+    method: "Wire transfer",
+    status: "paid",
+  },
+  {
+    id: "pay-2409",
+    invoiceId: "inv-2409",
+    customerId: "cust-harbor-bespoke",
+    amount: 4360,
+    paidAt: "2026-04-02",
+    method: "Bank transfer",
+    status: "partial",
+  },
+]);

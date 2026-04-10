@@ -10,6 +10,16 @@ export const orderStatusValues = [
   "dispatched",
 ] as const;
 export const paymentStatusValues = ["paid", "partial", "pending", "overdue"] as const;
+export const recentActivityTypeValues = [
+  "payment_received",
+  "invoice_partial_paid",
+  "invoice_overdue",
+  "order_in_production",
+  "order_ready",
+  "order_dispatched",
+  "inventory_low",
+  "invoice_issued",
+] as const;
 
 export const customerSchema = z.object({
   id: z.string(),
@@ -72,6 +82,17 @@ export const paymentRecordSchema = z.object({
   status: z.enum(paymentStatusValues),
 });
 
+export const recentActivitySchema = z.object({
+  id: z.string(),
+  type: z.enum(recentActivityTypeValues),
+  occurredAt: z.string(),
+  customerName: z.string().optional(),
+  orderCode: z.string().optional(),
+  invoiceId: z.string().optional(),
+  productName: z.string().optional(),
+  amount: z.number().nonnegative().optional(),
+});
+
 export const dashboardSummarySchema = z.object({
   totalRevenue: z.number().nonnegative(),
   openInvoices: z.number().int().nonnegative(),
@@ -99,6 +120,7 @@ export const dashboardSummarySchema = z.object({
       count: z.number().int().nonnegative(),
     })
   ),
+  recentActivity: z.array(recentActivitySchema),
 });
 
 export type Customer = z.infer<typeof customerSchema>;
@@ -110,4 +132,6 @@ export type OrderStatus = (typeof orderStatusValues)[number];
 export type Invoice = z.infer<typeof invoiceSchema>;
 export type PaymentRecord = z.infer<typeof paymentRecordSchema>;
 export type PaymentStatus = (typeof paymentStatusValues)[number];
+export type RecentActivity = z.infer<typeof recentActivitySchema>;
+export type RecentActivityType = (typeof recentActivityTypeValues)[number];
 export type DashboardSummary = z.infer<typeof dashboardSummarySchema>;

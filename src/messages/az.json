@@ -79,6 +79,44 @@
       "pipelineValueLabel": "Sifarişlər"
     },
     "recentOrders": "Son sifarişlər",
+    "activity": {
+      "title": "Son əməliyyatlar",
+      "description": "Sifariş, faktura, ödəniş və stok zaman xəttindən formalaşdırılmış cari dəyişikliklər.",
+      "types": {
+        "payment_received": {
+          "title": "Ödəniş daxil olub",
+          "description": "{customerName} {invoiceId} üzrə {amount} ödəniş edib."
+        },
+        "invoice_partial_paid": {
+          "title": "Faktura qismən ödənib",
+          "description": "{invoiceId} üçün {customerName} tərəfindən qismən ödəniş daxil olub."
+        },
+        "invoice_overdue": {
+          "title": "Faktura gecikib",
+          "description": "{customerName} üçün {invoiceId} üzrə {amount} məbləğ artıq gecikmədədir."
+        },
+        "order_in_production": {
+          "title": "Sifariş istehsala keçib",
+          "description": "{customerName} üçün {orderCode} istehsal mərhələsinə keçib."
+        },
+        "order_ready": {
+          "title": "Sifariş hazırdır",
+          "description": "{customerName} üçün {orderCode} göndəriş planlamasına hazırdır."
+        },
+        "order_dispatched": {
+          "title": "Sifariş göndərilib",
+          "description": "{customerName} üçün {orderCode} anbardan çıxıb."
+        },
+        "inventory_low": {
+          "title": "Stok xəbərdarlığı",
+          "description": "{productName} yenidən tədarük həddinə yaxınlaşır."
+        },
+        "invoice_issued": {
+          "title": "Faktura yaradılıb",
+          "description": "{customerName} üçün {invoiceId} ({amount}) yaradılıb."
+        }
+      }
+    },
     "insightsTitle": "Əməliyyat qeydləri",
     "insightsDescription": "Cari demo nəticələrinə əsaslanan sürətli hərəkətlər və biznes qeydləri.",
     "lowStockExposure": "Aşağı stok riski"

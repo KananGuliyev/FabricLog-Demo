@@ -10,8 +10,10 @@ import {
   DashboardRevenueChart,
 } from "@/features/dashboard/dashboard-charts";
 import type { AppLocale } from "@/lib/constants/site";
-import { formatCurrency, formatPercent } from "@/lib/formatting";
+import { formatCurrency, formatDate, formatPercent } from "@/lib/formatting";
+import { cn } from "@/lib/utils";
 import { fabricLogService } from "@/server/services/fabriclog-service";
+import type { RecentActivity } from "@/types/domain";
 
 type DashboardPageProps = {
   params: Promise<{ locale: string }>;
@@ -21,6 +23,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const { locale } = await params;
   const appLocale = locale as AppLocale;
   const t = await getTranslations({ locale, namespace: "Dashboard" });
+  const tActivity = await getTranslations({ locale, namespace: "Dashboard.activity" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
   const tInsights = await getTranslations({ locale, namespace: "Insights" });
   const tStatuses = await getTranslations({ locale, namespace: "Statuses.order" });
@@ -28,6 +31,17 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const summary = fabricLogService.getDashboardSummary();
   const orders = fabricLogService.getOrders().slice(0, 4);
   const customers = fabricLogService.getCustomers();
+
+  const activityToneMap: Record<RecentActivity["type"], string> = {
+    payment_received: "bg-emerald-500",
+    invoice_partial_paid: "bg-amber-500",
+    invoice_overdue: "bg-rose-500",
+    order_in_production: "bg-sky-500",
+    order_ready: "bg-indigo-500",
+    order_dispatched: "bg-violet-500",
+    inventory_low: "bg-orange-500",
+    invoice_issued: "bg-stone-500",
+  };
 
   return (
     <div className="page-grid">
@@ -68,7 +82,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.5fr_0.9fr]">
+      <div className="grid gap-6 xl:grid-cols-[1.35fr_0.85fr_0.85fr]">
         <Card>
           <CardHeader>
             <CardTitle>{t("charts.revenueTitle")}</CardTitle>
@@ -98,9 +112,18 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             />
           </CardContent>
         </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{t("charts.pipelineTitle")}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <DashboardPipelineChart data={summary.orderPipeline} />
+          </CardContent>
+        </Card>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr_0.9fr]">
+      <div className="grid gap-6 xl:grid-cols-[1.05fr_1.05fr_0.95fr]">
         <Card>
           <CardHeader>
             <CardTitle>{t("recentOrders")}</CardTitle>
@@ -134,10 +157,46 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
         <Card>
           <CardHeader>
-            <CardTitle>{t("charts.pipelineTitle")}</CardTitle>
+            <CardTitle>{tActivity("title")}</CardTitle>
+            <p className="body-copy text-sm text-muted-foreground">
+              {tActivity("description")}
+            </p>
           </CardHeader>
-          <CardContent>
-            <DashboardPipelineChart data={summary.orderPipeline} />
+          <CardContent className="space-y-4">
+            {summary.recentActivity.map((activity) => (
+              <div
+                key={activity.id}
+                className="panel-secondary flex gap-4 px-4 py-3"
+              >
+                <span
+                  className={cn(
+                    "mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full",
+                    activityToneMap[activity.type]
+                  )}
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <p className="font-medium">
+                      {tActivity(`types.${activity.type}.title`)}
+                    </p>
+                    <p className="subtle-label text-muted-foreground">
+                      {formatDate(activity.occurredAt, appLocale)}
+                    </p>
+                  </div>
+                  <p className="body-copy mt-1 text-sm text-muted-foreground">
+                    {tActivity(`types.${activity.type}.description`, {
+                      amount: activity.amount
+                        ? formatCurrency(activity.amount, appLocale)
+                        : formatCurrency(0, appLocale),
+                      customerName: activity.customerName ?? tCommon("unknown"),
+                      invoiceId: activity.invoiceId ?? tCommon("unknown"),
+                      orderCode: activity.orderCode ?? tCommon("unknown"),
+                      productName: activity.productName ?? tCommon("unknown"),
+                    })}
+                  </p>
+                </div>
+              </div>
+            ))}
           </CardContent>
         </Card>
 

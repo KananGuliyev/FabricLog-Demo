@@ -17,17 +17,22 @@ export const fabricLogService = {
   getPayments() {
     return fabricLogRepository.getPayments();
   },
+  getRecentActivity() {
+    return fabricLogRepository.getRecentActivity();
+  },
   getDashboardSummary() {
     const customers = fabricLogRepository.getCustomers();
     const fabrics = fabricLogRepository.getFabrics();
     const invoices = fabricLogRepository.getInvoices();
     const orders = fabricLogRepository.getOrders();
+    const recentActivity = fabricLogRepository.getRecentActivity();
 
     return buildDashboardSummary({
       activeCustomers: customers.length,
       invoices,
       lowStockCount: fabrics.filter((fabric) => fabric.status !== "available").length,
       orders,
+      recentActivity,
     });
   },
 };

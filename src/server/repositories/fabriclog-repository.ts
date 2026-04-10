@@ -4,7 +4,8 @@ import {
   demoInvoices,
   demoOrders,
   demoPayments,
-} from "@/server/demo-data/fabriclog-demo-data";
+  demoRecentActivity,
+} from "@/server/demo-data";
 
 export const fabricLogRepository = {
   getCustomers: () => demoCustomers,
@@ -12,4 +13,5 @@ export const fabricLogRepository = {
   getOrders: () => demoOrders,
   getInvoices: () => demoInvoices,
   getPayments: () => demoPayments,
+  getRecentActivity: () => demoRecentActivity,
 };
