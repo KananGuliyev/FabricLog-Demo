@@ -1,4 +1,5 @@
 import { MetricCard } from "@/components/shared/metric-card";
+import { cn } from "@/lib/utils";
 import type { StatTone } from "@/types/ui";
 
 type DashboardMetric = {
@@ -10,12 +11,16 @@ type DashboardMetric = {
 };
 
 type DashboardKpiGridProps = {
+  className?: string;
   metrics: DashboardMetric[];
 };
 
-export function DashboardKpiGrid({ metrics }: DashboardKpiGridProps) {
+export function DashboardKpiGrid({
+  className,
+  metrics,
+}: DashboardKpiGridProps) {
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+    <div className={cn("grid gap-4 md:grid-cols-2 xl:grid-cols-5", className)}>
       {metrics.map((metric) => (
         <MetricCard
           key={metric.label}

@@ -233,6 +233,64 @@ export const invoicesOverviewSchema = z.object({
   featuredInvoice: invoiceOverviewRowSchema,
 });
 
+export const reportsRevenuePointSchema = z.object({
+  month: z.string(),
+  revenue: z.number().nonnegative(),
+  invoices: z.number().int().nonnegative(),
+});
+
+export const reportsPaymentBreakdownItemSchema = z.object({
+  status: z.enum(paymentStatusValues),
+  count: z.number().int().nonnegative(),
+  totalAmount: z.number().nonnegative(),
+  openAmount: z.number().nonnegative(),
+});
+
+export const reportsOrderStatusItemSchema = z.object({
+  status: z.enum(orderStatusValues),
+  count: z.number().int().nonnegative(),
+  totalAmount: z.number().nonnegative(),
+});
+
+export const reportsCustomerHighlightSchema = z.object({
+  id: z.string(),
+  customerName: z.string(),
+  tier: z.enum(customerTierValues),
+  orderCount: z.number().int().nonnegative(),
+  invoiceValue: z.number().nonnegative(),
+  outstandingAmount: z.number().nonnegative(),
+});
+
+export const reportsOrderHighlightSchema = z.object({
+  id: z.string(),
+  referenceCode: z.string(),
+  customerName: z.string(),
+  itemSummary: z.string(),
+  amount: z.number().nonnegative(),
+  deliveryDate: z.string(),
+  status: z.enum(orderStatusValues),
+  paymentStatus: z.enum(orderBillingStatusValues),
+});
+
+export const reportsOverviewSummarySchema = z.object({
+  totalRevenue: z.number().nonnegative(),
+  collectionRate: z.number().nonnegative(),
+  overdueExposure: z.number().nonnegative(),
+  activeOrders: z.number().int().nonnegative(),
+  activeCustomers: z.number().int().nonnegative(),
+  pendingInvoices: z.number().int().nonnegative(),
+  lowStockReferences: z.number().int().nonnegative(),
+});
+
+export const reportsOverviewSchema = z.object({
+  summary: reportsOverviewSummarySchema,
+  revenueTrend: z.array(reportsRevenuePointSchema),
+  paymentBreakdown: z.array(reportsPaymentBreakdownItemSchema),
+  orderStatusOverview: z.array(reportsOrderStatusItemSchema),
+  customerHighlights: z.array(reportsCustomerHighlightSchema),
+  orderHighlights: z.array(reportsOrderHighlightSchema),
+});
+
 export const recentActivitySchema = z.object({
   id: z.string(),
   type: z.enum(recentActivityTypeValues),
@@ -329,6 +387,17 @@ export type OrdersOverview = z.infer<typeof ordersOverviewSchema>;
 export type InvoiceOverviewRow = z.infer<typeof invoiceOverviewRowSchema>;
 export type InvoicesOverviewSummary = z.infer<typeof invoicesOverviewSummarySchema>;
 export type InvoicesOverview = z.infer<typeof invoicesOverviewSchema>;
+export type ReportsRevenuePoint = z.infer<typeof reportsRevenuePointSchema>;
+export type ReportsPaymentBreakdownItem = z.infer<
+  typeof reportsPaymentBreakdownItemSchema
+>;
+export type ReportsOrderStatusItem = z.infer<typeof reportsOrderStatusItemSchema>;
+export type ReportsCustomerHighlight = z.infer<
+  typeof reportsCustomerHighlightSchema
+>;
+export type ReportsOrderHighlight = z.infer<typeof reportsOrderHighlightSchema>;
+export type ReportsOverviewSummary = z.infer<typeof reportsOverviewSummarySchema>;
+export type ReportsOverview = z.infer<typeof reportsOverviewSchema>;
 export type DashboardStatusIndicatorKey = (typeof dashboardStatusIndicatorValues)[number];
 export type DashboardOrderPreview = z.infer<typeof dashboardOrderPreviewSchema>;
 export type DashboardInvoicePreview = z.infer<typeof dashboardInvoicePreviewSchema>;

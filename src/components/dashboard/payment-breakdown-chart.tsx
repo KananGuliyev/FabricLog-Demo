@@ -28,7 +28,7 @@ export function PaymentBreakdownChart({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-      <div className="h-64">
+      <div className="h-64 min-w-0">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Tooltip

@@ -461,37 +461,53 @@
   },
   "Reports": {
     "title": "Reports",
-    "description": "Preview the reporting layer for sales, collections, customers, and product performance in a presentation-ready analytics hub.",
+    "description": "Review a portfolio-ready reporting snapshot for revenue, collections, order movement, and customer performance.",
     "badges": {
       "demoReady": "Demo ready"
     },
     "cards": {
-      "exportsReady": "Export-ready views",
-      "exportsReadyValue": "06",
-      "exportsReadyHint": "Structured reporting views already fit the dashboard visual system.",
-      "coverage": "Coverage areas",
-      "coverageValue": "Sales + Ops",
-      "coverageHint": "Reports are positioned to combine customer, catalog, and finance perspectives.",
-      "refreshCycle": "Refresh cadence",
-      "refreshCycleValue": "Weekly",
-      "refreshCycleHint": "A future reporting cadence can plug into the existing mock-service layer."
+      "totalRevenue": "Total revenue",
+      "totalRevenueHint": "Booked from the seeded invoice ledger across the current reporting period.",
+      "collectionRate": "Collection rate",
+      "collectionRateHint": "Current recovery pace based on paid amounts against billed revenue.",
+      "overdueExposure": "Overdue exposure",
+      "overdueExposureHint": "Receivables already past due and most likely to need active follow-up.",
+      "activeOrders": "Active orders",
+      "activeOrdersHint": "Orders still moving through sampling, production, ready, or dispatch preparation."
     },
-    "panels": {
-      "collectionsTitle": "Collections overview",
-      "collectionsDescription": "Monitor where reporting will highlight overdue exposure and partial settlements.",
-      "monthlyPacksTitle": "Monthly packs",
-      "collectionsBody": "This section is reserved for monthly receivables packs, customer collection trends, and invoice aging snapshots.",
-      "agingBucketsTitle": "Aging buckets",
-      "agingBucketsBody": "Use this slot for receivables aging, collector notes, and export filters.",
-      "collectionConfidenceTitle": "Collection confidence",
-      "collectionConfidenceBody": "Pair payment status with account health signals without changing the shell.",
-      "catalogTitle": "Product performance",
-      "catalogDescription": "Track which references, categories, and reserved lines are pulling the most demand.",
-      "demandPulseTitle": "Demand pulse",
-      "catalogBody": "Future reports will compare stock pressure, reservation ratios, and price movement across the portfolio.",
-      "roadmapTitle": "Coming next",
-      "roadmapDescription": "The shell is ready for richer charting and export workflows.",
-      "roadmapItems": {
+    "revenue": {
+      "title": "Revenue trend",
+      "description": "Monthly billed revenue from the demo invoice portfolio.",
+      "seriesLabel": "Revenue",
+      "invoiceCountSuffix": "invoices"
+    },
+    "breakdowns": {
+      "paymentsTitle": "Invoice and payment breakdown",
+      "paymentsDescription": "Compare invoice counts with current open or settled value by payment status.",
+      "ordersTitle": "Order status overview",
+      "ordersDescription": "Track where current order value is concentrated across the fulfillment pipeline.",
+      "invoiceCount": "{count} invoices",
+      "orderCount": "{count} orders"
+    },
+    "highlights": {
+      "customersTitle": "Customer highlights",
+      "customersDescription": "Top accounts by invoiced value in the current mock reporting set.",
+      "ordersTitle": "Order highlights",
+      "ordersDescription": "Highest-value live orders currently shaping the seeded operations mix.",
+      "customerOrders": "{count} orders",
+      "outstandingCue": "Open {amount}"
+    },
+    "notes": {
+      "title": "Reporting notes",
+      "description": "A compact operations note panel that makes the showcase feel complete without overbuilding analytics.",
+      "metrics": {
+        "activeCustomers": "Active customers",
+        "pendingInvoices": "Pending invoices",
+        "lowStockReferences": "Low-stock references"
+      },
+      "panelTitle": "Future-ready extensions",
+      "panelDescription": "The current reporting surface is intentionally compact, but the layout is ready for richer exports, cohort tracking, and inventory performance views.",
+      "items": {
         "profitability": "Margin and profitability views",
         "regional": "Regional customer segmentation",
         "inventory": "Inventory aging and replenishment alerts"

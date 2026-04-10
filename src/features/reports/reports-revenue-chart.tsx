@@ -13,22 +13,25 @@ import {
 
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency } from "@/lib/formatting";
-import type { DashboardSummary } from "@/types/domain";
+import type { ReportsOverview } from "@/types/domain";
 
-type RevenueChartProps = {
-  data: DashboardSummary["monthlyRevenue"];
+type ReportsRevenueChartProps = {
+  data: ReportsOverview["revenueTrend"];
   locale: AppLocale;
 };
 
-export function RevenueChart({ data, locale }: RevenueChartProps) {
-  const tCharts = useTranslations("Dashboard.charts");
+export function ReportsRevenueChart({
+  data,
+  locale,
+}: ReportsRevenueChartProps) {
+  const t = useTranslations("Reports.revenue");
 
   return (
     <div className="h-72 min-w-0">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data}>
           <defs>
-            <linearGradient id="revenueFill" x1="0" x2="0" y1="0" y2="1">
+            <linearGradient id="reportsRevenueFill" x1="0" x2="0" y1="0" y2="1">
               <stop offset="5%" stopColor="var(--color-chart-1)" stopOpacity={0.35} />
               <stop offset="95%" stopColor="var(--color-chart-1)" stopOpacity={0.04} />
             </linearGradient>
@@ -46,9 +49,9 @@ export function RevenueChart({ data, locale }: RevenueChartProps) {
             tickFormatter={(value: number) => formatCurrency(value, locale)}
           />
           <Tooltip
-            formatter={(value) => [
+            formatter={(value, _name, item) => [
               formatCurrency(Number(value ?? 0), locale),
-              tCharts("revenueSeriesLabel"),
+              `${t("seriesLabel")} · ${item?.payload?.invoices ?? 0} ${t("invoiceCountSuffix")}`,
             ]}
             contentStyle={{
               borderRadius: 18,
@@ -60,7 +63,7 @@ export function RevenueChart({ data, locale }: RevenueChartProps) {
             type="monotone"
             dataKey="revenue"
             stroke="var(--color-chart-1)"
-            fill="url(#revenueFill)"
+            fill="url(#reportsRevenueFill)"
             strokeWidth={3}
           />
         </AreaChart>
