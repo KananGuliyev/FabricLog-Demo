@@ -1,4 +1,4 @@
-{
+﻿{
   "Common": {
     "appName": "FabricLog",
     "brandSubtitle": "Textile operations demo",
@@ -52,9 +52,11 @@
     "welcomeBack": "Business snapshot",
     "demoSafe": "Sample records only",
     "mobileMenuLabel": "Open navigation menu",
-    "searchActionLabel": "Search modules",
     "sessionLabel": "Signed in",
     "sessionMetaLabel": "Role:",
+    "workspaceLabel": "Workspace status",
+    "workspaceValue": "Read-only public demo",
+    "workspaceNote": "Mock data, mock auth, and portfolio-safe records only.",
     "signOut": "Sign out"
   },
   "Dashboard": {
@@ -436,30 +438,64 @@
   },
   "Payments": {
     "title": "Payments",
-    "description": "Track payment timing, methods, and customers that need follow-up.",
+    "description": "Review payment timing, settlement methods, and open invoice exposure from one polished finance operations surface.",
     "searchPlaceholder": "Search payment or customer",
+    "emptyStateDescription": "Try clearing the current search or filters to reveal the full seeded payments ledger.",
+    "filters": {
+      "all": "All",
+      "statusLabel": "Payment status",
+      "methodLabel": "Method"
+    },
+    "methods": {
+      "bankTransfer": "Bank transfer",
+      "cardSettlement": "Card settlement",
+      "wireTransfer": "Wire transfer"
+    },
     "emptyState": "No payments found.",
     "cards": {
+      "totalPayments": "Total payments",
+      "totalPaymentsHint": "Settlement records currently logged across the seeded invoice portfolio.",
       "collectedPayments": "Collected payments",
       "collectedPaymentsHint": "Seeded receipts already logged against the invoice portfolio.",
       "bankTransfers": "Bank transfers",
       "bankTransfersHint": "Primary settlement channel used in the fictional dataset.",
       "partialReceipts": "Partial receipts",
-      "partialReceiptsHint": "Customers that still need follow-up to complete settlement.",
-      "collectionNoteTitle": "Collection note"
+      "partialReceiptsHint": "Receipts that still leave open exposure on the linked invoice."
     },
-    "notes": {
-      "primary": "The payment ledger mixes bank transfers, wire receipts, and card settlements to make the demo feel operationally realistic without using any private billing information.",
-      "secondary": "Portfolio viewers can inspect both the UI and the typed API route layer to see how payment status tracking is modeled end to end."
+    "panel": {
+      "title": "Settlement focus",
+      "description": "Keep the most operationally relevant settlement in view while scanning payment mix and remaining invoice exposure.",
+      "featuredLabel": "Featured payment",
+      "featuredDescription": "{customer} still has follow-up visibility tied to {invoiceId} in the current demo ledger.",
+      "cards": {
+        "cardSettlements": "Card settlements",
+        "cardSettlementsHint": "Payments processed through the seeded card settlement path.",
+        "wireTransfers": "Wire transfers",
+        "wireTransfersHint": "Higher-value payments settled through direct transfer.",
+        "settledPayments": "Settled in full",
+        "settledPaymentsHint": "Payments already marked fully closed in the ledger."
+      },
+      "meta": {
+        "customer": "Customer",
+        "invoice": "Invoice",
+        "date": "Payment date",
+        "method": "Method",
+        "amount": "Collected amount",
+        "outstanding": "Invoice exposure",
+        "status": "Payment status",
+        "dueDate": "Invoice due date"
+      }
     },
     "table": {
       "payment": "Payment",
       "customer": "Customer",
       "invoice": "Invoice",
-      "date": "Date",
       "method": "Method",
       "amount": "Amount",
-      "status": "Status"
+      "status": "Status",
+      "dateCue": "Received {date}",
+      "dueCue": "Due {date}",
+      "settlementCue": "Open {amount}"
     }
   },
   "Reports": {
@@ -651,14 +687,14 @@
       "description": "Latest order references connected to this customer.",
       "emptyTitle": "No related orders yet.",
       "emptyDescription": "This customer does not have any linked order history in the seeded demo data.",
-      "subtitle": "{date} · {item}"
+      "subtitle": "{date} / {item}"
     },
     "recentInvoices": {
       "title": "Recent invoices",
       "description": "Billing history and open exposure for this account.",
       "emptyTitle": "No related invoices yet.",
       "emptyDescription": "This customer does not currently have any linked invoices in the seeded ledger.",
-      "subtitle": "Issued {issueDate} · Due {dueDate}",
+      "subtitle": "Issued {issueDate} / Due {dueDate}",
       "trailing": "Open {amount}"
     },
     "activity": {
@@ -707,7 +743,7 @@
       "description": "Order demand currently touching this product reference.",
       "emptyTitle": "No linked orders found.",
       "emptyDescription": "This product is not currently referenced by any seeded orders.",
-      "subtitle": "{customer} · Delivery {date}"
+      "subtitle": "{customer} / Delivery {date}"
     },
     "inventory": {
       "title": "Inventory pressure",
@@ -858,6 +894,13 @@
       "emptyDescription": "This invoice does not currently have any related timeline events."
     }
   },
+  "NotFound": {
+    "title": "Record not found",
+    "description": "The requested FabricLog record could not be found in the current public demo dataset.",
+    "emptyTitle": "This page is not available.",
+    "emptyDescription": "The link may be outdated or the record may not exist in the seeded showcase data anymore.",
+    "backAction": "Return to dashboard"
+  },
   "Statuses": {
     "tiers": {
       "signature": "Signature",
@@ -937,3 +980,4 @@
     }
   }
 }
+

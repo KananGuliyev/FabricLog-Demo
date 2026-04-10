@@ -4,7 +4,9 @@ import { getTranslations } from "next-intl/server";
 import { BrandMark } from "@/components/shared/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { siteConfig } from "@/lib/constants/site";
 import { Link } from "@/lib/i18n/navigation";
+import { fabricLogService } from "@/server/services/fabriclog-service";
 
 type LandingPageProps = {
   params: Promise<{ locale: string }>;
@@ -14,6 +16,10 @@ export default async function LandingPage({ params }: LandingPageProps) {
   const { locale } = await params;
   const tLanding = await getTranslations({ locale, namespace: "Landing" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
+  const totalCustomers = fabricLogService.getCustomers().length;
+  const totalInvoices = fabricLogService.getInvoices().length;
+  const totalFabrics = fabricLogService.getFabrics().length;
+  const totalLocales = siteConfig.locales.length;
 
   const highlights = [
     {
@@ -104,19 +110,19 @@ export default async function LandingPage({ params }: LandingPageProps) {
               <p>{tCommon("portfolioNote")}</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  <p className="text-2xl font-semibold">6</p>
+                  <p className="text-2xl font-semibold">{totalCustomers}</p>
                   <p className="mt-1 text-white/72">{tLanding("stats.customers")}</p>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  <p className="text-2xl font-semibold">7</p>
+                  <p className="text-2xl font-semibold">{totalInvoices}</p>
                   <p className="mt-1 text-white/72">{tLanding("stats.invoices")}</p>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  <p className="text-2xl font-semibold">6</p>
+                  <p className="text-2xl font-semibold">{totalFabrics}</p>
                   <p className="mt-1 text-white/72">{tLanding("stats.fabrics")}</p>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  <p className="text-2xl font-semibold">2</p>
+                  <p className="text-2xl font-semibold">{totalLocales}</p>
                   <p className="mt-1 text-white/72">{tLanding("stats.languages")}</p>
                 </div>
               </div>

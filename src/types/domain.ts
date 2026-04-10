@@ -233,6 +233,35 @@ export const invoicesOverviewSchema = z.object({
   featuredInvoice: invoiceOverviewRowSchema,
 });
 
+export const paymentOverviewRowSchema = z.object({
+  id: z.string(),
+  customerName: z.string(),
+  invoiceId: z.string(),
+  invoiceAmount: z.number().nonnegative(),
+  outstandingAmount: z.number().nonnegative(),
+  paidAt: z.string(),
+  dueDate: z.string(),
+  method: z.string(),
+  amount: z.number().nonnegative(),
+  status: z.enum(paymentStatusValues),
+});
+
+export const paymentsOverviewSummarySchema = z.object({
+  totalPayments: z.number().int().nonnegative(),
+  collectedValue: z.number().nonnegative(),
+  bankTransferCount: z.number().int().nonnegative(),
+  cardSettlementCount: z.number().int().nonnegative(),
+  wireTransferCount: z.number().int().nonnegative(),
+  partialReceiptsCount: z.number().int().nonnegative(),
+  settledPaymentsCount: z.number().int().nonnegative(),
+});
+
+export const paymentsOverviewSchema = z.object({
+  summary: paymentsOverviewSummarySchema,
+  rows: z.array(paymentOverviewRowSchema),
+  featuredPayment: paymentOverviewRowSchema,
+});
+
 export const reportsRevenuePointSchema = z.object({
   month: z.string(),
   revenue: z.number().nonnegative(),
@@ -423,6 +452,9 @@ export type OrdersOverview = z.infer<typeof ordersOverviewSchema>;
 export type InvoiceOverviewRow = z.infer<typeof invoiceOverviewRowSchema>;
 export type InvoicesOverviewSummary = z.infer<typeof invoicesOverviewSummarySchema>;
 export type InvoicesOverview = z.infer<typeof invoicesOverviewSchema>;
+export type PaymentOverviewRow = z.infer<typeof paymentOverviewRowSchema>;
+export type PaymentsOverviewSummary = z.infer<typeof paymentsOverviewSummarySchema>;
+export type PaymentsOverview = z.infer<typeof paymentsOverviewSchema>;
 export type ReportsRevenuePoint = z.infer<typeof reportsRevenuePointSchema>;
 export type ReportsPaymentBreakdownItem = z.infer<
   typeof reportsPaymentBreakdownItemSchema

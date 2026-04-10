@@ -10,7 +10,7 @@ import {
   findRouteByPath,
   navigationItems,
 } from "@/components/navigation/navigation-config";
-import type { AppLocale } from "@/lib/constants/site";
+import { siteConfig, type AppLocale } from "@/lib/constants/site";
 import { formatDate } from "@/lib/formatting";
 import { usePathname } from "@/lib/i18n/navigation";
 import type { DemoSession } from "@/types/auth";
@@ -53,14 +53,16 @@ export function AppShell({ children, session }: AppShellProps) {
           items={navigationItems}
           lastUpdatedLabel={tCommon("updatedLabel")}
           mobileMenuLabel={tShell("mobileMenuLabel")}
-          searchActionLabel={tShell("searchActionLabel")}
           searchHint={tShell("welcomeBack")}
           session={session}
           sessionLabel={tShell("sessionLabel")}
           sessionMetaLabel={tShell("sessionMetaLabel")}
           signOutLabel={tShell("signOut")}
+          workspaceLabel={tShell("workspaceLabel")}
+          workspaceValue={tShell("workspaceValue")}
+          workspaceNote={tShell("workspaceNote")}
           logoutHref={`/${locale}/logout`}
-          updatedValue={formatDate("2026-04-09", locale)}
+          updatedValue={formatDate(siteConfig.demoLastUpdatedAt, locale)}
           languageSwitcher={<LanguageSwitcher />}
         />
 

@@ -1,4 +1,4 @@
-{
+﻿{
   "Common": {
     "appName": "FabricLog",
     "brandSubtitle": "Tekstil emeliyyatlari demosu",
@@ -52,9 +52,11 @@
     "welcomeBack": "Biznes gorunusu",
     "demoSafe": "Yalniz numune qeydler",
     "mobileMenuLabel": "Naviqasiya menusunu ac",
-    "searchActionLabel": "Modullarda axtar",
     "sessionLabel": "Daxil olunub",
     "sessionMetaLabel": "Rol:",
+    "workspaceLabel": "Is sahesinin veziyyeti",
+    "workspaceValue": "Yalniz baxis ictimai demo",
+    "workspaceNote": "Mock data, mock auth ve portfel ucun tehlukesiz qeydler istifade olunur.",
     "signOut": "Cixis"
   },
   "Dashboard": {
@@ -436,30 +438,64 @@
   },
   "Payments": {
     "title": "Odenisler",
-    "description": "Odenis vaxtini, usullari ve teqib teleb eden musterileri izleyin.",
+    "description": "Odenis vaxtini, hesablasma usullarini ve aciq faktura riskini daha guclu maliyye emeliyyat gorunusunden izleyin.",
     "searchPlaceholder": "Odenis ve ya musteri axtar",
+    "emptyStateDescription": "Butun demo odenis reyestrini gormek ucun cari axtarisi ve ya filtrleri temizleyin.",
+    "filters": {
+      "all": "Hamisi",
+      "statusLabel": "Odenis statusu",
+      "methodLabel": "Usul"
+    },
+    "methods": {
+      "bankTransfer": "Bank kocurmesi",
+      "cardSettlement": "Kart hesablasmasi",
+      "wireTransfer": "Wire transfer"
+    },
     "emptyState": "Odenis tapilmadi.",
     "cards": {
+      "totalPayments": "Umumi odenisler",
+      "totalPaymentsHint": "Demo faktura portfeli uzre qeyd olunan hesablasma hereketleri.",
       "collectedPayments": "Yigilmis odenisler",
       "collectedPaymentsHint": "Numune odenisler artiq faktura portfeline qarsi qeyd edilib.",
       "bankTransfers": "Bank kocurmeleri",
       "bankTransfersHint": "Uydurma melumat destinde istifade olunan esas hesablasma kanali.",
       "partialReceipts": "Qismen odenisler",
-      "partialReceiptsHint": "Hesablasmani tamamlamaq ucun elave teqib teleb eden musteriler.",
-      "collectionNoteTitle": "Yigim qeydi"
+      "partialReceiptsHint": "Bagli fakturada hele aciq risk saxlayan qismen hesablasmalar."
     },
-    "notes": {
-      "primary": "Odenis cedveli hech bir sexsi maliyye melumatindan istifade etmeden bank kocurmesi, wire ve kart odenisleri ile real emeliyyat hissi yaradir.",
-      "secondary": "Portfel izleyicileri hem UI, hem de typed API marsrut qatina baxaraq odenis statusu izlenmesinin nece quruldugunu gore bilerler."
+    "panel": {
+      "title": "Hesablasma fokusu",
+      "description": "En cox emeliyyat diqqeti teleb eden hesablasmani gorunurde saxlayin ve usul bolgusu ile qalan faktura riskini suretle oxuyun.",
+      "featuredLabel": "Secilen odenis",
+      "featuredDescription": "{customer} ucun {invoiceId} uzre hele de teqib gorunurluyu qalir.",
+      "cards": {
+        "cardSettlements": "Kart hesablasmalari",
+        "cardSettlementsHint": "Demo kart hesablasma axinindan kecen odenisler.",
+        "wireTransfers": "Wire transferler",
+        "wireTransfersHint": "Daha yuksek deyerli birbasa transfer hesablasmalari.",
+        "settledPayments": "Tam baglanmis odenisler",
+        "settledPaymentsHint": "Reyestrde baglanmis kimi qeyd olunan odenisler."
+      },
+      "meta": {
+        "customer": "Musteri",
+        "invoice": "Faktura",
+        "date": "Odenis tarixi",
+        "method": "Usul",
+        "amount": "Yigilan mebleg",
+        "outstanding": "Faktura riski",
+        "status": "Odenis statusu",
+        "dueDate": "Faktura son tarixi"
+      }
     },
     "table": {
       "payment": "Odenis",
       "customer": "Musteri",
       "invoice": "Faktura",
-      "date": "Tarix",
       "method": "Usul",
       "amount": "Mebleg",
-      "status": "Status"
+      "status": "Status",
+      "dateCue": "Qebul edilib {date}",
+      "dueCue": "Son tarix {date}",
+      "settlementCue": "Aciq {amount}"
     }
   },
   "Reports": {
@@ -619,244 +655,251 @@
     }
   },
   "CustomerDetail": {
-    "description": "{contact} üçün hesab sağlamlığını, son sifarişləri, fakturaları və fəaliyyətləri nəzərdən keçirin.",
-    "backAction": "Müştərilərə qayıt",
+    "description": "{contact} ucun hesab saglamligini, son sifarisleri, fakturalari ve fealiyyetleri nezerden kecirin.",
+    "backAction": "Musterilere qayit",
     "hero": {
-      "description": "Bu demo hesabı hazırda {collection} ətrafında formalaşıb və real hesab-faktura konteksti ilə təqdim olunur."
+      "description": "Bu demo hesab hazirda {collection} etrafinda formalasib ve real hesab-faktura konteksti ile teqdim olunur."
     },
     "cards": {
-      "totalOrders": "Ümumi sifarişlər",
-      "totalOrdersHint": "Bu hesab üzrə cari demo münasibət həcmi.",
-      "totalInvoiced": "Ümumi fakturalaşdırılıb",
-      "totalInvoicedHint": "Bu müştəriyə kəsilmiş bütün bağlı fakturaların dəyəri.",
-      "outstandingBalance": "Açıq qalıq",
-      "outstandingBalanceHint": "Yığım diqqəti tələb edən açıq debitor məbləği.",
-      "lastActivity": "Son fəaliyyət",
-      "lastActivityHint": "Demo zaman xəttində bu hesabla bağlı ən son hərəkət."
+      "totalOrders": "Umumi sifarisler",
+      "totalOrdersHint": "Bu hesab uzre cari demo munasibet hecmi.",
+      "totalInvoiced": "Umumi fakturalasdirilib",
+      "totalInvoicedHint": "Bu musteriye kesilmis butun bagli fakturalarin deyeri.",
+      "outstandingBalance": "Aciq qaliq",
+      "outstandingBalanceHint": "Yigim diqqeti teleb eden aciq debitor meblegi.",
+      "lastActivity": "Son fealiyyet",
+      "lastActivityHint": "Demo zaman xettinde bu hesabla bagli en son hereket."
     },
     "profile": {
       "title": "Hesab profili",
-      "description": "Bu uydurma müştəri hesabı üçün əsas kommersiya və əlaqə məlumatları.",
-      "relationshipLabel": "Münasibət fokusu",
-      "relationshipDescription": "{openInvoices} açıq və {paidInvoices} bağlanmış faktura mövcud hesab ritmini formalaşdırır.",
+      "description": "Bu uydurma musteri hesabi ucun esas kommersiya ve elaqe melumatlari.",
+      "relationshipLabel": "Munasibet fokusu",
+      "relationshipDescription": "{openInvoices} aciq ve {paidInvoices} baglanmis faktura movcud hesab ritmini formalasdirir.",
       "fields": {
-        "contact": "Əsas əlaqə",
-        "email": "E-poçt",
+        "contact": "Esas elaqe",
+        "email": "E-poct",
         "region": "Region",
-        "collection": "Seçilən kolleksiya"
+        "collection": "Secilen kolleksiya"
       }
     },
     "recentOrders": {
-      "title": "Son sifarişlər",
-      "description": "Bu müştəri ilə əlaqəli ən son sifarişlər.",
-      "emptyTitle": "Əlaqəli sifariş yoxdur.",
-      "emptyDescription": "Bu müştəri üçün demo məlumatlarında sifariş tarixçəsi yoxdur.",
-      "subtitle": "{date} · {item}"
+      "title": "Son sifarisler",
+      "description": "Bu musteri ile elaqeli en son sifarisler.",
+      "emptyTitle": "Elaqeli sifaris yoxdur.",
+      "emptyDescription": "Bu musteri ucun demo melumatlarinda sifaris tarixcesi yoxdur.",
+      "subtitle": "{date} / {item}"
     },
     "recentInvoices": {
       "title": "Son fakturalar",
-      "description": "Bu hesab üçün hesab-faktura tarixçəsi və açıq risk.",
-      "emptyTitle": "Əlaqəli faktura yoxdur.",
-      "emptyDescription": "Bu müştəri üçün demo reyestrində bağlı faktura yoxdur.",
-      "subtitle": "Kəsilib {issueDate} · Son tarix {dueDate}",
-      "trailing": "Açıq {amount}"
+      "description": "Bu hesab ucun hesab-faktura tarixcesi ve aciq risk.",
+      "emptyTitle": "Elaqeli faktura yoxdur.",
+      "emptyDescription": "Bu musteri ucun demo reyestrinde bagli faktura yoxdur.",
+      "subtitle": "Kesilib {issueDate} / Son tarix {dueDate}",
+      "trailing": "Aciq {amount}"
     },
     "activity": {
-      "title": "Hesab zaman xətti",
-      "description": "Bu müştəri hesabı ilə bağlı son əməliyyat hadisələri.",
-      "emptyTitle": "Müştəri fəaliyyəti yoxdur.",
-      "emptyDescription": "Demo fəaliyyət zaman xəttində bu hesab üçün hadisə yoxdur."
+      "title": "Hesab zaman xetti",
+      "description": "Bu musteri hesabi ile bagli son emeliyyat hadiseleri.",
+      "emptyTitle": "Musteri fealiyyeti yoxdur.",
+      "emptyDescription": "Demo fealiyyet zaman xettinde bu hesab ucun hadise yoxdur."
     },
     "invoiceBadges": {
-      "paid": "Ödənib",
-      "unpaid": "Ödənilməyib",
-      "pending": "Gözləmədə",
+      "paid": "Odenib",
+      "unpaid": "Odenilmeyib",
+      "pending": "Gozlemede",
       "overdue": "Gecikib"
     }
   },
   "ProductDetail": {
-    "description": "Bu tekstil referansı üzrə məhsul xüsusiyyətlərini, stok vəziyyətini və bağlı sifariş tələbatını nəzərdən keçirin.",
-    "backAction": "Məhsullara qayıt",
+    "description": "Bu tekstil referansi uzre mehsul xususiyyetlerini, stok veziyyetini ve bagli sifaris telebatini nezerden kecirin.",
+    "backAction": "Mehsullara qayit",
     "hero": {
-      "description": "{composition} real stok və sifariş konteksti ilə portfelə uyğun məhsul görünüşündə təqdim olunur."
+      "description": "{composition} real stok ve sifaris konteksti ile portfele uygun mehsul gorunusunde teqdim olunur."
     },
     "cards": {
-      "stock": "Ümumi stok",
-      "stockHint": "Demo kataloqda mövcud hazır həcm.",
+      "stock": "Umumi stok",
+      "stockHint": "Demo kataloqda movcud hazir hecm.",
       "reserved": "Rezerv stok",
-      "reservedHint": "Cari demo sifarişlərinə ayrılmış həcm.",
-      "available": "Mövcud stok",
-      "availableHint": "Hələ ayrılmamış və satışa açıq metrlər.",
-      "unitPrice": "Vahid qiymət",
-      "unitPriceHint": "Bu parça referansı üçün demo qiyməti."
+      "reservedHint": "Cari demo sifarislerine ayrilmis hecm.",
+      "available": "Movcud stok",
+      "availableHint": "Hele ayrilmamis ve satisa aciq metrler.",
+      "unitPrice": "Vahid qiymet",
+      "unitPriceHint": "Bu parca referansi ucun demo qiymeti."
     },
     "specifications": {
-      "title": "Məhsul spesifikasiyası",
-      "description": "Material və texniki detallar real daxili məhsul kartı kimi təqdim olunur.",
-      "highlightLabel": "Cari əsas variant",
-      "highlightDescription": "Cari rəng və material kombinasiyası real məhsul master qeydi kimi görünəcək şəkildə qurulub.",
+      "title": "Mehsul spesifikasiyasi",
+      "description": "Material ve texniki detallar real daxili mehsul karti kimi teqdim olunur.",
+      "highlightLabel": "Cari esas variant",
+      "highlightDescription": "Cari reng ve material kombinasiyasi real mehsul master qeydi kimi gorunecek sekilde qurulub.",
       "fields": {
         "category": "Kateqoriya",
-        "composition": "Tərkib",
+        "composition": "Terkib",
         "width": "En",
-        "weight": "Çəki"
+        "weight": "Ceki"
       }
     },
     "relatedOrders": {
-      "title": "Əlaqəli sifarişlər",
-      "description": "Hazırda bu məhsula toxunan sifariş tələbatı.",
-      "emptyTitle": "Bağlı sifariş yoxdur.",
-      "emptyDescription": "Bu məhsul hazırda demo sifarişlərində istifadə olunmur.",
-      "subtitle": "{customer} · Çatdırılma {date}"
+      "title": "Elaqeli sifarisler",
+      "description": "Hazirda bu mehsula toxunan sifaris telebati.",
+      "emptyTitle": "Bagli sifaris yoxdur.",
+      "emptyDescription": "Bu mehsul hazirda demo sifarislerinde istifade olunmur.",
+      "subtitle": "{customer} / Catdirilma {date}"
     },
     "inventory": {
-      "title": "Stok təzyiqi",
-      "description": "Cari demo sifariş qarışığından qurulmuş qısa stok vəziyyəti.",
-      "utilization": "Rezerv payı",
+      "title": "Stok tezyiqi",
+      "description": "Cari demo sifaris qarisiqindan qurulmus qisa stok veziyyeti.",
+      "utilization": "Rezerv payi",
       "fields": {
-        "activeOrders": "Aktiv sifarişlər",
-        "linkedCustomers": "Bağlı müştərilər",
-        "totalDemand": "Ümumi tələbat",
-        "available": "Mövcud metr"
+        "activeOrders": "Aktiv sifarisler",
+        "linkedCustomers": "Bagli musteriler",
+        "totalDemand": "Umumi telebat",
+        "available": "Movcud metr"
       }
     },
     "activity": {
-      "title": "Məhsul fəaliyyəti",
-      "description": "Demo zaman xəttindən götürülən məhsul yönümlü son hadisələr.",
-      "emptyTitle": "Məhsul fəaliyyəti yoxdur.",
-      "emptyDescription": "Bu məhsul üçün demo məlumatında birbaşa zaman xətti hadisəsi yoxdur."
+      "title": "Mehsul fealiyyeti",
+      "description": "Demo zaman xettinden goturulen mehsul yonumlu son hadiseler.",
+      "emptyTitle": "Mehsul fealiyyeti yoxdur.",
+      "emptyDescription": "Bu mehsul ucun demo melumatinda birbasa zaman xetti hadisesi yoxdur."
     }
   },
   "OrderDetail": {
-    "description": "{customer} üçün icra, hesablaşma və bağlı hesab kontekstini nəzərdən keçirin.",
-    "backAction": "Sifarişlərə qayıt",
+    "description": "{customer} ucun icra, hesablasma ve bagli hesab kontekstini nezerden kecirin.",
+    "backAction": "Sifarislere qayit",
     "hero": {
-      "description": "{item} real müştəri, məhsul və faktura konteksti ilə izlənir."
+      "description": "{item} real musteri, mehsul ve faktura konteksti ile izlenir."
     },
     "cards": {
       "quantity": "Miqdar",
-      "quantityHint": "Bu sifariş üzrə bron edilmiş tekstil həcmi.",
-      "totalAmount": "Ümumi məbləğ",
-      "totalAmountHint": "Demo portfeldə bu sifarişin cari dəyəri.",
-      "orderDate": "Sifariş tarixi",
-      "orderDateHint": "Sifarişin demo axınına daxil olduğu tarix.",
-      "deliveryDate": "Çatdırılma hədəfi",
-      "deliveryDateHint": "Sifariş üzrə mövcud çatdırılma öhdəliyi."
+      "quantityHint": "Bu sifaris uzre bron edilmis tekstil hecmi.",
+      "totalAmount": "Umumi mebleg",
+      "totalAmountHint": "Demo portfeldə bu sifarisin cari deyeri.",
+      "orderDate": "Sifaris tarixi",
+      "orderDateHint": "Sifarisin demo axinina daxil oldugu tarix.",
+      "deliveryDate": "Catdirilma hedefi",
+      "deliveryDateHint": "Sifaris uzre movcud catdirilma ohdeliyi."
     },
     "summary": {
-      "title": "Sifariş xülasəsi",
-      "description": "Bu sifariş üzrə müştəri, məhsul və hesablaşma konteksti.",
-      "highlightLabel": "Əsas məhsul bağlantısı",
-      "highlightDescription": "Bağlı tekstil referansı sifariş görünüşünü real daxili məhsul münasibəti ilə tamamlayır.",
+      "title": "Sifaris xulasesi",
+      "description": "Bu sifaris uzre musteri, mehsul ve hesablasma konteksti.",
+      "highlightLabel": "Esas mehsul baglantisi",
+      "highlightDescription": "Bagli tekstil referansi sifaris gorunusunu real daxili mehsul munasibeti ile tamamlayir.",
       "fields": {
-        "customer": "Müştəri",
-        "customerTier": "Müştəri səviyyəsi",
-        "product": "Məhsul",
+        "customer": "Musteri",
+        "customerTier": "Musteri seviyesi",
+        "product": "Mehsul",
         "invoice": "Faktura"
       },
-      "awaitingInvoice": "Faktura gözlənilir"
+      "awaitingInvoice": "Faktura gozlenilir"
     },
     "billing": {
-      "title": "Hesablaşma icmalı",
-      "description": "Bu sifariş üzrə faktura statusu və ödəniş irəliləyişi.",
+      "title": "Hesablasma icmali",
+      "description": "Bu sifaris uzre faktura statusu ve odenis irelileyisi.",
       "fields": {
-        "status": "Ödəniş statusu",
-        "invoiceAmount": "Faktura məbləği",
-        "paidAmount": "Ödənilmiş məbləğ",
-        "outstandingAmount": "Açıq qalıq"
+        "status": "Odenis statusu",
+        "invoiceAmount": "Faktura meblegi",
+        "paidAmount": "Odenilmis mebleg",
+        "outstandingAmount": "Aciq qaliq"
       },
-      "paymentsTitle": "Ödəniş tarixçəsi",
-      "emptyPaymentsTitle": "Hələ ödəniş qeydi yoxdur.",
-      "emptyPaymentsDescription": "Bu sifarişin fakturası var, amma demo məlumatında ödəniş hadisəsi yoxdur.",
-      "emptyTitle": "Faktura hələ yaradılmayıb.",
-      "emptyDescription": "Cari demo məlumatlarında bu sifariş üçün hesablaşma başlanmayıb."
+      "paymentsTitle": "Odenis tarixcesi",
+      "emptyPaymentsTitle": "Hele odenis qeydi yoxdur.",
+      "emptyPaymentsDescription": "Bu sifarisin fakturasi var, amma demo melumatinda odenis hadisesi yoxdur.",
+      "emptyTitle": "Faktura hele yaradilmayib.",
+      "emptyDescription": "Cari demo melumatlarinda bu sifaris ucun hesablasma baslanmayib."
     },
     "fulfillment": {
-      "title": "İcra konteksti",
-      "description": "Bu sifariş səhifəsini real daxili iş sahəsi kimi göstərən əməliyyat detalları.",
-      "statusLabel": "Sifariş statusu",
-      "deliveryLabel": "Çatdırılma tarixi",
+      "title": "Icra konteksti",
+      "description": "Bu sifaris sehifesini real daxili is sahesi kimi gosteren emeliyyat detallari.",
+      "statusLabel": "Sifaris statusu",
+      "deliveryLabel": "Catdirilma tarixi",
       "fields": {
-        "quantity": "Bron miqdarı",
-        "customerContact": "Müştəri əlaqəsi",
-        "collection": "Seçilən kolleksiya",
-        "variant": "Məhsul variantı"
+        "quantity": "Bron miqdari",
+        "customerContact": "Musteri elaqesi",
+        "collection": "Secilen kolleksiya",
+        "variant": "Mehsul varianti"
       }
     },
     "activity": {
-      "title": "Sifariş zaman xətti",
-      "description": "Bu qeydlə bağlı son sifariş və hesablaşma hadisələri.",
-      "emptyTitle": "Sifariş fəaliyyəti yoxdur.",
-      "emptyDescription": "Bu demo sifarişi üçün əlaqəli zaman xətti hadisəsi yoxdur."
+      "title": "Sifaris zaman xetti",
+      "description": "Bu qeydle bagli son sifaris ve hesablasma hadiseleri.",
+      "emptyTitle": "Sifaris fealiyyeti yoxdur.",
+      "emptyDescription": "Bu demo sifarisi ucun elaqeli zaman xetti hadisesi yoxdur."
     },
     "invoiceBadges": {
-      "paid": "Ödənib",
-      "unpaid": "Ödənilməyib",
-      "pending": "Gözləmədə",
+      "paid": "Odenib",
+      "unpaid": "Odenilmeyib",
+      "pending": "Gozlemede",
       "overdue": "Gecikib"
     }
   },
   "InvoiceDetail": {
-    "description": "{customer} üçün debitor vəziyyətini, bağlı sifariş kontekstini və ödəniş hərəkətlərini nəzərdən keçirin.",
-    "backAction": "Fakturalara qayıt",
+    "description": "{customer} ucun debitor veziyyetini, bagli sifaris kontekstini ve odenis hereketlerini nezerden kecirin.",
+    "backAction": "Fakturalara qayit",
     "hero": {
-      "description": "Bu faktura real son tarix və yığım konteksti ilə təqdim olunur. Son tarix {dueDate}."
+      "description": "Bu faktura real son tarix ve yigim konteksti ile teqdim olunur. Son tarix {dueDate}."
     },
     "badges": {
-      "paid": "Ödənib",
-      "unpaid": "Ödənilməyib",
-      "pending": "Gözləmədə",
+      "paid": "Odenib",
+      "unpaid": "Odenilmeyib",
+      "pending": "Gozlemede",
       "overdue": "Gecikib"
     },
     "cards": {
-      "amount": "Faktura məbləği",
-      "amountHint": "Bu qeyd üzrə ümumi hesablanan dəyər.",
-      "paidAmount": "Ödənilən məbləğ",
-      "paidAmountHint": "Faktura üzrə artıq bağlanmış yığım məbləği.",
-      "outstandingAmount": "Açıq qalıq",
-      "outstandingAmountHint": "Hələ gözlənilən debitor məbləği.",
+      "amount": "Faktura meblegi",
+      "amountHint": "Bu qeyd uzre umumi hesablanan deyer.",
+      "paidAmount": "Odenilen mebleg",
+      "paidAmountHint": "Faktura uzre artiq baglanmis yigim meblegi.",
+      "outstandingAmount": "Aciq qaliq",
+      "outstandingAmountHint": "Hele gozlenilen debitor meblegi.",
       "dueDate": "Son tarix",
-      "dueDateHint": "Bu faktura üçün mövcud ödəniş son tarixi."
+      "dueDateHint": "Bu faktura ucun movcud odenis son tarixi."
     },
     "summary": {
-      "title": "Hesab-faktura xülasəsi",
-      "description": "Müştəri və sifariş qeydlərinə bağlı əsas hesablaşma konteksti.",
-      "highlightLabel": "Əsas hesab bağlantısı",
-      "highlightDescription": "Demo iş sahəsində hesablaşma dəqiqləşməsi üçün bu hesabla {email} ünvanı üzərindən əlaqə saxlayın.",
+      "title": "Hesab-faktura xulasesi",
+      "description": "Musteri ve sifaris qeydlerine bagli esas hesablasma konteksti.",
+      "highlightLabel": "Esas hesab baglantisi",
+      "highlightDescription": "Demo is sahesinde hesablasma deqiqlasmesi ucun bu hesabla {email} unvani uzerinden elaqe saxlayin.",
       "fields": {
-        "customer": "Müştəri",
-        "issueDate": "Kəsilmə tarixi",
+        "customer": "Musteri",
+        "issueDate": "Kesilme tarixi",
         "dueDate": "Son tarix",
-        "order": "Sifariş"
+        "order": "Sifaris"
       },
-      "noOrder": "Bağlı sifariş yoxdur"
+      "noOrder": "Bagli sifaris yoxdur"
     },
     "payments": {
-      "title": "Ödəniş tarixçəsi",
-      "description": "Bu faktura ilə bağlı qeyd olunmuş ödəniş hadisələri.",
-      "emptyTitle": "Hələ ödəniş qeydi yoxdur.",
-      "emptyDescription": "Bu faktura üçün demo məlumatında ödəniş hadisəsi yoxdur."
+      "title": "Odenis tarixcesi",
+      "description": "Bu faktura ile bagli qeyd olunmus odenis hadiseleri.",
+      "emptyTitle": "Hele odenis qeydi yoxdur.",
+      "emptyDescription": "Bu faktura ucun demo melumatinda odenis hadisesi yoxdur."
     },
     "collections": {
-      "title": "Yığım konteksti",
-      "description": "Əlaqə, sifariş və açıq risk vəziyyətini birlikdə göstərən yığım görünüşü.",
-      "statusLabel": "Yığım statusu",
-      "outstandingLabel": "Açıq məbləğ",
+      "title": "Yigim konteksti",
+      "description": "Elaqe, sifaris ve aciq risk veziyyetini birlikde gosteren yigim gorunusu.",
+      "statusLabel": "Yigim statusu",
+      "outstandingLabel": "Aciq mebleg",
       "fields": {
-        "contact": "Müştəri əlaqəsi",
-        "tier": "Müştəri səviyyəsi",
-        "orderStatus": "Sifariş statusu",
-        "itemSummary": "Məhsul xülasəsi"
+        "contact": "Musteri elaqesi",
+        "tier": "Musteri seviyesi",
+        "orderStatus": "Sifaris statusu",
+        "itemSummary": "Mehsul xulasesi"
       },
-      "noOrderStatus": "Bağlı sifariş yoxdur",
-      "noItemSummary": "Məhsul xülasəsi yoxdur"
+      "noOrderStatus": "Bagli sifaris yoxdur",
+      "noItemSummary": "Mehsul xulasesi yoxdur"
     },
     "activity": {
-      "title": "Faktura zaman xətti",
-      "description": "Bu hesablaşma qeydi ilə bağlı son faktura və sifariş hadisələri.",
-      "emptyTitle": "Faktura fəaliyyəti yoxdur.",
-      "emptyDescription": "Bu faktura üçün bağlı zaman xətti hadisəsi yoxdur."
+      "title": "Faktura zaman xetti",
+      "description": "Bu hesablasma qeydi ile bagli son faktura ve sifaris hadiseleri.",
+      "emptyTitle": "Faktura fealiyyeti yoxdur.",
+      "emptyDescription": "Bu faktura ucun bagli zaman xetti hadisesi yoxdur."
     }
+  },
+  "NotFound": {
+    "title": "Qeyd tapilmadi",
+    "description": "Teleb olunan FabricLog qeydi cari ictimai demo melumat destinde tapilmadi.",
+    "emptyTitle": "Bu sehife movcud deyil.",
+    "emptyDescription": "Link kohne ola biler ve ya qeyd demo melumatinda artiq movcud deyil.",
+    "backAction": "Panele qayit"
   },
   "Statuses": {
     "tiers": {
@@ -937,3 +980,4 @@
     }
   }
 }
+

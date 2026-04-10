@@ -13,7 +13,7 @@ function resolvePaymentStatus(invoice?: Invoice): OrderBillingStatus {
 }
 
 function buildItemSummary(productName: string, quantityMeters: number) {
-  return `${productName} · ${quantityMeters} m`;
+  return `${productName} - ${quantityMeters} m`;
 }
 
 function buildOrderRow(params: {

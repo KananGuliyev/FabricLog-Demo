@@ -5,10 +5,55 @@ import { buildInvoiceDetail } from "@/server/mappers/invoice-detail-mapper";
 import { buildInvoicesOverview } from "@/server/mappers/invoices-mapper";
 import { buildOrderDetail } from "@/server/mappers/order-detail-mapper";
 import { buildOrdersOverview } from "@/server/mappers/orders-mapper";
+import { buildPaymentsOverview } from "@/server/mappers/payments-mapper";
 import { buildProductDetail } from "@/server/mappers/product-detail-mapper";
 import { buildProductsOverview } from "@/server/mappers/products-mapper";
 import { buildReportsOverview } from "@/server/mappers/reports-mapper";
 import { fabricLogRepository } from "@/server/repositories/fabriclog-repository";
+
+function getDemoContext() {
+  return {
+    customers: fabricLogRepository.getCustomers(),
+    fabrics: fabricLogRepository.getFabrics(),
+    invoices: fabricLogRepository.getInvoices(),
+    orders: fabricLogRepository.getOrders(),
+    payments: fabricLogRepository.getPayments(),
+    recentActivity: fabricLogRepository.getRecentActivity(),
+  };
+}
+
+function getOverviewContext() {
+  const context = getDemoContext();
+
+  return {
+    ...context,
+    customersOverview: buildCustomersOverview({
+      customers: context.customers,
+      invoices: context.invoices,
+      payments: context.payments,
+      recentActivity: context.recentActivity,
+    }),
+    invoicesOverview: buildInvoicesOverview({
+      customers: context.customers,
+      invoices: context.invoices,
+      orders: context.orders,
+    }),
+    ordersOverview: buildOrdersOverview({
+      customers: context.customers,
+      fabrics: context.fabrics,
+      invoices: context.invoices,
+      orders: context.orders,
+    }),
+    paymentsOverview: buildPaymentsOverview({
+      customers: context.customers,
+      invoices: context.invoices,
+      payments: context.payments,
+    }),
+    productsOverview: buildProductsOverview({
+      fabrics: context.fabrics,
+    }),
+  };
+}
 
 export const fabricLogService = {
   getCustomers() {
@@ -30,11 +75,7 @@ export const fabricLogService = {
     return fabricLogRepository.getRecentActivity();
   },
   getCustomersOverview() {
-    const customers = fabricLogRepository.getCustomers();
-    const invoices = fabricLogRepository.getInvoices();
-    const payments = fabricLogRepository.getPayments();
-    const recentActivity = fabricLogRepository.getRecentActivity();
-
+    const { customers, invoices, payments, recentActivity } = getDemoContext();
     return buildCustomersOverview({
       customers,
       invoices,
@@ -43,167 +84,104 @@ export const fabricLogService = {
     });
   },
   getCustomerDetail(customerId: string) {
-    const customers = fabricLogRepository.getCustomers();
-    const invoices = fabricLogRepository.getInvoices();
-    const payments = fabricLogRepository.getPayments();
-    const orders = fabricLogRepository.getOrders();
-    const recentActivity = fabricLogRepository.getRecentActivity();
+    const {
+      customersOverview,
+      invoices,
+      invoicesOverview,
+      orders,
+      ordersOverview,
+      recentActivity,
+    } = getOverviewContext();
 
     return buildCustomerDetail({
       customerId,
-      customersOverview: buildCustomersOverview({
-        customers,
-        invoices,
-        payments,
-        recentActivity,
-      }),
+      customersOverview,
       invoices,
-      invoicesOverview: buildInvoicesOverview({
-        customers,
-        invoices,
-        orders,
-      }),
+      invoicesOverview,
       orders,
-      ordersOverview: buildOrdersOverview({
-        customers,
-        fabrics: fabricLogRepository.getFabrics(),
-        invoices,
-        orders,
-      }),
+      ordersOverview,
       recentActivity,
     });
   },
   getProductsOverview() {
-    const fabrics = fabricLogRepository.getFabrics();
-
-    return buildProductsOverview({
-      fabrics,
-    });
+    return getOverviewContext().productsOverview;
   },
   getProductDetail(productId: string) {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-    const recentActivity = fabricLogRepository.getRecentActivity();
+    const {
+      orders,
+      ordersOverview,
+      productsOverview,
+      recentActivity,
+    } = getOverviewContext();
 
     return buildProductDetail({
       orders,
-      ordersOverview: buildOrdersOverview({
-        customers,
-        fabrics,
-        invoices,
-        orders,
-      }),
+      ordersOverview,
       productId,
-      productsOverview: buildProductsOverview({
-        fabrics,
-      }),
+      productsOverview,
       recentActivity,
     });
   },
   getOrdersOverview() {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-
-    return buildOrdersOverview({
-      customers,
-      fabrics,
-      invoices,
-      orders,
-    });
+    return getOverviewContext().ordersOverview;
   },
   getOrderDetail(orderId: string) {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-    const payments = fabricLogRepository.getPayments();
-    const recentActivity = fabricLogRepository.getRecentActivity();
+    const {
+      customersOverview,
+      invoices,
+      invoicesOverview,
+      orders,
+      ordersOverview,
+      payments,
+      productsOverview,
+      recentActivity,
+    } = getOverviewContext();
 
     return buildOrderDetail({
-      customersOverview: buildCustomersOverview({
-        customers,
-        invoices,
-        payments,
-        recentActivity,
-      }),
+      customersOverview,
       invoices,
-      invoicesOverview: buildInvoicesOverview({
-        customers,
-        invoices,
-        orders,
-      }),
+      invoicesOverview,
       orderId,
       orders,
-      ordersOverview: buildOrdersOverview({
-        customers,
-        fabrics,
-        invoices,
-        orders,
-      }),
+      ordersOverview,
       payments,
-      productsOverview: buildProductsOverview({
-        fabrics,
-      }),
+      productsOverview,
       recentActivity,
     });
   },
   getInvoicesOverview() {
-    const customers = fabricLogRepository.getCustomers();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-
-    return buildInvoicesOverview({
-      customers,
-      invoices,
-      orders,
-    });
+    return getOverviewContext().invoicesOverview;
+  },
+  getPaymentsOverview() {
+    return getOverviewContext().paymentsOverview;
   },
   getInvoiceDetail(invoiceId: string) {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-    const payments = fabricLogRepository.getPayments();
-    const recentActivity = fabricLogRepository.getRecentActivity();
+    const {
+      customersOverview,
+      invoices,
+      invoicesOverview,
+      orders,
+      ordersOverview,
+      payments,
+      productsOverview,
+      recentActivity,
+    } = getOverviewContext();
 
     return buildInvoiceDetail({
-      customersOverview: buildCustomersOverview({
-        customers,
-        invoices,
-        payments,
-        recentActivity,
-      }),
+      customersOverview,
       invoiceId,
       invoices,
-      invoicesOverview: buildInvoicesOverview({
-        customers,
-        invoices,
-        orders,
-      }),
+      invoicesOverview,
       orders,
-      ordersOverview: buildOrdersOverview({
-        customers,
-        fabrics,
-        invoices,
-        orders,
-      }),
+      ordersOverview,
       payments,
-      productsOverview: buildProductsOverview({
-        fabrics,
-      }),
+      productsOverview,
       recentActivity,
     });
   },
   getDashboardSummary() {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
-    const recentActivity = fabricLogRepository.getRecentActivity();
+    const { customers, fabrics, invoices, orders, recentActivity } =
+      getDemoContext();
 
     return buildDashboardSummary({
       customers,
@@ -214,10 +192,7 @@ export const fabricLogService = {
     });
   },
   getReportsOverview() {
-    const customers = fabricLogRepository.getCustomers();
-    const fabrics = fabricLogRepository.getFabrics();
-    const invoices = fabricLogRepository.getInvoices();
-    const orders = fabricLogRepository.getOrders();
+    const { customers, fabrics, invoices, orders } = getDemoContext();
 
     return buildReportsOverview({
       customers,

@@ -5,6 +5,7 @@ export const siteConfig = {
   defaultLocale: "en",
   locales: ["en", "az"] as const,
   currency: "AZN",
+  demoLastUpdatedAt: "2026-04-09",
 } as const;
 
 export type AppLocale = (typeof siteConfig.locales)[number];

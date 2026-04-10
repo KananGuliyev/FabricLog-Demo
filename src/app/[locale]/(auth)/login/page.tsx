@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "@/lib/i18n/navigation";
 import { demoCredentials, getDemoSession } from "@/lib/auth/session";
 import { buildLocalizedAppPath } from "@/lib/auth/routing";
-import type { AppLocale } from "@/lib/constants/site";
+import { siteConfig, type AppLocale } from "@/lib/constants/site";
 import { formatDate } from "@/lib/formatting";
 
 import { LoginForm } from "@/features/auth/login-form";
@@ -150,7 +150,7 @@ export default async function LoginPage({
                       {tCommon("updatedLabel")}
                     </p>
                     <p className="mt-2 text-sm font-semibold text-foreground">
-                      {formatDate("2026-04-09", appLocale)}
+                      {formatDate(siteConfig.demoLastUpdatedAt, appLocale)}
                     </p>
                   </div>
                 </div>

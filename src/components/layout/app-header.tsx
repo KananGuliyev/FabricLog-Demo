@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut, Menu, Search } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 
 import { BrandMark } from "@/components/shared/brand-mark";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -19,12 +19,14 @@ type AppHeaderProps = {
   items: NavigationItem[];
   lastUpdatedLabel: string;
   mobileMenuLabel: string;
-  searchActionLabel: string;
   searchHint: string;
   session: DemoSession;
   sessionLabel: string;
   sessionMetaLabel: string;
   signOutLabel: string;
+  workspaceLabel: string;
+  workspaceValue: string;
+  workspaceNote: string;
   logoutHref: string;
   updatedValue: string;
   languageSwitcher: React.ReactNode;
@@ -37,12 +39,14 @@ export function AppHeader({
   items,
   lastUpdatedLabel,
   mobileMenuLabel,
-  searchActionLabel,
   searchHint,
   session,
   sessionLabel,
   sessionMetaLabel,
   signOutLabel,
+  workspaceLabel,
+  workspaceValue,
+  workspaceNote,
   logoutHref,
   updatedValue,
   languageSwitcher,
@@ -86,6 +90,18 @@ export function AppHeader({
                   </div>
                 </div>
 
+                <div className="panel-secondary rounded-3xl px-4 py-4">
+                  <p className="subtle-label text-sidebar-foreground/70">
+                    {workspaceLabel}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-sidebar-foreground">
+                    {workspaceValue}
+                  </p>
+                  <p className="mt-1 text-xs text-sidebar-foreground/70">
+                    {workspaceNote}
+                  </p>
+                </div>
+
                 <Button asChild variant="outline" className="w-full justify-center">
                   <a href={logoutHref}>
                     <LogOut className="size-4" />
@@ -117,9 +133,7 @@ export function AppHeader({
               </AvatarFallback>
             </Avatar>
             <div className="min-w-0">
-              <p className="subtle-label text-muted-foreground">
-                {sessionLabel}
-              </p>
+              <p className="subtle-label text-muted-foreground">{sessionLabel}</p>
               <p className="truncate text-sm font-medium text-foreground">
                 {session.name}
               </p>
@@ -128,10 +142,13 @@ export function AppHeader({
               </p>
             </div>
           </div>
-          <Button variant="outline" className="px-4 text-muted-foreground">
-            <Search className="size-4" />
-            {searchActionLabel}
-          </Button>
+          <div className="panel-secondary min-w-[12rem] px-4 py-2">
+            <p className="subtle-label text-muted-foreground">{workspaceLabel}</p>
+            <p className="mt-1 text-sm font-medium text-foreground">
+              {workspaceValue}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">{workspaceNote}</p>
+          </div>
           <div className="panel-secondary min-w-[9.5rem] px-4 py-2 text-right">
             <p className="subtle-label text-muted-foreground">
               {lastUpdatedLabel}

@@ -5,13 +5,12 @@ import { useFormStatus } from "react-dom";
 import { AlertCircle, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import type { AppLocale } from "@/lib/constants/site";
-import type { AuthActionState } from "@/types/auth";
 import { FieldGroup } from "@/components/shared/field-group";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 import { signInAction } from "@/app/[locale]/(auth)/login/actions";
+import type { AppLocale } from "@/lib/constants/site";
+import type { AuthActionState } from "@/types/auth";
 
 const initialState: AuthActionState = {};
 
@@ -62,7 +61,7 @@ export function LoginForm({ locale, next }: LoginFormProps) {
           name="password"
           type="password"
           autoComplete="current-password"
-          placeholder="••••••••••••"
+          placeholder="************"
           required
         />
       </FieldGroup>
