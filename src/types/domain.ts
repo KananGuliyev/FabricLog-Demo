@@ -127,6 +127,45 @@ export const customersOverviewSchema = z.object({
   featuredCustomer: customerOverviewRowSchema,
 });
 
+export const productOverviewRowSchema = z.object({
+  id: z.string(),
+  sku: z.string(),
+  name: z.string(),
+  category: z.string(),
+  composition: z.string(),
+  colorway: z.string(),
+  widthCm: z.number().int().positive(),
+  weightGsm: z.number().int().positive(),
+  unitPrice: z.number().nonnegative(),
+  stockMeters: z.number().int().nonnegative(),
+  reservedMeters: z.number().int().nonnegative(),
+  availableMeters: z.number().int().nonnegative(),
+  reservationRate: z.number().min(0).max(1),
+  status: z.enum(fabricStatusValues),
+});
+
+export const productCategoryBreakdownSchema = z.object({
+  category: z.string(),
+  productsCount: z.number().int().nonnegative(),
+  stockMeters: z.number().int().nonnegative(),
+  reservedMeters: z.number().int().nonnegative(),
+  reservationRate: z.number().min(0).max(1),
+});
+
+export const productsOverviewSummarySchema = z.object({
+  totalProducts: z.number().int().nonnegative(),
+  totalStock: z.number().int().nonnegative(),
+  reservedStock: z.number().int().nonnegative(),
+  lowStockCount: z.number().int().nonnegative(),
+  categoryBreakdown: z.array(productCategoryBreakdownSchema),
+});
+
+export const productsOverviewSchema = z.object({
+  summary: productsOverviewSummarySchema,
+  rows: z.array(productOverviewRowSchema),
+  featuredProduct: productOverviewRowSchema,
+});
+
 export const recentActivitySchema = z.object({
   id: z.string(),
   type: z.enum(recentActivityTypeValues),
@@ -211,6 +250,10 @@ export type CustomerPaymentHealth = (typeof customerPaymentHealthValues)[number]
 export type CustomerOverviewRow = z.infer<typeof customerOverviewRowSchema>;
 export type CustomersOverviewSummary = z.infer<typeof customersOverviewSummarySchema>;
 export type CustomersOverview = z.infer<typeof customersOverviewSchema>;
+export type ProductOverviewRow = z.infer<typeof productOverviewRowSchema>;
+export type ProductCategoryBreakdown = z.infer<typeof productCategoryBreakdownSchema>;
+export type ProductsOverviewSummary = z.infer<typeof productsOverviewSummarySchema>;
+export type ProductsOverview = z.infer<typeof productsOverviewSchema>;
 export type DashboardStatusIndicatorKey = (typeof dashboardStatusIndicatorValues)[number];
 export type DashboardOrderPreview = z.infer<typeof dashboardOrderPreviewSchema>;
 export type DashboardInvoicePreview = z.infer<typeof dashboardInvoicePreviewSchema>;

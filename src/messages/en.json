@@ -240,26 +240,70 @@
   },
   "Products": {
     "title": "Products",
-    "description": "Present the textile catalog as a polished product library with stock, reservations, and pricing visibility.",
-    "searchPlaceholder": "Search SKU, product, or category",
+    "description": "Review the textile catalog with pricing, stock pressure, and availability signals in one polished inventory view.",
+    "searchPlaceholder": "Search SKU, product, category, or color",
     "emptyState": "No products found.",
+    "emptyStateDescription": "Try clearing the current search or filters to reveal the full demo assortment.",
+    "filters": {
+      "all": "All",
+      "categoryLabel": "Category",
+      "availabilityLabel": "Availability"
+    },
     "cards": {
+      "totalProducts": "Total products",
+      "totalProductsHint": "Active textile references currently presented in the showcase catalog.",
       "totalStock": "Total stock",
-      "totalStockHint": "Available catalog position across the demo assortment.",
+      "totalStockHint": "Current stock position across the full seeded product assortment.",
       "reservedStock": "Reserved stock",
-      "reservedStockHint": "Committed to current pipeline orders and sampling work.",
-      "averageUnitPrice": "Average unit price",
-      "averageUnitPriceHint": "Weighted for a premium but balanced textile portfolio."
+      "reservedStockHint": "Committed to current order flow, approvals, and sampling requests.",
+      "lowStockCount": "Low-stock references",
+      "lowStockCountHint": "Catalog lines that should be monitored for replenishment first."
     },
     "table": {
       "product": "Product",
-      "composition": "Composition",
-      "width": "Width",
-      "weight": "Weight",
+      "category": "Category",
+      "variant": "Color / variant",
       "stock": "Stock",
-      "reserved": "Reserved",
+      "stockCue": "{reserved} m reserved",
       "price": "Unit price",
-      "status": "Status"
+      "availability": "Availability",
+      "available": "Available meters"
+    },
+    "pressure": {
+      "healthy": "Healthy stock position",
+      "watch": "Reservation pressure building",
+      "critical": "Replenishment priority"
+    },
+    "panel": {
+      "title": "Catalog watch",
+      "description": "Track the references carrying the most reservation pressure and where the assortment is tightening.",
+      "featuredLabel": "Featured reference",
+      "featuredDescription": "{name} is carrying the highest current reservation pressure in the demo catalog and should stay on the replenishment radar.",
+      "categoryBreakdownTitle": "Category mix",
+      "categoryBreakdownDescription": "The strongest reservation pressure is concentrated in these seeded product groups.",
+      "meta": {
+        "category": "Category",
+        "availability": "Availability",
+        "available": "Available stock",
+        "price": "Unit price",
+        "pressure": "Pressure level",
+        "stock": "Total stock"
+      },
+      "breakdown": {
+        "productsCount": "{count} products",
+        "reservationShare": "{value} reserved"
+      }
+    },
+    "categories": {
+      "blend": "Blend",
+      "boucle": "Boucle",
+      "cotton": "Cotton",
+      "jacquard": "Jacquard",
+      "linen": "Linen",
+      "sheer": "Sheer",
+      "suiting": "Suiting",
+      "twill": "Twill",
+      "velvet": "Velvet"
     }
   },
   "Orders": {

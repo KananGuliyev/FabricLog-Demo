@@ -1,16 +1,26 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 
 import { DataTable } from "@/components/data-table/data-table";
+import {
+  TableFilterBar,
+  type TableFilterGroup,
+} from "@/components/data-table/table-filter-bar";
 import { StatusBadge } from "@/components/shared/status-badge";
 import type { AppLocale } from "@/lib/constants/site";
-import { formatCurrency, formatNumber } from "@/lib/formatting";
-import type { FabricProduct } from "@/types/domain";
+import { formatCurrency, formatNumber, formatPercent } from "@/lib/formatting";
+import type { ProductOverviewRow } from "@/types/domain";
+
+import {
+  getProductCategoryKey,
+  getProductPressureKey,
+} from "./product-presenters";
 
 type ProductsTableProps = {
-  data: FabricProduct[];
+  data: ProductOverviewRow[];
   locale: AppLocale;
 };
 
@@ -18,38 +28,93 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
   const t = useTranslations("Products");
   const tStatuses = useTranslations("Statuses.fabric");
 
-  const columns: ColumnDef<FabricProduct>[] = [
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [availabilityFilter, setAvailabilityFilter] = useState("all");
+
+  const categoryOptions = useMemo(() => {
+    const categories = [...new Set(data.map((product) => product.category))].sort();
+
+    return categories.map((category) => {
+      const key = getProductCategoryKey(category);
+
+      return {
+        label: key ? t(`categories.${key}`) : category,
+        value: category,
+      };
+    });
+  }, [data, t]);
+
+  const filteredData = useMemo(() => {
+    return data.filter((product) => {
+      const matchesCategory =
+        categoryFilter === "all" || product.category === categoryFilter;
+      const matchesAvailability =
+        availabilityFilter === "all" || product.status === availabilityFilter;
+
+      return matchesCategory && matchesAvailability;
+    });
+  }, [availabilityFilter, categoryFilter, data]);
+
+  const filterGroups: TableFilterGroup[] = [
+    {
+      label: t("filters.categoryLabel"),
+      value: categoryFilter,
+      onChange: setCategoryFilter,
+      options: [{ label: t("filters.all"), value: "all" }, ...categoryOptions],
+    },
+    {
+      label: t("filters.availabilityLabel"),
+      value: availabilityFilter,
+      onChange: setAvailabilityFilter,
+      options: [
+        { label: t("filters.all"), value: "all" },
+        { label: tStatuses("available"), value: "available" },
+        { label: tStatuses("low"), value: "low" },
+        { label: tStatuses("reserved"), value: "reserved" },
+      ],
+    },
+  ];
+
+  const columns: ColumnDef<ProductOverviewRow>[] = [
     {
       accessorKey: "name",
       header: t("table.product"),
       cell: ({ row }) => (
-        <div>
+        <div className="space-y-1">
           <p className="font-medium">{row.original.name}</p>
           <p className="text-sm text-muted-foreground">{row.original.sku}</p>
         </div>
       ),
     },
-    { accessorKey: "composition", header: t("table.composition") },
     {
-      accessorKey: "widthCm",
-      header: t("table.width"),
-      cell: ({ row }) => `${row.original.widthCm} cm`,
+      accessorKey: "category",
+      header: t("table.category"),
+      cell: ({ row }) => {
+        const key = getProductCategoryKey(row.original.category);
+
+        return (
+          <div className="space-y-1">
+            <p className="text-sm font-medium">
+              {key ? t(`categories.${key}`) : row.original.category}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {row.original.composition}
+            </p>
+          </div>
+        );
+      },
     },
     {
-      accessorKey: "weightGsm",
-      header: t("table.weight"),
-      cell: ({ row }) => `${row.original.weightGsm} gsm`,
-    },
-    {
-      accessorKey: "stockMeters",
-      header: t("table.stock"),
-      cell: ({ row }) => `${formatNumber(row.original.stockMeters, locale)} m`,
-    },
-    {
-      accessorKey: "reservedMeters",
-      header: t("table.reserved"),
-      cell: ({ row }) =>
-        `${formatNumber(row.original.reservedMeters, locale)} m`,
+      accessorKey: "colorway",
+      header: t("table.variant"),
+      cell: ({ row }) => (
+        <div className="space-y-1">
+          <p className="text-sm font-medium">{row.original.colorway}</p>
+          <p className="text-xs text-muted-foreground">
+            {row.original.widthCm} cm / {row.original.weightGsm} gsm
+          </p>
+        </div>
+      ),
     },
     {
       accessorKey: "unitPrice",
@@ -57,23 +122,69 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
       cell: ({ row }) => formatCurrency(row.original.unitPrice, locale),
     },
     {
-      accessorKey: "status",
-      header: t("table.status"),
+      accessorKey: "stockMeters",
+      header: t("table.stock"),
       cell: ({ row }) => (
-        <StatusBadge
-          status={row.original.status}
-          label={tStatuses(row.original.status)}
-        />
+        <div className="space-y-1">
+          <p className="text-sm font-medium">
+            {formatNumber(row.original.stockMeters, locale)} m
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {t("table.stockCue", {
+              reserved: formatNumber(row.original.reservedMeters, locale),
+            })}
+          </p>
+        </div>
+      ),
+    },
+    {
+      accessorKey: "status",
+      header: t("table.availability"),
+      cell: ({ row }) => (
+        <div className="space-y-1">
+          <StatusBadge
+            status={row.original.status}
+            label={tStatuses(row.original.status)}
+          />
+          <p className="text-xs text-muted-foreground">
+            {t(`pressure.${getProductPressureKey(row.original)}`)}
+          </p>
+        </div>
+      ),
+    },
+    {
+      accessorKey: "availableMeters",
+      header: t("table.available"),
+      cell: ({ row }) => (
+        <div className="space-y-1">
+          <p className="text-sm font-medium">
+            {formatNumber(row.original.availableMeters, locale)} m
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {formatPercent(row.original.reservationRate, locale)}
+          </p>
+        </div>
       ),
     },
   ];
 
   return (
     <DataTable
-      data={data}
+      data={filteredData}
       columns={columns}
+      searchAccessor={(row) =>
+        [
+          row.sku,
+          row.name,
+          row.category,
+          row.colorway,
+          row.composition,
+        ].join(" ")
+      }
       searchPlaceholder={t("searchPlaceholder")}
       emptyMessage={t("emptyState")}
+      emptyDescription={t("emptyStateDescription")}
+      toolbarExtras={<TableFilterBar groups={filterGroups} />}
     />
   );
 }
