@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
+import {
+  getSiteOrigin,
+  isProductionDeployment,
+  siteConfig,
+} from "@/lib/constants/site";
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -13,16 +19,66 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const siteOrigin = getSiteOrigin();
+const previewRobots = { index: false, follow: false } as const;
+
 export const metadata: Metadata = {
-  title: "FabricLog",
+  metadataBase: new URL(siteOrigin),
+  title: {
+    default: siteConfig.name,
+    template: siteConfig.titleTemplate,
+  },
   description:
-    "A portfolio-ready textile business management demo built with Next.js.",
+    "A bilingual textile operations demo with mock auth, connected business workflows, and portfolio-safe demo data.",
   keywords: [
     "FabricLog",
     "portfolio dashboard",
     "Next.js full-stack demo",
     "textile business app",
+    "bilingual SaaS demo",
   ],
+  authors: [{ name: "Kanan Guliyev" }],
+  creator: "Kanan Guliyev",
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: "/en",
+    languages: {
+      en: "/en",
+      az: "/az",
+    },
+  },
+  icons: {
+    icon: "/brand/fabriclog-mark.svg",
+    shortcut: "/brand/fabriclog-mark.svg",
+    apple: "/brand/fabriclog-mark.svg",
+  },
+  openGraph: {
+    type: "website",
+    url: siteOrigin,
+    title: siteConfig.name,
+    description:
+      "A polished public-safe textile operations demo covering customers, products, orders, invoices, payments, and reporting.",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/brand/fabriclog-mark.svg",
+        alt: "FabricLog brand mark",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.name,
+    description:
+      "Bilingual textile operations SaaS demo with mock auth and portfolio-safe sample data.",
+    images: ["/brand/fabriclog-mark.svg"],
+  },
+  robots: isProductionDeployment()
+    ? {
+        index: true,
+        follow: true,
+      }
+    : previewRobots,
 };
 
 export default function RootLayout({

@@ -901,6 +901,15 @@
     "emptyDescription": "Link kohne ola biler ve ya qeyd demo melumatinda artiq movcud deyil.",
     "backAction": "Panele qayit"
   },
+  "ErrorPage": {
+    "title": "Gozlenilmez xeta bas verdi",
+    "description": "FabricLog bu ictimai demo gorunusunu yukleyerken gozlenilmez bir problemle qarsilasdi.",
+    "emptyTitle": "Sehife tamamlana bilmedi.",
+    "emptyDescription": "Sehifeni yeniden yuklemeye calisin ve ya demonu davam etdirmek ucun panele qayidin.",
+    "retryAction": "Yeniden cehd et",
+    "backAction": "Panele qayit",
+    "reference": "Istinad: {digest}"
+  },
   "Statuses": {
     "tiers": {
       "signature": "Premium",

@@ -97,6 +97,12 @@ npm run typecheck
 npm run build
 ```
 
+Or run the full verification sequence in one command:
+
+```bash
+npm run verify
+```
+
 ## Mock Data and Demo Architecture
 
 FabricLog uses a curated demo data layer instead of a real backend. The dataset is intentionally realistic enough to make the product feel credible, but every customer, company, invoice, payment, and activity entry is fictional.
@@ -180,6 +186,45 @@ public/
   demo/
 ```
 
+## Deployment
+
+**Recommended platform:** Vercel
+
+FabricLog is a Next.js App Router project with `next-intl`, middleware route protection, and dynamic authenticated pages, so Vercel is the cleanest deployment target for this public showcase.
+
+### Deployment notes
+
+- No secrets are required for the public demo
+- `NODE_ENV` is set automatically by the host
+- `SITE_URL` is optional and improves canonical metadata, `robots.txt`, and `sitemap.xml`
+- Preview deployments are intended for review and are configured to stay `noindex`
+- The production deployment is the intended public portfolio URL and can be indexed
+
+### Recommended Vercel setup
+
+1. Import the repository into Vercel
+2. Keep the default Next.js build settings
+3. Use Node.js 22+
+4. Optionally add:
+
+```bash
+SITE_URL=https://your-demo-domain.com
+```
+
+### Local production check
+
+```bash
+npm run verify
+npm run start
+```
+
+### Deploy flow
+
+```bash
+vercel
+vercel --prod
+```
+
 ## Public Demo Disclaimer
 
 FabricLog is a **public showcase project**, not a production deployment.
@@ -215,6 +260,12 @@ For recruiters or hiring managers, it provides a compact but credible example of
 ## Environment Notes
 
 No secrets are required for the public demo. See [`.env.example`](./.env.example) for the minimal local environment reference.
+
+Optional deployment env:
+
+- `SITE_URL` for canonical metadata, sitemap, and robots output
+
+The local Windows `spawn EPERM` issue seen in some sandboxed environments is a workstation/runtime quirk, not an application build blocker. A normal host build completes successfully.
 
 ## Portfolio Publishing Notes
 

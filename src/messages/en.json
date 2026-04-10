@@ -901,6 +901,15 @@
     "emptyDescription": "The link may be outdated or the record may not exist in the seeded showcase data anymore.",
     "backAction": "Return to dashboard"
   },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "FabricLog hit an unexpected issue while rendering this public demo view.",
+    "emptyTitle": "The page could not be completed.",
+    "emptyDescription": "Try reloading this screen or return to the dashboard to continue exploring the demo.",
+    "retryAction": "Try again",
+    "backAction": "Back to dashboard",
+    "reference": "Reference: {digest}"
+  },
   "Statuses": {
     "tiers": {
       "signature": "Signature",
