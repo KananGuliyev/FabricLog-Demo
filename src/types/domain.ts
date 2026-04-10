@@ -10,6 +10,13 @@ export const orderStatusValues = [
   "dispatched",
 ] as const;
 export const paymentStatusValues = ["paid", "partial", "pending", "overdue"] as const;
+export const customerPaymentHealthValues = [
+  "none",
+  "paid",
+  "pending",
+  "partial",
+  "overdue",
+] as const;
 export const dashboardStatusIndicatorValues = [
   "low_stock",
   "overdue_invoices",
@@ -86,6 +93,38 @@ export const paymentRecordSchema = z.object({
   paidAt: z.string(),
   method: z.string(),
   status: z.enum(paymentStatusValues),
+});
+
+export const customerOverviewRowSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  company: z.string(),
+  email: z.string().email(),
+  region: z.string(),
+  tier: z.enum(customerTierValues),
+  preferredCollection: z.string(),
+  totalOrders: z.number().int().nonnegative(),
+  invoiceCount: z.number().int().nonnegative(),
+  paidInvoicesCount: z.number().int().nonnegative(),
+  openInvoicesCount: z.number().int().nonnegative(),
+  outstandingBalance: z.number().nonnegative(),
+  paymentHealth: z.enum(customerPaymentHealthValues),
+  lastActivityDate: z.string(),
+});
+
+export const customersOverviewSummarySchema = z.object({
+  totalCustomers: z.number().int().nonnegative(),
+  signatureCustomers: z.number().int().nonnegative(),
+  growthCustomers: z.number().int().nonnegative(),
+  totalOutstandingBalance: z.number().nonnegative(),
+  overdueCustomers: z.number().int().nonnegative(),
+  followUpCustomers: z.number().int().nonnegative(),
+});
+
+export const customersOverviewSchema = z.object({
+  summary: customersOverviewSummarySchema,
+  rows: z.array(customerOverviewRowSchema),
+  featuredCustomer: customerOverviewRowSchema,
 });
 
 export const recentActivitySchema = z.object({
@@ -168,6 +207,10 @@ export type OrderStatus = (typeof orderStatusValues)[number];
 export type Invoice = z.infer<typeof invoiceSchema>;
 export type PaymentRecord = z.infer<typeof paymentRecordSchema>;
 export type PaymentStatus = (typeof paymentStatusValues)[number];
+export type CustomerPaymentHealth = (typeof customerPaymentHealthValues)[number];
+export type CustomerOverviewRow = z.infer<typeof customerOverviewRowSchema>;
+export type CustomersOverviewSummary = z.infer<typeof customersOverviewSummarySchema>;
+export type CustomersOverview = z.infer<typeof customersOverviewSchema>;
 export type DashboardStatusIndicatorKey = (typeof dashboardStatusIndicatorValues)[number];
 export type DashboardOrderPreview = z.infer<typeof dashboardOrderPreviewSchema>;
 export type DashboardInvoicePreview = z.infer<typeof dashboardInvoicePreviewSchema>;

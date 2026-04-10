@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/incompatible-library */
 "use client";
 
-import { useDeferredValue, useState } from "react";
+import { useDeferredValue, useMemo, useState, type ReactNode } from "react";
 import {
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel,
   useReactTable,
   type ColumnDef,
 } from "@tanstack/react-table";
@@ -26,41 +25,67 @@ type DataTableProps<TData> = {
   data: TData[];
   columns: ColumnDef<TData>[];
   emptyMessage: string;
+  emptyDescription?: string;
+  onSearchChange?: (value: string) => void;
+  searchAccessor?: (row: TData) => string;
   searchPlaceholder: string;
+  searchValue?: string;
+  toolbarExtras?: ReactNode;
 };
 
 export function DataTable<TData>({
   data,
   columns,
   emptyMessage,
+  emptyDescription,
+  onSearchChange,
+  searchAccessor,
   searchPlaceholder,
+  searchValue,
+  toolbarExtras,
 }: DataTableProps<TData>) {
-  const [query, setQuery] = useState("");
+  const [internalQuery, setInternalQuery] = useState("");
+  const query = searchValue ?? internalQuery;
   const deferredQuery = useDeferredValue(query);
+  const setQuery = onSearchChange ?? setInternalQuery;
+
+  const filteredData = useMemo(() => {
+    const term = deferredQuery.trim().toLowerCase();
+
+    if (!term) {
+      return data;
+    }
+
+    return data.filter((row) => {
+      const haystack = searchAccessor
+        ? searchAccessor(row)
+        : JSON.stringify(row);
+
+      return haystack.toLowerCase().includes(term);
+    });
+  }, [data, deferredQuery, searchAccessor]);
 
   const table = useReactTable({
-    data,
+    data: filteredData,
     columns,
-    state: {
-      globalFilter: deferredQuery,
-    },
-    onGlobalFilterChange: setQuery,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
   });
 
   return (
     <div className="section-stack">
       <div className="table-toolbar">
         <div className="relative w-full max-w-md">
-        <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
-        <Input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          className="pl-10"
-          placeholder={searchPlaceholder}
-        />
+          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            className="pl-10"
+            placeholder={searchPlaceholder}
+          />
         </div>
+        {toolbarExtras ? (
+          <div className="flex flex-wrap items-center gap-3">{toolbarExtras}</div>
+        ) : null}
       </div>
 
       <div className="table-frame">
@@ -98,7 +123,10 @@ export function DataTable<TData>({
                   colSpan={columns.length}
                   className="px-4 py-6"
                 >
-                  <EmptyState title={emptyMessage} />
+                  <EmptyState
+                    title={emptyMessage}
+                    description={emptyDescription}
+                  />
                 </TableCell>
               </TableRow>
             )}

@@ -163,30 +163,59 @@
   },
   "Customers": {
     "title": "Müştərilər",
-    "description": "Dəyərli hesabları, açıq balansları və üstünlük verilən kolleksiyaları bir yerdə görün.",
-    "searchPlaceholder": "Müştəri və ya şirkət axtar",
-    "emptyState": "Müştəri tapılmadı.",
+    "description": "Müştəri hesablarını, əlaqə məlumatlarını, faktura təzyiqini və ödəniş sağlamlığını vahid portfel görünüşündə izləyin.",
+    "searchPlaceholder": "Ad, şirkət, e-poçt və ya region axtar",
+    "emptyState": "Uyğun müştəri tapılmadı.",
+    "emptyStateDescription": "Filtri sıfırlayın və ya axtarış ifadəsini genişləndirin.",
     "featured": "Fokus hesab",
     "featuredDescription": "{name} əsasən {collection} istiqamətində təkrarlanan tələb portfelinə nəzarət edir.",
+    "filters": {
+      "all": "Hamısı",
+      "tierLabel": "Səviyyə",
+      "paymentHealthLabel": "Ödəniş sağlamlığı"
+    },
     "cards": {
       "totalAccounts": "Ümumi hesablar",
       "totalAccountsHint": "Premium qonaqpərvərlik, tikiş və studiya alıcıları arasında balanslı paylanma.",
       "signatureCustomers": "Premium müştərilər",
       "signatureCustomersHint": "Bir neçə sifariş əlaqəsi olan ən dəyərli hesablar.",
+      "followUpCustomers": "Təqib hesabları",
+      "followUpCustomersHint": "Yığım diqqəti tələb edən gözləmədə və qismən fakturalı müştərilər.",
       "outstandingBalance": "Açıq balans",
       "outstandingBalanceHint": "Hələ də yığım gözləyən portfel riski.",
       "signatureAccount": "Premium hesab",
       "exposure": "Risk məbləği",
       "lastOrderPrefix": "Son sifariş"
     },
+    "healthPanel": {
+      "title": "Müştəri sağlamlığı",
+      "description": "Hesab paylanması, gecikmiş təzyiq və ən çox risk daşıyan müştəri üçün qısa icmal.",
+      "cards": {
+        "growthCustomers": "İnkişaf müştəriləri",
+        "growthCustomersHint": "Təkrarlanan sifariş həcmini artırmaq üçün potensialı olan hesablar.",
+        "overdueCustomers": "Gecikmiş müştərilər",
+        "overdueCustomersHint": "Hazırda gecikmiş faktura riski daşıyan hesablar.",
+        "followUpCustomers": "Yığım izləməsi",
+        "followUpCustomersHint": "Hələ hərəkətdə olan qismən və gözləmədəki balanslar."
+      },
+      "featured": {
+        "collection": "Üstünlük verilən kolleksiya",
+        "contact": "Əsas əlaqə",
+        "paymentHealth": "Ödəniş sağlamlığı",
+        "lastActivity": "Son aktivlik"
+      }
+    },
     "table": {
-      "name": "Müştəri",
+      "account": "Hesab",
+      "contact": "Əlaqə",
       "region": "Region",
       "tier": "Səviyyə",
-      "collection": "Kolleksiya",
       "orders": "Sifarişlər",
+      "invoices": "Fakturalar",
+      "paymentHealth": "Ödəniş sağlamlığı",
+      "paymentCue": "{open} açıq / {paid} ödənib",
       "balance": "Açıq balans",
-      "lastOrder": "Son sifariş"
+      "lastActivity": "Son aktivlik"
     }
   },
   "Fabrics": {
@@ -412,6 +441,7 @@
       "dispatched": "Göndərilib"
     },
     "payment": {
+      "none": "Faktura yoxdur",
       "paid": "Ödənib",
       "partial": "Qismən",
       "pending": "Gözləmədə",

@@ -1,11 +1,11 @@
 import { getTranslations } from "next-intl/server";
 
+import { CustomerHealthPanel } from "@/features/customers/customer-health-panel";
 import { CustomersTable } from "@/features/customers/customers-table";
 import { MetricCard } from "@/components/shared/metric-card";
 import { PageIntro } from "@/components/shared/page-intro";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AppLocale } from "@/lib/constants/site";
-import { formatCurrency, formatDate } from "@/lib/formatting";
+import { formatCurrency } from "@/lib/formatting";
 import { fabricLogService } from "@/server/services/fabriclog-service";
 
 type CustomersPageProps = {
@@ -17,16 +17,12 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
   const appLocale = locale as AppLocale;
   const t = await getTranslations({ locale, namespace: "Customers" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
+  const tPaymentStatuses = await getTranslations({
+    locale,
+    namespace: "Statuses.payment",
+  });
 
-  const customers = fabricLogService.getCustomers();
-  const signatureCustomers = customers.filter(
-    (customer) => customer.tier === "signature"
-  ).length;
-  const totalOutstanding = customers.reduce(
-    (sum, customer) => sum + customer.outstandingBalance,
-    0
-  );
-  const featuredCustomer = customers[0]!;
+  const overview = fabricLogService.getCustomersOverview();
 
   return (
     <div className="page-grid">
@@ -36,23 +32,30 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 lg:grid-cols-[1.4fr_0.8fr_0.8fr]">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           label={t("cards.totalAccounts")}
-          value={`${customers.length}`}
+          value={`${overview.summary.totalCustomers}`}
           hint={t("cards.totalAccountsHint")}
           trend={9}
         />
         <MetricCard
           label={t("cards.signatureCustomers")}
-          value={`${signatureCustomers}`}
+          value={`${overview.summary.signatureCustomers}`}
           hint={t("cards.signatureCustomersHint")}
           trend={6}
           tone="success"
         />
         <MetricCard
+          label={t("cards.followUpCustomers")}
+          value={`${overview.summary.followUpCustomers}`}
+          hint={t("cards.followUpCustomersHint")}
+          trend={7}
+          tone="warning"
+        />
+        <MetricCard
           label={t("cards.outstandingBalance")}
-          value={formatCurrency(totalOutstanding, appLocale)}
+          value={formatCurrency(overview.summary.totalOutstandingBalance, appLocale)}
           hint={t("cards.outstandingBalanceHint")}
           trend={-4}
           tone="warning"
@@ -60,39 +63,44 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
-        <CustomersTable data={customers} locale={appLocale} />
+        <CustomersTable data={overview.rows} locale={appLocale} />
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("featured")}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
-              <p className="subtle-label text-primary-foreground/72">
-                {t("cards.signatureAccount")}
-              </p>
-              <p className="mt-2 text-2xl font-semibold">
-                {featuredCustomer.company}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-primary-foreground/86">
-                {t("featuredDescription", {
-                  name: featuredCustomer.name,
-                  collection: featuredCustomer.preferredCollection,
-                })}
-              </p>
-            </div>
-            <div className="panel-secondary px-5 py-5">
-              <p className="subtle-label text-muted-foreground">{t("cards.exposure")}</p>
-              <p className="mt-1 text-3xl font-semibold">
-                {formatCurrency(featuredCustomer.outstandingBalance, appLocale)}
-              </p>
-              <p className="body-copy mt-2 text-sm text-muted-foreground">
-                {t("cards.lastOrderPrefix")}{" "}
-                {formatDate(featuredCustomer.lastOrderDate, appLocale)}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <CustomerHealthPanel
+          featuredCustomer={overview.featuredCustomer}
+          locale={appLocale}
+          summary={overview.summary}
+          translations={{
+            featured: t("featured"),
+            featuredDescription: t("featuredDescription", {
+              name: overview.featuredCustomer.name,
+              collection: overview.featuredCustomer.preferredCollection,
+            }),
+            statsTitle: t("healthPanel.title"),
+            statsDescription: t("healthPanel.description"),
+            summaryCards: {
+              growthCustomers: t("healthPanel.cards.growthCustomers"),
+              growthCustomersHint: t("healthPanel.cards.growthCustomersHint"),
+              overdueCustomers: t("healthPanel.cards.overdueCustomers"),
+              overdueCustomersHint: t("healthPanel.cards.overdueCustomersHint"),
+              followUpCustomers: t("healthPanel.cards.followUpCustomers"),
+              followUpCustomersHint: t("healthPanel.cards.followUpCustomersHint"),
+            },
+            featuredMeta: {
+              collection: t("healthPanel.featured.collection"),
+              contact: t("healthPanel.featured.contact"),
+              exposure: t("cards.exposure"),
+              paymentHealth: t("healthPanel.featured.paymentHealth"),
+              lastActivity: t("healthPanel.featured.lastActivity"),
+            },
+            paymentStatuses: {
+              none: tPaymentStatuses("none"),
+              paid: tPaymentStatuses("paid"),
+              pending: tPaymentStatuses("pending"),
+              partial: tPaymentStatuses("partial"),
+              overdue: tPaymentStatuses("overdue"),
+            },
+          }}
+        />
       </div>
     </div>
   );

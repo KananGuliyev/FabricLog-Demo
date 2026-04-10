@@ -163,30 +163,59 @@
   },
   "Customers": {
     "title": "Customers",
-    "description": "Keep high-value accounts, outstanding balances, and preferred collections visible in one place.",
-    "searchPlaceholder": "Search customer or company",
-    "emptyState": "No customers found.",
+    "description": "Review customer accounts, contact points, invoice pressure, and payment health from one polished portfolio view.",
+    "searchPlaceholder": "Search name, company, email, or region",
+    "emptyState": "No matching customers found.",
+    "emptyStateDescription": "Try clearing a filter or broadening the search terms.",
     "featured": "Account focus",
     "featuredDescription": "{name} oversees a recurring demand mix focused on {collection}.",
+    "filters": {
+      "all": "All",
+      "tierLabel": "Tier",
+      "paymentHealthLabel": "Payment health"
+    },
     "cards": {
       "totalAccounts": "Total accounts",
       "totalAccountsHint": "Balanced between signature hospitality, tailoring, and studio buyers.",
       "signatureCustomers": "Signature customers",
       "signatureCustomersHint": "Highest-value accounts with multi-order relationships.",
+      "followUpCustomers": "Follow-up accounts",
+      "followUpCustomersHint": "Customers with pending or partial invoices that need collection attention.",
       "outstandingBalance": "Outstanding balance",
       "outstandingBalanceHint": "Portfolio exposure still awaiting collection.",
       "signatureAccount": "Signature account",
       "exposure": "Exposure",
       "lastOrderPrefix": "Last order on"
     },
+    "healthPanel": {
+      "title": "Customer health",
+      "description": "A compact snapshot of account distribution, overdue pressure, and the most exposed featured relationship.",
+      "cards": {
+        "growthCustomers": "Growth customers",
+        "growthCustomersHint": "Accounts with room to deepen repeat order activity.",
+        "overdueCustomers": "Overdue customers",
+        "overdueCustomersHint": "Accounts currently carrying overdue invoice exposure.",
+        "followUpCustomers": "Collection watchlist",
+        "followUpCustomersHint": "Customers with pending or partial balances still in motion."
+      },
+      "featured": {
+        "collection": "Preferred collection",
+        "contact": "Primary contact",
+        "paymentHealth": "Payment health",
+        "lastActivity": "Last activity"
+      }
+    },
     "table": {
-      "name": "Customer",
+      "account": "Account",
+      "contact": "Contact",
       "region": "Region",
       "tier": "Tier",
-      "collection": "Collection",
       "orders": "Orders",
+      "invoices": "Invoices",
+      "paymentHealth": "Payment health",
+      "paymentCue": "{open} open / {paid} paid",
       "balance": "Outstanding balance",
-      "lastOrder": "Last order"
+      "lastActivity": "Last activity"
     }
   },
   "Fabrics": {
@@ -412,6 +441,7 @@
       "dispatched": "Dispatched"
     },
     "payment": {
+      "none": "No invoices",
       "paid": "Paid",
       "partial": "Partial",
       "pending": "Pending",

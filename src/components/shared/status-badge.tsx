@@ -17,6 +17,7 @@ const statusToneMap = {
   partial: "warning",
   pending: "neutral",
   overdue: "critical",
+  none: "neutral",
 } as const;
 
 const toneStyles = {
