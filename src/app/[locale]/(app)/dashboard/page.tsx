@@ -1,19 +1,17 @@
 import { getTranslations } from "next-intl/server";
 
-import { MetricCard } from "@/components/shared/metric-card";
 import { PageIntro } from "@/components/shared/page-intro";
 import { StatusBadge } from "@/components/shared/status-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  DashboardPaymentChart,
-  DashboardPipelineChart,
-  DashboardRevenueChart,
-} from "@/features/dashboard/dashboard-charts";
+import { DashboardRevenueChart } from "@/features/dashboard/dashboard-charts";
+import { DashboardActivityFeed } from "@/features/dashboard/dashboard-activity-feed";
+import { DashboardKpiGrid } from "@/features/dashboard/dashboard-kpi-grid";
+import { DashboardPreviewTable } from "@/features/dashboard/dashboard-preview-table";
+import { DashboardStatusIndicators } from "@/features/dashboard/dashboard-status-indicators";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatDate, formatPercent } from "@/lib/formatting";
-import { cn } from "@/lib/utils";
 import { fabricLogService } from "@/server/services/fabriclog-service";
-import type { RecentActivity } from "@/types/domain";
+import type { DashboardStatusIndicatorKey, RecentActivity } from "@/types/domain";
 
 type DashboardPageProps = {
   params: Promise<{ locale: string }>;
@@ -25,12 +23,13 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const t = await getTranslations({ locale, namespace: "Dashboard" });
   const tActivity = await getTranslations({ locale, namespace: "Dashboard.activity" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
-  const tInsights = await getTranslations({ locale, namespace: "Insights" });
-  const tStatuses = await getTranslations({ locale, namespace: "Statuses.order" });
+  const tOrderStatuses = await getTranslations({ locale, namespace: "Statuses.order" });
+  const tPaymentStatuses = await getTranslations({
+    locale,
+    namespace: "Statuses.payment",
+  });
 
   const summary = fabricLogService.getDashboardSummary();
-  const orders = fabricLogService.getOrders().slice(0, 4);
-  const customers = fabricLogService.getCustomers();
 
   const activityToneMap: Record<RecentActivity["type"], string> = {
     payment_received: "bg-emerald-500",
@@ -42,6 +41,21 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
     inventory_low: "bg-orange-500",
     invoice_issued: "bg-stone-500",
   };
+  const indicatorLabelMap: Record<DashboardStatusIndicatorKey, string> = {
+    low_stock: t("statusIndicators.items.lowStock"),
+    overdue_invoices: t("statusIndicators.items.overdueInvoices"),
+    pending_invoices: t("statusIndicators.items.pendingInvoices"),
+    production_orders: t("statusIndicators.items.productionOrders"),
+  };
+  const indicatorToneMap: Record<
+    DashboardStatusIndicatorKey,
+    "critical" | "neutral" | "success" | "warning"
+  > = {
+    low_stock: "warning",
+    overdue_invoices: "critical",
+    pending_invoices: "neutral",
+    production_orders: "success",
+  };
 
   return (
     <div className="page-grid">
@@ -51,189 +65,208 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <MetricCard
-          label={t("metrics.revenue")}
-          value={formatCurrency(summary.totalRevenue, appLocale)}
-          hint={t("metrics.revenueHint")}
-          trend={14}
-          tone="success"
-        />
-        <MetricCard
-          label={t("metrics.customers")}
-          value={`${summary.activeCustomers}`}
-          hint={t("metrics.customersHint")}
-          trend={8}
-          tone="neutral"
-        />
-        <MetricCard
-          label={t("metrics.invoices")}
-          value={`${summary.openInvoices}`}
-          hint={t("metrics.invoicesHint")}
-          trend={-3}
-          tone="warning"
-        />
-        <MetricCard
-          label={t("metrics.collections")}
-          value={formatPercent(summary.collectionRate, appLocale)}
-          hint={t("metrics.collectionsHint")}
-          trend={6}
-          tone="success"
-        />
-      </div>
+      <DashboardKpiGrid
+        metrics={[
+          {
+            label: t("metrics.customers"),
+            value: `${summary.totalCustomers}`,
+            hint: t("metrics.customersHint"),
+            trend: 8,
+            tone: "neutral",
+          },
+          {
+            label: t("metrics.orders"),
+            value: `${summary.totalOrders}`,
+            hint: t("metrics.ordersHint"),
+            trend: 11,
+            tone: "success",
+          },
+          {
+            label: t("metrics.invoices"),
+            value: `${summary.totalInvoices}`,
+            hint: t("metrics.invoicesHint"),
+            trend: 4,
+            tone: "neutral",
+          },
+          {
+            label: t("metrics.revenue"),
+            value: formatCurrency(summary.totalRevenue, appLocale),
+            hint: t("metrics.revenueHint"),
+            trend: 14,
+            tone: "success",
+          },
+          {
+            label: t("metrics.unpaidInvoices"),
+            value: `${summary.unpaidInvoicesCount}`,
+            hint: t("metrics.unpaidInvoicesHint"),
+            trend: -2,
+            tone: "warning",
+          },
+        ]}
+      />
 
-      <div className="grid gap-6 xl:grid-cols-[1.35fr_0.85fr_0.85fr]">
+      <div className="grid gap-6 xl:grid-cols-[1.45fr_1fr]">
         <Card>
           <CardHeader>
-            <CardTitle>{t("charts.revenueTitle")}</CardTitle>
+            <CardTitle>{t("visualSummary.title")}</CardTitle>
             <p className="body-copy text-sm text-muted-foreground">
-              {t("charts.revenueDescription")}
+              {t("visualSummary.description")}
             </p>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-6">
             <DashboardRevenueChart
               data={summary.monthlyRevenue}
               locale={appLocale}
             />
+            <div className="grid gap-3 sm:grid-cols-3">
+              <div className="panel-secondary px-4 py-3">
+                <p className="subtle-label text-muted-foreground">
+                  {t("visualSummary.items.collectionRate")}
+                </p>
+                <p className="mt-2 text-xl font-semibold">
+                  {formatPercent(summary.collectionRate, appLocale)}
+                </p>
+              </div>
+              <div className="panel-secondary px-4 py-3">
+                <p className="subtle-label text-muted-foreground">
+                  {t("visualSummary.items.pendingFollowUp")}
+                </p>
+                <p className="mt-2 text-xl font-semibold">
+                  {summary.pendingPayments}
+                </p>
+              </div>
+              <div className="panel-secondary px-4 py-3">
+                <p className="subtle-label text-muted-foreground">
+                  {t("visualSummary.items.lowStock")}
+                </p>
+                <p className="mt-2 text-xl font-semibold">
+                  {summary.lowStockCount}
+                </p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("charts.paymentsTitle")}</CardTitle>
-            <p className="body-copy text-sm text-muted-foreground">
-              {t("charts.paymentsDescription")}
-            </p>
-          </CardHeader>
-          <CardContent>
-            <DashboardPaymentChart
-              data={summary.paymentBreakdown}
-              locale={appLocale}
-            />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("charts.pipelineTitle")}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <DashboardPipelineChart data={summary.orderPipeline} />
-          </CardContent>
-        </Card>
+        <DashboardStatusIndicators
+          title={t("statusIndicators.title")}
+          description={t("statusIndicators.description")}
+          items={summary.statusIndicators.map((item) => ({
+            count: item.count,
+            label: indicatorLabelMap[item.key],
+            tone: indicatorToneMap[item.key],
+          }))}
+        />
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.05fr_1.05fr_0.95fr]">
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("recentOrders")}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {orders.map((order) => {
-              const customer = customers.find(
-                (entry) => entry.id === order.customerId
-              );
-
-              return (
-                <div
-                  key={order.id}
-                  className="panel-secondary flex items-center justify-between gap-4 px-4 py-3"
-                >
-                  <div>
-                    <p className="font-medium">{order.referenceCode}</p>
-                    <p className="body-copy text-sm text-muted-foreground">
-                      {customer?.company}
-                    </p>
-                  </div>
-                  <StatusBadge
-                    status={order.status}
-                    label={tStatuses(order.status)}
-                  />
-                </div>
-              );
-            })}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{tActivity("title")}</CardTitle>
-            <p className="body-copy text-sm text-muted-foreground">
-              {tActivity("description")}
-            </p>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {summary.recentActivity.map((activity) => (
-              <div
-                key={activity.id}
-                className="panel-secondary flex gap-4 px-4 py-3"
-              >
-                <span
-                  className={cn(
-                    "mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full",
-                    activityToneMap[activity.type]
-                  )}
+        <DashboardPreviewTable
+          title={t("recentOrders.title")}
+          description={t("recentOrders.description")}
+          rows={summary.recentOrders}
+          columns={[
+            {
+              key: "referenceCode",
+              header: t("recentOrders.table.reference"),
+              render: (row) => <p className="font-medium">{row.referenceCode}</p>,
+            },
+            {
+              key: "customerName",
+              header: t("recentOrders.table.customer"),
+            },
+            {
+              key: "deliveryDate",
+              header: t("recentOrders.table.delivery"),
+              render: (row) => formatDate(row.deliveryDate, appLocale),
+            },
+            {
+              key: "amount",
+              header: t("recentOrders.table.amount"),
+              align: "right",
+              render: (row) => formatCurrency(row.amount, appLocale),
+            },
+            {
+              key: "status",
+              header: t("recentOrders.table.status"),
+              align: "right",
+              render: (row) => (
+                <StatusBadge
+                  status={row.status}
+                  label={tOrderStatuses(row.status)}
                 />
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <p className="font-medium">
-                      {tActivity(`types.${activity.type}.title`)}
-                    </p>
-                    <p className="subtle-label text-muted-foreground">
-                      {formatDate(activity.occurredAt, appLocale)}
-                    </p>
-                  </div>
-                  <p className="body-copy mt-1 text-sm text-muted-foreground">
-                    {tActivity(`types.${activity.type}.description`, {
-                      amount: activity.amount
-                        ? formatCurrency(activity.amount, appLocale)
-                        : formatCurrency(0, appLocale),
-                      customerName: activity.customerName ?? tCommon("unknown"),
-                      invoiceId: activity.invoiceId ?? tCommon("unknown"),
-                      orderCode: activity.orderCode ?? tCommon("unknown"),
-                      productName: activity.productName ?? tCommon("unknown"),
+              ),
+            },
+          ]}
+        />
+
+        <DashboardPreviewTable
+          title={t("recentInvoices.title")}
+          description={t("recentInvoices.description")}
+          rows={summary.recentInvoices}
+          columns={[
+            {
+              key: "id",
+              header: t("recentInvoices.table.invoice"),
+              render: (row) => <p className="font-medium">{row.id}</p>,
+            },
+            {
+              key: "customerName",
+              header: t("recentInvoices.table.customer"),
+            },
+            {
+              key: "dueAt",
+              header: t("recentInvoices.table.due"),
+              render: (row) => formatDate(row.dueAt, appLocale),
+            },
+            {
+              key: "amount",
+              header: t("recentInvoices.table.billing"),
+              align: "right",
+              render: (row) => (
+                <div className="space-y-1 text-right">
+                  <p className="font-medium">
+                    {formatCurrency(row.amount, appLocale)}
+                  </p>
+                  <p className="body-copy text-xs text-muted-foreground">
+                    {t("recentInvoices.table.paidLabel", {
+                      amount: formatCurrency(row.paidAmount, appLocale),
                     })}
                   </p>
                 </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+              ),
+            },
+            {
+              key: "status",
+              header: t("recentInvoices.table.status"),
+              align: "right",
+              render: (row) => (
+                <StatusBadge
+                  status={row.status}
+                  label={tPaymentStatuses(row.status)}
+                />
+              ),
+            },
+          ]}
+        />
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("insightsTitle")}</CardTitle>
-            <p className="body-copy text-sm text-muted-foreground">
-              {t("insightsDescription")}
-            </p>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
-              <p className="text-sm font-semibold">
-                {tInsights("primary.title")}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-primary-foreground/86">
-                {tInsights("primary.description")}
-              </p>
-            </div>
-            <div className="panel-inset px-5 py-5">
-              <p className="text-sm font-semibold">
-                {tInsights("secondary.title")}
-              </p>
-              <p className="body-copy mt-2 text-sm text-muted-foreground">
-                {tInsights("secondary.description")}
-              </p>
-            </div>
-            <div className="panel-secondary px-5 py-5">
-              <p className="subtle-label text-muted-foreground">
-                {t("lowStockExposure")}
-              </p>
-              <p className="mt-2 text-3xl font-semibold">
-                {summary.lowStockCount}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <DashboardActivityFeed
+          title={tActivity("title")}
+          description={tActivity("description")}
+          items={summary.recentActivity.map((activity) => ({
+            id: activity.id,
+            colorClassName: activityToneMap[activity.type],
+            dateLabel: formatDate(activity.occurredAt, appLocale),
+            title: tActivity(`types.${activity.type}.title`),
+            description: tActivity(`types.${activity.type}.description`, {
+              amount: activity.amount
+                ? formatCurrency(activity.amount, appLocale)
+                : formatCurrency(0, appLocale),
+              customerName: activity.customerName ?? tCommon("unknown"),
+              invoiceId: activity.invoiceId ?? tCommon("unknown"),
+              orderCode: activity.orderCode ?? tCommon("unknown"),
+              productName: activity.productName ?? tCommon("unknown"),
+            }),
+          }))}
+        />
       </div>
     </div>
   );

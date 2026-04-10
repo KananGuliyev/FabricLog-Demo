@@ -28,9 +28,9 @@ export const fabricLogService = {
     const recentActivity = fabricLogRepository.getRecentActivity();
 
     return buildDashboardSummary({
-      activeCustomers: customers.length,
+      customers,
+      fabrics,
       invoices,
-      lowStockCount: fabrics.filter((fabric) => fabric.status !== "available").length,
       orders,
       recentActivity,
     });

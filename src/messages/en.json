@@ -56,16 +56,27 @@
   },
   "Dashboard": {
     "title": "Dashboard",
-    "description": "Monitor sales momentum, low stock pressure, invoice exposure, and payment collection performance.",
+    "description": "Monitor customers, order flow, invoicing, and collection pressure from one textile operations overview.",
     "metrics": {
-      "revenue": "Revenue booked",
-      "revenueHint": "Booked across the current seeded invoice portfolio.",
-      "customers": "Active customers",
-      "customersHint": "Active fictional accounts across atelier, hospitality, and tailoring segments.",
-      "invoices": "Open invoices",
-      "invoicesHint": "Invoices still requiring collection follow-up.",
-      "collections": "Collection rate",
-      "collectionsHint": "Collected value against total invoiced exposure."
+      "customers": "Total customers",
+      "customersHint": "Active fictional accounts across atelier, hospitality, interiors, and tailoring segments.",
+      "orders": "Total orders",
+      "ordersHint": "Seeded orders currently tracked across the showcase pipeline.",
+      "invoices": "Total invoices",
+      "invoicesHint": "Issued demo invoices connected to the current order portfolio.",
+      "revenue": "Demo revenue",
+      "revenueHint": "Booked from the current seeded invoice ledger.",
+      "unpaidInvoices": "Unpaid invoices",
+      "unpaidInvoicesHint": "Pending, partial, and overdue invoices still requiring follow-up."
+    },
+    "visualSummary": {
+      "title": "Revenue snapshot",
+      "description": "Monthly booked revenue with a compact view of current collection and stock pressure.",
+      "items": {
+        "collectionRate": "Collection rate",
+        "pendingFollowUp": "Pending follow-up",
+        "lowStock": "Low stock references"
+      }
     },
     "charts": {
       "revenueTitle": "Revenue trend",
@@ -78,7 +89,39 @@
       "pipelineTitle": "Order pipeline",
       "pipelineValueLabel": "Orders"
     },
-    "recentOrders": "Recent orders",
+    "statusIndicators": {
+      "title": "Quick status indicators",
+      "description": "Watch the areas that need the most operational attention in the current mock portfolio.",
+      "items": {
+        "lowStock": "Low stock",
+        "overdueInvoices": "Overdue invoices",
+        "pendingInvoices": "Pending invoices",
+        "productionOrders": "In production"
+      }
+    },
+    "recentOrders": {
+      "title": "Recent orders",
+      "description": "Latest order movement across the seeded customer book.",
+      "table": {
+        "reference": "Reference",
+        "customer": "Customer",
+        "delivery": "Delivery",
+        "amount": "Amount",
+        "status": "Status"
+      }
+    },
+    "recentInvoices": {
+      "title": "Recent invoices",
+      "description": "Newest invoice items with due dates, paid values, and collection status.",
+      "table": {
+        "invoice": "Invoice",
+        "customer": "Customer",
+        "due": "Due",
+        "billing": "Billing",
+        "paidLabel": "Paid {amount}",
+        "status": "Status"
+      }
+    },
     "activity": {
       "title": "Recent activity",
       "description": "Operational changes generated from the seeded order, invoice, payment, and stock timeline.",
@@ -116,10 +159,7 @@
           "description": "{invoiceId} was issued for {customerName} ({amount})."
         }
       }
-    },
-    "insightsTitle": "Operations insights",
-    "insightsDescription": "Quick actions and business notes based on current mock performance.",
-    "lowStockExposure": "Low stock exposure"
+    }
   },
   "Customers": {
     "title": "Customers",

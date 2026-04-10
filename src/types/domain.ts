@@ -10,6 +10,12 @@ export const orderStatusValues = [
   "dispatched",
 ] as const;
 export const paymentStatusValues = ["paid", "partial", "pending", "overdue"] as const;
+export const dashboardStatusIndicatorValues = [
+  "low_stock",
+  "overdue_invoices",
+  "pending_invoices",
+  "production_orders",
+] as const;
 export const recentActivityTypeValues = [
   "payment_received",
   "invoice_partial_paid",
@@ -93,8 +99,35 @@ export const recentActivitySchema = z.object({
   amount: z.number().nonnegative().optional(),
 });
 
+export const dashboardOrderPreviewSchema = z.object({
+  id: z.string(),
+  referenceCode: z.string(),
+  customerName: z.string(),
+  amount: z.number().nonnegative(),
+  deliveryDate: z.string(),
+  status: z.enum(orderStatusValues),
+});
+
+export const dashboardInvoicePreviewSchema = z.object({
+  id: z.string(),
+  customerName: z.string(),
+  amount: z.number().nonnegative(),
+  paidAmount: z.number().nonnegative(),
+  dueAt: z.string(),
+  status: z.enum(paymentStatusValues),
+});
+
+export const dashboardStatusIndicatorSchema = z.object({
+  key: z.enum(dashboardStatusIndicatorValues),
+  count: z.number().int().nonnegative(),
+});
+
 export const dashboardSummarySchema = z.object({
+  totalCustomers: z.number().int().nonnegative(),
+  totalOrders: z.number().int().nonnegative(),
+  totalInvoices: z.number().int().nonnegative(),
   totalRevenue: z.number().nonnegative(),
+  unpaidInvoicesCount: z.number().int().nonnegative(),
   openInvoices: z.number().int().nonnegative(),
   pendingPayments: z.number().int().nonnegative(),
   activeCustomers: z.number().int().nonnegative(),
@@ -120,6 +153,9 @@ export const dashboardSummarySchema = z.object({
       count: z.number().int().nonnegative(),
     })
   ),
+  recentOrders: z.array(dashboardOrderPreviewSchema),
+  recentInvoices: z.array(dashboardInvoicePreviewSchema),
+  statusIndicators: z.array(dashboardStatusIndicatorSchema),
   recentActivity: z.array(recentActivitySchema),
 });
 
@@ -132,6 +168,10 @@ export type OrderStatus = (typeof orderStatusValues)[number];
 export type Invoice = z.infer<typeof invoiceSchema>;
 export type PaymentRecord = z.infer<typeof paymentRecordSchema>;
 export type PaymentStatus = (typeof paymentStatusValues)[number];
+export type DashboardStatusIndicatorKey = (typeof dashboardStatusIndicatorValues)[number];
+export type DashboardOrderPreview = z.infer<typeof dashboardOrderPreviewSchema>;
+export type DashboardInvoicePreview = z.infer<typeof dashboardInvoicePreviewSchema>;
+export type DashboardStatusIndicator = z.infer<typeof dashboardStatusIndicatorSchema>;
 export type RecentActivity = z.infer<typeof recentActivitySchema>;
 export type RecentActivityType = (typeof recentActivityTypeValues)[number];
 export type DashboardSummary = z.infer<typeof dashboardSummarySchema>;

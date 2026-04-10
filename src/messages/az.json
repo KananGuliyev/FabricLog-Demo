@@ -56,20 +56,31 @@
   },
   "Dashboard": {
     "title": "Panel",
-    "description": "Satış dinamikasını, aşağı stok təzyiqini, faktura riskini və ödəniş toplama performansını izləyin.",
+    "description": "Müştəriləri, sifariş axınını, fakturaları və yığım təzyiqini vahid tekstil əməliyyat görünüşündə izləyin.",
     "metrics": {
-      "revenue": "Qeyd olunan gəlir",
-      "revenueHint": "Mövcud nümunə faktura portfeli üzrə qeydə alınmış gəlir.",
-      "customers": "Aktiv müştərilər",
-      "customersHint": "Atelye, qonaqpərvərlik və tikiş seqmentləri üzrə aktiv uydurma hesablar.",
-      "invoices": "Açıq fakturalar",
-      "invoicesHint": "Hələ də yığım izlənməsi tələb edən fakturalar.",
-      "collections": "Yığım faizi",
-      "collectionsHint": "Ümumi faktura məbləği ilə müqayisədə toplanmış dəyər."
+      "customers": "Ümumi müştərilər",
+      "customersHint": "Atelye, qonaqpərvərlik, interyer və tikiş seqmentləri üzrə aktiv uydurma hesablar.",
+      "orders": "Ümumi sifarişlər",
+      "ordersHint": "Demo axını boyunca izlənən nümunə sifarişlər.",
+      "invoices": "Ümumi fakturalar",
+      "invoicesHint": "Cari sifariş portfeli ilə əlaqəli yaradılmış demo fakturalar.",
+      "revenue": "Demo gəliri",
+      "revenueHint": "Cari nümunə faktura reyestrindən qeyd alınmış gəlir.",
+      "unpaidInvoices": "Ödənilməmiş fakturalar",
+      "unpaidInvoicesHint": "Təqib tələb edən gözləmədə, qismən və gecikmiş fakturalar."
+    },
+    "visualSummary": {
+      "title": "Gəlir görünüşü",
+      "description": "Aylıq gəlir trendi ilə birlikdə cari yığım və stok təzyiqinin qısa icmalı.",
+      "items": {
+        "collectionRate": "Yığım faizi",
+        "pendingFollowUp": "Təqib gözləyənlər",
+        "lowStock": "Az stoklu məhsullar"
+      }
     },
     "charts": {
       "revenueTitle": "Gəlir trendi",
-      "revenueDescription": "Aylıq qeydə alınmış gəlir və faktura həcmi",
+      "revenueDescription": "Aylıq qeyd alınmış gəlir və faktura həcmi",
       "revenueSeriesLabel": "Gəlir",
       "paymentsTitle": "Ödəniş bölgüsü",
       "paymentsDescription": "Ödəniş statusuna görə açıq risk",
@@ -78,7 +89,39 @@
       "pipelineTitle": "Sifariş axını",
       "pipelineValueLabel": "Sifarişlər"
     },
-    "recentOrders": "Son sifarişlər",
+    "statusIndicators": {
+      "title": "Sürətli status göstəriciləri",
+      "description": "Cari demo portfelində daha çox diqqət tələb edən sahələri izləyin.",
+      "items": {
+        "lowStock": "Az stok",
+        "overdueInvoices": "Gecikmiş fakturalar",
+        "pendingInvoices": "Gözləmədə olan fakturalar",
+        "productionOrders": "İstehsalda"
+      }
+    },
+    "recentOrders": {
+      "title": "Son sifarişlər",
+      "description": "Cari müştəri portfelindəki ən son sifariş hərəkətləri.",
+      "table": {
+        "reference": "Kod",
+        "customer": "Müştəri",
+        "delivery": "Çatdırılma",
+        "amount": "Məbləğ",
+        "status": "Status"
+      }
+    },
+    "recentInvoices": {
+      "title": "Son fakturalar",
+      "description": "Ödəniş tarixi, ödənən məbləğ və yığım statusu ilə ən yeni fakturalar.",
+      "table": {
+        "invoice": "Faktura",
+        "customer": "Müştəri",
+        "due": "Son tarix",
+        "billing": "Maliyyə",
+        "paidLabel": "Ödənib {amount}",
+        "status": "Status"
+      }
+    },
     "activity": {
       "title": "Son əməliyyatlar",
       "description": "Sifariş, faktura, ödəniş və stok zaman xəttindən formalaşdırılmış cari dəyişikliklər.",
@@ -116,10 +159,7 @@
           "description": "{customerName} üçün {invoiceId} ({amount}) yaradılıb."
         }
       }
-    },
-    "insightsTitle": "Əməliyyat qeydləri",
-    "insightsDescription": "Cari demo nəticələrinə əsaslanan sürətli hərəkətlər və biznes qeydləri.",
-    "lowStockExposure": "Aşağı stok riski"
+    }
   },
   "Customers": {
     "title": "Müştərilər",
