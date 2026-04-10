@@ -367,10 +367,23 @@
   },
   "Invoices": {
     "title": "Invoices",
-    "description": "Stay ahead of due dates, overdue exposure, and partial collections.",
+    "description": "Stay ahead of due dates, overdue exposure, and receivables follow-up from one finance operations view.",
     "searchPlaceholder": "Search invoice or customer",
     "emptyState": "No invoices found.",
+    "emptyStateDescription": "Try clearing the current search or payment filter to reveal the full receivables ledger.",
+    "filters": {
+      "all": "All",
+      "paymentStatusLabel": "Payment status"
+    },
+    "badges": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
     "cards": {
+      "totalInvoices": "Total invoices",
+      "totalInvoicesHint": "Issued demo invoices currently linked across the seeded customer portfolio.",
       "openInvoiceValue": "Open invoice value",
       "openInvoiceValueHint": "Outstanding receivables across pending, partial, and overdue invoices.",
       "overdueExposure": "Overdue exposure",
@@ -378,14 +391,44 @@
       "paidInFull": "Paid in full",
       "paidInFullHint": "Invoices cleared without follow-up."
     },
+    "panel": {
+      "title": "Collections focus",
+      "description": "Keep the most urgent receivables in view while tracking the current mix of unpaid, pending, and overdue invoices.",
+      "featuredLabel": "Priority invoice",
+      "featuredDescription": "{customer} currently sits at the top of the receivables watchlist in the demo ledger.",
+      "cards": {
+        "unpaid": "Unpaid invoices",
+        "unpaidHint": "Partially collected invoices that still need direct settlement follow-up.",
+        "pending": "Pending invoices",
+        "pendingHint": "Issued invoices that are active but not yet collected.",
+        "overdue": "Overdue exposure",
+        "overdueHint": "The most urgent receivables already past their due dates."
+      },
+      "meta": {
+        "customer": "Customer",
+        "issueDate": "Issue date",
+        "dueDate": "Due date",
+        "paymentStatus": "Payment status",
+        "amount": "Invoice amount",
+        "paidAmount": "Paid amount",
+        "outstandingAmount": "Outstanding",
+        "orderReference": "Order link"
+      }
+    },
     "table": {
       "invoice": "Invoice",
       "customer": "Customer",
-      "issued": "Issued",
-      "due": "Due",
+      "issueDate": "Issue date",
+      "dueDate": "Due date",
       "amount": "Amount",
-      "paid": "Paid",
-      "status": "Status"
+      "paymentStatus": "Payment status",
+      "billing": "Billing",
+      "paidLabel": "Paid {amount}",
+      "outstandingLabel": "Outstanding {amount}",
+      "paymentCue": "Collected {amount}",
+      "outstandingCue": "Open {amount}",
+      "orderCue": "Order {reference}",
+      "orderCueFallback": "No order reference"
     }
   },
   "Payments": {

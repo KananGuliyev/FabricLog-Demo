@@ -14,6 +14,7 @@ const statusToneMap = {
   ready: "success",
   dispatched: "neutral",
   paid: "success",
+  unpaid: "warning",
   partial: "warning",
   pending: "neutral",
   overdue: "critical",

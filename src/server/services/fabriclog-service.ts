@@ -1,5 +1,6 @@
 import { buildCustomersOverview } from "@/server/mappers/customers-mapper";
 import { buildDashboardSummary } from "@/server/mappers/dashboard-mapper";
+import { buildInvoicesOverview } from "@/server/mappers/invoices-mapper";
 import { buildOrdersOverview } from "@/server/mappers/orders-mapper";
 import { buildProductsOverview } from "@/server/mappers/products-mapper";
 import { fabricLogRepository } from "@/server/repositories/fabriclog-repository";
@@ -52,6 +53,17 @@ export const fabricLogService = {
     return buildOrdersOverview({
       customers,
       fabrics,
+      invoices,
+      orders,
+    });
+  },
+  getInvoicesOverview() {
+    const customers = fabricLogRepository.getCustomers();
+    const invoices = fabricLogRepository.getInvoices();
+    const orders = fabricLogRepository.getOrders();
+
+    return buildInvoicesOverview({
+      customers,
       invoices,
       orders,
     });

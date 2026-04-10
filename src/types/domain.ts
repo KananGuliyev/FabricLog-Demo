@@ -14,6 +14,12 @@ export const orderBillingStatusValues = [
   "none",
   ...paymentStatusValues,
 ] as const;
+export const invoiceBadgeStatusValues = [
+  "paid",
+  "unpaid",
+  "pending",
+  "overdue",
+] as const;
 export const customerPaymentHealthValues = [
   "none",
   "paid",
@@ -199,6 +205,34 @@ export const ordersOverviewSchema = z.object({
   featuredOrder: orderOverviewRowSchema,
 });
 
+export const invoiceOverviewRowSchema = z.object({
+  id: z.string(),
+  customerName: z.string(),
+  issueDate: z.string(),
+  dueDate: z.string(),
+  amount: z.number().nonnegative(),
+  paidAmount: z.number().nonnegative(),
+  outstandingAmount: z.number().nonnegative(),
+  paymentStatus: z.enum(paymentStatusValues),
+  badgeStatus: z.enum(invoiceBadgeStatusValues),
+  orderReference: z.string().nullable(),
+});
+
+export const invoicesOverviewSummarySchema = z.object({
+  totalInvoices: z.number().int().nonnegative(),
+  openInvoiceValue: z.number().nonnegative(),
+  overdueExposure: z.number().nonnegative(),
+  paidInFullCount: z.number().int().nonnegative(),
+  unpaidCount: z.number().int().nonnegative(),
+  pendingCount: z.number().int().nonnegative(),
+});
+
+export const invoicesOverviewSchema = z.object({
+  summary: invoicesOverviewSummarySchema,
+  rows: z.array(invoiceOverviewRowSchema),
+  featuredInvoice: invoiceOverviewRowSchema,
+});
+
 export const recentActivitySchema = z.object({
   id: z.string(),
   type: z.enum(recentActivityTypeValues),
@@ -280,6 +314,7 @@ export type Invoice = z.infer<typeof invoiceSchema>;
 export type PaymentRecord = z.infer<typeof paymentRecordSchema>;
 export type PaymentStatus = (typeof paymentStatusValues)[number];
 export type OrderBillingStatus = (typeof orderBillingStatusValues)[number];
+export type InvoiceBadgeStatus = (typeof invoiceBadgeStatusValues)[number];
 export type CustomerPaymentHealth = (typeof customerPaymentHealthValues)[number];
 export type CustomerOverviewRow = z.infer<typeof customerOverviewRowSchema>;
 export type CustomersOverviewSummary = z.infer<typeof customersOverviewSummarySchema>;
@@ -291,6 +326,9 @@ export type ProductsOverview = z.infer<typeof productsOverviewSchema>;
 export type OrderOverviewRow = z.infer<typeof orderOverviewRowSchema>;
 export type OrdersOverviewSummary = z.infer<typeof ordersOverviewSummarySchema>;
 export type OrdersOverview = z.infer<typeof ordersOverviewSchema>;
+export type InvoiceOverviewRow = z.infer<typeof invoiceOverviewRowSchema>;
+export type InvoicesOverviewSummary = z.infer<typeof invoicesOverviewSummarySchema>;
+export type InvoicesOverview = z.infer<typeof invoicesOverviewSchema>;
 export type DashboardStatusIndicatorKey = (typeof dashboardStatusIndicatorValues)[number];
 export type DashboardOrderPreview = z.infer<typeof dashboardOrderPreviewSchema>;
 export type DashboardInvoicePreview = z.infer<typeof dashboardInvoicePreviewSchema>;

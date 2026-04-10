@@ -1,532 +1,575 @@
 {
-  "Common": {
-    "appName": "FabricLog",
-    "brandSubtitle": "Tekstil É™mÉ™liyyatlarÄ± demosu",
-    "demoBadge": "Ä°ctimai, tÉ™hlÃ¼kÉ™siz demo",
-    "openDemo": "Demoya keÃ§",
-    "viewOnGitHub": "Portfel Ã¼Ã§Ã¼n hazÄ±rdÄ±r",
-    "search": "Axtar",
-    "localeEnglish": "Ä°ngilis dili",
-    "localeAzerbaijani": "AzÉ™rbaycan dili",
-    "localeLabel": "Dil",
-    "portfolioNote": "BÃ¼tÃ¼n qeydlÉ™r portfel tÉ™qdimatÄ± Ã¼Ã§Ã¼n hazÄ±rlanmÄ±ÅŸ uydurma nÃ¼munÉ™ mÉ™lumatlardÄ±r.",
-    "updatedLabel": "Son yenilÉ™nmÉ™",
-    "currency": "AZN",
-    "unknown": "NamÉ™lum"
-  },
-  "Navigation": {
-    "dashboard": "Panel",
-    "customers": "MÃ¼ÅŸtÉ™rilÉ™r",
-    "fabrics": "ParÃ§alar",
-    "products": "MÉ™hsullar",
-    "orders": "SifariÅŸlÉ™r",
-    "invoices": "Fakturalar",
-    "reports": "Hesabatlar",
-    "settings": "TÉ™nzimlÉ™mÉ™lÉ™r",
-    "payments": "Ã–dÉ™niÅŸlÉ™r"
-  },
-  "Landing": {
-    "eyebrow": "Tekstil biznesi É™mÉ™liyyat demosu",
-    "title": "ParÃ§a biznesini vahid idarÉ™etmÉ™ mÉ™rkÉ™zindÉ™n yÃ¶nÉ™ldin.",
-    "description": "FabricLog tekstil É™mÉ™liyyatlarÄ± Ã¼Ã§Ã¼n peÅŸÉ™kar full-stack demo tÉ™qdim edir: mÃ¼ÅŸtÉ™rilÉ™r, stok, sifariÅŸlÉ™r, fakturalar vÉ™ Ã¶dÉ™niÅŸ izlÉ™nmÉ™si bir SaaS tÉ™crÃ¼bÉ™sindÉ™ birlÉ™ÅŸir.",
-    "primaryCta": "Paneli aÃ§",
-    "secondaryCta": "Modullara bax",
-    "highlightsTitle": "Real gÃ¶rÃ¼nÉ™n nÃ¼mayiÅŸ dÉ™yÉ™ri Ã¼Ã§Ã¼n hazÄ±rlanÄ±b",
-    "stats": {
-      "customers": "Uydurma mÃ¼ÅŸtÉ™rilÉ™r",
-      "invoices": "ÆlaqÉ™li fakturalar",
-      "fabrics": "ParÃ§a referanslarÄ±",
-      "languages": "DÉ™stÉ™klÉ™nÉ™n dillÉ™r"
-    },
-    "highlights": {
-      "customers": "MÃ¼ÅŸtÉ™ri portfeli, regional hesablar vÉ™ yÄ±ÄŸÄ±m gÃ¶rÃ¼nÃ¼rlÃ¼ÄŸÃ¼",
-      "inventory": "Stok tÉ™zyiqi, rezerv vÉ™ qiymÉ™t mÉ™lumatlÄ± parÃ§a kataloqu",
-      "orders": "NÃ¼munÉ™dÉ™n gÃ¶ndÉ™riÅŸÉ™ qÉ™dÉ™r sifariÅŸ axÄ±nÄ±",
-      "finance": "Realistik xÃ¼lasÉ™lÉ™rlÉ™ faktura vÉ™ Ã¶dÉ™niÅŸ izlÉ™nmÉ™si"
-    },
-    "safetyTitle": "Portfel Ã¼Ã§Ã¼n tÉ™hlÃ¼kÉ™siz dizayn",
-    "safetyDescription": "HeÃ§ bir gizli mÉ™lumat, istehsal xidmÉ™ti vÉ™ ya ÅŸÉ™xsi mÉ™lumat yoxdur. Bu demodakÄ± bÃ¼tÃ¼n ÅŸirkÉ™tlÉ™r, kontaktlar, sifariÅŸlÉ™r vÉ™ É™mÉ™liyyatlar uydurmadÄ±r."
-  },
-  "Shell": {
-    "subtitle": "ParÃ§a É™mÉ™liyyatlarÄ± demo iÅŸ sahÉ™si",
-    "welcomeBack": "Biznes gÃ¶rÃ¼nÃ¼ÅŸÃ¼",
-    "demoSafe": "YalnÄ±z nÃ¼munÉ™ qeydlÉ™r",
-    "mobileMenuLabel": "Naviqasiya menyusunu aÃ§",
-    "searchActionLabel": "Modullarda axtar"
-  },
-  "Dashboard": {
-    "title": "Panel",
-    "description": "MÃ¼ÅŸtÉ™rilÉ™ri, sifariÅŸ axÄ±nÄ±nÄ±, fakturalarÄ± vÉ™ yÄ±ÄŸÄ±m tÉ™zyiqini vahid tekstil É™mÉ™liyyat gÃ¶rÃ¼nÃ¼ÅŸÃ¼ndÉ™ izlÉ™yin.",
-    "metrics": {
-      "customers": "Ãœmumi mÃ¼ÅŸtÉ™rilÉ™r",
-      "customersHint": "Atelye, qonaqpÉ™rvÉ™rlik, interyer vÉ™ tikiÅŸ seqmentlÉ™ri Ã¼zrÉ™ aktiv uydurma hesablar.",
-      "orders": "Ãœmumi sifariÅŸlÉ™r",
-      "ordersHint": "Demo axÄ±nÄ± boyunca izlÉ™nÉ™n nÃ¼munÉ™ sifariÅŸlÉ™r.",
-      "invoices": "Ãœmumi fakturalar",
-      "invoicesHint": "Cari sifariÅŸ portfeli ilÉ™ É™laqÉ™li yaradÄ±lmÄ±ÅŸ demo fakturalar.",
-      "revenue": "Demo gÉ™liri",
-      "revenueHint": "Cari nÃ¼munÉ™ faktura reyestrindÉ™n qeyd alÄ±nmÄ±ÅŸ gÉ™lir.",
-      "unpaidInvoices": "Ã–dÉ™nilmÉ™miÅŸ fakturalar",
-      "unpaidInvoicesHint": "TÉ™qib tÉ™lÉ™b edÉ™n gÃ¶zlÉ™mÉ™dÉ™, qismÉ™n vÉ™ gecikmiÅŸ fakturalar."
-    },
-    "visualSummary": {
-      "title": "GÉ™lir gÃ¶rÃ¼nÃ¼ÅŸÃ¼",
-      "description": "AylÄ±q gÉ™lir trendi ilÉ™ birlikdÉ™ cari yÄ±ÄŸÄ±m vÉ™ stok tÉ™zyiqinin qÄ±sa icmalÄ±.",
-      "items": {
-        "collectionRate": "YÄ±ÄŸÄ±m faizi",
-        "pendingFollowUp": "TÉ™qib gÃ¶zlÉ™yÉ™nlÉ™r",
-        "lowStock": "Az stoklu mÉ™hsullar"
-      }
-    },
-    "charts": {
-      "revenueTitle": "GÉ™lir trendi",
-      "revenueDescription": "AylÄ±q qeyd alÄ±nmÄ±ÅŸ gÉ™lir vÉ™ faktura hÉ™cmi",
-      "revenueSeriesLabel": "GÉ™lir",
-      "paymentsTitle": "Ã–dÉ™niÅŸ bÃ¶lgÃ¼sÃ¼",
-      "paymentsDescription": "Ã–dÉ™niÅŸ statusuna gÃ¶rÉ™ aÃ§Ä±q risk",
-      "paymentValueLabel": "Risk mÉ™blÉ™ÄŸi",
-      "paymentCountLabel": "{count} faktura",
-      "pipelineTitle": "SifariÅŸ axÄ±nÄ±",
-      "pipelineValueLabel": "SifariÅŸlÉ™r"
-    },
-    "statusIndicators": {
-      "title": "SÃ¼rÉ™tli status gÃ¶stÉ™ricilÉ™ri",
-      "description": "Cari demo portfelindÉ™ daha Ã§ox diqqÉ™t tÉ™lÉ™b edÉ™n sahÉ™lÉ™ri izlÉ™yin.",
-      "items": {
-        "lowStock": "Az stok",
-        "overdueInvoices": "GecikmiÅŸ fakturalar",
-        "pendingInvoices": "GÃ¶zlÉ™mÉ™dÉ™ olan fakturalar",
-        "productionOrders": "Ä°stehsalda"
-      }
-    },
-    "recentOrders": {
-      "title": "Son sifariÅŸlÉ™r",
-      "description": "Cari mÃ¼ÅŸtÉ™ri portfelindÉ™ki É™n son sifariÅŸ hÉ™rÉ™kÉ™tlÉ™ri.",
-      "table": {
-        "reference": "Kod",
-        "customer": "MÃ¼ÅŸtÉ™ri",
-        "delivery": "Ã‡atdÄ±rÄ±lma",
-        "amount": "MÉ™blÉ™ÄŸ",
-        "status": "Status"
-      }
-    },
-    "recentInvoices": {
-      "title": "Son fakturalar",
-      "description": "Ã–dÉ™niÅŸ tarixi, Ã¶dÉ™nÉ™n mÉ™blÉ™ÄŸ vÉ™ yÄ±ÄŸÄ±m statusu ilÉ™ É™n yeni fakturalar.",
-      "table": {
-        "invoice": "Faktura",
-        "customer": "MÃ¼ÅŸtÉ™ri",
-        "due": "Son tarix",
-        "billing": "MaliyyÉ™",
-        "paidLabel": "Ã–dÉ™nib {amount}",
-        "status": "Status"
-      }
-    },
-    "activity": {
-      "title": "Son É™mÉ™liyyatlar",
-      "description": "SifariÅŸ, faktura, Ã¶dÉ™niÅŸ vÉ™ stok zaman xÉ™ttindÉ™n formalaÅŸdÄ±rÄ±lmÄ±ÅŸ cari dÉ™yiÅŸikliklÉ™r.",
-      "types": {
-        "payment_received": {
-          "title": "Ã–dÉ™niÅŸ daxil olub",
-          "description": "{customerName} {invoiceId} Ã¼zrÉ™ {amount} Ã¶dÉ™niÅŸ edib."
-        },
-        "invoice_partial_paid": {
-          "title": "Faktura qismÉ™n Ã¶dÉ™nib",
-          "description": "{invoiceId} Ã¼Ã§Ã¼n {customerName} tÉ™rÉ™findÉ™n qismÉ™n Ã¶dÉ™niÅŸ daxil olub."
-        },
-        "invoice_overdue": {
-          "title": "Faktura gecikib",
-          "description": "{customerName} Ã¼Ã§Ã¼n {invoiceId} Ã¼zrÉ™ {amount} mÉ™blÉ™ÄŸ artÄ±q gecikmÉ™dÉ™dir."
-        },
-        "order_in_production": {
-          "title": "SifariÅŸ istehsala keÃ§ib",
-          "description": "{customerName} Ã¼Ã§Ã¼n {orderCode} istehsal mÉ™rhÉ™lÉ™sinÉ™ keÃ§ib."
-        },
-        "order_ready": {
-          "title": "SifariÅŸ hazÄ±rdÄ±r",
-          "description": "{customerName} Ã¼Ã§Ã¼n {orderCode} gÃ¶ndÉ™riÅŸ planlamasÄ±na hazÄ±rdÄ±r."
-        },
-        "order_dispatched": {
-          "title": "SifariÅŸ gÃ¶ndÉ™rilib",
-          "description": "{customerName} Ã¼Ã§Ã¼n {orderCode} anbardan Ã§Ä±xÄ±b."
-        },
-        "inventory_low": {
-          "title": "Stok xÉ™bÉ™rdarlÄ±ÄŸÄ±",
-          "description": "{productName} yenidÉ™n tÉ™darÃ¼k hÉ™ddinÉ™ yaxÄ±nlaÅŸÄ±r."
-        },
-        "invoice_issued": {
-          "title": "Faktura yaradÄ±lÄ±b",
-          "description": "{customerName} Ã¼Ã§Ã¼n {invoiceId} ({amount}) yaradÄ±lÄ±b."
-        }
-      }
-    }
-  },
-  "Customers": {
-    "title": "MÃ¼ÅŸtÉ™rilÉ™r",
-    "description": "MÃ¼ÅŸtÉ™ri hesablarÄ±nÄ±, É™laqÉ™ mÉ™lumatlarÄ±nÄ±, faktura tÉ™zyiqini vÉ™ Ã¶dÉ™niÅŸ saÄŸlamlÄ±ÄŸÄ±nÄ± vahid portfel gÃ¶rÃ¼nÃ¼ÅŸÃ¼ndÉ™ izlÉ™yin.",
-    "searchPlaceholder": "Ad, ÅŸirkÉ™t, e-poÃ§t vÉ™ ya region axtar",
-    "emptyState": "UyÄŸun mÃ¼ÅŸtÉ™ri tapÄ±lmadÄ±.",
-    "emptyStateDescription": "Filtri sÄ±fÄ±rlayÄ±n vÉ™ ya axtarÄ±ÅŸ ifadÉ™sini geniÅŸlÉ™ndirin.",
-    "featured": "Fokus hesab",
-    "featuredDescription": "{name} É™sasÉ™n {collection} istiqamÉ™tindÉ™ tÉ™krarlanan tÉ™lÉ™b portfelinÉ™ nÉ™zarÉ™t edir.",
-    "filters": {
-      "all": "HamÄ±sÄ±",
-      "tierLabel": "SÉ™viyyÉ™",
-      "paymentHealthLabel": "Ã–dÉ™niÅŸ saÄŸlamlÄ±ÄŸÄ±"
-    },
-    "cards": {
-      "totalAccounts": "Ãœmumi hesablar",
-      "totalAccountsHint": "Premium qonaqpÉ™rvÉ™rlik, tikiÅŸ vÉ™ studiya alÄ±cÄ±larÄ± arasÄ±nda balanslÄ± paylanma.",
-      "signatureCustomers": "Premium mÃ¼ÅŸtÉ™rilÉ™r",
-      "signatureCustomersHint": "Bir neÃ§É™ sifariÅŸ É™laqÉ™si olan É™n dÉ™yÉ™rli hesablar.",
-      "followUpCustomers": "TÉ™qib hesablarÄ±",
-      "followUpCustomersHint": "YÄ±ÄŸÄ±m diqqÉ™ti tÉ™lÉ™b edÉ™n gÃ¶zlÉ™mÉ™dÉ™ vÉ™ qismÉ™n fakturalÄ± mÃ¼ÅŸtÉ™rilÉ™r.",
-      "outstandingBalance": "AÃ§Ä±q balans",
-      "outstandingBalanceHint": "HÉ™lÉ™ dÉ™ yÄ±ÄŸÄ±m gÃ¶zlÉ™yÉ™n portfel riski.",
-      "signatureAccount": "Premium hesab",
-      "exposure": "Risk mÉ™blÉ™ÄŸi",
-      "lastOrderPrefix": "Son sifariÅŸ"
-    },
-    "healthPanel": {
-      "title": "MÃ¼ÅŸtÉ™ri saÄŸlamlÄ±ÄŸÄ±",
-      "description": "Hesab paylanmasÄ±, gecikmiÅŸ tÉ™zyiq vÉ™ É™n Ã§ox risk daÅŸÄ±yan mÃ¼ÅŸtÉ™ri Ã¼Ã§Ã¼n qÄ±sa icmal.",
-      "cards": {
-        "growthCustomers": "Ä°nkiÅŸaf mÃ¼ÅŸtÉ™rilÉ™ri",
-        "growthCustomersHint": "TÉ™krarlanan sifariÅŸ hÉ™cmini artÄ±rmaq Ã¼Ã§Ã¼n potensialÄ± olan hesablar.",
-        "overdueCustomers": "GecikmiÅŸ mÃ¼ÅŸtÉ™rilÉ™r",
-        "overdueCustomersHint": "HazÄ±rda gecikmiÅŸ faktura riski daÅŸÄ±yan hesablar.",
-        "followUpCustomers": "YÄ±ÄŸÄ±m izlÉ™mÉ™si",
-        "followUpCustomersHint": "HÉ™lÉ™ hÉ™rÉ™kÉ™tdÉ™ olan qismÉ™n vÉ™ gÃ¶zlÉ™mÉ™dÉ™ki balanslar."
-      },
-      "featured": {
-        "collection": "ÃœstÃ¼nlÃ¼k verilÉ™n kolleksiya",
-        "contact": "Æsas É™laqÉ™",
-        "paymentHealth": "Ã–dÉ™niÅŸ saÄŸlamlÄ±ÄŸÄ±",
-        "lastActivity": "Son aktivlik"
-      }
-    },
-    "table": {
-      "account": "Hesab",
-      "contact": "ÆlaqÉ™",
-      "region": "Region",
-      "tier": "SÉ™viyyÉ™",
-      "orders": "SifariÅŸlÉ™r",
-      "invoices": "Fakturalar",
-      "paymentHealth": "Ã–dÉ™niÅŸ saÄŸlamlÄ±ÄŸÄ±",
-      "paymentCue": "{open} aÃ§Ä±q / {paid} Ã¶dÉ™nib",
-      "balance": "AÃ§Ä±q balans",
-      "lastActivity": "Son aktivlik"
-    }
-  },
-  "Fabrics": {
-    "title": "ParÃ§alar",
-    "description": "Kataloq Ã¼zrÉ™ populyar tekstillÉ™ri, stok vÉ™ziyyÉ™tini vÉ™ rezerv tÉ™zyiqini izlÉ™yin.",
-    "searchPlaceholder": "SKU, parÃ§a vÉ™ ya kateqoriya axtar",
-    "cards": {
-      "totalStock": "Ãœmumi stok",
-      "reservedStock": "Rezerv stok",
-      "averageUnitPrice": "Orta vahid qiymÉ™t"
-    },
-    "table": {
-      "product": "MÉ™hsul",
-      "composition": "TÉ™rkib",
-      "width": "En",
-      "weight": "SÄ±xlÄ±q",
-      "stock": "Stok",
-      "reserved": "Rezerv",
-      "price": "Vahid qiymÉ™t",
-      "status": "Status"
-    }
-  },
-  "Products": {
-    "title": "M\u0259hsullar",
-    "description": "Tekstil kataloqunu qiym\u0259t, stok t\u0259zyiqi v\u0259 m\u00f6vcudluq siqnallar\u0131 il\u0259 vahid pe\u015f\u0259kar inventar g\u00f6r\u00fcn\u00fc\u015f\u00fcnd\u0259 izl\u0259yin.",
-    "searchPlaceholder": "SKU, m\u0259hsul, kateqoriya v\u0259 ya r\u0259ng axtar",
-    "emptyState": "M\u0259hsul tap\u0131lmad\u0131.",
-    "emptyStateDescription": "Tam demo assortimentini g\u00f6rm\u0259k \u00fc\u00e7\u00fcn cari axtar\u0131\u015f\u0131 v\u0259 ya filtrl\u0259ri t\u0259mizl\u0259yin.",
-    "filters": {
-      "all": "Ham\u0131s\u0131",
-      "categoryLabel": "Kateqoriya",
-      "availabilityLabel": "M\u00f6vcudluq"
-    },
-    "cards": {
-      "totalProducts": "\u00dcmumi m\u0259hsullar",
-      "totalProductsHint": "N\u00fcmun\u0259 kataloqda t\u0259qdim olunan aktiv tekstil referanslar\u0131.",
-      "totalStock": "\u00dcmumi stok",
-      "totalStockHint": "Tam n\u00fcmun\u0259 assortiment \u00fczr\u0259 cari stok m\u00f6vqeyi.",
-      "reservedStock": "Rezerv stok",
-      "reservedStockHint": "Cari sifari\u015f ax\u0131n\u0131, t\u0259sdiql\u0259r v\u0259 n\u00fcmun\u0259 sor\u011fular\u0131 \u00fc\u00e7\u00fcn ayr\u0131lm\u0131\u015f h\u0259cm.",
-      "lowStockCount": "Az stoklu referanslar",
-      "lowStockCountHint": "\u018flav\u0259 t\u0259chizat \u00fc\u00e7\u00fcn ilk n\u00f6vb\u0259d\u0259 izl\u0259nm\u0259li kataloq x\u0259tl\u0259ri."
-    },
-    "table": {
-      "product": "M\u0259hsul",
-      "category": "Kateqoriya",
-      "variant": "R\u0259ng / variant",
-      "stock": "Stok",
-      "stockCue": "{reserved} m rezervd\u0259dir",
-      "price": "Vahid qiym\u0259t",
-      "availability": "M\u00f6vcudluq",
-      "available": "S\u0259rb\u0259st metr"
-    },
-    "pressure": {
-      "healthy": "Stok m\u00f6vqeyi sabitdir",
-      "watch": "Rezerv t\u0259zyiqi art\u0131r",
-      "critical": "T\u0259chizat prioritetidir"
-    },
-    "panel": {
-      "title": "Kataloq n\u0259zar\u0259ti",
-      "description": "\u018fn \u00e7ox rezerv t\u0259zyiqi da\u015f\u0131yan referanslar\u0131 v\u0259 assortimentin hans\u0131 sah\u0259l\u0259rd\u0259 darald\u0131\u011f\u0131n\u0131 izl\u0259yin.",
-      "featuredLabel": "Se\u00e7ilmi\u015f referans",
-      "featuredDescription": "{name} demo kataloqda haz\u0131rda \u0259n y\u00fcks\u0259k rezerv t\u0259zyiqi da\u015f\u0131y\u0131r v\u0259 t\u0259chizat bax\u0131m\u0131ndan diqq\u0259td\u0259 saxlanmal\u0131d\u0131r.",
-      "categoryBreakdownTitle": "Kateqoriya balans\u0131",
-      "categoryBreakdownDescription": "\u018fn g\u00fccl\u00fc rezerv t\u0259zyiqi bu n\u00fcmun\u0259 m\u0259hsul qruplar\u0131nda toplan\u0131b.",
-      "meta": {
-        "category": "Kateqoriya",
-        "availability": "M\u00f6vcudluq",
-        "available": "S\u0259rb\u0259st stok",
-        "price": "Vahid qiym\u0259t",
-        "pressure": "T\u0259zyiq s\u0259viyy\u0259si",
-        "stock": "\u00dcmumi stok"
-      },
-      "breakdown": {
-        "productsCount": "{count} m\u0259hsul",
-        "reservationShare": "{value} rezervd\u0259dir"
-      }
-    },
-    "categories": {
-      "blend": "Qar\u0131\u015f\u0131q",
-      "boucle": "Bukle",
-      "cotton": "Pamb\u0131q",
-      "jacquard": "Jakard",
-      "linen": "K\u0259tan",
-      "sheer": "T\u00fcl",
-      "suiting": "Kostyumluq",
-      "twill": "Sarja",
-      "velvet": "M\u0259xm\u0259r"
-    }
-  },
-  "Orders": {
-    "title": "Sifari\u015fl\u0259r",
-    "description": "Yeni sor\u011fulardan istehsal v\u0259 g\u00f6nd\u0259ri\u015f\u0259 q\u0259d\u0259r cari sifari\u015f kitab\u0131n\u0131 daha g\u00fcc\u00fcl\u00fc \u0259m\u0259liyyat g\u00f6r\u00fcn\u00fc\u015f\u00fcnd\u0259 izl\u0259yin.",
-    "searchPlaceholder": "Sifari\u015f, m\u00fc\u015ft\u0259ri, m\u0259hsul v\u0259 ya faktura axtar",
-    "emptyState": "Sifari\u015f tap\u0131lmad\u0131.",
-    "emptyStateDescription": "Tam demo sifari\u015f kitab\u0131n\u0131 qaytarmaq \u00fc\u00e7\u00fcn axtar\u0131\u015f\u0131 v\u0259 ya filtrl\u0259ri t\u0259mizl\u0259yin.",
-    "filters": {
-      "all": "Ham\u0131s\u0131",
-      "orderStatusLabel": "Sifari\u015f statusu",
-      "paymentStatusLabel": "\u00d6d\u0259ni\u015f statusu"
-    },
-    "cards": {
-      "totalOrders": "\u00dcmumi sifari\u015fl\u0259r",
-      "totalOrdersHint": "Cari demo ax\u0131n\u0131nda izl\u0259n\u0259n \u0259m\u0259liyyat sifari\u015fl\u0259ri.",
-      "liveOrderValue": "Aktiv sifari\u015f m\u0259bl\u0259\u011fi",
-      "liveOrderValueHint": "Haz\u0131rda demoda izl\u0259n\u0259n sifari\u015f portfelinin \u00fcmumi d\u0259y\u0259ri.",
-      "inProduction": "\u0130stehsalda",
-      "inProductionHint": "K\u0259sm\u0259, tamamlama v\u0259 keyfiyy\u0259t haz\u0131rl\u0131\u011f\u0131nda olan sifari\u015fl\u0259r.",
-      "billingFollowUp": "Maliyy\u0259 t\u0259qibi",
-      "billingFollowUpHint": "Fakturas\u0131 tamamlanmam\u0131\u015f v\u0259 ya \u00f6d\u0259ni\u015fi ba\u011flanmam\u0131\u015f sifari\u015fl\u0259r."
-    },
-    "table": {
-      "order": "Sifari\u015f",
-      "customer": "M\u00fc\u015ft\u0259ri",
-      "orderDate": "Sifari\u015f tarixi",
-      "items": "M\u0259hsul x\u00fclas\u0259si",
-      "itemsCue": "{quantity} m qeyd olunub",
-      "totalAmount": "\u00dcmumi m\u0259bl\u0259\u011f",
-      "orderStatus": "Sifari\u015f statusu",
-      "paymentStatus": "\u00d6d\u0259ni\u015f statusu",
-      "invoiceCue": "Faktura {invoiceId}",
-      "awaitingInvoice": "Faktura g\u00f6zl\u0259yir",
-      "deliveryCue": "\u00c7atd\u0131r\u0131lma {date}"
-    },
-    "panel": {
-      "title": "\u018fm\u0259liyyat fokusu",
-      "description": "Hansi sifari\u015fl\u0259rin istehsal diqq\u0259ti, g\u00f6nd\u0259ri\u015f koordinasiyas\u0131 v\u0259 maliyy\u0259 t\u0259qibi t\u0259l\u0259b etdiyini izl\u0259yin.",
-      "featuredLabel": "Prioritet sifari\u015f",
-      "featuredDescription": "{reference} sifari\u015fi {customer} hesab\u0131 \u00fc\u00e7\u00fcn cari demo sifari\u015f kitab\u0131nda \u0259m\u0259liyyat t\u0259qibin\u0259 \u0259n yax\u0131n m\u00f6vqed\u0259dir.",
-      "cards": {
-        "inProduction": "\u0130stehsalda",
-        "inProductionHint": "Haz\u0131rda k\u0259sm\u0259, tamamlama v\u0259 QA haz\u0131rl\u0131\u011f\u0131nda olan sifari\u015fl\u0259r.",
-        "readyToDispatch": "G\u00f6nd\u0259ri\u015f\u0259 haz\u0131r",
-        "readyToDispatchHint": "Yekun logistika planlamas\u0131 v\u0259 g\u00f6nd\u0259ri\u015f koordinasiyas\u0131 \u00fc\u00e7\u00fcn haz\u0131r sifari\u015fl\u0259r.",
-        "billingFollowUp": "Maliyy\u0259 t\u0259qibi",
-        "billingFollowUpHint": "A\u00e7\u0131q maliyy\u0259 tap\u015f\u0131r\u0131\u011f\u0131 qalan v\u0259 ya faktura il\u0259 \u0259hat\u0259 olunmayan sifari\u015fl\u0259r."
-      },
-      "meta": {
-        "customer": "M\u00fc\u015ft\u0259ri",
-        "orderDate": "Sifari\u015f tarixi",
-        "deliveryDate": "\u00c7atd\u0131r\u0131lma tarixi",
-        "itemSummary": "M\u0259hsul x\u00fclas\u0259si",
-        "invoice": "Faktura ba\u011flant\u0131s\u0131",
-        "paymentStatus": "\u00d6d\u0259ni\u015f statusu",
-        "orderStatus": "Sifari\u015f statusu",
-        "totalAmount": "\u00dcmumi m\u0259bl\u0259\u011f"
-      }
-    }
-  },
-  "Invoices": {
-    "title": "Fakturalar",
-    "description": "Ã–dÉ™niÅŸ tarixlÉ™rini, gecikmiÅŸ risklÉ™ri vÉ™ qismÉ™n yÄ±ÄŸÄ±mlarÄ± qabaqcadan gÃ¶rÃ¼n.",
-    "searchPlaceholder": "Faktura vÉ™ ya mÃ¼ÅŸtÉ™ri axtar",
-    "emptyState": "Faktura tapÄ±lmadÄ±.",
-    "cards": {
-      "openInvoiceValue": "AÃ§Ä±q faktura mÉ™blÉ™ÄŸi",
-      "openInvoiceValueHint": "GÃ¶zlÉ™yÉ™n, qismÉ™n Ã¶dÉ™nmiÅŸ vÉ™ gecikmiÅŸ fakturalar Ã¼zrÉ™ aÃ§Ä±q debitor mÉ™blÉ™ÄŸi.",
-      "overdueExposure": "GecikmiÅŸ risk",
-      "overdueExposureHint": "Ã–dÉ™niÅŸ tarixi artÄ±q keÃ§miÅŸ debitor borclarÄ±.",
-      "paidInFull": "Tam Ã¶dÉ™nÉ™nlÉ™r",
-      "paidInFullHint": "ÆlavÉ™ tÉ™qib tÉ™lÉ™b etmÉ™dÉ™n baÄŸlanan fakturalar."
-    },
-    "table": {
-      "invoice": "Faktura",
-      "customer": "MÃ¼ÅŸtÉ™ri",
-      "issued": "Tarix",
-      "due": "Son tarix",
-      "amount": "MÉ™blÉ™ÄŸ",
-      "paid": "Ã–dÉ™nib",
-      "status": "Status"
-    }
-  },
-  "Payments": {
-    "title": "Ã–dÉ™niÅŸlÉ™r",
-    "description": "Ã–dÉ™niÅŸ vaxtÄ±nÄ±, Ã¼sullarÄ±nÄ± vÉ™ tÉ™qib tÉ™lÉ™b edÉ™n mÃ¼ÅŸtÉ™rilÉ™ri izlÉ™yin.",
-    "searchPlaceholder": "Ã–dÉ™niÅŸ vÉ™ ya mÃ¼ÅŸtÉ™ri axtar",
-    "emptyState": "Ã–dÉ™niÅŸ tapÄ±lmadÄ±.",
-    "cards": {
-      "collectedPayments": "YÄ±ÄŸÄ±lmÄ±ÅŸ Ã¶dÉ™niÅŸlÉ™r",
-      "collectedPaymentsHint": "NÃ¼munÉ™ Ã¶dÉ™niÅŸlÉ™r artÄ±q faktura portfelinÉ™ qarÅŸÄ± qeyd edilib.",
-      "bankTransfers": "Bank kÃ¶Ã§Ã¼rmÉ™lÉ™ri",
-      "bankTransfersHint": "Uydurma mÉ™lumat dÉ™stindÉ™ istifadÉ™ olunan É™sas hesablaÅŸma kanalÄ±.",
-      "partialReceipts": "QismÉ™n Ã¶dÉ™niÅŸlÉ™r",
-      "partialReceiptsHint": "HesablaÅŸmanÄ± tamamlamaq Ã¼Ã§Ã¼n É™lavÉ™ tÉ™qib tÉ™lÉ™b edÉ™n mÃ¼ÅŸtÉ™rilÉ™r.",
-      "collectionNoteTitle": "YÄ±ÄŸÄ±m qeydi"
-    },
-    "notes": {
-      "primary": "Ã–dÉ™niÅŸ cÉ™dvÉ™li heÃ§ bir ÅŸÉ™xsi maliyyÉ™ mÉ™lumatÄ±ndan istifadÉ™ etmÉ™dÉ™n bank kÃ¶Ã§Ã¼rmÉ™si, wire vÉ™ kart Ã¶dÉ™niÅŸlÉ™ri ilÉ™ real É™mÉ™liyyat hissi yaradÄ±r.",
-      "secondary": "Portfel izlÉ™yicilÉ™ri hÉ™m UI, hÉ™m dÉ™ typed API marÅŸrut qatÄ±na baxaraq Ã¶dÉ™niÅŸ statusu izlÉ™nmÉ™sinin necÉ™ qurulduÄŸunu gÃ¶rÉ™ bilÉ™rlÉ™r."
-    },
-    "table": {
-      "payment": "Ã–dÉ™niÅŸ",
-      "customer": "MÃ¼ÅŸtÉ™ri",
-      "invoice": "Faktura",
-      "date": "Tarix",
-      "method": "Ãœsul",
-      "amount": "MÉ™blÉ™ÄŸ",
-      "status": "Status"
-    }
-  },
-  "Reports": {
-    "title": "Hesabatlar",
-    "description": "SatÄ±ÅŸ, yÄ±ÄŸÄ±m, mÃ¼ÅŸtÉ™ri vÉ™ mÉ™hsul performansÄ± Ã¼Ã§Ã¼n tÉ™qdimata hazÄ±r analitika mÉ™rkÉ™zinin ilkin gÃ¶rÃ¼nÃ¼ÅŸÃ¼nÃ¼ gÃ¶stÉ™rin.",
-    "badges": {
-      "demoReady": "Demo Ã¼Ã§Ã¼n hazÄ±r"
-    },
-    "cards": {
-      "exportsReady": "Eksporta hazÄ±r gÃ¶rÃ¼nÃ¼ÅŸlÉ™r",
-      "exportsReadyValue": "06",
-      "exportsReadyHint": "StrukturlaÅŸdÄ±rÄ±lmÄ±ÅŸ hesabat gÃ¶rÃ¼nÃ¼ÅŸlÉ™ri artÄ±q dashboard vizual sistemi ilÉ™ uyÄŸunlaÅŸÄ±r.",
-      "coverage": "ÆhatÉ™ sahÉ™lÉ™ri",
-      "coverageValue": "SatÄ±ÅŸ + É™mÉ™liyyat",
-      "coverageHint": "Hesabatlar mÃ¼ÅŸtÉ™ri, kataloq vÉ™ maliyyÉ™ perspektivlÉ™rini birlÉ™ÅŸdirmÉ™k Ã¼Ã§Ã¼n mÃ¶vqelÉ™nib.",
-      "refreshCycle": "YenilÉ™nmÉ™ ritmi",
-      "refreshCycleValue": "HÉ™ftÉ™lik",
-      "refreshCycleHint": "GÉ™lÉ™cÉ™k hesabat ritmi mÃ¶vcud mock-service qatÄ±na problemsiz qoÅŸula bilÉ™r."
-    },
-    "panels": {
-      "collectionsTitle": "YÄ±ÄŸÄ±m xÃ¼lasÉ™si",
-      "collectionsDescription": "GecikmiÅŸ risk vÉ™ qismÉ™n Ã¶dÉ™niÅŸlÉ™rin hesabatlarda necÉ™ gÃ¶rÃ¼nÉ™cÉ™yini izlÉ™yin.",
-      "monthlyPacksTitle": "AylÄ±q paketlÉ™r",
-      "collectionsBody": "Bu hissÉ™ aylÄ±q debitor paketlÉ™ri, mÃ¼ÅŸtÉ™ri yÄ±ÄŸÄ±m trendi vÉ™ faktura yaÅŸlanma gÃ¶rÃ¼nÃ¼ÅŸlÉ™ri Ã¼Ã§Ã¼n ayrÄ±lÄ±b.",
-      "agingBucketsTitle": "YaÅŸlanma qruplarÄ±",
-      "agingBucketsBody": "Bu sahÉ™dÉ™ debitor yaÅŸlanmasÄ±, kollektor qeydlÉ™ri vÉ™ export filtrlÉ™ri yerlÉ™ÅŸdirilÉ™ bilÉ™r.",
-      "collectionConfidenceTitle": "YÄ±ÄŸÄ±m etibarlÄ±lÄ±ÄŸÄ±",
-      "collectionConfidenceBody": "Ã–dÉ™niÅŸ statusunu hesab saÄŸlamlÄ±ÄŸÄ± siqnallarÄ± ilÉ™ birlÉ™ÅŸdirin, hÉ™m dÉ™ shell quruluÅŸunu dÉ™yiÅŸmÉ™dÉ™n.",
-      "catalogTitle": "MÉ™hsul performansÄ±",
-      "catalogDescription": "HansÄ± referanslarÄ±n, kateqoriyalarÄ±n vÉ™ rezervdÉ™ki mÉ™hsullarÄ±n daha Ã§ox tÉ™lÉ™b gÃ¶rdÃ¼yÃ¼nÃ¼ izlÉ™yin.",
-      "demandPulseTitle": "TÉ™lÉ™b nÉ™bzi",
-      "catalogBody": "GÉ™lÉ™cÉ™k hesabatlar portfel Ã¼zrÉ™ stok tÉ™zyiqi, rezerv nisbÉ™ti vÉ™ qiymÉ™t dÉ™yiÅŸimini mÃ¼qayisÉ™ edÉ™cÉ™k.",
-      "roadmapTitle": "NÃ¶vbÉ™ti mÉ™rhÉ™lÉ™",
-      "roadmapDescription": "Shell daha gÃ¼clÃ¼ qrafik vÉ™ export iÅŸ axÄ±nlarÄ± Ã¼Ã§Ã¼n hazÄ±rdÄ±r.",
-      "roadmapItems": {
-        "profitability": "Marja vÉ™ mÉ™nfÉ™É™tlilik gÃ¶rÃ¼nÃ¼ÅŸlÉ™ri",
-        "regional": "Regional mÃ¼ÅŸtÉ™ri seqmentasiyasÄ±",
-        "inventory": "Stok yaÅŸlanmasÄ± vÉ™ yenidÉ™n tÉ™darÃ¼k xÉ™bÉ™rdarlÄ±qlarÄ±"
-      }
-    }
-  },
-  "Settings": {
-    "title": "TÉ™nzimlÉ™mÉ™lÉ™r",
-    "description": "FabricLog-un brendinq, É™mÉ™liyyat, lokalizasiya vÉ™ idarÉ™etmÉ™ Ã¼Ã§Ã¼n konfiqurasiya olunan iÅŸ sahÉ™sinÉ™ necÉ™ Ã§evrilÉ™ bilÉ™cÉ™yini gÃ¶stÉ™rin.",
-    "badges": {
-      "demoWorkspace": "Demo iÅŸ sahÉ™si"
-    },
-    "cards": {
-      "workspace": "Ä°ÅŸ sahÉ™si profili",
-      "workspaceHint": "GÉ™lÉ™cÉ™k mÃ¼ÅŸtÉ™riyÉ™ uyÄŸun konfiqurasiya Ã¼Ã§Ã¼n sabit brend vÉ™ iÅŸ sahÉ™si sÉ™thi.",
-      "localization": "Lokalizasiyaya hazÄ±r",
-      "localizationValue": "EN / AZ",
-      "localizationHint": "Shell vÉ™ marÅŸrut sistemi sonradan daha Ã§ox dil É™lavÉ™ etmÉ™k Ã¼Ã§Ã¼n artÄ±q hazÄ±rdÄ±r.",
-      "governance": "Ä°darÉ™etmÉ™ sÉ™thi",
-      "governanceValue": "GÉ™lÉ™cÉ™yÉ™ hazÄ±r",
-      "governanceHint": "GiriÅŸ, export vÉ™ inteqrasiyalar layout dÉ™yiÅŸmÉ™dÉ™n É™lavÉ™ oluna bilÉ™r."
-    },
-    "panels": {
-      "profileTitle": "Biznes profili",
-      "profileDescription": "Uydurma FabricLog iÅŸ sahÉ™si Ã¼Ã§Ã¼n ictimai demo metadata.",
-      "workspaceTitle": "FabricLog Demo Ä°ÅŸ SahÉ™si",
-      "profileBody": "Bu sahÉ™ sonradan ÅŸirkÉ™t mÉ™lumatÄ±, vergi seÃ§imlÉ™ri, faktura ÅŸablonlarÄ± vÉ™ sifariÅŸ kodu qaydalarÄ± Ã¼Ã§Ã¼n istifadÉ™ edilÉ™ bilÉ™r.",
-      "experienceTitle": "TÉ™crÃ¼bÉ™ standartlarÄ±",
-      "experienceDescription": "Dil, tarix vÉ™ panel seÃ§imlÉ™rinin idarÉ™si Ã¼Ã§Ã¼n hazÄ±r struktur.",
-      "experienceBody": "MÃ¶vcud struktur artÄ±q ingilis vÉ™ azÉ™rbaycan dillÉ™rini dÉ™stÉ™klÉ™yir vÉ™ layout yenidÉ™n yazÄ±lmadan istifadÉ™Ã§i sÉ™viyyÉ™li seÃ§imlÉ™rÉ™ geniÅŸlÉ™nÉ™ bilÉ™r.",
-      "experienceItems": {
-        "localeReadyTitle": "Lokalizasiya Ã¼Ã§Ã¼n hazÄ±r shell",
-        "visualConsistencyTitle": "Vizual ardÄ±cÄ±llÄ±q",
-        "visualConsistencyBody": "Tema tokenlÉ™ri, boÅŸluq sistemi vÉ™ sÉ™th Ã¼slublarÄ± shell vÉ™ funksional sÉ™hifÉ™lÉ™r boyunca uyÄŸunlaÅŸdÄ±rÄ±lÄ±b."
-      },
-      "controlsTitle": "ÆmÉ™liyyat nÉ™zarÉ™tlÉ™ri",
-      "controlsDescription": "SÉ™lahiyyÉ™t, export vÉ™ inteqrasiya Ã¼Ã§Ã¼n gÉ™lÉ™cÉ™yÉ™ hazÄ±r placeholder sahÉ™lÉ™r.",
-      "controlsItems": {
-        "roles": "Rol vÉ™ giriÅŸ siyasÉ™tlÉ™ri",
-        "templates": "SÉ™nÉ™d vÉ™ faktura ÅŸablonlarÄ±",
-        "integrations": "MÃ¼hasibat vÉ™ hesabat inteqrasiyalarÄ±"
-      }
-    }
-  },
-  "Statuses": {
-    "tiers": {
-      "signature": "Premium",
-      "growth": "Ä°nkiÅŸaf",
-      "studio": "Studiya"
-    },
-    "fabric": {
-      "available": "MÃ¶vcud",
-      "low": "Az stok",
-      "reserved": "RezervdÉ™"
-    },
-    "order": {
-      "new": "Yeni",
-      "sampling": "NÃ¼munÉ™",
-      "production": "Ä°stehsal",
-      "ready": "HazÄ±r",
-      "dispatched": "GÃ¶ndÉ™rilib"
-    },
-    "payment": {
-      "none": "Faktura yoxdur",
-      "paid": "Ã–dÉ™nib",
-      "partial": "QismÉ™n",
-      "pending": "GÃ¶zlÉ™mÉ™dÉ™",
-      "overdue": "Gecikib"
-    }
-  },
-  "Insights": {
-    "primary": {
-      "title": "Prioritet yÄ±ÄŸÄ±m pÉ™ncÉ™rÉ™si",
-      "description": "Ä°ki qismÉ™n Ã¶dÉ™niÅŸli fakturanÄ±n son tarixi nÃ¶vbÉ™ti beÅŸ iÅŸ gÃ¼nÃ¼nÉ™ dÃ¼ÅŸÃ¼r. SÃ¼rÉ™tli tÉ™qib aylÄ±q yÄ±ÄŸÄ±m faizini hÉ™dÉ™fdÉ™ saxlayÄ±r."
-    },
-    "secondary": {
-      "title": "Rezerv planlamasÄ±",
-      "description": "Premium jakard vÉ™ kÉ™tan mÉ™hsullarÄ±nda rezerv tÉ™zyiqi É™n yÃ¼ksÉ™kdir. YenidÉ™n tÉ™darÃ¼k É™vvÉ™lcÉ™ bu istiqamÉ™tÉ™ yÃ¶nÉ™lmÉ™lidir."
-    }
-  }
+    "Common":  {
+                   "appName":  "FabricLog",
+                   "brandSubtitle":  "Tekstil Ã‰â„¢mÃ‰â„¢liyyatlarÃ„Â± demosu",
+                   "demoBadge":  "Ã„Â°ctimai, tÃ‰â„¢hlÃƒÂ¼kÃ‰â„¢siz demo",
+                   "openDemo":  "Demoya keÃƒÂ§",
+                   "viewOnGitHub":  "Portfel ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±rdÃ„Â±r",
+                   "search":  "Axtar",
+                   "localeEnglish":  "Ã„Â°ngilis dili",
+                   "localeAzerbaijani":  "AzÃ‰â„¢rbaycan dili",
+                   "localeLabel":  "Dil",
+                   "portfolioNote":  "BÃƒÂ¼tÃƒÂ¼n qeydlÃ‰â„¢r portfel tÃ‰â„¢qdimatÃ„Â± ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±rlanmÃ„Â±Ã…Å¸ uydurma nÃƒÂ¼munÃ‰â„¢ mÃ‰â„¢lumatlardÃ„Â±r.",
+                   "updatedLabel":  "Son yenilÃ‰â„¢nmÃ‰â„¢",
+                   "currency":  "AZN",
+                   "unknown":  "NamÃ‰â„¢lum"
+               },
+    "Navigation":  {
+                       "dashboard":  "Panel",
+                       "customers":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                       "fabrics":  "ParÃƒÂ§alar",
+                       "products":  "MÃ‰â„¢hsullar",
+                       "orders":  "SifariÃ…Å¸lÃ‰â„¢r",
+                       "invoices":  "Fakturalar",
+                       "reports":  "Hesabatlar",
+                       "settings":  "TÃ‰â„¢nzimlÃ‰â„¢mÃ‰â„¢lÃ‰â„¢r",
+                       "payments":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸lÃ‰â„¢r"
+                   },
+    "Landing":  {
+                    "eyebrow":  "Tekstil biznesi Ã‰â„¢mÃ‰â„¢liyyat demosu",
+                    "title":  "ParÃƒÂ§a biznesini vahid idarÃ‰â„¢etmÃ‰â„¢ mÃ‰â„¢rkÃ‰â„¢zindÃ‰â„¢n yÃƒÂ¶nÃ‰â„¢ldin.",
+                    "description":  "FabricLog tekstil Ã‰â„¢mÃ‰â„¢liyyatlarÃ„Â± ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n peÃ…Å¸Ã‰â„¢kar full-stack demo tÃ‰â„¢qdim edir: mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r, stok, sifariÃ…Å¸lÃ‰â„¢r, fakturalar vÃ‰â„¢ ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ izlÃ‰â„¢nmÃ‰â„¢si bir SaaS tÃ‰â„¢crÃƒÂ¼bÃ‰â„¢sindÃ‰â„¢ birlÃ‰â„¢Ã…Å¸ir.",
+                    "primaryCta":  "Paneli aÃƒÂ§",
+                    "secondaryCta":  "Modullara bax",
+                    "highlightsTitle":  "Real gÃƒÂ¶rÃƒÂ¼nÃ‰â„¢n nÃƒÂ¼mayiÃ…Å¸ dÃ‰â„¢yÃ‰â„¢ri ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±rlanÃ„Â±b",
+                    "stats":  {
+                                  "customers":  "Uydurma mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                                  "invoices":  "Ã†ÂlaqÃ‰â„¢li fakturalar",
+                                  "fabrics":  "ParÃƒÂ§a referanslarÃ„Â±",
+                                  "languages":  "DÃ‰â„¢stÃ‰â„¢klÃ‰â„¢nÃ‰â„¢n dillÃ‰â„¢r"
+                              },
+                    "highlights":  {
+                                       "customers":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri portfeli, regional hesablar vÃ‰â„¢ yÃ„Â±Ã„Å¸Ã„Â±m gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼rlÃƒÂ¼Ã„Å¸ÃƒÂ¼",
+                                       "inventory":  "Stok tÃ‰â„¢zyiqi, rezerv vÃ‰â„¢ qiymÃ‰â„¢t mÃ‰â„¢lumatlÃ„Â± parÃƒÂ§a kataloqu",
+                                       "orders":  "NÃƒÂ¼munÃ‰â„¢dÃ‰â„¢n gÃƒÂ¶ndÃ‰â„¢riÃ…Å¸Ã‰â„¢ qÃ‰â„¢dÃ‰â„¢r sifariÃ…Å¸ axÃ„Â±nÃ„Â±",
+                                       "finance":  "Realistik xÃƒÂ¼lasÃ‰â„¢lÃ‰â„¢rlÃ‰â„¢ faktura vÃ‰â„¢ ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ izlÃ‰â„¢nmÃ‰â„¢si"
+                                   },
+                    "safetyTitle":  "Portfel ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n tÃ‰â„¢hlÃƒÂ¼kÃ‰â„¢siz dizayn",
+                    "safetyDescription":  "HeÃƒÂ§ bir gizli mÃ‰â„¢lumat, istehsal xidmÃ‰â„¢ti vÃ‰â„¢ ya Ã…Å¸Ã‰â„¢xsi mÃ‰â„¢lumat yoxdur. Bu demodakÃ„Â± bÃƒÂ¼tÃƒÂ¼n Ã…Å¸irkÃ‰â„¢tlÃ‰â„¢r, kontaktlar, sifariÃ…Å¸lÃ‰â„¢r vÃ‰â„¢ Ã‰â„¢mÃ‰â„¢liyyatlar uydurmadÃ„Â±r."
+                },
+    "Shell":  {
+                  "subtitle":  "ParÃƒÂ§a Ã‰â„¢mÃ‰â„¢liyyatlarÃ„Â± demo iÃ…Å¸ sahÃ‰â„¢si",
+                  "welcomeBack":  "Biznes gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸ÃƒÂ¼",
+                  "demoSafe":  "YalnÃ„Â±z nÃƒÂ¼munÃ‰â„¢ qeydlÃ‰â„¢r",
+                  "mobileMenuLabel":  "Naviqasiya menyusunu aÃƒÂ§",
+                  "searchActionLabel":  "Modullarda axtar"
+              },
+    "Dashboard":  {
+                      "title":  "Panel",
+                      "description":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢ri, sifariÃ…Å¸ axÃ„Â±nÃ„Â±nÃ„Â±, fakturalarÃ„Â± vÃ‰â„¢ yÃ„Â±Ã„Å¸Ã„Â±m tÃ‰â„¢zyiqini vahid tekstil Ã‰â„¢mÃ‰â„¢liyyat gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸ÃƒÂ¼ndÃ‰â„¢ izlÃ‰â„¢yin.",
+                      "metrics":  {
+                                      "customers":  "ÃƒÅ“mumi mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                                      "customersHint":  "Atelye, qonaqpÃ‰â„¢rvÃ‰â„¢rlik, interyer vÃ‰â„¢ tikiÃ…Å¸ seqmentlÃ‰â„¢ri ÃƒÂ¼zrÃ‰â„¢ aktiv uydurma hesablar.",
+                                      "orders":  "ÃƒÅ“mumi sifariÃ…Å¸lÃ‰â„¢r",
+                                      "ordersHint":  "Demo axÃ„Â±nÃ„Â± boyunca izlÃ‰â„¢nÃ‰â„¢n nÃƒÂ¼munÃ‰â„¢ sifariÃ…Å¸lÃ‰â„¢r.",
+                                      "invoices":  "ÃƒÅ“mumi fakturalar",
+                                      "invoicesHint":  "Cari sifariÃ…Å¸ portfeli ilÃ‰â„¢ Ã‰â„¢laqÃ‰â„¢li yaradÃ„Â±lmÃ„Â±Ã…Å¸ demo fakturalar.",
+                                      "revenue":  "Demo gÃ‰â„¢liri",
+                                      "revenueHint":  "Cari nÃƒÂ¼munÃ‰â„¢ faktura reyestrindÃ‰â„¢n qeyd alÃ„Â±nmÃ„Â±Ã…Å¸ gÃ‰â„¢lir.",
+                                      "unpaidInvoices":  "Ãƒâ€“dÃ‰â„¢nilmÃ‰â„¢miÃ…Å¸ fakturalar",
+                                      "unpaidInvoicesHint":  "TÃ‰â„¢qib tÃ‰â„¢lÃ‰â„¢b edÃ‰â„¢n gÃƒÂ¶zlÃ‰â„¢mÃ‰â„¢dÃ‰â„¢, qismÃ‰â„¢n vÃ‰â„¢ gecikmiÃ…Å¸ fakturalar."
+                                  },
+                      "visualSummary":  {
+                                            "title":  "GÃ‰â„¢lir gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸ÃƒÂ¼",
+                                            "description":  "AylÃ„Â±q gÃ‰â„¢lir trendi ilÃ‰â„¢ birlikdÃ‰â„¢ cari yÃ„Â±Ã„Å¸Ã„Â±m vÃ‰â„¢ stok tÃ‰â„¢zyiqinin qÃ„Â±sa icmalÃ„Â±.",
+                                            "items":  {
+                                                          "collectionRate":  "YÃ„Â±Ã„Å¸Ã„Â±m faizi",
+                                                          "pendingFollowUp":  "TÃ‰â„¢qib gÃƒÂ¶zlÃ‰â„¢yÃ‰â„¢nlÃ‰â„¢r",
+                                                          "lowStock":  "Az stoklu mÃ‰â„¢hsullar"
+                                                      }
+                                        },
+                      "charts":  {
+                                     "revenueTitle":  "GÃ‰â„¢lir trendi",
+                                     "revenueDescription":  "AylÃ„Â±q qeyd alÃ„Â±nmÃ„Â±Ã…Å¸ gÃ‰â„¢lir vÃ‰â„¢ faktura hÃ‰â„¢cmi",
+                                     "revenueSeriesLabel":  "GÃ‰â„¢lir",
+                                     "paymentsTitle":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ bÃƒÂ¶lgÃƒÂ¼sÃƒÂ¼",
+                                     "paymentsDescription":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ statusuna gÃƒÂ¶rÃ‰â„¢ aÃƒÂ§Ã„Â±q risk",
+                                     "paymentValueLabel":  "Risk mÃ‰â„¢blÃ‰â„¢Ã„Å¸i",
+                                     "paymentCountLabel":  "{count} faktura",
+                                     "pipelineTitle":  "SifariÃ…Å¸ axÃ„Â±nÃ„Â±",
+                                     "pipelineValueLabel":  "SifariÃ…Å¸lÃ‰â„¢r"
+                                 },
+                      "statusIndicators":  {
+                                               "title":  "SÃƒÂ¼rÃ‰â„¢tli status gÃƒÂ¶stÃ‰â„¢ricilÃ‰â„¢ri",
+                                               "description":  "Cari demo portfelindÃ‰â„¢ daha ÃƒÂ§ox diqqÃ‰â„¢t tÃ‰â„¢lÃ‰â„¢b edÃ‰â„¢n sahÃ‰â„¢lÃ‰â„¢ri izlÃ‰â„¢yin.",
+                                               "items":  {
+                                                             "lowStock":  "Az stok",
+                                                             "overdueInvoices":  "GecikmiÃ…Å¸ fakturalar",
+                                                             "pendingInvoices":  "GÃƒÂ¶zlÃ‰â„¢mÃ‰â„¢dÃ‰â„¢ olan fakturalar",
+                                                             "productionOrders":  "Ã„Â°stehsalda"
+                                                         }
+                                           },
+                      "recentOrders":  {
+                                           "title":  "Son sifariÃ…Å¸lÃ‰â„¢r",
+                                           "description":  "Cari mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri portfelindÃ‰â„¢ki Ã‰â„¢n son sifariÃ…Å¸ hÃ‰â„¢rÃ‰â„¢kÃ‰â„¢tlÃ‰â„¢ri.",
+                                           "table":  {
+                                                         "reference":  "Kod",
+                                                         "customer":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri",
+                                                         "delivery":  "Ãƒâ€¡atdÃ„Â±rÃ„Â±lma",
+                                                         "amount":  "MÃ‰â„¢blÃ‰â„¢Ã„Å¸",
+                                                         "status":  "Status"
+                                                     }
+                                       },
+                      "recentInvoices":  {
+                                             "title":  "Son fakturalar",
+                                             "description":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ tarixi, ÃƒÂ¶dÃ‰â„¢nÃ‰â„¢n mÃ‰â„¢blÃ‰â„¢Ã„Å¸ vÃ‰â„¢ yÃ„Â±Ã„Å¸Ã„Â±m statusu ilÃ‰â„¢ Ã‰â„¢n yeni fakturalar.",
+                                             "table":  {
+                                                           "invoice":  "Faktura",
+                                                           "customer":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri",
+                                                           "due":  "Son tarix",
+                                                           "billing":  "MaliyyÃ‰â„¢",
+                                                           "paidLabel":  "Ãƒâ€“dÃ‰â„¢nib {amount}",
+                                                           "status":  "Status"
+                                                       }
+                                         },
+                      "activity":  {
+                                       "title":  "Son Ã‰â„¢mÃ‰â„¢liyyatlar",
+                                       "description":  "SifariÃ…Å¸, faktura, ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ vÃ‰â„¢ stok zaman xÃ‰â„¢ttindÃ‰â„¢n formalaÃ…Å¸dÃ„Â±rÃ„Â±lmÃ„Â±Ã…Å¸ cari dÃ‰â„¢yiÃ…Å¸ikliklÃ‰â„¢r.",
+                                       "types":  {
+                                                     "payment_received":  {
+                                                                              "title":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ daxil olub",
+                                                                              "description":  "{customerName} {invoiceId} ÃƒÂ¼zrÃ‰â„¢ {amount} ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ edib."
+                                                                          },
+                                                     "invoice_partial_paid":  {
+                                                                                  "title":  "Faktura qismÃ‰â„¢n ÃƒÂ¶dÃ‰â„¢nib",
+                                                                                  "description":  "{invoiceId} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {customerName} tÃ‰â„¢rÃ‰â„¢findÃ‰â„¢n qismÃ‰â„¢n ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ daxil olub."
+                                                                              },
+                                                     "invoice_overdue":  {
+                                                                             "title":  "Faktura gecikib",
+                                                                             "description":  "{customerName} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {invoiceId} ÃƒÂ¼zrÃ‰â„¢ {amount} mÃ‰â„¢blÃ‰â„¢Ã„Å¸ artÃ„Â±q gecikmÃ‰â„¢dÃ‰â„¢dir."
+                                                                         },
+                                                     "order_in_production":  {
+                                                                                 "title":  "SifariÃ…Å¸ istehsala keÃƒÂ§ib",
+                                                                                 "description":  "{customerName} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {orderCode} istehsal mÃ‰â„¢rhÃ‰â„¢lÃ‰â„¢sinÃ‰â„¢ keÃƒÂ§ib."
+                                                                             },
+                                                     "order_ready":  {
+                                                                         "title":  "SifariÃ…Å¸ hazÃ„Â±rdÃ„Â±r",
+                                                                         "description":  "{customerName} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {orderCode} gÃƒÂ¶ndÃ‰â„¢riÃ…Å¸ planlamasÃ„Â±na hazÃ„Â±rdÃ„Â±r."
+                                                                     },
+                                                     "order_dispatched":  {
+                                                                              "title":  "SifariÃ…Å¸ gÃƒÂ¶ndÃ‰â„¢rilib",
+                                                                              "description":  "{customerName} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {orderCode} anbardan ÃƒÂ§Ã„Â±xÃ„Â±b."
+                                                                          },
+                                                     "inventory_low":  {
+                                                                           "title":  "Stok xÃ‰â„¢bÃ‰â„¢rdarlÃ„Â±Ã„Å¸Ã„Â±",
+                                                                           "description":  "{productName} yenidÃ‰â„¢n tÃ‰â„¢darÃƒÂ¼k hÃ‰â„¢ddinÃ‰â„¢ yaxÃ„Â±nlaÃ…Å¸Ã„Â±r."
+                                                                       },
+                                                     "invoice_issued":  {
+                                                                            "title":  "Faktura yaradÃ„Â±lÃ„Â±b",
+                                                                            "description":  "{customerName} ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n {invoiceId} ({amount}) yaradÃ„Â±lÃ„Â±b."
+                                                                        }
+                                                 }
+                                   }
+                  },
+    "Customers":  {
+                      "title":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                      "description":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri hesablarÃ„Â±nÃ„Â±, Ã‰â„¢laqÃ‰â„¢ mÃ‰â„¢lumatlarÃ„Â±nÃ„Â±, faktura tÃ‰â„¢zyiqini vÃ‰â„¢ ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â±nÃ„Â± vahid portfel gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸ÃƒÂ¼ndÃ‰â„¢ izlÃ‰â„¢yin.",
+                      "searchPlaceholder":  "Ad, Ã…Å¸irkÃ‰â„¢t, e-poÃƒÂ§t vÃ‰â„¢ ya region axtar",
+                      "emptyState":  "UyÃ„Å¸un mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri tapÃ„Â±lmadÃ„Â±.",
+                      "emptyStateDescription":  "Filtri sÃ„Â±fÃ„Â±rlayÃ„Â±n vÃ‰â„¢ ya axtarÃ„Â±Ã…Å¸ ifadÃ‰â„¢sini geniÃ…Å¸lÃ‰â„¢ndirin.",
+                      "featured":  "Fokus hesab",
+                      "featuredDescription":  "{name} Ã‰â„¢sasÃ‰â„¢n {collection} istiqamÃ‰â„¢tindÃ‰â„¢ tÃ‰â„¢krarlanan tÃ‰â„¢lÃ‰â„¢b portfelinÃ‰â„¢ nÃ‰â„¢zarÃ‰â„¢t edir.",
+                      "filters":  {
+                                      "all":  "HamÃ„Â±sÃ„Â±",
+                                      "tierLabel":  "SÃ‰â„¢viyyÃ‰â„¢",
+                                      "paymentHealthLabel":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â±"
+                                  },
+                      "cards":  {
+                                    "totalAccounts":  "ÃƒÅ“mumi hesablar",
+                                    "totalAccountsHint":  "Premium qonaqpÃ‰â„¢rvÃ‰â„¢rlik, tikiÃ…Å¸ vÃ‰â„¢ studiya alÃ„Â±cÃ„Â±larÃ„Â± arasÃ„Â±nda balanslÃ„Â± paylanma.",
+                                    "signatureCustomers":  "Premium mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                                    "signatureCustomersHint":  "Bir neÃƒÂ§Ã‰â„¢ sifariÃ…Å¸ Ã‰â„¢laqÃ‰â„¢si olan Ã‰â„¢n dÃ‰â„¢yÃ‰â„¢rli hesablar.",
+                                    "followUpCustomers":  "TÃ‰â„¢qib hesablarÃ„Â±",
+                                    "followUpCustomersHint":  "YÃ„Â±Ã„Å¸Ã„Â±m diqqÃ‰â„¢ti tÃ‰â„¢lÃ‰â„¢b edÃ‰â„¢n gÃƒÂ¶zlÃ‰â„¢mÃ‰â„¢dÃ‰â„¢ vÃ‰â„¢ qismÃ‰â„¢n fakturalÃ„Â± mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r.",
+                                    "outstandingBalance":  "AÃƒÂ§Ã„Â±q balans",
+                                    "outstandingBalanceHint":  "HÃ‰â„¢lÃ‰â„¢ dÃ‰â„¢ yÃ„Â±Ã„Å¸Ã„Â±m gÃƒÂ¶zlÃ‰â„¢yÃ‰â„¢n portfel riski.",
+                                    "signatureAccount":  "Premium hesab",
+                                    "exposure":  "Risk mÃ‰â„¢blÃ‰â„¢Ã„Å¸i",
+                                    "lastOrderPrefix":  "Son sifariÃ…Å¸"
+                                },
+                      "healthPanel":  {
+                                          "title":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â±",
+                                          "description":  "Hesab paylanmasÃ„Â±, gecikmiÃ…Å¸ tÃ‰â„¢zyiq vÃ‰â„¢ Ã‰â„¢n ÃƒÂ§ox risk daÃ…Å¸Ã„Â±yan mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n qÃ„Â±sa icmal.",
+                                          "cards":  {
+                                                        "growthCustomers":  "Ã„Â°nkiÃ…Å¸af mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢ri",
+                                                        "growthCustomersHint":  "TÃ‰â„¢krarlanan sifariÃ…Å¸ hÃ‰â„¢cmini artÃ„Â±rmaq ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n potensialÃ„Â± olan hesablar.",
+                                                        "overdueCustomers":  "GecikmiÃ…Å¸ mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r",
+                                                        "overdueCustomersHint":  "HazÃ„Â±rda gecikmiÃ…Å¸ faktura riski daÃ…Å¸Ã„Â±yan hesablar.",
+                                                        "followUpCustomers":  "YÃ„Â±Ã„Å¸Ã„Â±m izlÃ‰â„¢mÃ‰â„¢si",
+                                                        "followUpCustomersHint":  "HÃ‰â„¢lÃ‰â„¢ hÃ‰â„¢rÃ‰â„¢kÃ‰â„¢tdÃ‰â„¢ olan qismÃ‰â„¢n vÃ‰â„¢ gÃƒÂ¶zlÃ‰â„¢mÃ‰â„¢dÃ‰â„¢ki balanslar."
+                                                    },
+                                          "featured":  {
+                                                           "collection":  "ÃƒÅ“stÃƒÂ¼nlÃƒÂ¼k verilÃ‰â„¢n kolleksiya",
+                                                           "contact":  "Ã†Âsas Ã‰â„¢laqÃ‰â„¢",
+                                                           "paymentHealth":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â±",
+                                                           "lastActivity":  "Son aktivlik"
+                                                       }
+                                      },
+                      "table":  {
+                                    "account":  "Hesab",
+                                    "contact":  "Ã†ÂlaqÃ‰â„¢",
+                                    "region":  "Region",
+                                    "tier":  "SÃ‰â„¢viyyÃ‰â„¢",
+                                    "orders":  "SifariÃ…Å¸lÃ‰â„¢r",
+                                    "invoices":  "Fakturalar",
+                                    "paymentHealth":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â±",
+                                    "paymentCue":  "{open} aÃƒÂ§Ã„Â±q / {paid} ÃƒÂ¶dÃ‰â„¢nib",
+                                    "balance":  "AÃƒÂ§Ã„Â±q balans",
+                                    "lastActivity":  "Son aktivlik"
+                                }
+                  },
+    "Fabrics":  {
+                    "title":  "ParÃƒÂ§alar",
+                    "description":  "Kataloq ÃƒÂ¼zrÃ‰â„¢ populyar tekstillÃ‰â„¢ri, stok vÃ‰â„¢ziyyÃ‰â„¢tini vÃ‰â„¢ rezerv tÃ‰â„¢zyiqini izlÃ‰â„¢yin.",
+                    "searchPlaceholder":  "SKU, parÃƒÂ§a vÃ‰â„¢ ya kateqoriya axtar",
+                    "cards":  {
+                                  "totalStock":  "ÃƒÅ“mumi stok",
+                                  "reservedStock":  "Rezerv stok",
+                                  "averageUnitPrice":  "Orta vahid qiymÃ‰â„¢t"
+                              },
+                    "table":  {
+                                  "product":  "MÃ‰â„¢hsul",
+                                  "composition":  "TÃ‰â„¢rkib",
+                                  "width":  "En",
+                                  "weight":  "SÃ„Â±xlÃ„Â±q",
+                                  "stock":  "Stok",
+                                  "reserved":  "Rezerv",
+                                  "price":  "Vahid qiymÃ‰â„¢t",
+                                  "status":  "Status"
+                              }
+                },
+    "Products":  {
+                     "title":  "Məhsullar",
+                     "description":  "Tekstil kataloqunu qiymət, stok təzyiqi və mövcudluq siqnalları ilə vahid peşəkar inventar görünüşündə izləyin.",
+                     "searchPlaceholder":  "SKU, məhsul, kateqoriya və ya rəng axtar",
+                     "emptyState":  "Məhsul tapılmadı.",
+                     "emptyStateDescription":  "Tam demo assortimentini görmək üçün cari axtarışı və ya filtrləri təmizləyin.",
+                     "filters":  {
+                                     "all":  "Hamısı",
+                                     "categoryLabel":  "Kateqoriya",
+                                     "availabilityLabel":  "Mövcudluq"
+                                 },
+                     "cards":  {
+                                   "totalProducts":  "Ümumi məhsullar",
+                                   "totalProductsHint":  "Nümunə kataloqda təqdim olunan aktiv tekstil referansları.",
+                                   "totalStock":  "Ümumi stok",
+                                   "totalStockHint":  "Tam nümunə assortiment üzrə cari stok mövqeyi.",
+                                   "reservedStock":  "Rezerv stok",
+                                   "reservedStockHint":  "Cari sifariş axını, təsdiqlər və nümunə sorğuları üçün ayrılmış həcm.",
+                                   "lowStockCount":  "Az stoklu referanslar",
+                                   "lowStockCountHint":  "Əlavə təchizat üçün ilk növbədə izlənməli kataloq xətləri."
+                               },
+                     "table":  {
+                                   "product":  "Məhsul",
+                                   "category":  "Kateqoriya",
+                                   "variant":  "Rəng / variant",
+                                   "stock":  "Stok",
+                                   "stockCue":  "{reserved} m rezervdədir",
+                                   "price":  "Vahid qiymət",
+                                   "availability":  "Mövcudluq",
+                                   "available":  "Sərbəst metr"
+                               },
+                     "pressure":  {
+                                      "healthy":  "Stok mövqeyi sabitdir",
+                                      "watch":  "Rezerv təzyiqi artır",
+                                      "critical":  "Təchizat prioritetidir"
+                                  },
+                     "panel":  {
+                                   "title":  "Kataloq nəzarəti",
+                                   "description":  "Ən çox rezerv təzyiqi daşıyan referansları və assortimentin hansı sahələrdə daraldığını izləyin.",
+                                   "featuredLabel":  "Seçilmiş referans",
+                                   "featuredDescription":  "{name} demo kataloqda hazırda ən yüksək rezerv təzyiqi daşıyır və təchizat baxımından diqqətdə saxlanmalıdır.",
+                                   "categoryBreakdownTitle":  "Kateqoriya balansı",
+                                   "categoryBreakdownDescription":  "Ən güclü rezerv təzyiqi bu nümunə məhsul qruplarında toplanıb.",
+                                   "meta":  {
+                                                "category":  "Kateqoriya",
+                                                "availability":  "Mövcudluq",
+                                                "available":  "Sərbəst stok",
+                                                "price":  "Vahid qiymət",
+                                                "pressure":  "Təzyiq səviyyəsi",
+                                                "stock":  "Ümumi stok"
+                                            },
+                                   "breakdown":  {
+                                                     "productsCount":  "{count} məhsul",
+                                                     "reservationShare":  "{value} rezervdədir"
+                                                 }
+                               },
+                     "categories":  {
+                                        "blend":  "Qarışıq",
+                                        "boucle":  "Bukle",
+                                        "cotton":  "Pambıq",
+                                        "jacquard":  "Jakard",
+                                        "linen":  "Kətan",
+                                        "sheer":  "Tül",
+                                        "suiting":  "Kostyumluq",
+                                        "twill":  "Sarja",
+                                        "velvet":  "Məxmər"
+                                    }
+                 },
+    "Orders":  {
+                   "title":  "Sifarişlər",
+                   "description":  "Yeni sorğulardan istehsal və göndərişə qədər cari sifariş kitabını daha gücülü əməliyyat görünüşündə izləyin.",
+                   "searchPlaceholder":  "Sifariş, müştəri, məhsul və ya faktura axtar",
+                   "emptyState":  "Sifariş tapılmadı.",
+                   "emptyStateDescription":  "Tam demo sifariş kitabını qaytarmaq üçün axtarışı və ya filtrləri təmizləyin.",
+                   "filters":  {
+                                   "all":  "Hamısı",
+                                   "orderStatusLabel":  "Sifariş statusu",
+                                   "paymentStatusLabel":  "Ödəniş statusu"
+                               },
+                   "cards":  {
+                                 "totalOrders":  "Ümumi sifarişlər",
+                                 "totalOrdersHint":  "Cari demo axınında izlənən əməliyyat sifarişləri.",
+                                 "liveOrderValue":  "Aktiv sifariş məbləği",
+                                 "liveOrderValueHint":  "Hazırda demoda izlənən sifariş portfelinin ümumi dəyəri.",
+                                 "inProduction":  "İstehsalda",
+                                 "inProductionHint":  "Kəsmə, tamamlama və keyfiyyət hazırlığında olan sifarişlər.",
+                                 "billingFollowUp":  "Maliyyə təqibi",
+                                 "billingFollowUpHint":  "Fakturası tamamlanmamış və ya ödənişi bağlanmamış sifarişlər."
+                             },
+                   "table":  {
+                                 "order":  "Sifariş",
+                                 "customer":  "Müştəri",
+                                 "orderDate":  "Sifariş tarixi",
+                                 "items":  "Məhsul xülasəsi",
+                                 "itemsCue":  "{quantity} m qeyd olunub",
+                                 "totalAmount":  "Ümumi məbləğ",
+                                 "orderStatus":  "Sifariş statusu",
+                                 "paymentStatus":  "Ödəniş statusu",
+                                 "invoiceCue":  "Faktura {invoiceId}",
+                                 "awaitingInvoice":  "Faktura gözləyir",
+                                 "deliveryCue":  "Çatdırılma {date}"
+                             },
+                   "panel":  {
+                                 "title":  "Əməliyyat fokusu",
+                                 "description":  "Hansi sifarişlərin istehsal diqqəti, göndəriş koordinasiyası və maliyyə təqibi tələb etdiyini izləyin.",
+                                 "featuredLabel":  "Prioritet sifariş",
+                                 "featuredDescription":  "{reference} sifarişi {customer} hesabı üçün cari demo sifariş kitabında əməliyyat təqibinə ən yaxın mövqedədir.",
+                                 "cards":  {
+                                               "inProduction":  "İstehsalda",
+                                               "inProductionHint":  "Hazırda kəsmə, tamamlama və QA hazırlığında olan sifarişlər.",
+                                               "readyToDispatch":  "Göndərişə hazır",
+                                               "readyToDispatchHint":  "Yekun logistika planlaması və göndəriş koordinasiyası üçün hazır sifarişlər.",
+                                               "billingFollowUp":  "Maliyyə təqibi",
+                                               "billingFollowUpHint":  "Açıq maliyyə tapşırığı qalan və ya faktura ilə əhatə olunmayan sifarişlər."
+                                           },
+                                 "meta":  {
+                                              "customer":  "Müştəri",
+                                              "orderDate":  "Sifariş tarixi",
+                                              "deliveryDate":  "Çatdırılma tarixi",
+                                              "itemSummary":  "Məhsul xülasəsi",
+                                              "invoice":  "Faktura bağlantısı",
+                                              "paymentStatus":  "Ödəniş statusu",
+                                              "orderStatus":  "Sifariş statusu",
+                                              "totalAmount":  "Ümumi məbləğ"
+                                          }
+                             }
+               },
+    "Invoices":  {
+                     "title":  "Fakturalar",
+                     "description":  "Ödəniş tarixlərini, gecikmiş riskləri və debitor təqibini vahid maliyyə əməliyyat görünüşündə izləyin.",
+                     "searchPlaceholder":  "Faktura və ya müştəri axtar",
+                     "emptyState":  "Faktura tapılmadı.",
+                     "emptyStateDescription":  "Tam debitor reyestrini qaytarmaq üçün cari axtarışı və ya ödəniş filtrini təmizləyin.",
+                     "filters":  {
+                                     "all":  "Hamısı",
+                                     "paymentStatusLabel":  "Ödəniş statusu"
+                                 },
+                     "badges":  {
+                                    "paid":  "Ödənib",
+                                    "unpaid":  "Ödənilməyib",
+                                    "pending":  "Gözləmədə",
+                                    "overdue":  "Gecikib"
+                                },
+                     "cards":  {
+                                   "totalInvoices":  "Ümumi fakturalar",
+                                   "totalInvoicesHint":  "Cari demo müştəri portfeli üzrə yaradılmış fakturalar.",
+                                   "openInvoiceValue":  "Açıq faktura məbləği",
+                                   "openInvoiceValueHint":  "Gözləmədə, qismən yığılmış və gecikmiş fakturalar üzrə açıq debitor borcu.",
+                                   "overdueExposure":  "Gecikmiş risk",
+                                   "overdueExposureHint":  "Ödəniş tarixi keçmiş debitor məbləğləri.",
+                                   "paidInFull":  "Tam ödənilən",
+                                   "paidInFullHint":  "Əlavə təqib tələb etmədən bağlanmış fakturalar."
+                               },
+                     "panel":  {
+                                   "title":  "Yığım fokusu",
+                                   "description":  "Cari demo reyestrində ən təcili debitorları izləyin və ödənilməmiş, gözləmədə olan və gecikmiş fakturaların nisbətini görün.",
+                                   "featuredLabel":  "Prioritet faktura",
+                                   "featuredDescription":  "{customer} cari demo debitor reyestrində yığım siyahısının ən yuxarı hissəsində yer alır.",
+                                   "cards":  {
+                                                 "unpaid":  "Ödənilməmiş fakturalar",
+                                                 "unpaidHint":  "Qismən yığılmış, amma hələ bağlanmamış fakturalar.",
+                                                 "pending":  "Gözləmədə olanlar",
+                                                 "pendingHint":  "Yaradılmış, lakin hələ yığılmamış aktiv fakturalar.",
+                                                 "overdue":  "Gecikmiş risk",
+                                                 "overdueHint":  "Son ödəniş tarixi keçmiş ən təcili debitor məbləğləri."
+                                             },
+                                   "meta":  {
+                                                "customer":  "Müştəri",
+                                                "issueDate":  "Yaradılma tarixi",
+                                                "dueDate":  "Son ödəniş tarixi",
+                                                "paymentStatus":  "Ödəniş statusu",
+                                                "amount":  "Faktura məbləği",
+                                                "paidAmount":  "Ödənilən məbləğ",
+                                                "outstandingAmount":  "Açıq qalan",
+                                                "orderReference":  "Sifariş bağlantısı"
+                                            }
+                               },
+                     "table":  {
+                                   "invoice":  "Faktura",
+                                   "customer":  "Müştəri",
+                                   "issueDate":  "Yaradılma tarixi",
+                                   "dueDate":  "Son ödəniş tarixi",
+                                   "amount":  "Məbləğ",
+                                   "paymentStatus":  "Ödəniş statusu",
+                                   "billing":  "Yığım",
+                                   "paidLabel":  "Ödənib {amount}",
+                                   "outstandingLabel":  "Açıq qalan {amount}",
+                                   "paymentCue":  "Yığılıb {amount}",
+                                   "outstandingCue":  "Açıq {amount}",
+                                   "orderCue":  "Sifariş {reference}",
+                                   "orderCueFallback":  "Sifariş kodu yoxdur"
+                               }
+                 },
+    "Payments":  {
+                     "title":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸lÃ‰â„¢r",
+                     "description":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ vaxtÃ„Â±nÃ„Â±, ÃƒÂ¼sullarÃ„Â±nÃ„Â± vÃ‰â„¢ tÃ‰â„¢qib tÃ‰â„¢lÃ‰â„¢b edÃ‰â„¢n mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢ri izlÃ‰â„¢yin.",
+                     "searchPlaceholder":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ vÃ‰â„¢ ya mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri axtar",
+                     "emptyState":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ tapÃ„Â±lmadÃ„Â±.",
+                     "cards":  {
+                                   "collectedPayments":  "YÃ„Â±Ã„Å¸Ã„Â±lmÃ„Â±Ã…Å¸ ÃƒÂ¶dÃ‰â„¢niÃ…Å¸lÃ‰â„¢r",
+                                   "collectedPaymentsHint":  "NÃƒÂ¼munÃ‰â„¢ ÃƒÂ¶dÃ‰â„¢niÃ…Å¸lÃ‰â„¢r artÃ„Â±q faktura portfelinÃ‰â„¢ qarÃ…Å¸Ã„Â± qeyd edilib.",
+                                   "bankTransfers":  "Bank kÃƒÂ¶ÃƒÂ§ÃƒÂ¼rmÃ‰â„¢lÃ‰â„¢ri",
+                                   "bankTransfersHint":  "Uydurma mÃ‰â„¢lumat dÃ‰â„¢stindÃ‰â„¢ istifadÃ‰â„¢ olunan Ã‰â„¢sas hesablaÃ…Å¸ma kanalÃ„Â±.",
+                                   "partialReceipts":  "QismÃ‰â„¢n ÃƒÂ¶dÃ‰â„¢niÃ…Å¸lÃ‰â„¢r",
+                                   "partialReceiptsHint":  "HesablaÃ…Å¸manÃ„Â± tamamlamaq ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n Ã‰â„¢lavÃ‰â„¢ tÃ‰â„¢qib tÃ‰â„¢lÃ‰â„¢b edÃ‰â„¢n mÃƒÂ¼Ã…Å¸tÃ‰â„¢rilÃ‰â„¢r.",
+                                   "collectionNoteTitle":  "YÃ„Â±Ã„Å¸Ã„Â±m qeydi"
+                               },
+                     "notes":  {
+                                   "primary":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ cÃ‰â„¢dvÃ‰â„¢li heÃƒÂ§ bir Ã…Å¸Ã‰â„¢xsi maliyyÃ‰â„¢ mÃ‰â„¢lumatÃ„Â±ndan istifadÃ‰â„¢ etmÃ‰â„¢dÃ‰â„¢n bank kÃƒÂ¶ÃƒÂ§ÃƒÂ¼rmÃ‰â„¢si, wire vÃ‰â„¢ kart ÃƒÂ¶dÃ‰â„¢niÃ…Å¸lÃ‰â„¢ri ilÃ‰â„¢ real Ã‰â„¢mÃ‰â„¢liyyat hissi yaradÃ„Â±r.",
+                                   "secondary":  "Portfel izlÃ‰â„¢yicilÃ‰â„¢ri hÃ‰â„¢m UI, hÃ‰â„¢m dÃ‰â„¢ typed API marÃ…Å¸rut qatÃ„Â±na baxaraq ÃƒÂ¶dÃ‰â„¢niÃ…Å¸ statusu izlÃ‰â„¢nmÃ‰â„¢sinin necÃ‰â„¢ qurulduÃ„Å¸unu gÃƒÂ¶rÃ‰â„¢ bilÃ‰â„¢rlÃ‰â„¢r."
+                               },
+                     "table":  {
+                                   "payment":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸",
+                                   "customer":  "MÃƒÂ¼Ã…Å¸tÃ‰â„¢ri",
+                                   "invoice":  "Faktura",
+                                   "date":  "Tarix",
+                                   "method":  "ÃƒÅ“sul",
+                                   "amount":  "MÃ‰â„¢blÃ‰â„¢Ã„Å¸",
+                                   "status":  "Status"
+                               }
+                 },
+    "Reports":  {
+                    "title":  "Hesabatlar",
+                    "description":  "SatÃ„Â±Ã…Å¸, yÃ„Â±Ã„Å¸Ã„Â±m, mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri vÃ‰â„¢ mÃ‰â„¢hsul performansÃ„Â± ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n tÃ‰â„¢qdimata hazÃ„Â±r analitika mÃ‰â„¢rkÃ‰â„¢zinin ilkin gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸ÃƒÂ¼nÃƒÂ¼ gÃƒÂ¶stÃ‰â„¢rin.",
+                    "badges":  {
+                                   "demoReady":  "Demo ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±r"
+                               },
+                    "cards":  {
+                                  "exportsReady":  "Eksporta hazÃ„Â±r gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸lÃ‰â„¢r",
+                                  "exportsReadyValue":  "06",
+                                  "exportsReadyHint":  "StrukturlaÃ…Å¸dÃ„Â±rÃ„Â±lmÃ„Â±Ã…Å¸ hesabat gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸lÃ‰â„¢ri artÃ„Â±q dashboard vizual sistemi ilÃ‰â„¢ uyÃ„Å¸unlaÃ…Å¸Ã„Â±r.",
+                                  "coverage":  "Ã†ÂhatÃ‰â„¢ sahÃ‰â„¢lÃ‰â„¢ri",
+                                  "coverageValue":  "SatÃ„Â±Ã…Å¸ + Ã‰â„¢mÃ‰â„¢liyyat",
+                                  "coverageHint":  "Hesabatlar mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri, kataloq vÃ‰â„¢ maliyyÃ‰â„¢ perspektivlÃ‰â„¢rini birlÃ‰â„¢Ã…Å¸dirmÃ‰â„¢k ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n mÃƒÂ¶vqelÃ‰â„¢nib.",
+                                  "refreshCycle":  "YenilÃ‰â„¢nmÃ‰â„¢ ritmi",
+                                  "refreshCycleValue":  "HÃ‰â„¢ftÃ‰â„¢lik",
+                                  "refreshCycleHint":  "GÃ‰â„¢lÃ‰â„¢cÃ‰â„¢k hesabat ritmi mÃƒÂ¶vcud mock-service qatÃ„Â±na problemsiz qoÃ…Å¸ula bilÃ‰â„¢r."
+                              },
+                    "panels":  {
+                                   "collectionsTitle":  "YÃ„Â±Ã„Å¸Ã„Â±m xÃƒÂ¼lasÃ‰â„¢si",
+                                   "collectionsDescription":  "GecikmiÃ…Å¸ risk vÃ‰â„¢ qismÃ‰â„¢n ÃƒÂ¶dÃ‰â„¢niÃ…Å¸lÃ‰â„¢rin hesabatlarda necÃ‰â„¢ gÃƒÂ¶rÃƒÂ¼nÃ‰â„¢cÃ‰â„¢yini izlÃ‰â„¢yin.",
+                                   "monthlyPacksTitle":  "AylÃ„Â±q paketlÃ‰â„¢r",
+                                   "collectionsBody":  "Bu hissÃ‰â„¢ aylÃ„Â±q debitor paketlÃ‰â„¢ri, mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri yÃ„Â±Ã„Å¸Ã„Â±m trendi vÃ‰â„¢ faktura yaÃ…Å¸lanma gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸lÃ‰â„¢ri ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n ayrÃ„Â±lÃ„Â±b.",
+                                   "agingBucketsTitle":  "YaÃ…Å¸lanma qruplarÃ„Â±",
+                                   "agingBucketsBody":  "Bu sahÃ‰â„¢dÃ‰â„¢ debitor yaÃ…Å¸lanmasÃ„Â±, kollektor qeydlÃ‰â„¢ri vÃ‰â„¢ export filtrlÃ‰â„¢ri yerlÃ‰â„¢Ã…Å¸dirilÃ‰â„¢ bilÃ‰â„¢r.",
+                                   "collectionConfidenceTitle":  "YÃ„Â±Ã„Å¸Ã„Â±m etibarlÃ„Â±lÃ„Â±Ã„Å¸Ã„Â±",
+                                   "collectionConfidenceBody":  "Ãƒâ€“dÃ‰â„¢niÃ…Å¸ statusunu hesab saÃ„Å¸lamlÃ„Â±Ã„Å¸Ã„Â± siqnallarÃ„Â± ilÃ‰â„¢ birlÃ‰â„¢Ã…Å¸dirin, hÃ‰â„¢m dÃ‰â„¢ shell quruluÃ…Å¸unu dÃ‰â„¢yiÃ…Å¸mÃ‰â„¢dÃ‰â„¢n.",
+                                   "catalogTitle":  "MÃ‰â„¢hsul performansÃ„Â±",
+                                   "catalogDescription":  "HansÃ„Â± referanslarÃ„Â±n, kateqoriyalarÃ„Â±n vÃ‰â„¢ rezervdÃ‰â„¢ki mÃ‰â„¢hsullarÃ„Â±n daha ÃƒÂ§ox tÃ‰â„¢lÃ‰â„¢b gÃƒÂ¶rdÃƒÂ¼yÃƒÂ¼nÃƒÂ¼ izlÃ‰â„¢yin.",
+                                   "demandPulseTitle":  "TÃ‰â„¢lÃ‰â„¢b nÃ‰â„¢bzi",
+                                   "catalogBody":  "GÃ‰â„¢lÃ‰â„¢cÃ‰â„¢k hesabatlar portfel ÃƒÂ¼zrÃ‰â„¢ stok tÃ‰â„¢zyiqi, rezerv nisbÃ‰â„¢ti vÃ‰â„¢ qiymÃ‰â„¢t dÃ‰â„¢yiÃ…Å¸imini mÃƒÂ¼qayisÃ‰â„¢ edÃ‰â„¢cÃ‰â„¢k.",
+                                   "roadmapTitle":  "NÃƒÂ¶vbÃ‰â„¢ti mÃ‰â„¢rhÃ‰â„¢lÃ‰â„¢",
+                                   "roadmapDescription":  "Shell daha gÃƒÂ¼clÃƒÂ¼ qrafik vÃ‰â„¢ export iÃ…Å¸ axÃ„Â±nlarÃ„Â± ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±rdÃ„Â±r.",
+                                   "roadmapItems":  {
+                                                        "profitability":  "Marja vÃ‰â„¢ mÃ‰â„¢nfÃ‰â„¢Ã‰â„¢tlilik gÃƒÂ¶rÃƒÂ¼nÃƒÂ¼Ã…Å¸lÃ‰â„¢ri",
+                                                        "regional":  "Regional mÃƒÂ¼Ã…Å¸tÃ‰â„¢ri seqmentasiyasÃ„Â±",
+                                                        "inventory":  "Stok yaÃ…Å¸lanmasÃ„Â± vÃ‰â„¢ yenidÃ‰â„¢n tÃ‰â„¢darÃƒÂ¼k xÃ‰â„¢bÃ‰â„¢rdarlÃ„Â±qlarÃ„Â±"
+                                                    }
+                               }
+                },
+    "Settings":  {
+                     "title":  "TÃ‰â„¢nzimlÃ‰â„¢mÃ‰â„¢lÃ‰â„¢r",
+                     "description":  "FabricLog-un brendinq, Ã‰â„¢mÃ‰â„¢liyyat, lokalizasiya vÃ‰â„¢ idarÃ‰â„¢etmÃ‰â„¢ ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n konfiqurasiya olunan iÃ…Å¸ sahÃ‰â„¢sinÃ‰â„¢ necÃ‰â„¢ ÃƒÂ§evrilÃ‰â„¢ bilÃ‰â„¢cÃ‰â„¢yini gÃƒÂ¶stÃ‰â„¢rin.",
+                     "badges":  {
+                                    "demoWorkspace":  "Demo iÃ…Å¸ sahÃ‰â„¢si"
+                                },
+                     "cards":  {
+                                   "workspace":  "Ã„Â°Ã…Å¸ sahÃ‰â„¢si profili",
+                                   "workspaceHint":  "GÃ‰â„¢lÃ‰â„¢cÃ‰â„¢k mÃƒÂ¼Ã…Å¸tÃ‰â„¢riyÃ‰â„¢ uyÃ„Å¸un konfiqurasiya ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n sabit brend vÃ‰â„¢ iÃ…Å¸ sahÃ‰â„¢si sÃ‰â„¢thi.",
+                                   "localization":  "Lokalizasiyaya hazÃ„Â±r",
+                                   "localizationValue":  "EN / AZ",
+                                   "localizationHint":  "Shell vÃ‰â„¢ marÃ…Å¸rut sistemi sonradan daha ÃƒÂ§ox dil Ã‰â„¢lavÃ‰â„¢ etmÃ‰â„¢k ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n artÃ„Â±q hazÃ„Â±rdÃ„Â±r.",
+                                   "governance":  "Ã„Â°darÃ‰â„¢etmÃ‰â„¢ sÃ‰â„¢thi",
+                                   "governanceValue":  "GÃ‰â„¢lÃ‰â„¢cÃ‰â„¢yÃ‰â„¢ hazÃ„Â±r",
+                                   "governanceHint":  "GiriÃ…Å¸, export vÃ‰â„¢ inteqrasiyalar layout dÃ‰â„¢yiÃ…Å¸mÃ‰â„¢dÃ‰â„¢n Ã‰â„¢lavÃ‰â„¢ oluna bilÃ‰â„¢r."
+                               },
+                     "panels":  {
+                                    "profileTitle":  "Biznes profili",
+                                    "profileDescription":  "Uydurma FabricLog iÃ…Å¸ sahÃ‰â„¢si ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n ictimai demo metadata.",
+                                    "workspaceTitle":  "FabricLog Demo Ã„Â°Ã…Å¸ SahÃ‰â„¢si",
+                                    "profileBody":  "Bu sahÃ‰â„¢ sonradan Ã…Å¸irkÃ‰â„¢t mÃ‰â„¢lumatÃ„Â±, vergi seÃƒÂ§imlÃ‰â„¢ri, faktura Ã…Å¸ablonlarÃ„Â± vÃ‰â„¢ sifariÃ…Å¸ kodu qaydalarÃ„Â± ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n istifadÃ‰â„¢ edilÃ‰â„¢ bilÃ‰â„¢r.",
+                                    "experienceTitle":  "TÃ‰â„¢crÃƒÂ¼bÃ‰â„¢ standartlarÃ„Â±",
+                                    "experienceDescription":  "Dil, tarix vÃ‰â„¢ panel seÃƒÂ§imlÃ‰â„¢rinin idarÃ‰â„¢si ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±r struktur.",
+                                    "experienceBody":  "MÃƒÂ¶vcud struktur artÃ„Â±q ingilis vÃ‰â„¢ azÃ‰â„¢rbaycan dillÃ‰â„¢rini dÃ‰â„¢stÃ‰â„¢klÃ‰â„¢yir vÃ‰â„¢ layout yenidÃ‰â„¢n yazÃ„Â±lmadan istifadÃ‰â„¢ÃƒÂ§i sÃ‰â„¢viyyÃ‰â„¢li seÃƒÂ§imlÃ‰â„¢rÃ‰â„¢ geniÃ…Å¸lÃ‰â„¢nÃ‰â„¢ bilÃ‰â„¢r.",
+                                    "experienceItems":  {
+                                                            "localeReadyTitle":  "Lokalizasiya ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n hazÃ„Â±r shell",
+                                                            "visualConsistencyTitle":  "Vizual ardÃ„Â±cÃ„Â±llÃ„Â±q",
+                                                            "visualConsistencyBody":  "Tema tokenlÃ‰â„¢ri, boÃ…Å¸luq sistemi vÃ‰â„¢ sÃ‰â„¢th ÃƒÂ¼slublarÃ„Â± shell vÃ‰â„¢ funksional sÃ‰â„¢hifÃ‰â„¢lÃ‰â„¢r boyunca uyÃ„Å¸unlaÃ…Å¸dÃ„Â±rÃ„Â±lÃ„Â±b."
+                                                        },
+                                    "controlsTitle":  "Ã†ÂmÃ‰â„¢liyyat nÃ‰â„¢zarÃ‰â„¢tlÃ‰â„¢ri",
+                                    "controlsDescription":  "SÃ‰â„¢lahiyyÃ‰â„¢t, export vÃ‰â„¢ inteqrasiya ÃƒÂ¼ÃƒÂ§ÃƒÂ¼n gÃ‰â„¢lÃ‰â„¢cÃ‰â„¢yÃ‰â„¢ hazÃ„Â±r placeholder sahÃ‰â„¢lÃ‰â„¢r.",
+                                    "controlsItems":  {
+                                                          "roles":  "Rol vÃ‰â„¢ giriÃ…Å¸ siyasÃ‰â„¢tlÃ‰â„¢ri",
+                                                          "templates":  "SÃ‰â„¢nÃ‰â„¢d vÃ‰â„¢ faktura Ã…Å¸ablonlarÃ„Â±",
+                                                          "integrations":  "MÃƒÂ¼hasibat vÃ‰â„¢ hesabat inteqrasiyalarÃ„Â±"
+                                                      }
+                                }
+                 },
+    "Statuses":  {
+                     "tiers":  {
+                                   "signature":  "Premium",
+                                   "growth":  "Ã„Â°nkiÃ…Å¸af",
+                                   "studio":  "Studiya"
+                               },
+                     "fabric":  {
+                                    "available":  "MÃƒÂ¶vcud",
+                                    "low":  "Az stok",
+                                    "reserved":  "RezervdÃ‰â„¢"
+                                },
+                     "order":  {
+                                   "new":  "Yeni",
+                                   "sampling":  "NÃƒÂ¼munÃ‰â„¢",
+                                   "production":  "Ã„Â°stehsal",
+                                   "ready":  "HazÃ„Â±r",
+                                   "dispatched":  "GÃƒÂ¶ndÃ‰â„¢rilib"
+                               },
+                     "payment":  {
+                                     "none":  "Faktura yoxdur",
+                                     "paid":  "Ãƒâ€“dÃ‰â„¢nib",
+                                     "partial":  "QismÃ‰â„¢n",
+                                     "pending":  "GÃƒÂ¶zlÃ‰â„¢mÃ‰â„¢dÃ‰â„¢",
+                                     "overdue":  "Gecikib"
+                                 }
+                 },
+    "Insights":  {
+                     "primary":  {
+                                     "title":  "Prioritet yÃ„Â±Ã„Å¸Ã„Â±m pÃ‰â„¢ncÃ‰â„¢rÃ‰â„¢si",
+                                     "description":  "Ã„Â°ki qismÃ‰â„¢n ÃƒÂ¶dÃ‰â„¢niÃ…Å¸li fakturanÃ„Â±n son tarixi nÃƒÂ¶vbÃ‰â„¢ti beÃ…Å¸ iÃ…Å¸ gÃƒÂ¼nÃƒÂ¼nÃ‰â„¢ dÃƒÂ¼Ã…Å¸ÃƒÂ¼r. SÃƒÂ¼rÃ‰â„¢tli tÃ‰â„¢qib aylÃ„Â±q yÃ„Â±Ã„Å¸Ã„Â±m faizini hÃ‰â„¢dÃ‰â„¢fdÃ‰â„¢ saxlayÃ„Â±r."
+                                 },
+                     "secondary":  {
+                                       "title":  "Rezerv planlamasÃ„Â±",
+                                       "description":  "Premium jakard vÃ‰â„¢ kÃ‰â„¢tan mÃ‰â„¢hsullarÃ„Â±nda rezerv tÃ‰â„¢zyiqi Ã‰â„¢n yÃƒÂ¼ksÃ‰â„¢kdir. YenidÃ‰â„¢n tÃ‰â„¢darÃƒÂ¼k Ã‰â„¢vvÃ‰â„¢lcÃ‰â„¢ bu istiqamÃ‰â„¢tÃ‰â„¢ yÃƒÂ¶nÃ‰â„¢lmÃ‰â„¢lidir."
+                                   }
+                 }
 }
