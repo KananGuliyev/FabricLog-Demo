@@ -12,6 +12,7 @@ import {
 import { StatusBadge } from "@/components/shared/status-badge";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatDate } from "@/lib/formatting";
+import { Link } from "@/lib/i18n/navigation";
 import type { CustomerOverviewRow } from "@/types/domain";
 
 type CustomersTableProps = {
@@ -72,7 +73,12 @@ export function CustomersTable({ data, locale }: CustomersTableProps) {
       header: t("table.account"),
       cell: ({ row }) => (
         <div className="space-y-1">
-          <p className="font-medium">{row.original.company}</p>
+          <Link
+            href={`/customers/${row.original.id}`}
+            className="font-medium text-foreground transition-colors hover:text-primary"
+          >
+            {row.original.company}
+          </Link>
           <p className="text-sm text-muted-foreground">{row.original.name}</p>
         </div>
       ),

@@ -12,6 +12,7 @@ import {
 import { StatusBadge } from "@/components/shared/status-badge";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatNumber, formatPercent } from "@/lib/formatting";
+import { Link } from "@/lib/i18n/navigation";
 import type { ProductOverviewRow } from "@/types/domain";
 
 import {
@@ -81,7 +82,12 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
       header: t("table.product"),
       cell: ({ row }) => (
         <div className="space-y-1">
-          <p className="font-medium">{row.original.name}</p>
+          <Link
+            href={`/products/${row.original.id}`}
+            className="font-medium text-foreground transition-colors hover:text-primary"
+          >
+            {row.original.name}
+          </Link>
           <p className="text-sm text-muted-foreground">{row.original.sku}</p>
         </div>
       ),

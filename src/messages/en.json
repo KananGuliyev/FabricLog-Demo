@@ -618,6 +618,246 @@
       }
     }
   },
+  "CustomerDetail": {
+    "description": "Review account health, recent orders, invoices, and activity for {contact} in {region}.",
+    "backAction": "Back to customers",
+    "hero": {
+      "description": "This demo account is currently centered around {collection} and is presented with realistic billing and follow-up context."
+    },
+    "cards": {
+      "totalOrders": "Total orders",
+      "totalOrdersHint": "Current seeded relationship volume across the account.",
+      "totalInvoiced": "Total invoiced",
+      "totalInvoicedHint": "All linked invoice value issued to this customer.",
+      "outstandingBalance": "Outstanding balance",
+      "outstandingBalanceHint": "Open receivables still requiring collection attention.",
+      "lastActivity": "Last activity",
+      "lastActivityHint": "Most recent customer-facing movement in the demo timeline."
+    },
+    "profile": {
+      "title": "Account profile",
+      "description": "Key commercial details and contact context for this fictional customer account.",
+      "relationshipLabel": "Relationship focus",
+      "relationshipDescription": "{openInvoices} open invoices and {paidInvoices} settled invoices shape the current account rhythm.",
+      "fields": {
+        "contact": "Primary contact",
+        "email": "Email",
+        "region": "Region",
+        "collection": "Preferred collection"
+      }
+    },
+    "recentOrders": {
+      "title": "Recent orders",
+      "description": "Latest order references connected to this customer.",
+      "emptyTitle": "No related orders yet.",
+      "emptyDescription": "This customer does not have any linked order history in the seeded demo data.",
+      "subtitle": "{date} · {item}"
+    },
+    "recentInvoices": {
+      "title": "Recent invoices",
+      "description": "Billing history and open exposure for this account.",
+      "emptyTitle": "No related invoices yet.",
+      "emptyDescription": "This customer does not currently have any linked invoices in the seeded ledger.",
+      "subtitle": "Issued {issueDate} · Due {dueDate}",
+      "trailing": "Open {amount}"
+    },
+    "activity": {
+      "title": "Account timeline",
+      "description": "Recent operational events tied to this customer account.",
+      "emptyTitle": "No customer activity recorded.",
+      "emptyDescription": "The seeded activity timeline does not currently include events for this account."
+    },
+    "invoiceBadges": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    }
+  },
+  "ProductDetail": {
+    "description": "Review product specifications, stock posture, and related order demand for this textile reference.",
+    "backAction": "Back to products",
+    "hero": {
+      "description": "{composition} presented in a portfolio-safe catalog view with realistic stock and order context."
+    },
+    "cards": {
+      "stock": "Total stock",
+      "stockHint": "Current on-hand volume in the demo catalog.",
+      "reserved": "Reserved stock",
+      "reservedHint": "Committed volume tied to current seeded orders.",
+      "available": "Available stock",
+      "availableHint": "Unallocated meters still available to sell.",
+      "unitPrice": "Unit price",
+      "unitPriceHint": "Current demo pricing for this fabric reference."
+    },
+    "specifications": {
+      "title": "Product specification",
+      "description": "Material and technical details presented like a real internal product record.",
+      "highlightLabel": "Current featured variant",
+      "highlightDescription": "The current colorway and material mix are positioned to feel like a real product master record.",
+      "fields": {
+        "category": "Category",
+        "composition": "Composition",
+        "width": "Width",
+        "weight": "Weight"
+      }
+    },
+    "relatedOrders": {
+      "title": "Related orders",
+      "description": "Order demand currently touching this product reference.",
+      "emptyTitle": "No linked orders found.",
+      "emptyDescription": "This product is not currently referenced by any seeded orders.",
+      "subtitle": "{customer} · Delivery {date}"
+    },
+    "inventory": {
+      "title": "Inventory pressure",
+      "description": "A concise stock posture summary built from the current seeded order mix.",
+      "utilization": "Reservation share",
+      "fields": {
+        "activeOrders": "Active orders",
+        "linkedCustomers": "Linked customers",
+        "totalDemand": "Total ordered",
+        "available": "Available meters"
+      }
+    },
+    "activity": {
+      "title": "Product activity",
+      "description": "Recent product-facing activity pulled from the demo timeline.",
+      "emptyTitle": "No product activity recorded.",
+      "emptyDescription": "This product does not currently have direct timeline events in the seeded data."
+    }
+  },
+  "OrderDetail": {
+    "description": "Review fulfillment, billing, and linked account context for {customer}.",
+    "backAction": "Back to orders",
+    "hero": {
+      "description": "{item} is currently tracked with realistic customer, product, and invoice context."
+    },
+    "cards": {
+      "quantity": "Quantity",
+      "quantityHint": "Booked textile volume for this order.",
+      "totalAmount": "Total amount",
+      "totalAmountHint": "Current billed order value in the demo portfolio.",
+      "orderDate": "Order date",
+      "orderDateHint": "When the order entered the seeded pipeline.",
+      "deliveryDate": "Delivery target",
+      "deliveryDateHint": "Current delivery commitment for the order."
+    },
+    "summary": {
+      "title": "Order summary",
+      "description": "Core commercial context for this order across customer, product, and billing references.",
+      "highlightLabel": "Primary product link",
+      "highlightDescription": "The linked textile reference anchors the order view with a realistic internal product relationship.",
+      "fields": {
+        "customer": "Customer",
+        "customerTier": "Customer tier",
+        "product": "Product",
+        "invoice": "Invoice"
+      },
+      "awaitingInvoice": "Awaiting invoice"
+    },
+    "billing": {
+      "title": "Billing overview",
+      "description": "Invoice status and settlement progress for this order.",
+      "fields": {
+        "status": "Payment status",
+        "invoiceAmount": "Invoice amount",
+        "paidAmount": "Paid amount",
+        "outstandingAmount": "Outstanding"
+      },
+      "paymentsTitle": "Payment history",
+      "emptyPaymentsTitle": "No payments recorded yet.",
+      "emptyPaymentsDescription": "This order has an invoice but no seeded payment events yet.",
+      "emptyTitle": "Invoice not issued yet.",
+      "emptyDescription": "Billing has not started for this order in the current demo dataset."
+    },
+    "fulfillment": {
+      "title": "Fulfillment context",
+      "description": "Operational context to make the order detail page feel like a real internal workspace.",
+      "statusLabel": "Order status",
+      "deliveryLabel": "Delivery date",
+      "fields": {
+        "quantity": "Booked quantity",
+        "customerContact": "Customer contact",
+        "collection": "Preferred collection",
+        "variant": "Product variant"
+      }
+    },
+    "activity": {
+      "title": "Order timeline",
+      "description": "Recent order and billing events tied to this record.",
+      "emptyTitle": "No order activity recorded.",
+      "emptyDescription": "This seeded order does not currently have related timeline events."
+    },
+    "invoiceBadges": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    }
+  },
+  "InvoiceDetail": {
+    "description": "Review receivables, linked order context, and payment movement for {customer}.",
+    "backAction": "Back to invoices",
+    "hero": {
+      "description": "This invoice is presented with realistic due-date pressure and collections context. Due {dueDate}."
+    },
+    "badges": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
+    "cards": {
+      "amount": "Invoice amount",
+      "amountHint": "Total billed value on this record.",
+      "paidAmount": "Paid amount",
+      "paidAmountHint": "Collected value already settled against the invoice.",
+      "outstandingAmount": "Outstanding",
+      "outstandingAmountHint": "Open exposure still awaiting payment.",
+      "dueDate": "Due date",
+      "dueDateHint": "Current settlement deadline for this invoice."
+    },
+    "summary": {
+      "title": "Billing summary",
+      "description": "Core billing context linked across customer and order records.",
+      "highlightLabel": "Primary account link",
+      "highlightDescription": "Contact this account at {email} for billing clarification in the demo workspace.",
+      "fields": {
+        "customer": "Customer",
+        "issueDate": "Issue date",
+        "dueDate": "Due date",
+        "order": "Order"
+      },
+      "noOrder": "No linked order"
+    },
+    "payments": {
+      "title": "Payment history",
+      "description": "Settlement events currently linked to this invoice.",
+      "emptyTitle": "No payments recorded yet.",
+      "emptyDescription": "This invoice does not have any seeded payment events yet."
+    },
+    "collections": {
+      "title": "Collections context",
+      "description": "A focused receivables view showing contact, order context, and open exposure.",
+      "statusLabel": "Collections status",
+      "outstandingLabel": "Outstanding",
+      "fields": {
+        "contact": "Customer contact",
+        "tier": "Customer tier",
+        "orderStatus": "Order status",
+        "itemSummary": "Item summary"
+      },
+      "noOrderStatus": "No linked order",
+      "noItemSummary": "No item summary available"
+    },
+    "activity": {
+      "title": "Invoice timeline",
+      "description": "Recent invoice and order events tied to this billing record.",
+      "emptyTitle": "No invoice activity recorded.",
+      "emptyDescription": "This invoice does not currently have any related timeline events."
+    }
+  },
   "Statuses": {
     "tiers": {
       "signature": "Signature",

@@ -10,6 +10,7 @@ import { DashboardPreviewTable } from "@/features/dashboard/dashboard-preview-ta
 import { DashboardStatusIndicators } from "@/features/dashboard/dashboard-status-indicators";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatDate, formatPercent } from "@/lib/formatting";
+import { Link } from "@/lib/i18n/navigation";
 import { fabricLogService } from "@/server/services/fabriclog-service";
 import type { DashboardStatusIndicatorKey, RecentActivity } from "@/types/domain";
 
@@ -167,7 +168,14 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             {
               key: "referenceCode",
               header: t("recentOrders.table.reference"),
-              render: (row) => <p className="font-medium">{row.referenceCode}</p>,
+              render: (row) => (
+                <Link
+                  href={`/orders/${row.id}`}
+                  className="font-medium text-foreground transition-colors hover:text-primary"
+                >
+                  {row.referenceCode}
+                </Link>
+              ),
             },
             {
               key: "customerName",
@@ -206,7 +214,14 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             {
               key: "id",
               header: t("recentInvoices.table.invoice"),
-              render: (row) => <p className="font-medium">{row.id}</p>,
+              render: (row) => (
+                <Link
+                  href={`/invoices/${row.id}`}
+                  className="font-medium text-foreground transition-colors hover:text-primary"
+                >
+                  {row.id}
+                </Link>
+              ),
             },
             {
               key: "customerName",

@@ -12,6 +12,7 @@ import {
 import { StatusBadge } from "@/components/shared/status-badge";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatDate, formatNumber } from "@/lib/formatting";
+import { Link } from "@/lib/i18n/navigation";
 import type { OrderOverviewRow } from "@/types/domain";
 
 type OrdersTableProps = {
@@ -74,7 +75,12 @@ export function OrdersTable({ data, locale }: OrdersTableProps) {
       header: t("table.order"),
       cell: ({ row }) => (
         <div className="space-y-1">
-          <p className="font-medium">{row.original.referenceCode}</p>
+          <Link
+            href={`/orders/${row.original.id}`}
+            className="font-medium text-foreground transition-colors hover:text-primary"
+          >
+            {row.original.referenceCode}
+          </Link>
           <p className="text-sm text-muted-foreground">{row.original.id}</p>
         </div>
       ),

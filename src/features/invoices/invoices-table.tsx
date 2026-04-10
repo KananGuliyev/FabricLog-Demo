@@ -12,6 +12,7 @@ import {
 import { StatusBadge } from "@/components/shared/status-badge";
 import type { AppLocale } from "@/lib/constants/site";
 import { formatCurrency, formatDate } from "@/lib/formatting";
+import { Link } from "@/lib/i18n/navigation";
 import type { InvoiceOverviewRow } from "@/types/domain";
 
 type InvoicesTableProps = {
@@ -61,7 +62,12 @@ export function InvoicesTable({ data, locale }: InvoicesTableProps) {
       header: t("table.invoice"),
       cell: ({ row }) => (
         <div className="space-y-1">
-          <p className="font-medium">{row.original.id}</p>
+          <Link
+            href={`/invoices/${row.original.id}`}
+            className="font-medium text-foreground transition-colors hover:text-primary"
+          >
+            {row.original.id}
+          </Link>
           <p className="text-xs text-muted-foreground">
             {row.original.orderReference
               ? t("table.orderCue", { reference: row.original.orderReference })

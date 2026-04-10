@@ -362,6 +362,42 @@ export const dashboardSummarySchema = z.object({
   recentActivity: z.array(recentActivitySchema),
 });
 
+export const customerDetailSchema = z.object({
+  profile: customerOverviewRowSchema.extend({
+    totalInvoicedValue: z.number().nonnegative(),
+  }),
+  recentOrders: z.array(orderOverviewRowSchema),
+  recentInvoices: z.array(invoiceOverviewRowSchema),
+  recentActivity: z.array(recentActivitySchema),
+});
+
+export const productDetailSchema = z.object({
+  product: productOverviewRowSchema,
+  activeOrdersCount: z.number().int().nonnegative(),
+  linkedCustomersCount: z.number().int().nonnegative(),
+  totalOrderedMeters: z.number().int().nonnegative(),
+  relatedOrders: z.array(orderOverviewRowSchema),
+  recentActivity: z.array(recentActivitySchema),
+});
+
+export const orderDetailSchema = z.object({
+  order: orderOverviewRowSchema,
+  customer: customerOverviewRowSchema,
+  product: productOverviewRowSchema,
+  invoice: invoiceOverviewRowSchema.nullable(),
+  payments: z.array(paymentRecordSchema),
+  recentActivity: z.array(recentActivitySchema),
+});
+
+export const invoiceDetailSchema = z.object({
+  invoice: invoiceOverviewRowSchema,
+  customer: customerOverviewRowSchema,
+  order: orderOverviewRowSchema.nullable(),
+  product: productOverviewRowSchema.nullable(),
+  payments: z.array(paymentRecordSchema),
+  recentActivity: z.array(recentActivitySchema),
+});
+
 export type Customer = z.infer<typeof customerSchema>;
 export type CustomerTier = (typeof customerTierValues)[number];
 export type FabricProduct = z.infer<typeof fabricProductSchema>;
@@ -405,3 +441,7 @@ export type DashboardStatusIndicator = z.infer<typeof dashboardStatusIndicatorSc
 export type RecentActivity = z.infer<typeof recentActivitySchema>;
 export type RecentActivityType = (typeof recentActivityTypeValues)[number];
 export type DashboardSummary = z.infer<typeof dashboardSummarySchema>;
+export type CustomerDetail = z.infer<typeof customerDetailSchema>;
+export type ProductDetail = z.infer<typeof productDetailSchema>;
+export type OrderDetail = z.infer<typeof orderDetailSchema>;
+export type InvoiceDetail = z.infer<typeof invoiceDetailSchema>;
