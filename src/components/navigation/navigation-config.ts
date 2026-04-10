@@ -5,7 +5,6 @@ import {
   ReceiptText,
   Settings2,
   ShoppingBag,
-  SwatchBook,
   UsersRound,
   WalletCards,
 } from "lucide-react";
@@ -21,7 +20,6 @@ export const appRoutes: NavigationItem[] = [
   { href: "/reports", icon: BarChart3, labelKey: "reports", primary: true },
   { href: "/settings", icon: Settings2, labelKey: "settings", primary: true },
   { href: "/payments", icon: WalletCards, labelKey: "payments", primary: false },
-  { href: "/fabrics", icon: SwatchBook, labelKey: "products", primary: false },
 ];
 
 export const navigationItems = appRoutes.filter((route) => route.primary);
