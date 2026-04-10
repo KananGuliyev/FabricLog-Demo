@@ -98,14 +98,12 @@ export function AppHeader({
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className="subtle-label text-muted-foreground">
-            {searchHint}
-          </p>
-          <div className="mt-1 flex flex-wrap items-center gap-3">
-            <h1 className="font-heading text-xl font-semibold tracking-tight sm:text-2xl">
+          <p className="subtle-label text-muted-foreground">{searchHint}</p>
+          <div className="mt-1.5 flex flex-wrap items-center gap-2.5">
+            <h1 className="font-heading text-lg font-semibold tracking-tight sm:text-xl">
               {currentTitle}
             </h1>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[0.72rem] font-semibold text-primary">
               {demoBadge}
             </span>
           </div>
@@ -130,10 +128,7 @@ export function AppHeader({
               </p>
             </div>
           </div>
-          <Button
-            variant="outline"
-            className="px-4 text-muted-foreground"
-          >
+          <Button variant="outline" className="px-4 text-muted-foreground">
             <Search className="size-4" />
             {searchActionLabel}
           </Button>

@@ -20,12 +20,12 @@ export function ReportsHighlightsCard({
   items,
 }: ReportsHighlightsCardProps) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">{description}</p>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-3 pt-0">
         {items.map((item) => (
           <div
             key={item.id}

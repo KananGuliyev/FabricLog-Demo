@@ -20,8 +20,8 @@ export function TableFilterBar({ className, groups }: TableFilterBarProps) {
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
       {groups.map((group) => (
-        <div key={group.label} className="flex flex-wrap items-center gap-2">
-          <span className="subtle-label text-muted-foreground">
+        <div key={group.label} className="toolbar-group">
+          <span className="toolbar-group-label">
             {group.label}
           </span>
           <div className="flex flex-wrap gap-2">
@@ -31,6 +31,10 @@ export function TableFilterBar({ className, groups }: TableFilterBarProps) {
                 type="button"
                 variant={group.value === option.value ? "secondary" : "outline"}
                 size="xs"
+                className={cn(
+                  "rounded-full",
+                  group.value === option.value && "shadow-none"
+                )}
                 onClick={() => group.onChange(option.value)}
               >
                 {option.label}

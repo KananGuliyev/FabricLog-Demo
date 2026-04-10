@@ -19,15 +19,17 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div className={cn("empty-state", className)}>
-      <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+      <div className="mx-auto flex size-14 items-center justify-center rounded-[1.35rem] border border-primary/10 bg-primary/10 text-primary shadow-sm">
         <Icon className="size-5" />
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <p className="font-heading text-base font-semibold tracking-tight text-foreground">
           {title}
         </p>
         {description ? (
-          <p className="body-copy mx-auto max-w-md text-sm">{description}</p>
+          <p className="body-copy mx-auto max-w-md text-sm leading-6">
+            {description}
+          </p>
         ) : null}
       </div>
       {action ? <div>{action}</div> : null}

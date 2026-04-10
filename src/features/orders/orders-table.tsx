@@ -123,8 +123,12 @@ export function OrdersTable({ data, locale }: OrdersTableProps) {
     },
     {
       accessorKey: "totalAmount",
-      header: t("table.totalAmount"),
-      cell: ({ row }) => formatCurrency(row.original.totalAmount, locale),
+      header: () => <div className="text-right">{t("table.totalAmount")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">
+          {formatCurrency(row.original.totalAmount, locale)}
+        </div>
+      ),
     },
     {
       accessorKey: "status",

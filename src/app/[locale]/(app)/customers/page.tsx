@@ -32,7 +32,7 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="page-metrics-grid">
         <MetricCard
           label={t("cards.totalAccounts")}
           value={`${overview.summary.totalCustomers}`}
@@ -62,7 +62,7 @@ export default async function CustomersPage({ params }: CustomersPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
+      <div className="page-rail-grid">
         <CustomersTable data={overview.rows} locale={appLocale} />
 
         <CustomerHealthPanel

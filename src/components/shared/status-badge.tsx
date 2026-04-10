@@ -38,7 +38,7 @@ export function StatusBadge({ label, status }: StatusBadgeProps) {
     <Badge
       variant="outline"
       className={cn(
-        "rounded-full px-2.5 py-1 text-[0.72rem] font-semibold tracking-[0.04em]",
+        "inline-flex min-h-7 items-center rounded-full px-2.5 py-1 text-[0.72rem] font-semibold tracking-[0.02em] shadow-sm",
         toneStyles[statusToneMap[status]]
       )}
     >

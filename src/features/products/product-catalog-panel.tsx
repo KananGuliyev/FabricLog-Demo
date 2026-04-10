@@ -45,15 +45,15 @@ export function ProductCatalogPanel({
   pressureKey,
 }: ProductCatalogPanelProps) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{translations.title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">
           {translations.description}
         </p>
       </CardHeader>
-      <CardContent className="space-y-5">
-        <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
+      <CardContent className="space-y-5 pt-0">
+        <div className="panel-highlight">
           <p className="subtle-label text-primary-foreground/72">
             {translations.featuredLabel}
           </p>
@@ -77,8 +77,8 @@ export function ProductCatalogPanel({
             />
           </div>
 
-          <div className="grid gap-3">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="panel-meta-grid">
+            <div className="panel-meta-row">
               <div>
                 <p className="subtle-label text-muted-foreground">
                   {translations.meta.category}
@@ -97,7 +97,7 @@ export function ProductCatalogPanel({
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="panel-meta-row">
               <div>
                 <p className="subtle-label text-muted-foreground">
                   {translations.meta.stock}

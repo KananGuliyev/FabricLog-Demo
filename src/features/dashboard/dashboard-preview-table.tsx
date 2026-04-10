@@ -32,15 +32,15 @@ export function DashboardPreviewTable<T extends { id: string }>({
   title,
 }: DashboardPreviewTableProps<T>) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">{description}</p>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="p-0 pt-0">
         <div className="table-frame rounded-none border-x-0 border-b-0">
-          <Table>
-            <TableHeader className="bg-muted/34">
+          <Table className="min-w-[34rem]">
+            <TableHeader className="bg-muted/40">
               <TableRow>
                 {columns.map((column) => (
                   <TableHead

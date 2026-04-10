@@ -23,16 +23,14 @@ export function PageIntro({
         className
       )}
     >
-      <div className="max-w-2xl space-y-3">
+      <div className="max-w-2xl space-y-3.5">
         {badge ? (
           <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
             {badge}
           </Badge>
         ) : null}
         <div className="space-y-2.5">
-          <h1 className="page-title text-balance">
-            {title}
-          </h1>
+          <h1 className="page-title text-balance">{title}</h1>
           <p className="body-copy max-w-xl text-sm sm:text-base">
             {description}
           </p>

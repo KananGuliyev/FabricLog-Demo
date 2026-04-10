@@ -46,7 +46,7 @@ export function OrderOperationsPanel({
 }: OrderOperationsPanelProps) {
   return (
     <div className="section-stack">
-      <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-1">
+      <div className="metric-rail-grid">
         <MetricCard
           label={translations.summaryCards.inProduction}
           value={`${summary.inProductionCount}`}
@@ -70,15 +70,15 @@ export function OrderOperationsPanel({
         />
       </div>
 
-      <Card>
+      <Card size="sm">
         <CardHeader>
           <CardTitle>{translations.title}</CardTitle>
           <p className="body-copy text-sm text-muted-foreground">
             {translations.description}
           </p>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
+        <CardContent className="space-y-4 pt-0">
+          <div className="panel-highlight">
             <p className="subtle-label text-primary-foreground/72">
               {translations.featuredLabel}
             </p>
@@ -121,8 +121,8 @@ export function OrderOperationsPanel({
               </div>
             </div>
 
-            <div className="grid gap-3">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="panel-meta-grid">
+              <div className="panel-meta-row">
                 <div>
                   <p className="subtle-label text-muted-foreground">
                     {translations.meta.customer}
@@ -141,7 +141,7 @@ export function OrderOperationsPanel({
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="panel-meta-row">
                 <div>
                   <p className="subtle-label text-muted-foreground">
                     {translations.meta.orderDate}

@@ -52,7 +52,7 @@ export default async function SettingsPage({ params }: SettingsPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] xl:items-start">
         <div className="section-stack">
           <SettingsProfilePanel
             title={t("profile.title")}

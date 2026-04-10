@@ -36,7 +36,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="page-metrics-grid">
         <MetricCard
           label={t("cards.totalProducts")}
           value={`${overview.summary.totalProducts}`}
@@ -66,7 +66,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.45fr_0.55fr]">
+      <div className="page-rail-grid">
         <ProductsTable data={overview.rows} locale={appLocale} />
 
         <ProductCatalogPanel

@@ -107,8 +107,12 @@ export function InvoicesTable({ data, locale }: InvoicesTableProps) {
     },
     {
       accessorKey: "amount",
-      header: t("table.amount"),
-      cell: ({ row }) => formatCurrency(row.original.amount, locale),
+      header: () => <div className="text-right">{t("table.amount")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">
+          {formatCurrency(row.original.amount, locale)}
+        </div>
+      ),
     },
     {
       accessorKey: "badgeStatus",
@@ -122,9 +126,9 @@ export function InvoicesTable({ data, locale }: InvoicesTableProps) {
     },
     {
       accessorKey: "paidAmount",
-      header: t("table.billing"),
+      header: () => <div className="text-right">{t("table.billing")}</div>,
       cell: ({ row }) => (
-        <div className="space-y-1">
+        <div className="space-y-1 text-right">
           <p className="text-sm font-medium">
             {t("table.paidLabel", {
               amount: formatCurrency(row.original.paidAmount, locale),

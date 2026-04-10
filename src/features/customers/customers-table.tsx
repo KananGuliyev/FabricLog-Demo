@@ -100,8 +100,20 @@ export function CustomersTable({ data, locale }: CustomersTableProps) {
         />
       ),
     },
-    { accessorKey: "totalOrders", header: t("table.orders") },
-    { accessorKey: "invoiceCount", header: t("table.invoices") },
+    {
+      accessorKey: "totalOrders",
+      header: () => <div className="text-right">{t("table.orders")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">{row.original.totalOrders}</div>
+      ),
+    },
+    {
+      accessorKey: "invoiceCount",
+      header: () => <div className="text-right">{t("table.invoices")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">{row.original.invoiceCount}</div>
+      ),
+    },
     {
       accessorKey: "paymentHealth",
       header: t("table.paymentHealth"),
@@ -122,8 +134,12 @@ export function CustomersTable({ data, locale }: CustomersTableProps) {
     },
     {
       accessorKey: "outstandingBalance",
-      header: t("table.balance"),
-      cell: ({ row }) => formatCurrency(row.original.outstandingBalance, locale),
+      header: () => <div className="text-right">{t("table.balance")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">
+          {formatCurrency(row.original.outstandingBalance, locale)}
+        </div>
+      ),
     },
     {
       accessorKey: "lastActivityDate",

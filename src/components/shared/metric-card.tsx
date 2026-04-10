@@ -38,7 +38,7 @@ export function MetricCard({
         toneStyles[tone]
       )}
     >
-      <CardHeader className="space-y-3">
+      <CardHeader className="space-y-3.5">
         <div className="flex items-center justify-between gap-3">
           <p className="subtle-label text-[0.72rem] text-muted-foreground">
             {label}
@@ -46,7 +46,7 @@ export function MetricCard({
           {trendLabel ? (
             <span
               className={cn(
-                "inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium",
+                "inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[0.72rem] font-semibold shadow-sm",
                 isPositive
                   ? "bg-emerald-100 text-emerald-700"
                   : "bg-rose-100 text-rose-700"
@@ -57,11 +57,11 @@ export function MetricCard({
             </span>
           ) : null}
         </div>
-        <CardTitle className="text-3xl font-semibold tracking-tight text-foreground">
+        <CardTitle className="text-[1.9rem] font-semibold tracking-tight text-foreground sm:text-3xl">
           {value}
         </CardTitle>
       </CardHeader>
-      <CardContent className="body-copy pt-0 text-sm text-muted-foreground">
+      <CardContent className="body-copy pt-0 text-sm leading-6 text-muted-foreground">
         {hint}
       </CardContent>
     </Card>

@@ -18,11 +18,11 @@ export function FeaturePanel({
   className,
 }: FeaturePanelProps) {
   return (
-    <Card className={cn("gap-4", className)}>
+    <Card className={cn("gap-4", className)} size="sm">
       <CardHeader>
         <SectionHeader title={title} description={description} action={action} />
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent className="pt-0">{children}</CardContent>
     </Card>
   );
 }

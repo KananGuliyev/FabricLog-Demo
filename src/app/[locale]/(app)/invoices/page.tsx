@@ -36,7 +36,7 @@ export default async function InvoicesPage({ params }: InvoicesPageProps) {
         description={t("description")}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="page-metrics-grid">
         <MetricCard
           label={t("cards.totalInvoices")}
           value={`${overview.summary.totalInvoices}`}
@@ -67,7 +67,7 @@ export default async function InvoicesPage({ params }: InvoicesPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.75fr)_minmax(320px,0.95fr)]">
+      <div className="page-rail-grid">
         <InvoicesTable data={overview.rows} locale={appLocale} />
         <InvoiceCollectionsPanel
           featuredInvoice={overview.featuredInvoice}

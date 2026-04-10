@@ -101,7 +101,7 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
         ]}
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.4fr_1fr]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.38fr)_minmax(320px,0.92fr)] xl:items-start">
         <FeaturePanel
           title={t("revenue.title")}
           description={t("revenue.description")}
@@ -147,7 +147,7 @@ export default async function ReportsPage({ params }: ReportsPageProps) {
         </div>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_1fr_0.95fr]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(300px,0.95fr)] xl:items-start">
         <ReportsHighlightsCard
           title={t("highlights.customersTitle")}
           description={t("highlights.customersDescription")}

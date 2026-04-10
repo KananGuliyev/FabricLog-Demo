@@ -10,7 +10,9 @@ import {
 } from "@tanstack/react-table";
 import { Search } from "lucide-react";
 
+import { EmptyState } from "@/components/shared/empty-state";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -19,18 +21,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { EmptyState } from "@/components/shared/empty-state";
+import { cn } from "@/lib/utils";
 
 type DataTableProps<TData> = {
   data: TData[];
   columns: ColumnDef<TData>[];
   emptyMessage: string;
   emptyDescription?: string;
+  loading?: boolean;
+  loadingRows?: number;
   onSearchChange?: (value: string) => void;
   searchAccessor?: (row: TData) => string;
   searchPlaceholder: string;
   searchValue?: string;
   toolbarExtras?: ReactNode;
+  tableClassName?: string;
 };
 
 export function DataTable<TData>({
@@ -38,10 +43,13 @@ export function DataTable<TData>({
   columns,
   emptyMessage,
   emptyDescription,
+  loading = false,
+  loadingRows = 5,
   onSearchChange,
   searchAccessor,
   searchPlaceholder,
   searchValue,
+  tableClassName,
   toolbarExtras,
 }: DataTableProps<TData>) {
   const [internalQuery, setInternalQuery] = useState("");
@@ -74,23 +82,25 @@ export function DataTable<TData>({
   return (
     <div className="section-stack">
       <div className="table-toolbar">
-        <div className="relative w-full max-w-md">
-          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            className="pl-10"
-            placeholder={searchPlaceholder}
-          />
+        <div className="table-toolbar-main">
+          <div className="relative w-full max-w-xl">
+            <Search className="pointer-events-none absolute top-1/2 left-4 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              className="pl-11"
+              placeholder={searchPlaceholder}
+            />
+          </div>
         </div>
         {toolbarExtras ? (
-          <div className="flex flex-wrap items-center gap-3">{toolbarExtras}</div>
+          <div className="table-toolbar-side">{toolbarExtras}</div>
         ) : null}
       </div>
 
       <div className="table-frame">
-        <Table>
-          <TableHeader className="bg-muted/34">
+        <Table className={cn("min-w-[45rem]", tableClassName)}>
+          <TableHeader className="bg-muted/40">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
@@ -107,7 +117,22 @@ export function DataTable<TData>({
             ))}
           </TableHeader>
           <TableBody>
-            {table.getRowModel().rows.length ? (
+            {loading ? (
+              Array.from({ length: loadingRows }).map((_, rowIndex) => (
+                <TableRow key={`loading-${rowIndex}`}>
+                  {columns.map((_, columnIndex) => (
+                    <TableCell key={`loading-${rowIndex}-${columnIndex}`}>
+                      <Skeleton
+                        className={cn(
+                          "h-4 w-full max-w-[10rem]",
+                          columnIndex === 0 && "max-w-[12rem]"
+                        )}
+                      />
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
@@ -121,7 +146,7 @@ export function DataTable<TData>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="px-4 py-6"
+                  className="px-4 py-8"
                 >
                   <EmptyState
                     title={emptyMessage}

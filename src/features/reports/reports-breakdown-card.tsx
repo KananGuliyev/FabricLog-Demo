@@ -20,16 +20,16 @@ export function ReportsBreakdownCard({
   items,
 }: ReportsBreakdownCardProps) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">{description}</p>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-3.5 pt-0">
         {items.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl border border-border/70 bg-muted/24 px-4 py-3"
+            className="rounded-2xl border border-border/70 bg-muted/24 px-4 py-3.5"
           >
             <div className="flex items-start justify-between gap-4">
               <div>

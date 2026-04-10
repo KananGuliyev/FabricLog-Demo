@@ -26,17 +26,17 @@ export function DashboardStatusIndicators({
   title,
 }: DashboardStatusIndicatorsProps) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">{description}</p>
       </CardHeader>
-      <CardContent className="flex flex-wrap gap-3">
+      <CardContent className="flex flex-wrap gap-3 pt-0">
         {items.map((item) => (
           <div
             key={item.label}
             className={cn(
-              "inline-flex min-w-[10.5rem] flex-1 items-center justify-between rounded-2xl border px-4 py-3",
+              "inline-flex min-w-[10.5rem] flex-1 items-center justify-between rounded-2xl border px-4 py-3.5 shadow-sm",
               toneStyles[item.tone]
             )}
           >

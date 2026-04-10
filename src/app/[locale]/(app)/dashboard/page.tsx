@@ -105,15 +105,15 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         ]}
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.45fr_1fr]">
-        <Card>
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.95fr)] xl:items-start">
+        <Card size="sm">
           <CardHeader>
             <CardTitle>{t("visualSummary.title")}</CardTitle>
             <p className="body-copy text-sm text-muted-foreground">
               {t("visualSummary.description")}
             </p>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 pt-0">
             <DashboardRevenueChart
               data={summary.monthlyRevenue}
               locale={appLocale}
@@ -158,7 +158,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.05fr_1.05fr_0.95fr]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(300px,0.92fr)] xl:items-start">
         <DashboardPreviewTable
           title={t("recentOrders.title")}
           description={t("recentOrders.description")}

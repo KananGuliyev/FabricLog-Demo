@@ -118,14 +118,18 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
     },
     {
       accessorKey: "unitPrice",
-      header: t("table.price"),
-      cell: ({ row }) => formatCurrency(row.original.unitPrice, locale),
+      header: () => <div className="text-right">{t("table.price")}</div>,
+      cell: ({ row }) => (
+        <div className="text-right font-medium">
+          {formatCurrency(row.original.unitPrice, locale)}
+        </div>
+      ),
     },
     {
       accessorKey: "stockMeters",
-      header: t("table.stock"),
+      header: () => <div className="text-right">{t("table.stock")}</div>,
       cell: ({ row }) => (
-        <div className="space-y-1">
+        <div className="space-y-1 text-right">
           <p className="text-sm font-medium">
             {formatNumber(row.original.stockMeters, locale)} m
           </p>
@@ -154,9 +158,9 @@ export function ProductsTable({ data, locale }: ProductsTableProps) {
     },
     {
       accessorKey: "availableMeters",
-      header: t("table.available"),
+      header: () => <div className="text-right">{t("table.available")}</div>,
       cell: ({ row }) => (
-        <div className="space-y-1">
+        <div className="space-y-1 text-right">
           <p className="text-sm font-medium">
             {formatNumber(row.original.availableMeters, locale)} m
           </p>

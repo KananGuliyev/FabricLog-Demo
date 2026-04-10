@@ -21,16 +21,16 @@ export function DashboardActivityFeed({
   title,
 }: DashboardActivityFeedProps) {
   return (
-    <Card>
+    <Card size="sm">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <p className="body-copy text-sm text-muted-foreground">{description}</p>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-3 pt-0">
         {items.map((item) => (
           <div
             key={item.id}
-            className="panel-secondary flex gap-4 px-4 py-3"
+            className="panel-secondary flex gap-4 px-4 py-3.5"
           >
             <span
               className={cn(

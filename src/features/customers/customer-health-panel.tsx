@@ -44,7 +44,7 @@ export function CustomerHealthPanel({
 }: CustomerHealthPanelProps) {
   return (
     <div className="section-stack">
-      <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-1">
+      <div className="metric-rail-grid">
         <MetricCard
           label={translations.summaryCards.growthCustomers}
           value={`${summary.growthCustomers}`}
@@ -68,15 +68,15 @@ export function CustomerHealthPanel({
         />
       </div>
 
-      <Card>
+      <Card size="sm">
         <CardHeader>
           <CardTitle>{translations.statsTitle}</CardTitle>
           <p className="body-copy text-sm text-muted-foreground">
             {translations.statsDescription}
           </p>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="rounded-[1.75rem] bg-primary px-5 py-5 text-primary-foreground shadow-sm shadow-primary/15">
+        <CardContent className="space-y-4 pt-0">
+          <div className="panel-highlight">
             <p className="subtle-label text-primary-foreground/72">
               {translations.featured}
             </p>
@@ -101,7 +101,7 @@ export function CustomerHealthPanel({
               />
             </div>
 
-            <div className="grid gap-3">
+            <div className="panel-meta-grid">
               <div>
                 <p className="subtle-label text-muted-foreground">
                   {translations.featuredMeta.collection}
@@ -118,7 +118,7 @@ export function CustomerHealthPanel({
                   {featuredCustomer.email}
                 </p>
               </div>
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center justify-between gap-4 rounded-2xl border border-border/70 bg-background/90 px-4 py-3">
                 <div>
                   <p className="subtle-label text-muted-foreground">
                     {translations.featuredMeta.lastActivity}

@@ -22,14 +22,18 @@ export function SectionHeader({
         className
       )}
     >
-      <div className="min-w-0 space-y-2">
+      <div className="min-w-0 space-y-2.5">
         {eyebrow ? <p className="subtle-label">{eyebrow}</p> : null}
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           <h2 className="section-title">{title}</h2>
-          {description ? <p className="body-copy max-w-2xl">{description}</p> : null}
+          {description ? (
+            <p className="body-copy max-w-2xl text-sm sm:text-[0.98rem]">
+              {description}
+            </p>
+          ) : null}
         </div>
       </div>
-      {action ? <div className="shrink-0">{action}</div> : null}
+      {action ? <div className="shrink-0 self-start">{action}</div> : null}
     </div>
   );
 }
